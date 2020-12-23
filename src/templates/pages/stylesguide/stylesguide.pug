@@ -2,7 +2,7 @@ extends ../../wrapper.pug
 
 mixin linkMenu(name)
 	li 
-		a(href="../src/templates/compiled/stylesguide/"+name.toLowerCase(), class={'active': name==sectionTitle}) #{name}
+		a(href="../dest/pages/stylesguide/"+name.toLowerCase(), class={'active': name==sectionTitle}) #{name}
 
 block title-page
 	title Styles Guide - Framework

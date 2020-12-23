@@ -35,41 +35,6 @@
 * 
 -------------------------------------------- */
 
-/* 
-	Example: 
-		$params: (
-			'pseudo-element': before,
-			'size': 2rem,
-			'border-width': .3rem
-		);
-		@include loading($params...);
-*/
-
-@mixin loading($pseudo-element, $size, $border-width, $color: currentColor, $position-parent: relative, $hide-children: false) {
-	position: $position-parent !important;
-	pointer-events: none;
-	@if $hide-children {
-		* {
-			opacity: 0;
-		}
-	}
-
-	&::#{$pseudo-element} {
-		content: '';
-		position: absolute;
-		top: calc(50% - (#{$size} / 2));
-		left: calc(50% - (#{$size} / 2));
-		width: $size;
-		height: $size;
-		border: $border-width solid $color;
-		border-top-color: transparent !important;
-		border-right-color: transparent !important;
-		border-radius: 50%;
-		opacity: 1;
-		animation: o-rotate 0.6s linear infinite;
-	}
-}
-
 //// https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/
 /// Mixin to customize scrollbars
 /// Beware, this does not work in all browsers
@@ -105,22 +70,5 @@
 
 	&::-webkit-scrollbar-track {
 		background: mix($foreground-color, white, 50%);
-	}
-}
-
-/** --------------------------------------------
-*
-*  Remove top space from headings
-*  https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
-* 
--------------------------------------------- */
-
-@mixin lh-heading-crop($line-height: $heading-line-height) {
-	&::before {
-		content: '';
-		display: block;
-		width: 0;
-		height: 0;
-		margin-top: calc((1 - #{$line-height}) * 1em);
 	}
 }

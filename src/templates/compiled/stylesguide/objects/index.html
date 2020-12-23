@@ -60,14 +60,14 @@
         <div class="row no-gutters">
           <div class="col-12 col-md-3 col-lg-2 u-px-0 u-mb-0 menu-stylesguide">
             <ul class="list-unstyled" id="menuStylesguide" data-computed-style="width, height" data-computed-style-name="menu">
-              <li> <a href="../src/templates/compiled/stylesguide/cheatsheet">Cheatsheet</a></li>
-              <li> <a href="../src/templates/compiled/stylesguide/elements">Elements</a></li>
-              <li> <a class="active" href="../src/templates/compiled/stylesguide/objects">Objects</a></li>
-              <li> <a href="../src/templates/compiled/stylesguide/components">Components</a></li>
-              <li> <a href="../src/templates/compiled/stylesguide/patterns">Patterns</a></li>
-              <li> <a href="../src/templates/compiled/stylesguide/utilities">Utilities</a></li>
-              <li> <a href="../src/templates/compiled/stylesguide/misc">Misc</a></li>
-              <li> <a href="../src/templates/compiled/stylesguide/layout">Layout</a></li>
+              <li> <a href="../dest/pages/stylesguide/cheatsheet">Cheatsheet</a></li>
+              <li> <a href="../dest/pages/stylesguide/elements">Elements</a></li>
+              <li> <a class="active" href="../dest/pages/stylesguide/objects">Objects</a></li>
+              <li> <a href="../dest/pages/stylesguide/components">Components</a></li>
+              <li> <a href="../dest/pages/stylesguide/patterns">Patterns</a></li>
+              <li> <a href="../dest/pages/stylesguide/utilities">Utilities</a></li>
+              <li> <a href="../dest/pages/stylesguide/misc">Misc</a></li>
+              <li> <a href="../dest/pages/stylesguide/layout">Layout</a></li>
             </ul>
           </div>
           <div class="col-12 col-md-9 col-lg-10 u-px-0 u-mb-0">
@@ -82,17 +82,21 @@
                 <div class="row js-parent-snippet">
                   <div class="col-6 col-md-3">
                     <h2>1:1</h2>
-                    <div class="o-preserve-ratio o-preserve-ratio--square js-snippet"><img src="https://gradientjoy.com/200x300" alt=""></div>
+                    <div class="o-preserve-ratio o-preserve-ratio--square js-snippet"><img src="https://picsum.photos/400/200" loading="lazy" alt=""></div>
                   </div>
                   <div class="col-6 col-md-3">
                     <h2>4:3</h2>
-                    <div class="o-preserve-ratio o-preserve-ratio--four-thirds js-snippet"><img class="lazyload" data-src="/assets/dest/img/holy-768.jpg" alt="" data-srcset="/assets/dest/img/holy-768.jpg 768w, /assets/dest/img/holy-1080.jpg 1080w" sizes="auto"></div>
+                    <div class="o-preserve-ratio o-preserve-ratio--four-thirds js-snippet"><img src="https://picsum.photos/400/200" loading="lazy" alt=""></div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <h2>16:9</h2>
+                    <h2>Video 16:9</h2>
                     <div class="o-preserve-ratio js-snippet">
-                      <iframe class="lazyload" data-src="https://www.youtube.com/embed/3LxyRuZxs2w?rel=0&amp;amp;showinfo=0" title="youtube iframe test"></iframe>
+                      <iframe src="https://www.youtube.com/embed/3LxyRuZxs2w?rel=0&amp;amp;showinfo=0" title="youtube iframe test"></iframe>
                     </div>
+                  </div>
+                  <div class="col-12">
+                    <h2>16:9</h2>
+                    <div class="o-preserve-ratio js-snippet"><img src="https://picsum.photos/1920" srcset="https://picsum.photos/768 768w, https://picsum.photos/1200 1200w, https://picsum.photos/1920 1920w" loading="lazy" alt=""></div>
                   </div>
                 </div>
               </section>
@@ -112,7 +116,6 @@
       catch(e){window.attachEvent("onload", $buo_f)}
       
     </script>
-    <script src="js/vendors/lazysizes.min.js"></script>
     <script src="js/vendors/easy-toggle-state.js"></script>
     <script src="js/vendors/tiny-slider.min.js"></script>
     <script src="js/scripts.min.js"></script>

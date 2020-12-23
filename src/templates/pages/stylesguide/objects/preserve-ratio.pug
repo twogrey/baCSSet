@@ -6,20 +6,17 @@ section.section.js-menu#Preserve-ratio
 		.col-6.col-md-3
 			h2 1:1
 			.o-preserve-ratio.o-preserve-ratio--square.js-snippet
-				img(src="https://gradientjoy.com/200x300", alt="")
+				img(src="https://picsum.photos/400/200", loading="lazy", alt="")
 		.col-6.col-md-3
 			h2 4:3
 			.o-preserve-ratio.o-preserve-ratio--four-thirds.js-snippet
-				//- In case you don't use a polyfill it is recommended that the first image candidate matches the fallback src
-				img(
-						class="lazyload",
-						data-src="/assets/dest/img/holy-768.jpg", 
-						alt="", 
-						data-srcset="/assets/dest/img/holy-768.jpg 768w, /assets/dest/img/holy-1080.jpg 1080w",
-						sizes="auto"
-					)
+				img(src="https://picsum.photos/400/200", loading="lazy", alt="")
 		.col-12.col-md-6
+			h2 Video 16:9
+			.o-preserve-ratio.js-snippet
+				iframe(src="https://www.youtube.com/embed/3LxyRuZxs2w?rel=0&amp;showinfo=0", title="youtube iframe test")
+		.col-12
 			h2 16:9
 			.o-preserve-ratio.js-snippet
-				iframe(data-src="https://www.youtube.com/embed/3LxyRuZxs2w?rel=0&amp;showinfo=0", title="youtube iframe test", class="lazyload")
+				img(src="https://picsum.photos/1920", srcset="https://picsum.photos/768 768w, https://picsum.photos/1200 1200w, https://picsum.photos/1920 1920w", loading="lazy", alt="")
 

@@ -18,7 +18,7 @@ document.querySelectorAll('.js-menu').forEach((title) => {
 	const a = document.createElement('a');
 	const li = document.createElement('li');
 	a.textContent = href;
-	a.href = `${window.location.pathname}#${href}`;
+	a.href = window.location.pathname+'#'+href;
 	li.append(a);
 	ul.append(li);
 });

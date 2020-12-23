@@ -4,6 +4,9 @@
  * 
  -------------------------------------------- */
 
+/**
+ * Form
+ */
 $enable-form-choices: true;
 $enable-form-fieldset: false;
 $enable-form-textual-fields: true;
@@ -12,6 +15,9 @@ $enable-form-prepend-append: true;
 $enable-form-input-action: true;
 $enable-form-input-with-icon: true;
 
+/**
+ * HTML Elements
+ */
 $enable-blockquote: true;
 $enable-descriptions: true;
 $enable-headings: true;
@@ -19,29 +25,29 @@ $enable-hr: true;
 $enable-lists: true;
 $enable-table: true;
 
+/**
+ * Objects
+ */
 $enable-skip-links: true;
-
 $enable-preserve-ratio: true;
 
+/**
+ * Components
+ */
+$enable-badge: true;
 $enable-button: true;
-
 $enable-panel: true;
-
 $enable-loader: true;
-
 $enable-breadcrumb: true;
 
+/**
+ * Patterns
+ */
 $enable-offcanvas: true;
-
 $enable-modal: true;
-
 $enable-accordion: false;
-
 $enable-slider: true;
- 
 $enable-tabs: true;
-
-$enable-loader: true;
 
 /** --------------------------------------------
  * 

@@ -66,9 +66,7 @@
  */
 
 @import '04-objects/aspect-ratio',
-	'04-objects/animation',
-	'04-objects/total-selected',
-	'04-objects/sticky-bar-reveal';
+	'04-objects/animation';
 
 /** -----------------------------------------------------------
  *
@@ -85,16 +83,11 @@
  */
 
 @import
-	'05-components/placeholder-img',
+	'05-components/badge', 
 	'05-components/loader',
 	'05-components/button',
-	'05-components/style',
-	'05-components/color-tone',
 	'05-components/panel',
-	'05-components/breadcrumb',
-	'05-components/inspiration',
-	'05-components/product-card',
-	'05-components/room';
+	'05-components/breadcrumb';
 
 /** -----------------------------------------------------------
  *
@@ -110,12 +103,10 @@
  */
 
 @import '06-patterns/offcanvas',
-	'06-patterns/hero',
 	'06-patterns/slider',
 	'06-patterns/accordion',
 	'06-patterns/tabs',
 	'06-patterns/modal',
-	'06-patterns/steps-thread',
 	'06-patterns/dropdown';
 
 /** -----------------------------------------------------------
@@ -152,6 +143,4 @@
  */
 
 @import '08-extra/header',
-	'08-extra/footer',
-	'08-extra/lazy',
-	'08-extra/filters-products';
+	'08-extra/footer';
