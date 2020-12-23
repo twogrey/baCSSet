@@ -1,0 +1,109 @@
+extends ../../wrapper.pug
+
+mixin linkMenu(name)
+	li 
+		a(href="../src/templates/compiled/stylesguide/"+name.toLowerCase(), class={'active': name==sectionTitle}) #{name}
+
+block title-page
+	title Styles Guide - Framework
+
+block vars
+	- var bodyClass = 'stylesguide-page';
+
+block append styles
+	link(href="css/pages/stylesguide.min.css", rel="stylesheet")
+
+block main
+	.container.container--fluid.u-px-0
+		
+		.row.no-gutters
+
+			.col-12.col-md-3.col-lg-2.u-px-0.u-mb-0.menu-stylesguide
+
+				ul#menuStylesguide.list-unstyled(data-computed-style="width, height", data-computed-style-name="menu")
+					+linkMenu('Cheatsheet')
+					+linkMenu('Elements')
+					+linkMenu('Objects')
+					+linkMenu('Components')
+					+linkMenu('Patterns')
+					+linkMenu('Utilities')
+					+linkMenu('Misc')
+					+linkMenu('Layout')
+
+			.col-12.col-md-9.col-lg-10.u-px-0.u-mb-0
+				 
+				.god-section-title #{sectionTitle} 
+				.container.u-py-md.u-px-md-double
+					block content
+
+				//- .js-menu-1(id="Elements")
+				//- 	.god-section-title Elements
+				//- 	.container.container--fluid
+				//- 		include elements/typo.pug
+				//- 	.container.container--fluid
+				//- 		include elements/tables.pug
+				//- 	.container.container--fluid
+				//- 		include elements/form.pug
+				
+				//- .js-menu-1(id="Objects")
+				//- 	.god-section-title Objects
+				//- 	.container.container--fluid
+				//- 		include objects/preserve-ratio.pug 
+				
+				//- .js-menu-1(id="Components")
+				//- 	.god-section-title Components
+				//- 	.container.container--fluid
+				//- 		include components/button.pug
+				//- 	.container.container--fluid
+				//- 		include components/panel.pug
+				//- 	.container.container--fluid
+				//- 		include components/tooltip.pug
+				//- 	.container.container--fluid
+				//- 		include components/toggle.pug
+				//- 	.container.container--fluid
+				//- 		include components/loader.pug 
+				//- 	.container.container--fluid
+				//- 		include components/breadcrumb.pug 
+				//- 	.container.container--fluid
+				//- 		include components/pagination.pug 
+				
+				//- .js-menu-1(id="Patterns")
+				//- 	.god-section-title Patterns
+				//- 	.container.container--fluid
+				//- 		include patterns/modal.pug 
+				//- 	.container.container--fluid
+				//- 		include patterns/accordion.pug 
+				//- 	.container.container--fluid
+				//- 		include patterns/tabs.pug 
+				//- 	.container.container--fluid
+				//- 		include patterns/slider.pug 
+				
+				//- .js-menu-1(id="Utilities")
+				//- 	.god-section-title Utilities
+				//- 	.container.container--fluid
+				//- 		include utilities/utilities.pug
+				
+				//- .js-menu-1(id="Layout")
+				//- 	.god-section-title Layout system
+				//- 	.container.container--fluid
+				//- 		include grid.pug
+				
+				//- .js-menu-1(id="Misc")
+				//- 	.god-section-title Misc
+				//- 	.container.container--fluid
+				//- 		include misc/iframe.pug
+				//- 	.container.container--fluid
+				//- 		include misc/img.pug
+				//- 	.container.container--fluid
+				//- 		include misc/colors.pug
+				//- 	.container.container--fluid
+				//- 		include misc/read-more-links.pug
+				//- 	.container.container--fluid
+				//- 		include misc/menu.pug
+
+block append scripts-footer
+		script(src="js/vendors/prism.js")
+		script(src="js/vendors/prism-toolbar.js")
+		script(src="js/vendors/prism-copy-to-clipboard.js")
+		script(src="js/components/sliders.min.js")
+		script(src="js/pages/stylesguide.min.js")

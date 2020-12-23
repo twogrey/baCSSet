@@ -1,0 +1,106 @@
+@if $enable-panel {
+	.c-panel {
+		--s: var(--spacing);
+		position: relative;
+		padding: var(--s);
+		border: rem(1px) solid var(--border-color, currentColor);
+		border-left: rem(3px) solid var(--border-color, currentColor);
+		border-radius: var(--radius);
+		overflow: hidden;
+		background-color: var(--bg);
+		color: var(--color, var(--color-black));
+
+		@each $name, $color in($main-colors) {
+			&--#{$name} { 
+				--bg: var(--color-#{$name}-lightest);
+				--color: var(--color-#{$name}-dark);
+
+				hr {
+					border-bottom-color: var(--color-#{$name}-light);
+				}
+			}
+		}
+
+		&--white {
+			--bg: #fff;
+			--border-color: var(--color-grey);
+		}
+
+		&--light {
+			--bg: var(--color-lightgrey);
+		}
+
+		&--dark {
+			--bg: var(--color-black);
+			--color: #fff;
+			--border-color: var(--color-black);
+		}
+
+		&--closable {
+			padding-right: calc(var(--s) * 3);
+
+			&:not(.is-active) {
+				display: none;
+			}
+		}
+
+		a {
+			color: inherit;
+
+			&:hover,
+			&.focus-visible {
+				outline-color: currentColor;
+				outline-style: dotted;
+				outline-width: rem(2px);
+			}
+		}
+
+		&__title {
+			margin-bottom: var(--s);
+			color: inherit;
+		}
+
+		&__close {
+			position: absolute;
+			top: rem(3px);
+			right: rem(3px);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: calc(var(--s) * 1.5);
+			height: calc(var(--s) * 1.5);
+			border: 0;
+			border-radius: var(--radius);
+			overflow: hidden;
+			font-size: rem(14px);
+			background-color: transparent;
+			color: inherit;
+			cursor: pointer;
+			user-select: none;
+			outline: none;
+			-webkit-tap-highlight-color: transparent;
+
+			&::before {
+				content: '';
+				position: absolute 0;
+				box-shadow: inset 0 0 0 rem(2px) currentColor;
+				opacity: 0;
+				transition: opacity 0.2s;
+			}
+
+			&.focus-visible,
+			&:hover {
+				&::before {
+					opacity: 0.5;
+				}
+			}
+
+			&:active {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+}

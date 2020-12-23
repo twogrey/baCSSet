@@ -1,0 +1,40 @@
+body {
+	.buorg {
+		position: fixed 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		text-align: center;
+		color: #fff;
+		background-color: rgba(0, 0, 0, 0.5);
+		animation: none;
+
+		&-pad {
+			max-width: 90%;
+			padding: rem(15px) !important;
+			line-height: 1.5;
+			box-shadow: 0 0 1.25rem 0 rgba(21, 24, 36, 0.4);
+			background-color: $color-primary;
+		}
+
+		&-fadeout {
+			transition: visibility 0s 6s, opacity 0.5s ease-out 5.5s;
+		}
+	}
+
+	// .buorg-buttons {
+	// 
+	// } 
+
+	#buorgul {
+		margin-top: rem(10px);
+		background-color: $color-secondary;
+	}
+
+	#buorgig {
+		margin-top: rem(10px);
+		border-color: $color-primary-dark;
+		background-color: $color-primary;
+	}
+}

@@ -1,0 +1,48 @@
+.c-product-card {
+	height: 100%;
+
+	&__content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__img {
+		z-index: 1;
+		border-radius: rem(8px);
+		box-shadow: 0 rem(2px) rem(8px) rgba(0, 0, 0, 0.08);
+		pointer-events: none;
+	}
+
+	&__name {
+		flex: 1 0 auto;
+		padding: 0 rem(2px);
+		margin: var(--spacing) 0;
+		line-height: 1.4;
+		font-weight: $regular;
+		font-size: rem(13px);
+		transition: color 0.2s;
+	}
+
+	&__price {
+		padding: 0 rem(2px);
+		font-weight: $bold;
+	}
+
+	&__link {
+		&::before {
+			content: '';
+			position: absolute rem(-5px);
+			border-radius: rem(8px);
+			transition: background-color 0.2s;
+		}
+
+		&:hover,
+		&.focus-visible {
+			&::before {
+				background-color: rgba(#000, 0.05);
+			}
+		}
+	}
+}

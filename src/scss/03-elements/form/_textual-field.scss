@@ -1,0 +1,89 @@
+@if $enable-form-textual-fields {
+	[type='color'],
+	[type='date'],
+	[type='datetime-local'],
+	[type='email'],
+	[type='month'],
+	[type='number'],
+	[type='password'],
+	[type='search'],
+	[type='tel'],
+	[type='text'],
+	[type='time'],
+	[type='url'],
+	[type='week'],
+	[type='file'],
+	select,
+	textarea {
+		--focus-color: var(--color-primary-lightest);
+		width: 100%;
+		min-width: 0;
+		max-width: 100%;
+		height: $input-height;
+		margin: 0;
+		padding: 0 $input-padding-x;
+		border: $input-border;
+		border-radius: $input-radius;
+		font-family: inherit;
+		font-size: rem(16px);
+		line-height: calc(#{$input-height} - #{$input-radius} * 2);
+		background-color: $input-background-color;
+		color: $typo-color;
+		transition-duration: 0.2s;
+		transition-property: border-color, color, box-shadow;
+		appearance: none;
+		outline: none;
+
+		&:hover {
+			border-color: $input-hover-border-color;
+		}
+
+		&:focus {
+			border-color: $input-focus-border-color;
+			box-shadow: 0 0 0 $input-focus-width var(--focus-color);
+		}
+
+		&::placeholder {
+			color: var(--color-grey);
+		}
+
+		&[readonly],
+		&[disabled] {
+			background-color: var(--color-lightgrey);
+			color: var(--color-darkgrey);
+		}
+
+		&[disabled] {
+			cursor: not-allowed;
+		}
+
+		.error & {
+			border-color: $input-error-border-color;
+			&:focus { --focus-color: var(--color-error-lightest); }
+		}
+
+		.valid & {
+			border-color: $input-valid-border-color;
+			&:focus { --focus-color: var(--color-success-lightest); }
+		}    
+	}
+
+	textarea {
+		display: block;
+		height: auto;
+		min-height: var(--min-height, #{$input-height * 3});
+		padding-top: $input-padding-y;
+		padding-bottom: $input-padding-y;
+		line-height: 1.5;
+		resize: vertical;
+	}
+
+	select {
+		--chevron-size: #{rem(10px)};
+		padding-right: $input-padding-x * 2;
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>");
+		background-repeat: no-repeat;
+		background-position: right calc(#{$input-padding-x} - var(--chevron-size) / 2) center;
+		background-size: var(--chevron-size);
+	}
+}

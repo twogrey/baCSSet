@@ -1,0 +1,41 @@
+//--- Essential
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+base(href="/framework2/dest/") 
+block title-page
+	title Framework
+
+//--- Styles
+block styles
+	link(href="css/styles.min.css", rel="stylesheet")  
+
+//--- Favicon
+	//- Icon in the highest resolution we need it for
+link(rel="icon" sizes="192x192" href="/favicon.png")
+	//- Apple Touch Icon (reuse 192px icon.png)
+link(rel="apple-touch-icon" sizes="192x192" href="/favicon.png")
+
+//--- Scripts
+block scripts-header
+
+//--- Short description of the document (limit to 150 characters)
+meta(name="description", content="")
+
+//--- Facebook & Linkedin
+meta(property="og:url", content="")
+//- article, video, music, book, website (default), profile
+meta(property="og:type", content="article")
+meta(property="og:title", content="")
+meta(property="og:description", content="Content description less than 200 characters")
+	//- Ratio 1,91:1 (2:1 is allowed but img will be cropped)
+meta(property="og:image", content="")
+
+//--- Twitter
+meta(name='twitter:card', content='summary_large_image')
+meta(name='twitter:site', content='@site_account')
+meta(name='twitter:url', content='https://...')
+meta(name='twitter:title', content='Content Title')
+meta(name='twitter:description', content='Content description less than 200 characters')
+//- Ratio 2:1, 300x157 min, 4096x4096 max, < 5 MB
+meta(name='twitter:image', content='https://...')

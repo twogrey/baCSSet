@@ -1,0 +1,67 @@
+@if $enable-loader {
+	.c-loader {
+		--c: var(--color-primary);
+		--w: calc(var(--spacing) * 3);
+
+		&--small {
+			--w: calc(var(--spacing) * 1.125);
+		}
+
+		&--large {
+			--w: calc(var(--spacing) * 6);
+		}
+
+		&--overlay {
+			--bg: rgba(255, 255, 255, 0.5);
+			position: absolute 0;
+			z-index: var(--z-overlay);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--bg);
+		}
+
+		&--white {
+			--c: #fff;
+			--bg: rgba(0, 0, 0, 0.5);
+		}
+
+		svg {
+			width: 100%;
+			max-width: var(--w);
+			animation: o-rotate 2s linear infinite;
+		}
+
+		circle {
+			display: block;
+			fill: transparent;
+			stroke: var(--c);
+			transform-origin: 50% 50%;
+			animation: loader-circle-animation 1.4s ease-in-out infinite both;
+			stroke-dasharray: 283;
+			stroke-dashoffset: 280;
+			stroke-linecap: round;
+			stroke-width: 5px;
+		}
+	}
+
+	@keyframes loader-circle-animation {
+		0%,
+		25% {
+			stroke-dashoffset: 280;
+			transform: rotate(0);
+		}
+	  
+		50%,
+		75% {
+			stroke-dashoffset: 75;
+			transform: rotate(45deg);
+		}
+	  
+		100% {
+			stroke-dashoffset: 280;
+			transform: rotate(360deg);
+		}
+	}
+
+}

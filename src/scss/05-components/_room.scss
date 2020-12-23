@@ -1,0 +1,97 @@
+.c-room {
+	--size: #{rem(96px)};
+	--icon-bc: var(--color-primary);
+	--icon-color: var(--color-primary);
+	--icon-mb: var(--spacing); 
+	--icon-bgcolor: transparent;
+	--icon-shadow: none;
+	--text-color: var(--color-black);
+	--empty-color: var(--color-black);
+	--name-weight: #{$regular};
+	line-height: 1.25;
+	text-align: center;
+	text-decoration: none;
+
+	@include medium {
+		--size: #{rem(144px)};
+	}
+
+	&:hover, 
+	&.focus-visible {
+		@at-root {
+			a#{&} {
+				--icon-shadow: 0 0 0 #{rem(2px)} #fff, 0 0 0 #{rem(4px)} var(--color-primary-dark);
+				text-decoration: none;
+			}
+		}
+	}
+
+	&--white {
+		--icon-bc: #fff;
+		--icon-mb: var(--spacing-half);
+		--icon-bgcolor: #fff;
+		--text-color: #fff;
+		--name-weight: #{$bold};
+
+		@include medium {
+			--size: #{rem(96px)};
+		}
+	}
+
+	&__content {
+		padding: 0;
+		color: var(--text-color);
+
+		.focus-visible + & {
+			--icon-shadow: 0 0 0 #{rem(2px)} #fff, 0 0 0 #{rem(4px)} var(--color-primary-dark);
+		}
+
+		:checked + & {
+			--icon-bgcolor: var(--color-primary);
+			--icon-color: #fff;
+			--name-weight: #{$bold};
+			--empty-color: #fff;
+		}
+	}
+
+	&__img {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--size);
+		height: var(--size);
+		margin-bottom: var(--icon-mb);
+		border: rem(3px) solid var(--icon-bc);
+		border-radius: 50%;
+		background-color: var(--icon-bgcolor);
+		color: var(--icon-color);
+		box-shadow: var(--icon-shadow);
+		transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+		&--empty {
+			padding: 0 rem(5px);
+			margin-bottom: 0;
+			font-size: calc(var(--size) / 8);
+			color: var(--empty-color);
+		}
+
+		.icon {
+			width: 45%;
+			height: 45%;
+		}
+	}
+
+	&__name {
+		font-weight: var(--name-weight);
+	}
+
+	&__text {
+		font-size: 0.75em;
+		font-weight: $regular;
+	}
+
+	label {
+		padding-left: 0;
+		line-height: 1.25;
+	}
+}

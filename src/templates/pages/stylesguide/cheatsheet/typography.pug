@@ -1,0 +1,31 @@
+mixin weight(val)
+	- var content = '<div class="u-mb-half" style="font-size: calc(2 * var(--spacing)); line-height: 1">Aa<br></div><div style="font-size: calc(0.8 * var(--spacing)); line-height: 1">'+val.charAt(0).toUpperCase() + val.slice(1)+'</div>';
+	.col
+		if val !== 'normal'
+			div(class="u-text-" + val) 
+				| !{content}
+		else 
+			| !{content}
+
+.row.u-mb
+	+weight('bold')
+	+weight('semibold')
+	+weight('regular')
+
+.row
+	.col-12.col-md
+			p(class="u-uppercase u-text-semibold u-text-secondary-light") Headlines
+			h1.u-mt-0.u-mb-half h1 headline
+			h2.u-mt-0.u-mb-half h2 headline
+			h3.u-mt-0.u-mb-half h3 headline
+			h4.u-mt-0.u-mb-half h4 headline
+			h5.u-mt-0.u-mb-half h5 headline
+			h6.u-mt-0.u-mb-half h6 headline
+	.col-12.col-md
+			p(class="u-uppercase u-text-semibold u-text-secondary-light") Body text
+			p Jelly beans chocolate cake dessert chocolate. Wafer gingerbread topping macaroon cupcake tiramisu.
+			p.u-text-semibold Croissant cookie biscuit cake. Dessert lollipop sesame snaps chocolate bar jujubes.
+			p
+				i Tootsie roll jelly beans lollipop apple pie liquorice pastry dragée.
+			p.u-text-smaller Caramels tart jelly gummi bears dessert biscuit fruitcake marshmallow. Liquorice apple pie danish croissant jelly donut.
+			p.u-text-bigger Croissant sweet wafer cookie sweet roll wafer sesame snaps pie jujubes. Bear claw donut chocolate macaroon.

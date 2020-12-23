@@ -1,0 +1,47 @@
+mixin input(type)
+	if type == 'text'
+		input(type='text', aria-label='Input text with prefix or suffix')
+	if type == 'select'
+		select(aria-label='Select with prefix or suffix')
+	if type == 'textarea'
+		textarea(aria-label='Textarea with prefix or suffix')
+
+.col-12
+	h2 Prepend / Append
+.col-12
+	.row.js-parent-snippet
+		each val, index in ['text', 'select', 'textarea']
+			.col-12.col-md-6.col-lg-4
+				.form-group
+					.input-group
+						span.add Prefix
+						+input(val)
+			.col-12.col-md-6.col-lg-4 
+				.form-group
+					.input-group
+						+input(val)
+						span.add Suffix
+			.col-12.col-md-6.col-lg-4
+				.form-group(class={'js-snippet': val=='text'})
+					.input-group
+						span.add Prefix
+						+input(val)
+						span.add Suffix
+		.col-12.col-md-6.col-lg-4
+			.form-group
+				.input-group
+					span.add Prefix
+					+input('text')
+				include message-help.pug
+		.col-12.col-md-6.col-lg-4 
+			.form-group.error
+				.input-group
+					span.add Prefix
+					+input('text')
+				include message-error.pug
+		.col-12.col-md-6.col-lg-4
+			.form-group.valid
+				.input-group
+					span.add Prefix
+					+input('text')
+				include message-valid.pug

@@ -1,0 +1,234 @@
+$button-focus-width: 0.2rem;
+$button-pseudo-element-loading: after;
+$button-line-height: 1.25;
+
+@if $enable-button {
+	.c-btn {
+		$parent: &;
+		--font-size: #{rem(14px)};
+		--px: calc(var(--spacing) * 1.5);
+		--py: calc(var(--px) * 0.4725);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--py) var(--px);
+		border: 1px solid;
+		border-radius: 0.235em;
+		font-size: var(--font-size);
+		font-weight: $semibold;
+		line-height: $button-line-height;
+		text-decoration: none;
+		vertical-align: middle;
+		color: #fff;
+		cursor: pointer;
+		user-select: none;
+		transition: opacity 0.2s, color 0.2s, border-color 0.2s, background-color 0.2s;
+		transition-timing-function: ease;
+		-webkit-tap-highlight-color: transparent;
+		outline: none;
+
+		> span {
+			&:first-child {
+				margin-right: auto;
+			}
+		}
+
+		@include small-plus {
+			--font-size: #{rem(16px)};
+			--px: var(--spacing-double);
+		}
+
+		&--block {
+			width: 100%;
+		}
+
+		.icon {
+			flex: 0 0 auto;
+			height: calc(#{var(--font-size)} * #{$button-line-height});
+			transition: transform 0.2s;
+
+			&:first-child {
+				margin-right: var(--px);
+
+				~ span {
+					margin-left: auto;
+				}
+			}
+
+			&:last-child {
+				margin-left: var(--px);
+			}
+
+			&:only-child {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+
+		&--icon-only {
+			padding-right: var(--py);
+			padding-left: var(--py);
+
+			.icon {
+				width: calc(#{var(--font-size)} * #{$button-line-height});
+			}
+		}
+
+		@each $name, $color in($main-colors) {
+			&--#{$name} {
+				border-color: var(--color-#{$name});
+				background-color: var(--color-#{$name});
+				color: #fff;
+
+				&:hover {
+					border-color: var(--color-#{$name}-dark);
+					background-color: var(--color-#{$name}-dark);
+					color: #fff;
+				}
+
+				&:focus-visible {
+					color: #fff;
+					outline-color: var(--color-#{$name}-light);
+					outline-style: solid;
+					outline-width: $button-focus-width;
+				}
+			}
+
+			&--outline-#{$name} {
+				border-color: var(--color-#{$name});
+				background-color: transparent;
+				color: var(--color-#{$name});
+
+				&:hover {
+					background-color: var(--color-#{$name});
+					color: #fff;
+				} 
+
+				&:focus-visible,
+				&:active {
+					outline-color: var(--color-#{$name}-light);
+					outline-style: solid;
+					outline-width: $button-focus-width;
+				}
+			}
+		}
+
+		&:hover,
+		&.focus-visible {
+			text-decoration: none;
+		}
+
+		&--white {
+			border-color: transparent;
+			background-color: #fff;
+			color: var(--c, var(--color-secondary));
+
+			&:hover {
+				border-color: var(--color-secondary-lightest);
+				background-color: var(--color-secondary-lightest);
+				color: var(--color-secondary-dark);
+			}
+
+			&.focus-visible {
+				outline-color: var(--color-secondary-light);
+				outline-style: solid;
+				outline-width: $button-focus-width;
+			}
+		}
+
+		&--white-alt {
+			border-color: transparent;
+			background-color: #fff;
+			color: var(--c, var(--color-primary));
+
+			&:hover {
+				border-color: var(--color-primary-lightest);
+				background-color: var(--color-primary-lightest);
+				color: var(--color-primary-dark);
+			}
+
+			&.focus-visible {
+				outline-color: var(--color-primary-light);
+				outline-style: solid;
+				outline-width: $button-focus-width;
+			}
+		}
+
+		&--transparent {
+			border-color: transparent;
+			background-color: transparent;
+			color: var(--c, var(--color-black));
+
+			&:hover {
+				background-color: rgba(#000, 0.1);
+				color: var(--c-hover, var(--color-black));
+			}
+
+			&.focus-visible {
+				outline-color: rgba(#000, 0.25);
+				outline-style: solid;
+				outline-width: $button-focus-width;
+			}
+		}
+
+		&--link {
+			border: 0;
+			text-decoration: underline;
+			background-color: transparent;
+			color: var(--c, var(--color-black));
+			box-shadow: none;
+
+			&:hover {
+				text-decoration: underline;
+				background-color: transparent;
+				color: var(--c-hover, var(--color-black));
+			}
+
+			&.focus-visible {
+				outline: auto;
+				text-decoration: underline;
+			}
+
+			.icon {
+				&:first-child {
+					margin-right: calc(var(--px) / 2);
+				}
+
+				&:last-child {
+					margin-left: calc(var(--px) / 2);
+				}
+			}
+		}
+
+		// @include medium {
+		// 	--font-size: #{rem(XXpx)};
+		// }
+
+		&--small {
+			--font-size: #{rem(11px)};
+
+			@include small-plus {
+				--font-size: #{rem(13px)};
+			}
+		}
+
+		// &--large {
+		// 	--font-size: #{rem(18px)};
+
+		// 	@include small-plus {
+		// 		--font-size: #{rem(XXpx)};
+		// 	}
+		// }
+
+		&--rounded {
+			border-radius: 10em;
+		}		
+
+		&[disabled],
+		&.disabled,
+		form:invalid &[type="submit"] {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+}

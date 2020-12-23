@@ -1,0 +1,45 @@
+@function strip-unit($number) {
+	@return $number / ($number * 0 + 1);
+}
+
+@function rem($size, $stripUnit: false) {
+	$rem-size: $size / 16px;
+	@if $stripUnit == true {
+		@return #{$rem-size};
+	} @else {
+		@return #{$rem-size}rem;
+	}
+}
+
+/// Base path for assets (fonts, images...),
+/// should not include trailing slash
+/// @access public
+/// @type String
+$assets-base-path: '../' !default;
+
+/// Asset URL builder
+/// @access private
+/// @param {String} $type - Asset type, matching folder name
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the asset
+@function asset($type, $file) {
+	@return url($assets-base-path + $type + '/' + $file);
+}
+
+/// Image asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the image
+/// @require {function} asset
+@function image($file) {
+	@return asset('img', $file);
+}
+
+/// SVG asset helper
+/// @access public
+/// @param {String} $file - Asset file name, including extension
+/// @return {URL} - A `url()` function leading to the svg
+/// @require {function} asset
+@function svg($file) {
+	@return asset('img/svg', $file);
+}

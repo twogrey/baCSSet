@@ -1,0 +1,25 @@
+mixin fieldset-content(id)
+	.row
+		.col-12
+			.form-group
+				label(for="ftext"+id) Label
+				input(type="text", id="ftext"+id)
+		.col-12
+			.form-group
+				select(aria-label="select in fieldset")
+					option(disabled, selected) Choose one :
+					option Value 1
+					option Value 2
+					option Value 3
+ 
+.col-12
+	h2 Fieldset
+	.row.js-parent-snippet
+		.col-12.col-lg-4
+			fieldset.js-snippet
+				legend Legend
+				+fieldset-content('1')
+		.col-12.col-lg-4
+			fieldset(disabled)
+				legend Legend (disabled fieldset)
+				+fieldset-content('2')

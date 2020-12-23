@@ -1,0 +1,21 @@
+@if $enable-form-input-action {
+	.input-action {
+		display: flex; 
+
+		input {
+			border-right: 0;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+
+			&:focus {
+				z-index: 3;
+			}
+		}
+
+		button {
+			padding-top: 0;
+			padding-bottom: 0;
+			border-radius: 0 $input-radius $input-radius 0;
+		}
+	}
+}

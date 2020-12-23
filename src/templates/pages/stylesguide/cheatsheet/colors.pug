@@ -1,0 +1,29 @@
+mixin color(color, shades)
+	.col-12.u-mb-0
+		.u-p(class="u-bg-"+color)
+	if shades
+		.col-3.u-mb-0
+			.u-py-half(class="u-bg-"+color+"-lightest")
+		.col-3.u-mb-0
+			.u-py-half(class="u-bg-"+color+"-light")
+		.col-3.u-mb-0
+			.u-py-half(class="u-bg-"+color)
+		.col-3.u-mb-0
+			.u-py-half(class="u-bg-"+color+"-dark")
+	.col-12.u-mt-quarter
+		.u-text-semibold= color.charAt(0).toUpperCase() + color.slice(1)
+
+.row.no-gutters
+	+color('primary', true)
+	+color('secondary', true)
+	+color('error', true)
+	+color('success', true)
+	.col-12.u-mb-0
+		.u-py(class="u-bg-grey")
+	.col-6.u-mb-0
+		.u-py-half(class="u-bg-lightgrey")
+	.col-6.u-mb-0
+		.u-py-half(class="u-bg-darkgrey")
+	.col-12.u-mt-quarter
+		.u-text-semibold Neutral
+	+color('black', false)

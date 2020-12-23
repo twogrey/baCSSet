@@ -1,0 +1,61 @@
+@if $enable-tabs {
+	
+	.p-tabs {
+		display: flex;
+		margin-bottom: var(--spacing-half);
+		border: rem(1px) solid var(--color-primary-light);
+		border-radius: rem(4px);
+
+		@include medium {
+			margin-bottom: var(--spacing);
+		}
+
+		@include large {
+			margin-bottom: var(--spacing-double);
+		}
+
+		&__item {
+			position: relative;
+			flex: 1;
+			padding: 0.7em 1em;
+			border: 0;
+			box-shadow: none;
+			border-radius: inherit;
+			font-size: rem(13px);
+			color: var(--color-primary);
+			background-color: transparent;
+			transition: background-color 0.2s, color 0.2s;
+			cursor: pointer;
+			outline: none;
+
+			@include small-plus {
+				font-size: rem(16px);
+			}
+			
+			&:hover,
+			&.focus-visible {
+				background-color: var(--color-primary-lightest);
+			}
+
+			&.focus-visible {
+				font-weight: $semibold;
+				text-decoration: underline;
+			}
+
+			&.is-active {
+				font-weight: $semibold;
+				color: #fff;
+				background-color: var(--color-primary);
+			}
+		}
+	}
+
+	.p-tab-content {
+		display: none;
+
+		&.is-active {
+			display: block;
+		}
+	}
+
+}

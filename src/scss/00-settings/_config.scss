@@ -1,0 +1,94 @@
+/** --------------------------------------------
+ * 
+ * Enable/disable imports
+ * 
+ -------------------------------------------- */
+
+$enable-form-choices: true;
+$enable-form-fieldset: false;
+$enable-form-textual-fields: true;
+$enable-form-file: true;
+$enable-form-prepend-append: true;
+$enable-form-input-action: true;
+$enable-form-input-with-icon: true;
+
+$enable-blockquote: true;
+$enable-descriptions: true;
+$enable-headings: true;
+$enable-hr: true;
+$enable-lists: true;
+$enable-table: true;
+
+$enable-skip-links: true;
+
+$enable-preserve-ratio: true;
+
+$enable-button: true;
+
+$enable-panel: true;
+
+$enable-loader: true;
+
+$enable-breadcrumb: true;
+
+$enable-offcanvas: true;
+
+$enable-modal: true;
+
+$enable-accordion: false;
+
+$enable-slider: true;
+ 
+$enable-tabs: true;
+
+$enable-loader: true;
+
+/** --------------------------------------------
+ * 
+ * Enable/disable rulesets
+ * 
+ -------------------------------------------- */
+
+$enable-borders-utilities        : false;
+$enable-shadow-utilities         : false;
+$enable-vertical-align-utilities : false;
+
+/** --------------------------------------------
+ * 
+ * Grid
+ * 
+ -------------------------------------------- */
+
+/**
+ * Generic
+ */
+
+$nb-cols: 12;
+
+$spacing: 1rem;
+
+/**
+ * Breakpoints
+ */
+
+$small-screen: 20rem !default;
+$small-plus-screen: 36rem !default;
+$medium-screen: 48rem !default;
+$medium-plus-screen: 62rem !default;
+$large-screen: 75rem !default;
+$large-plus-screen: 90rem !default;
+   
+$grid-mq: (
+	'small-plus' : 'sm',
+	'medium': 'md',
+	'large': 'lg'
+);
+
+$mq: (
+	'small'      : $small-screen,
+	'small-plus' : $small-plus-screen,
+	'medium'     : $medium-screen,
+	'medium-plus': $medium-plus-screen,
+	'large'      : $large-screen,
+	'large-plus' : $large-plus-screen
+);

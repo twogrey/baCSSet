@@ -1,0 +1,36 @@
+@if $enable-form-input-with-icon {
+
+	$input-icon-size: $input-height * 0.5;
+
+	.input-icon {
+
+		position: relative;
+
+		.icon {
+			position: absolute;
+			top: 50%;
+			font-size: $input-icon-size;
+			color: $input-border-color;
+			pointer-events: none;
+			transform: translateY(-50%);
+
+			&:first-child {
+				left: $input-padding-x;
+			}
+
+			&:last-child {
+				right: $input-padding-x;
+			}
+		}
+
+		input {
+			&:first-child {
+				padding-right: $input-icon-size + $input-padding-x * 2;
+			}
+
+			&:last-child {
+				padding-left: $input-icon-size + $input-padding-x * 2;
+			}
+		}
+	}
+}

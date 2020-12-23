@@ -1,0 +1,23 @@
+$assets-base-path: '../../';
+
+@import '../abstracts';
+
+.article-content {
+	img {
+		display: block;
+		margin: var(--spacing-double) auto;
+	}
+
+	h2 {
+		margin: var(--spacing-double) 0 var(--spacing);
+		font-size: rem(20px);
+	}
+
+	h3 {
+		font-size: rem(18px);
+	}
+
+	h4 {
+		font-size: rem(16px);
+	}
+}

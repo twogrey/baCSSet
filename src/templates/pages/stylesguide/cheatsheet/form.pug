@@ -1,0 +1,41 @@
+.row
+	.col-12.col-md-6.col-lg-4
+		.form-group
+			label(for) A normal input
+			input(type="text", placeholder="Placeholder")
+			span.help A message here.
+	.col-12.col-md-6.col-lg-4
+		.form-group
+			label(for) A disabled input
+			input(type="text", placeholder="Placeholder", disabled)
+	.col-12.col-md-6.col-lg-4
+		.form-group
+			label(for) A secondary input
+			input(type="text", placeholder="Placeholder", class="secondary")
+	.col-12.col-md-6.col-lg-4
+		.form-group.valid
+			label(for) A right input
+			input(type="text", placeholder="Placeholder")
+			span.message Your value is valid.
+	.col-12.col-md-6.col-lg-4
+		.form-group.error
+			label(for) An incorrect input
+			input(type="text", placeholder="Placeholder")
+			span.message There's an error.
+	.col-12.col-md-6.col-lg-4
+		.form-group
+			label(for) A normal select
+			select
+				option Opt 1
+				option Opt 2
+	.col-12
+		.form-group
+			label(for) Textarea
+			textarea(placeholder="Placeholder")
+			span.help A message here.
+	.col-12.col-md-4
+		+inputs('1', 'list', 'Checkboxes', true, false, false)
+	.col-12.col-md-4
+		+inputs('2', 'list', 'Radios buttons', false, true, false)
+	.col-12.col-md-4
+		+inputs('3', 'list', 'Alternative', false, false, false, false, true)

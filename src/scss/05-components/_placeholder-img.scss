@@ -1,0 +1,10 @@
+.c-placeholder-img {
+	padding: var(--spacing-double) var(--spacing);
+	text-align: center;
+	background-color: var(--color-lightgrey);
+
+	svg {
+		max-width: 100%;
+		fill: var(--color-grey);
+	}
+}

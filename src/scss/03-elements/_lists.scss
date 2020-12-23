@@ -1,0 +1,50 @@
+@if $enable-lists {
+	ol {		
+		li {
+			&::marker {
+				font-weight: $bold;
+			}
+		}
+	}  
+
+	ul,
+	ol {
+		list-style-position: inside;
+		margin: 0 0 $text-margin-bottom;
+		padding-left: 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		ul,
+		ol {
+			margin-bottom: 0;
+			margin-top: var(--spacing-half);
+			padding-left: var(--spacing);
+		}
+
+		li {
+			&:not(:first-child) {
+				margin-top: var(--spacing-half);
+			}
+		}
+	}
+
+	.list-unstyled {
+		list-style: none;
+
+		ul,
+		ol {
+			list-style: none;
+			margin-top: 0;
+			padding-left: 0;
+		}
+
+		li {
+			&:not(:first-child) {
+				margin-top: 0;
+			}
+		}
+	}
+}

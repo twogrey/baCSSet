@@ -1,0 +1,41 @@
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal, $display: optional, $woff2: true) {
+	@font-face {
+		font-family: quote($font-name);
+		font-weight: $weight;
+		font-style: $style;
+		font-display: $display; // optional for text, swap for headings, block for font icon
+		@if $woff2 {
+		src: url('../font/' + $font-name + '/' + $file-name + '.woff2') format('woff2'),
+			url('../font/' + $font-name + '/' + $file-name + '.woff') format('woff');
+		} @else {
+			src: url('../font/' + $font-name + '/' + $file-name + '.woff') format('woff');
+		}
+	}
+}
+ 
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+
+$typo-font-family: 'Open Sans', Arial, sans-serif;
+$typo-font-family-serif: serif;
+
+$typo-color: var(--color-black);
+
+$heading-font-family: $typo-font-family;
+$heading-line-height: 1.1;
+$heading-margin-bottom: var(--spacing);
+$heading-margin-top: $heading-margin-bottom;
+$heading-weight: $semibold;
+$heading-color: $typo-color;
+
+$text-color: $typo-color;
+$text-line-height: 1.5;
+$text-margin-bottom: var(--spacing);
+
+$link-color: var(--color-primary);
+$link-color-active: var(--color-primary-dark); 
+
+$link-color-secondary: var(--color-secondary);
+$link-color-secondary-active: var(--color-secondary-dark);
+	

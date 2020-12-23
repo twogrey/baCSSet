@@ -1,0 +1,80 @@
+/** --------------------------------------------
+ * 
+ * Variables
+ * 
+ -------------------------------------------- */
+
+$input-radius: rem(4px);
+
+$input-border-color: var(--color-grey);
+$input-border-width: 0.0625rem;
+$input-border: $input-border-width solid $input-border-color;
+
+$input-hover-border-color: var(--color-darkgrey);
+$input-focus-border-color: var(--color-primary);
+$input-error-border-color: var(--color-error);
+$input-valid-border-color: var(--color-success);
+
+$input-focus-width: 0.2rem;
+$input-background-color: #fff;
+$input-height: 2.5rem;
+$input-padding-x: $spacing;
+$input-padding-y: $spacing / 2;
+
+$choice-margin-right: 1.5em;
+$choice-input-margin-right: $choice-margin-right / 2;
+$choice-background-color: #fff;
+$choice-input-border-color: $input-border-color;
+$choice-hover-border-color: $input-hover-border-color;
+$choice-focus-border-color: $input-focus-border-color;
+$choice-size: 1.2rem;
+
+/** --------------------------------------------
+* 
+* Layout, Message, Error / Valid
+* 
+-------------------------------------------- */
+
+form {
+	width: 100%;
+}
+
+.form-group {
+	--message-d: none;
+
+	.help,
+	.message {
+		margin-top: 0.75em;
+		font-size: rem(13px);
+		line-height: 1.25em;
+		color: var(--message-c, inherit);
+	}
+
+	.help { display: block }
+
+	.message { display: var(--message-d) } 
+
+	&.error,
+	&.valid { --message-d: block }
+
+	&.error { --message-c: #{$input-error-border-color} }
+
+	&.valid { --message-c: #{$input-valid-border-color} }
+}
+
+/** --------------------------------------------
+* 
+* Imports
+* 
+-------------------------------------------- */
+
+@import 'form/fieldset';
+@import 'form/label';
+@import 'form/textual-field';
+@import 'form/choice';
+@import 'form/file';
+@import 'form/prepend-append';
+@import 'form/action';
+@import 'form/icon';
+
+

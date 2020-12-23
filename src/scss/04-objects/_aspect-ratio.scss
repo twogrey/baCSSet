@@ -1,0 +1,27 @@
+.o-preserve-ratio {
+	position: relative;
+	height: 0;
+	padding-bottom: var(--ratio, 56.25%);
+	overflow: hidden;
+
+	&--four-thirds {
+		padding-bottom: 75%;
+	}
+
+	&--square {
+		padding-bottom: 100%;
+	}
+
+	> * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	> img {
+		object-fit: cover;
+	}
+}

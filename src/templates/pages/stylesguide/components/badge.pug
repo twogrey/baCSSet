@@ -1,0 +1,51 @@
+mixin icon(srHidden)
+	if(srHidden == true)
+		svg(class="icon", aria-hidden="true")
+			use(xlink:href="#icon-x")
+	else
+		svg(class="icon")
+			title Text button
+			use(xlink:href="#icon-x")
+
+section.section.js-menu#Badges
+	.row
+		.col-12
+			h1.section__title Badges
+		.col-12 
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Standard
+					span(class="c-badge c-badge--primary u-mr-half u-mb-half js-snippet") Primary
+					span(class="c-badge c-badge--secondary u-mr-half u-mb-half") Secondary
+					span(class="c-badge c-badge--success u-mr-half u-mb-half") Success
+					span(class="c-badge c-badge--error u-mr-half u-mb-half") Error
+		.col-12
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Pill
+					span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half js-snippet") Primary
+					span(class="c-badge c-badge--pill c-badge--secondary u-mr-half u-mb-half") Secondary
+					span(class="c-badge c-badge--pill c-badge--success u-mr-half u-mb-half") Success
+					span(class="c-badge c-badge--pill c-badge--error u-mr-half u-mb-half") Error
+		.col-12
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Pastille
+					button(type="button", class="c-btn c-btn--primary u-pos-relative u-mr-half u-mb-half js-snippet", aria-describedby="idPastille") 
+						| Button
+						span(id="idPastille", class="c-badge c-badge--abs c-badge--secondary", aria-hidden="true") 
+							span 1
+							span.sr-only blabla
+					.u-d-inline-block.u-va-m.u-pos-relative.js-snippet.u-mr-half.u-mb-half
+						button(type="button", class="c-btn c-btn--secondary c-btn--icon-only", aria-describedby="unreadMessageCount") 
+							+icon(false)
+						span(id="unreadMessageCount", class="c-badge c-badge--abs c-badge--error", aria-hidden="true") 
+							span 42
+							span.sr-only messages non lus
+					.u-d-inline-block.u-va-m.u-pos-relative.js-snippet.u-mr-half.u-mb-half
+						button(type="button", class="c-btn c-btn--white c-btn--icon-only", aria-describedby="statusUser") 
+							+icon(false)
+						span(id="statusUser", class="c-badge c-badge--abs c-badge--error", aria-hidden="true", aria-label="Vous êtes connecté.") 
+							+icon(true)
+
+

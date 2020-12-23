@@ -1,0 +1,416 @@
+$assets-base-path: '../../';
+
+@import '../abstracts';
+
+
+/* PrismJS 1.16.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code:not([class]) {
+	padding: 0.1em 0.4em;
+	font-size: 1rem;
+	font-weight: 400;
+	vertical-align: baseline;
+	background-color: var(--color-secondary-lightest);
+	color: var(--color-secondary-dark);
+
+	h2 & {
+		margin-left: 1rem;
+	}
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 0.95em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	text-shadow: none;
+ 
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+	padding: 1em;
+	margin: 1em 0 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
+}
+
+.token.punctuation {
+	color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #e2777a;
+}
+
+.token.function-name {
+	color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+
+div.code-toolbar {
+	position: relative;
+}
+
+div.code-toolbar > .toolbar {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	transition: opacity 0.3s ease-in-out;
+}
+
+div.code-toolbar > .toolbar .toolbar-item {
+	display: inline-block;
+}
+
+div.code-toolbar > .toolbar a {
+	cursor: pointer;
+}
+
+div.code-toolbar > .toolbar button {
+	background: none;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	padding: 0;
+	-webkit-user-select: none; /* for button */
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+	display: inline-block;
+	color: #fff;
+	font-size: 14px;
+	padding: 0.5em 1em;
+	background: #f5f2f0;
+	background: rgba(224, 224, 224, 0.2);
+	box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	font-family: monospace;
+}
+
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a.focus-visible,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button.focus-visible,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span.focus-visible {
+	background: #fff;
+	color: #333;
+	text-decoration: none;
+}
+
+.toggle-code {    
+	display: block;
+	width: calc(100% - (var(--spacing)));
+	margin: 0 auto 1em;
+
+	summary {
+		display: flex;
+		align-items: center;
+		font-size: rem(14px);
+		text-transform: uppercase;
+		font-weight: bold;
+
+		&::after {
+			content: '';
+			flex: 1 1 auto;
+			height: 1px;
+			margin-left: var(--spacing-half);
+			background-color: var(--color-primary);
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Layout
+ * 
+ -------------------------------------------- */
+ 
+.god-section-title {
+	padding: var(--spacing-double);
+	margin-bottom: var(--spacing);
+	line-height: 1.25;
+	font-size: responsive rem(30px) rem(50px);
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	color: #fff;
+	background-color: var(--color-primary-dark);
+}
+
+.section {
+	margin-bottom: var(--spacing);
+
+	&__title {
+		padding: rem(10px) rem(20px);
+		border-left: rem(5px) solid var(--color-primary-dark);
+		line-height: 1.15;
+		color: #fff;
+		background-color: var(--color-primary);
+		clip-path: polygon(98% 0%, 100% 50%, 98% 100%, 0% 100%, 0% 0%);
+	}
+}
+
+.menu-stylesguide {
+	position: sticky;
+	z-index: 10;
+	top: 0;
+	background-color: var(--color-lightgrey);
+	box-shadow: 0 rem(1px) rem(2px) rgba(#000, 0.25);
+
+	@include medium {
+		@include scrollbar(rem(15px), $color-secondary);
+		height: 100vh;
+		overflow-y: auto;
+		box-shadow: none;
+		overflow-y: auto;
+	}
+
+	> ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: var(--spacing-half);
+		list-style: none;
+
+		@include medium {
+			display: block;
+		}
+
+		> li {
+			@include medium {
+				margin-bottom: var(--spacing);
+			}
+
+			@include large {
+				margin-bottom: var(--spacing-half);
+			}
+
+			> a {
+				@include medium {
+					font-weight: bold;
+				}
+			}
+		}
+
+		ul {
+			display: none;
+
+			@include medium {
+				display: block;
+				list-style: none;
+				padding: 0;
+			}
+
+			a {
+				font-size: 85%;
+			}
+		}
+	}
+
+	li {
+		line-height: 1.25;
+	}
+
+	a {	
+		display: block;
+		padding: var(--spacing-half);
+		text-decoration: none;
+		color: $typo-color;
+
+		@include medium {
+			padding: var(--spacing-quarter);
+		}
+
+		&:hover {
+			color: var(--color-primary);
+			text-decoration: underline;
+		}
+	}
+
+	+ * {    
+		@include medium {
+			position: relative;
+			z-index: 5;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.27);
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Cheatsheet
+ * 
+ -------------------------------------------- */
+
+.cheatsheet {
+	border: 1px solid var(--color-secondary);
+
+	@include mq($medium-plus-screen) {
+		display: grid;
+		grid: repeat(5, fit-content(300px))/repeat(4, 1fr);
+		grid-template-areas: 
+			'colors typography typography typography' 
+			'colors buttons buttons links' 
+			'form form form form' 
+			'loader c alerts alerts' 
+			'b c alerts alerts';
+	}
+
+	> [class*='a-'] {
+		position: relative;
+		padding: var(--spacing-double);
+		border: 1px solid var(--color-secondary);
+	}
+
+	.legend {
+		position: absolute;
+		top: -10px;
+		left: 20px;
+		padding: 0 10px;
+		line-height: 1;
+		font-weight: $semibold;
+		color: var(--color-secondary);
+		text-transform: uppercase;
+		background-color: #fff;
+	}
+
+	@each $name in('colors', 'typography', 'buttons', 'links', 'form', 'loader', 'b', 'c', 'alerts') {
+		.a-#{$name} {
+			grid-area: #{$name};
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Demo Grid
+ * 
+ -------------------------------------------- */
+
+#Grid {
+	.section__content {
+		padding: var(--spacing);
+		background-color: var(--color-grey);
+
+		.row {
+			&:not(:last-child) {
+				margin-bottom: var(--spacing);
+			}
+		}
+
+		.col,
+		[class*='col-'] {
+			padding-top: var(--spacing-half);
+			padding-bottom: var(--spacing-half);
+			margin-bottom: 0;
+			font-family: monospace;
+			text-align: center;
+			border: 1px solid var(--color-lightgrey);
+			background-color: #fff;
+			word-wrap: break-word;
+		}
+	}    
+}

@@ -1,0 +1,37 @@
+$display-values: (
+	'-none'         : 'none', 
+	'-inline'       : 'inline',
+	'-block'        : 'block',
+	'-inline-block' : 'inline-block',
+	'-flex'         : 'flex',
+	'-inline-flex'  : 'inline-flex' );
+
+@each $d-name, $d-value in($display-values) {
+	.u-d#{$d-name} {
+		display: #{$d-value} !important;
+	}
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.u-d-#{$prefix}#{$d-name} {
+				display: #{$d-value} !important;
+			}
+		}
+	}
+}
+
+@if $enable-vertical-align-utilities {
+	.u-va-m {
+		vertical-align: middle !important;
+	}
+
+	.u-va-b {
+		vertical-align: baseline !important;
+	}
+}
+
+@if $enable-borders-utilities {
+	.u-shadow {
+		box-shadow: 0 rem(2px) rem(8px) rgba(#000, 0.08) !important;
+	}
+}

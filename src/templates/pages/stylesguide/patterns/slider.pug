@@ -1,0 +1,55 @@
+mixin slide(content)
+	.p-slider__item #{content}
+
+section.section.js-menu#Slider
+	.row
+		.col-12
+			h1.section__title Slider
+		.col-12
+			.u-bg-lightgrey.u-p 
+				p <b>Notes :</b>
+				ul
+					li Repo Github : <a href="https://github.com/ganlanyuan/tiny-slider/" target="_blank" rel="noopener">github.com/ganlanyuan/tiny-slider</a>
+					li Options : <a href="http://ganlanyuan.github.io/tiny-slider/#options" target="_blank" rel="noopener">ganlanyuan.github.io/tiny-slider</a>
+					li Demo : <a href="http://ganlanyuan.github.io/tiny-slider/demo/" target="_blank" rel="noopener">ganlanyuan.github.io/tiny-slider/demo</a>
+					li La pagination et les contrôles se n'affichent pas s'il n'y a pas plus d'une seule slide.
+					li Avec l'option <code>onInit</code>, prévoir un loader ou un placeholder pendant l'init du slider. Par défaut, sa propriété <code>display</code> passe de <code>none</code> à <code>block</code>.
+	.row.js-parent-snippet
+		.col-12
+			.p-slider.js-slider-1.js-snippet
+				.p-slider__content
+					+slide('1')
+					+slide('2')
+					+slide('3') 
+				.p-slider__controls
+					button(type="button", class="c-btn c-btn--secondary c-btn--small p-slider__control p-slider__control--prev") Slide précédente
+					button(type="button", class="c-btn c-btn--secondary c-btn--small p-slider__control p-slider__control--next") Slide suivante
+	.row
+		details(class="toggle-code")
+			summary Toggle script
+			pre
+				code(class="language-js")
+					| var slider1 = document.querySelector('.js-slider-1');
+					| tns({
+					|     container: slider1.querySelector('.p-slider__content'),
+					|     items: 1,
+					|     slideBy: 'page',
+					|     controlsContainer: slider1.querySelector('.p-slider__controls'),
+					|     loop: false,
+					|     navPosition: 'bottom',
+					|     arrowKeys: true,
+					|     responsive: {
+					|         640: {
+					|             items: 2
+					|         },
+					|         1024: {
+					|             items: 3
+					|         },
+					|         1200: {
+					|             items: 4
+					|         }
+					|     },
+					|     onInit: function() {
+					|         slider1.style.display = 'block';
+					|     }
+					| });

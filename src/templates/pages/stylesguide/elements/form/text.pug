@@ -1,0 +1,48 @@
+each val, index in ['text', 'date', 'search', 'file']
+	.col-12
+		h2= val.charAt(0).toUpperCase() + val.slice(1)
+	if val == 'search'
+		.col-12
+			.u-bg-lightgrey.u-p 
+				p 
+					b Notes :
+				ul
+					li 
+						| Ajouter 
+						code role="search"
+						|  au conteneur.
+	.col-12
+		.row.js-parent-snippet
+			.col-12.col-md-6.col-lg-4
+				.form-group&attributes({"role='search'": val=='search'})
+					if val == 'date'
+						input(type=val, aria-label=val)
+					else
+						input(type=val, placeholder=val+' placeholder', aria-label=val)
+			.col-12.col-md-6.col-lg-4
+				.form-group&attributes({"role='search'": val=='search'})
+					if val == 'date'
+						input(type=val, aria-label=val)
+					else
+						input(type=val, value=val+' value', aria-label=val)
+			.col-12.col-md-6.col-lg-4
+				.form-group&attributes({"role='search'": val=='search'})
+					if val == 'date'
+						input(type=val, readonly, aria-label=val)
+					else
+						input(type=val, value=val+' readonly', readonly, aria-label=val)
+			.col-12.col-md-6.col-lg-4
+				.form-group(class="js-snippet")&attributes({"role='search'": val=='search'})
+					if val == 'date'
+						input(type=val, disabled, aria-label=val)
+					else
+						input(type=val, value=val+' disabled', disabled, aria-label=val)
+					include message-help.pug
+			.col-12.col-md-6.col-lg-4
+				.form-group.error&attributes({"role='search'": val=='search'})
+					input(type=val, aria-label=val)
+					include message-error.pug
+			.col-12.col-md-6.col-lg-4
+				.form-group.valid&attributes({"role='search'": val=='search'})
+					input(type=val, aria-label=val)
+					include message-valid.pug

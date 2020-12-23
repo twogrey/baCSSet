@@ -1,0 +1,126 @@
+/** --------------------------------------------
+ * 
+ * 
+ * 
+ -------------------------------------------- */
+
+@mixin mq($size) {
+	@media screen and (min-width: #{$size}) {
+		@content;
+	}
+} 
+
+/** --------------------------------------------
+ * 
+ * 
+ * 
+ -------------------------------------------- */
+
+@mixin show-for($width, $display: block) {
+	display: none !important;
+	@include mq(map-get($mq, $width)) {
+		display: #{$display} !important; 
+	}
+}
+
+@mixin hide-for($width) {
+	@include mq(map-get($mq, $width)) {
+		display: none !important;
+	}
+}
+
+/** --------------------------------------------
+* 
+* 
+* 
+-------------------------------------------- */
+
+/* 
+	Example: 
+		$params: (
+			'pseudo-element': before,
+			'size': 2rem,
+			'border-width': .3rem
+		);
+		@include loading($params...);
+*/
+
+@mixin loading($pseudo-element, $size, $border-width, $color: currentColor, $position-parent: relative, $hide-children: false) {
+	position: $position-parent !important;
+	pointer-events: none;
+	@if $hide-children {
+		* {
+			opacity: 0;
+		}
+	}
+
+	&::#{$pseudo-element} {
+		content: '';
+		position: absolute;
+		top: calc(50% - (#{$size} / 2));
+		left: calc(50% - (#{$size} / 2));
+		width: $size;
+		height: $size;
+		border: $border-width solid $color;
+		border-top-color: transparent !important;
+		border-right-color: transparent !important;
+		border-radius: 50%;
+		opacity: 1;
+		animation: o-rotate 0.6s linear infinite;
+	}
+}
+
+//// https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/
+/// Mixin to customize scrollbars
+/// Beware, this does not work in all browsers
+/// @author Hugo Giraudel
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Scrollbar's color
+/// @example scss - Scrollbar styling
+///   @include scrollbars(.5em, slategray);
+@mixin scrollbar($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+
+	// For Firefox
+	scrollbar-color: $foreground-color $background-color;
+	scrollbar-width: thin;
+	// For Google Chrome
+	&::-webkit-scrollbar {
+		width: $size;
+		height: $size;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+		transition: background-color 0.2s;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: mix($foreground-color, black, 90%);
+	}
+
+	&::-webkit-scrollbar-thumb:active {
+		background: mix($foreground-color, black, 80%);
+	}
+
+	&::-webkit-scrollbar-track {
+		background: mix($foreground-color, white, 50%);
+	}
+}
+
+/** --------------------------------------------
+*
+*  Remove top space from headings
+*  https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
+* 
+-------------------------------------------- */
+
+@mixin lh-heading-crop($line-height: $heading-line-height) {
+	&::before {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		margin-top: calc((1 - #{$line-height}) * 1em);
+	}
+}

@@ -1,0 +1,40 @@
+mixin table(classes)
+	table(class=classes)
+		caption Caption
+		thead.thead-default
+			tr
+				th Référence de commande
+				th Date
+				th Prix total
+				th Paiement
+		tbody
+			tr
+				th(scope="row") XKBKNABJK
+				td 12/02/2020
+				td 61,80 €
+				td Payment by check
+			tr
+				th(scope="row") XKBKNABJK
+				td 12/02/2020
+				td 61,80 €
+				td Payment by check
+			tr
+				th(scope="row") XKBKNABJK
+				td 12/02/2020
+				td 61,80 €
+				td Payment by check
+
+section.section.js-menu#Tables
+	.row
+		.col-12
+			h1.section__title Tables
+		.col-12
+			.u-bg-lightgrey.u-p 
+				p <b>Notes :</b>
+				ul
+					li Pour des tableaux complexes : <a href="https://www.w3.org/WAI/tutorials/tables/" target="_blank" rel="noopener">w3.org/WAI/tutorials/tables</a>
+		.col-12
+			.row.js-parent-snippet.u-mb
+				.col-12
+					.table-responsive.js-snippet
+						+table

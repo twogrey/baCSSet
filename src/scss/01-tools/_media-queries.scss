@@ -1,0 +1,35 @@
+@mixin small {
+	@media screen and (min-width: map-get($mq, 'small')) {
+		@content;
+	}
+}
+
+@mixin small-plus {
+	@media screen and (min-width: map-get($mq, 'small-plus')) {
+		@content;
+	}
+}
+
+@mixin medium {
+	@media screen and (min-width: map-get($mq, 'medium')) {
+		@content;
+	}
+}
+
+@mixin medium-plus {
+	@media screen and (min-width: map-get($mq, 'medium-plus')) {
+		@content;
+	}
+}
+
+@mixin large {
+	@media screen and (min-width: map-get($mq, 'large')) {
+		@content;
+	}
+}
+
+@mixin large-plus {
+	@media screen and (min-width: map-get($mq, 'large-plus')) {
+		@content;
+	}
+}

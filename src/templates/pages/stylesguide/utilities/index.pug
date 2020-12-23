@@ -1,0 +1,69 @@
+extends ../stylesguide.pug
+ 
+block append vars
+	- var sectionTitle = 'Utilities';
+
+block content
+
+	section.section.js-menu#Colors
+		.row
+			.col-12
+				h1.section__title Colors
+		.row
+			include colors.pug
+
+	section.section.js-menu#Display
+		.row
+			.col-12
+				h1.section__title Display
+		.row
+			include display.pug
+
+	section.section.js-menu#Position
+		.row
+			.col-12
+				h1.section__title Position
+		.row
+			include position.pug
+
+	section.section.js-menu#Radius
+		.row
+			.col-12
+				h1.section__title Radius
+		.row
+			include radius.pug
+
+	section.section.js-menu#Spacing
+		.row
+			.col-12
+				h1.section__title Spacing
+		.row
+			include spacing.pug
+
+	section.section.js-menu#Alignment
+		.row
+			.col-12
+				h1.section__title Text alignment
+		.row
+			include text-align.pug
+
+	section.section.js-menu#Size
+		.row
+			.col-12
+				h1.section__title Text size
+		.row
+			include text-size.pug
+
+	section.section.js-menu#Weight
+		.row
+			.col-12
+				h1.section__title Text weight
+		.row
+			include text-weight.pug
+
+	section.section.js-menu#Transform
+		.row
+			.col-12
+				h1.section__title Text transform
+		.row
+			include text-transform.pug

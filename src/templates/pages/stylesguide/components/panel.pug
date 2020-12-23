@@ -1,0 +1,39 @@
+mixin panel(id, classes, closable, longContent)
+	if(closable)
+		- classes = classes + ' c-panel--closable';
+	.c-panel(class=classes, id="msg_"+id)&attributes({"aria-hidden='false'": closable==true})
+		.c-panel__content
+			if(longContent)
+				h3.c-panel__title Title
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa <b>expedita minima ea</b>, rem laudantium reiciendis <i>reprehenderit pariatur in</i>.
+				hr
+				p Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.
+			else
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.
+		if(closable)
+			button(type="button", class="c-panel__close", data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
+				svg(class="icon")
+					title Cacher ce message
+					use(xlink:href="#icon-x")
+
+section.section.js-menu#Panels
+	.row.js-parent-snippet
+		.col-12
+			h1.section__title Panels
+		.col-12
+			.u-bg-lightgrey.u-p 
+				p <b>Notes :</b>
+				ul
+					li Ajouter <code>role="alert"</code> s'il s'agit d'une notification.
+		.col-12
+			+panel('1', 'c-panel--white js-snippet')
+		.col-12
+			+panel('2', 'c-panel--primary js-snippet')
+		.col-12
+			+panel('3', 'c-panel--secondary js-snippet', true)
+		.col-12
+			+panel('4', 'c-panel--error js-snippet', true)
+		.col-12
+			+panel('5', 'c-panel--light js-snippet', true, true)
+		.col-12
+			+panel('6', 'c-panel--dark js-snippet', true, true)

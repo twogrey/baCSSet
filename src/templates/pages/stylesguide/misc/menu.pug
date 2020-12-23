@@ -1,0 +1,89 @@
+section.section.js-menu#Menu
+	.row
+		.col-12
+			h1.section__title Menu
+	.row.js-parent-snippet.u-mb-half
+		.col-12
+			h2 Mobile/Tablet trigger
+		.col-12
+			button(
+				type="button",
+				class="c-btn c-btn--secondary c-btn--icon-only p-offcanvas-trigger p-offcanvas-trigger--menu js-toggle-menu js-snippet" 
+				data-toggle-escape,
+				data-toggle-class="menu-mobile-offcanvas-is-open",
+				data-toggle-target="#menu",
+				aria-controls="menu", 
+				aria-expanded="false"
+			)
+				svg(class="icon", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 16 16")
+					title Afficher/Masquer le menu principal
+					path(d="M.8 3.8h14.4c.5 0 .8-.4.8-.8s-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z")
+					path(d="M.8 8.8h14.4c.5 0 .8-.4.8-.8s-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z")
+					path(d="M.8 8.8h14.4c.5 0 .8-.4.8-.8s-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z")
+					path(d="M.8 13.8h14.4c.4 0 .8-.3.8-.8 0-.4-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z")
+	.row.js-parent-snippet
+		.col-12
+			h2 Navigation
+		.col-12
+			.u-bg-lightgrey.u-p 
+				p <b>Notes :</b>
+				ul
+					li Ajouter <code>aria-current="page"</code> sur le lien courant.
+					li Ajouter <code>aria-current="true"</code> sur les ancêtres du lien courant.
+		.col-12
+			.c-panel.c-panel--white.u-d-lg-none 
+				.c-panel__content
+					p Menu is offscreen. Toggle it with the button above.
+			nav(id="menu", aria-label="Principale", aria-hidden="true")
+				.p-offcanvas-overlay(
+					aria-hidden="true",
+					data-toggle-trigger-off
+				)
+				.p-offcanvas
+					.p-offcanvas__content
+						ul.p-offcanvas__list.list-unstyled
+							li
+								a(href="dest/pages/stylesguide/misc", aria-current="page") Misc (current)
+							li 
+								a(href="#", 
+									role="button",
+									id="exempleToggleSubMenu2"
+									data-toggle-class="is-open",
+									data-toggle-target-next,
+									aria-expanded="false",
+									aria-controls="exempleSubMenu2",
+									aria-haspopup="listbox"
+								) 
+									| Menu link #2
+									svg(class="icon", aria-hidden="true")
+										use(xlink:href="#icon-chevron-down")
+								ul(id="exempleSubMenu2", role="listbox", aria-labelledby="exempleToggleSubMenu2", aria-hidden="true")
+									li
+										a(href="#") Sub menu link #2-1
+									li
+										a(href="#") Sub menu link #2-2
+									li
+										a(href="#") Sub menu link #2-3
+							li
+								a(href="#", 
+									role="button",
+									id="exempleToggleSubMenu3"
+									data-toggle-class="is-open",
+									data-toggle-outside,
+									data-toggle-target-next,
+									aria-expanded="false",
+									aria-controls="exempleSubMenu3",
+									aria-haspopup="listbox"
+								) 
+									| Menu link #3
+									svg(class="icon", aria-hidden="true")
+										use(xlink:href="#icon-chevron-down")
+								ul(id="exempleSubMenu3", role="listbox", aria-labelledby="exempleToggleSubMenu3", aria-hidden="true")
+									li
+										a(href="#") Sub menu link #3-1
+									li
+										a(href="#") Sub menu link #3-2
+							li
+								a(href="#") Menu link #4
+							li
+								a(href="#") Menu link #5

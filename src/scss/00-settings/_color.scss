@@ -1,0 +1,78 @@
+$green : #78BE20;
+
+$black     : #333;
+
+$grey      : #ced4da;
+$lightgrey : mix(white, $grey, 50%);
+$darkgrey  : mix(black, $grey, 50%);
+
+$color-primary          : #2980b9;
+$color-primary-lightest : mix(white, $color-primary, 66%);
+$color-primary-light    : mix(white, $color-primary, 33%);
+$color-primary-dark     : mix(black, $color-primary, 66%);
+
+$color-secondary          : #B53471;
+$color-secondary-lightest : mix(white, $color-secondary, 66%);
+$color-secondary-light    : mix(white, $color-secondary, 33%);
+$color-secondary-dark     : mix(black, $color-secondary, 66%);
+
+$color-error          : #df382b;
+$color-error-lightest : mix(white, $color-error, 66%);
+$color-error-light    : mix(white, $color-error, 33%);
+$color-error-dark     : mix(black, $color-error, 50%);
+
+$color-success          : #27ae60;
+$color-success-lightest : mix(white, $color-success, 66%);
+$color-success-light    : mix(white, $color-success, 33%);
+$color-success-dark     : mix(black, $color-success, 50%);
+
+$neutral-colors: (
+	'black'     : $black,
+	'darkgrey'  : $darkgrey,
+	'grey'      : $grey,
+	'lightgrey' : $lightgrey
+);
+
+$main-colors: (
+	'primary'   : $color-primary,
+	'secondary' : $color-secondary,
+	'error'     : $color-error,
+	'success'   : $color-success
+);
+
+$colors-shades: (
+	'primary-lightest'   : $color-primary-lightest,
+	'primary-light'      : $color-primary-light,
+	'primary-dark'       : $color-primary-dark,
+	'secondary-lightest' : $color-secondary-lightest,
+	'secondary-light'    : $color-secondary-light,
+	'error-lightest'     : $color-error-lightest,
+	'error-light'        : $color-error-light,
+	'error-dark'         : $color-error-dark,
+	'success-lightest'   : $color-success-lightest,
+	'success-light'      : $color-success-light,
+	'success-dark'       : $color-success-dark
+);
+
+$all-colors: (
+	'primary'            : $color-primary,
+	'primary-lightest'   : $color-primary-lightest,
+	'primary-light'      : $color-primary-light,
+	'primary-dark'       : $color-primary-dark,
+	'secondary'          : $color-secondary,
+	'secondary-lightest' : $color-secondary-lightest,
+	'secondary-light'    : $color-secondary-light,
+	'secondary-dark'     : $color-secondary-dark,
+	'error'              : $color-error,
+	'error-lightest'     : $color-error-lightest,
+	'error-light'        : $color-error-light,
+	'error-dark'         : $color-error-dark,
+	'success'            : $color-success,
+	'success-lightest'   : $color-success-lightest,
+	'success-light'      : $color-success-light,
+	'success-dark'       : $color-success-dark,
+	'black'              : $black,
+	'darkgrey'           : $darkgrey,
+	'grey'               : $grey,
+	'lightgrey'          : $lightgrey
+);

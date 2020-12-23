@@ -1,0 +1,48 @@
+@if $enable-form-prepend-append {
+	.input-group {
+		display: flex;
+
+		.add {
+			display: inline-flex;
+			flex-shrink: 0;
+			align-items: center;
+			justify-content: center;
+			padding: 0 $input-padding-x;
+			border: $input-border;
+			font-size: rem(14px);
+			background-color: var(--color-lightgrey);
+
+			&:first-child {
+				border-right: 0;
+				border-top-left-radius: $input-radius;
+				border-bottom-left-radius: $input-radius;
+			}
+
+			&:last-child {
+				border-left: 0;
+				border-top-right-radius: $input-radius;
+				border-bottom-right-radius: $input-radius;
+			}
+		}
+
+		input,
+		select,
+		textarea {
+			position: relative;
+
+			&:first-child {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+
+			&:last-child {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			&:nth-child(2):not(:last-child) {
+				border-radius: 0;
+			}
+		}
+	}
+}

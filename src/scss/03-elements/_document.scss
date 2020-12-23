@@ -1,0 +1,66 @@
+// @include font-face('XXX', 'XXX-Regular', $regular, normal, swap); 
+// @include font-face('XXX', 'XXX-SemiBold', $semibold, normal, swap); 
+// @include font-face('XXX', 'XXX-Bold', $bold, normal, swap); 
+
+@include font-face('icons', 'icons', $display: block); 
+
+:root {
+	--z-header: 10;
+	--z-overlay: 9;
+	--z-tooltip: 1500;
+	--z-offcanvas: 2000;
+	--z-max: 9999; 
+}
+
+html {
+	box-sizing: border-box;
+	font-family: $typo-font-family;
+	font-size: 100%;
+	scroll-behavior: smooth;
+
+	@media (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-size: 1rem;
+	line-height: 1.5;
+	text-rendering: optimizeSpeed;
+	color: $text-color;
+
+	&::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: -100%;
+		z-index: 10000;
+		width: 100%;
+		height: rem(5px);
+		background-color: var(--color-secondary);
+		pointer-events: none;
+		transition: opacity 0.3s;
+		animation: loading-page-running 5s both ease-in;
+
+		.loading-page-done & {
+			opacity: 0;
+			transform: translateX(100%);
+			animation: none; 
+		}
+	}
+}
+
+::selection {
+	background-color: var(--color-primary-dark);
+	color: #fff;
+}
+
+.sr-only {
+	@extend %hidden;
+}

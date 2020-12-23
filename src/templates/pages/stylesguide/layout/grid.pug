@@ -1,0 +1,87 @@
+section.section.js-menu#Grid
+	.row
+		.col-12
+			h1.section__title#rows Rows
+		each val in ['justify-between', 'justify-around', 'justify-center']
+			.col-12
+				.section__content
+					.container
+						.row(class='u-'+val)
+							.col-3
+								| .col-3
+							.col-3
+								| .col-3
+							.col-3
+								| .col-3
+				.row.js-parent-snippet.u-mt-half
+					.row(class='u-d-none js-snippet u-'+val) ...
+		each val in ['align-start', 'align-center', 'align-end']
+			.col-12
+				.section__content
+					.container
+						.row.u-justify-center(class='u-'+val)
+							.col-4(style="min-height: 60px")
+								| .col-4
+							.col-4
+								| .col-4
+				.row.js-parent-snippet.u-mt-half
+					.row(class='u-d-none js-snippet u-'+val) ...
+		.col-12
+			h1.section__title#columns Columns
+		.col-12
+			.section__content
+				.container
+					.row
+						- var n = 1;
+						while n <= 12
+							.col-1.u-border-transparent.u-bg-primary.u-text-white= n
+							- n++; 
+					.row
+						.col
+							| .col
+					.row
+						.col
+							| .col
+						.col
+							| .col
+					.row
+						.col
+							| .col
+						.col
+							| .col
+						.col
+							| .col
+					.row
+						.col-4
+							| .col-4
+						.col-auto
+							| .col-auto
+						.col
+							| .col
+					.row
+						.col-6.col-sm-4
+							| .col-6.col-sm-4
+						.col
+							| .col
+					.row
+						.col-12.col-md-4.col-lg-3
+							| .col-12.col-md-4.col-lg-3
+						.col-12.col-md-4.col-lg-3
+							| .col-12.col-md-4.col-lg-3
+						.col-12.col-md-4.col-lg-3
+							| .col-12.col-md-4.col-lg-3
+					.row
+						.col-6.col-offset-3
+							| .col-6.col-offset-3
+					.row
+						.col-4.u-order-md-1
+							| .col-4.u-order-md-1 
+						.col-4
+							| .col-4
+					.row
+						.col-12.col-md-3.u-order-md-1
+							| .col-12.col-md-3.u-order-md-1 
+						.col-12.col-md-3.u-order-md-last
+							| .col-3.u-order-md-last 
+						.col-3
+							| .col-3

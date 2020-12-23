@@ -1,0 +1,115 @@
+@if $enable-modal {
+	.modal-is-open { 
+		overflow: hidden;
+
+		.not-touch & {
+			padding-right: var(--scrollbar-width);
+		}
+	}
+
+	.p-modal {
+		--spacing-modal-close: calc(var(--spacing) * -1);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: var(--z-max);
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		width: 100%;
+		height: 100vh;
+		padding-right: 0 !important;
+		background-color: rgba(#000, 0.8); 
+		overflow-x: hidden;
+		overflow-y: auto;
+		animation: o-fade-in 0.3s both;
+
+		&[aria-modal='true'] {
+			display: flex;
+		}
+
+		&[aria-hidden='true'] {
+			animation-name: o-fade-out;
+		}
+
+		&__dialog {
+			--dialog-m: var(--spacing);
+			position: relative;
+			width: 100%;
+			max-width: calc(100% - (var(--spacing) * 2));
+			margin: var(--dialog-m);
+			border-radius: 0.3rem;
+			overflow: hidden;
+			animation: o-translate-from-top 0.3s both;
+
+			[aria-hidden='true'] > & {
+				animation-name: o-translate-to-bottom;
+			}
+
+			&--small {
+				max-width: calc(#{$small-plus-screen} - (var(--spacing) * 2));
+			}
+
+			&--medium {
+				max-width: calc(#{$medium-screen} - (var(--spacing) * 2));
+			}
+
+			&--large {
+				max-width: calc(#{$large-screen} - (var(--spacing) * 2));
+			}
+
+			&--large-plus {
+				max-width: calc(#{$large-plus-screen} - (var(--spacing) * 2));
+			}
+		}
+
+		&__content {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			background-color: #fff;
+		}
+
+		&__header {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+
+		&__body {
+			flex: 1 1 auto;
+		}
+
+		&__footer {
+
+		}
+
+		&__title {
+			@include heading(4);
+			margin-bottom: 0;
+		}
+
+		&__close {
+			border: 0;
+			background-color: transparent;
+			color: var(--color-black);
+			cursor: pointer;
+			transition: box-shadow 0.2s, color 0.2s, background-color 0.2s;
+			appearance: none;
+			outline: none;
+
+			&--absolute {
+				position: absolute;
+				top: var(--spacing-half); 
+				right: var(--spacing-half);
+				z-index: 1;
+				background-color: #fff;
+			}
+
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
+	}
+}

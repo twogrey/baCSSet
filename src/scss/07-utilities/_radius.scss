@@ -1,0 +1,17 @@
+/** --------------------------------------------
+ * 
+ * 
+ * 
+ -------------------------------------------- */
+
+:root {
+	--radius: #{rem(8px)};
+}
+
+.u-radius {
+	border-radius: var(--radius) !important;
+}
+
+.u-rounded {
+	border-radius: rem(5000px) !important;
+}

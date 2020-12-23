@@ -1,0 +1,108 @@
+mixin icon(srHidden)
+	if(srHidden == true)
+		svg(class="icon", aria-hidden="true")
+			use(xlink:href="#icon-x")
+	else
+		svg(class="icon")
+			title Text button
+			use(xlink:href="#icon-x")
+
+section.section.js-menu#Buttons
+	.row
+		.col-12
+			h1.section__title Buttons
+		.col-12 
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Plain
+					a(href="#", class="c-btn c-btn--primary u-mr u-mb js-snippet") Base link
+					input(type="submit", class="c-btn c-btn--primary u-mr u-mb js-snippet", value="Input submit")
+					button(type="button", class="c-btn c-btn--primary u-mr u-mb js-snippet") Button
+		.col-12
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Colors
+					button(type="button", class="c-btn c-btn--primary u-mr u-mb js-snippet") .c-btn--primary
+					button(type="button", class="c-btn c-btn--secondary u-mr u-mb") --secondary
+					button(type="button", class="c-btn c-btn--error u-mr u-mb") --error
+					button(type="button", class="c-btn c-btn--white u-mr u-mb") --white
+					button(type="button", class="c-btn c-btn--white-alt u-mr u-mb") --white-alt
+					button(type="button", class="c-btn c-btn--transparent u-mr u-mb") --transparent
+		.col-12
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Expanded
+					button(type="button", class="c-btn c-btn--primary c-btn--block u-mb js-snippet") .c-btn--block
+		//- .col-12
+		//- 	.row.js-parent-snippet
+		//- 		.col.u-mb-0
+		//- 			h2 Outline
+		//- 			button(type="button", class="c-btn c-btn--outline-primary u-mr u-mb js-snippet") .c-btn--outline--primary
+		//- 			button(type="button", class="c-btn c-btn--outline-secondary u-mr u-mb") --secondary
+		//- 			button(type="button", class="c-btn c-btn--outline-error u-mr u-mb") --error
+		//- .col-12
+		//- 	.row.js-parent-snippet
+		//- 		.col.u-mb-0
+		//- 			h2 Sizes
+		//- 			button(type="button", class="c-btn c-btn--error c-btn--icon-only c-btn--small u-mr u-mb")
+		//- 				+icon(false)
+		//- 			button(type="button", class="have-to-load c-btn c-btn--error c-btn--small u-mr u-mb js-snippet") .c-btn--small
+		//- 			button(type="button", class="c-btn c-btn--error c-btn--small u-mr u-mb")
+		//- 				+icon(true)
+		//- 				span Button
+		//- 			button(type="button", class="c-btn c-btn--primary u-mr u-mb") Normal
+		//- 			button(type="button", class="c-btn c-btn--secondary c-btn--icon-only c-btn--large u-mr u-mb")
+		//- 				+icon(false)
+		//- 			button(type="button", class="c-btn c-btn--secondary c-btn--large u-mr u-mb") .c-btn--large
+		//- 			button(type="button", class="c-btn c-btn--secondary c-btn--large u-mr u-mb")
+		//- 				+icon(true)
+		//- 				span Button
+		.col-12
+			h2 Disabled
+			button(type="button", class="c-btn c-btn--primary u-mr u-mb", disabled) Button
+			a(href="#", class="c-btn c-btn--white u-mr u-mb disabled", aria-disabled="true") Base Link
+			//- button(type="button", class="c-btn c-btn--outline-primary u-mr u-mb", disabled) Button outline
+		.col-12
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 With icons
+					button(type="button", class="c-btn c-btn--primary u-mr u-mb js-snippet")
+						+icon(true)
+						span Button
+					button(type="button", class="c-btn c-btn--primary u-mr u-mb") 
+						span Button
+						+icon(true)
+					//- button(type="button", class="c-btn c-btn--outline-primary u-mr u-mb") 
+					//- 	+icon(true)
+					//- 	span Button
+					a(href="#", class="c-btn c-btn--white u-mr u-mb") 
+						+icon(true)
+						span Button
+					button(type="button", class="c-btn c-btn--primary u-mr u-mb")
+						+icon(true) 
+						span Button
+					button(type="button", class="c-btn c-btn--primary c-btn--icon-only u-mr u-mb js-snippet") 
+						+icon(false)
+					button(type="button", class="c-btn c-btn--secondary c-btn--icon-only u-mr u-mb") 
+						+icon(false)
+		.col-12
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Rounded
+					button(type="button", class="c-btn c-btn--primary c-btn--rounded u-mr u-mb js-snippet") Rounded
+					button(type="button", class="c-btn c-btn--primary c-btn--rounded u-mr u-mb") 
+						+icon(true)
+						span Rounded
+					button(type="button", class="c-btn c-btn--primary c-btn--rounded c-btn--icon-only u-mr u-mb")
+						+icon(false)
+		.col-12
+			.row.js-parent-snippet
+				.col.u-mb-0
+					h2 Link look
+					button(type="button", class="c-btn c-btn--link u-mr-double u-mb-half js-snippet") --link
+					button(type="button", class="c-btn c-btn--link u-mr-double u-mb-half") 
+						+icon(true)
+						span --link with icon
+
+
+

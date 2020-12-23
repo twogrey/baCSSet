@@ -1,0 +1,45 @@
+@keyframes o-rotate {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes o-fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes o-fade-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes o-translate-from-top {
+	from {
+		transform: translateY(calc(var(--spacing-double) * -1));
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes o-translate-to-bottom {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(var(--spacing-double));
+	}
+}

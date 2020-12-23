@@ -1,0 +1,19 @@
+mixin tab(position, selected)
+	button(type="button", class="p-tabs__item" id="tab_"+position, role="tab", data-toggle-class, data-toggle-target="#tabPanel_"+position, data-toggle-radio-group="tabsGroup", data-toggle-arrows, aria-controls="tabPanel_"+position, aria-selected="false", aria-setsize="3", aria-posinset=position)&attributes({'data-toggle-is-active': selected==true, 'tabindex="0"': position==1, 'tabindex="-1"': position!=1})
+		span= 'Tab #'+position
+
+mixin tabContent(id, content, selected)
+	div(id="tabPanel_"+id, role="tabpanel", aria-labelledby="tab_"+id)&attributes({'aria-hidden="true"': selected==false, 'aria-hidden="false"': selected==true, 'class="p-tab-content p-tab-content--vertical"': axis=='vertical', 'class="p-tab-content"': axis!='vertical'})= content
+
+section.section.js-menu#Tabs
+	.row.js-parent-snippet.u-mb-half
+		.col-12
+			h1.section__title Tabs
+		.col-12
+			.p-tabs(role="tablist")
+				+tab('1', true)
+				+tab('2')
+				+tab('3')
+			+tabContent('1', "Content 1", true)
+			+tabContent('2', "Content 2")
+			+tabContent('3', "Content 3")

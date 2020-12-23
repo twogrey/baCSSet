@@ -1,0 +1,13 @@
+.o-total-selected {
+	&::after {
+		content: ' ('counter(inspirationChecked)')';
+	}
+
+	&-container {
+		counter-reset: inspirationChecked;
+	}
+
+	&-increment :checked {
+		counter-increment: inspirationChecked;
+	}
+}

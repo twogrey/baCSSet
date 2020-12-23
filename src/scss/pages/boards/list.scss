@@ -1,0 +1,38 @@
+$assets-base-path: '../../../';
+
+@import '../../abstracts';
+
+.menupiece-filter {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	&:empty { display: none; }
+
+	> * {
+		margin-right: var(--spacing-double);
+		margin-top: var(--spacing);
+	}
+
+	.filter {
+		display: flex;
+		align-items: center;
+		padding: rem(6px) rem(24px) rem(6px) rem(8px);
+		font-size: rem(14px);
+
+		span {
+			width: rem(18px);
+			height: rem(18px);
+			border-radius: 50%;
+			background-color: var(--c);
+			transform: translateX(rem(18px));
+		}
+	}
+
+	.filter-remove {
+		--c: var(--color-black);
+		--font-size: 8px;
+		margin-right: rem(15px);
+		padding: rem(5px);
+	}
+}

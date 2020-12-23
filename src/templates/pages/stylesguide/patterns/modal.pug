@@ -1,0 +1,51 @@
+section.section.js-menu#Modals
+	.row.js-parent-snippet
+		.col-12
+			h1.section__title Modal
+		.col-12
+			button(type="button", class="c-btn c-btn--primary u-mr-half u-mb-half js-modal js-snippet", data-modal-id="modal1") Open modal (plain text)
+
+			.p-modal.js-snippet#modal1(role="dialog", aria-labelledby="titleModal1", aria-hidden="true", style="display: none")
+				.p-modal__dialog.p-modal__dialog--medium.js-modal-stop
+					.p-modal__content
+						.container
+							.row.u-pt-double
+								.col
+									header.h3-like(id="titleModal1") 
+										span.u-text-regular Modal 
+										span.u-text-primary title
+								.col-auto
+									button.p-modal__close.c-btn.c-btn--icon-only.c-btn--transparent.js-modal-close(type="button")
+										svg(class="icon")
+											title Fermer cette fenêtre
+											use(xlink:href="#icon-x")
+						.p-modal__body
+							.container
+								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!
+								div
+									input(type="text")
+						.p-modal__footer
+							.container
+								.row.u-align-center.u-justify-center.u-pt-double
+									.col-auto
+										button(type="button", class="c-btn c-btn--white") Button
+									.col-auto
+										button(type="button", class="c-btn c-btn--secondary") Button
+			
+			//- button(type="button", class="c-btn c-btn--primary u-mr-half u-mb-half js-modal", data-modal-id="modal2") Open modal (Lightbox for image)
+
+			//- .p-modal#modal2(role="dialog", aria-labelledby="titleModal2", aria-hidden="true", style="display: none")
+			//- 	.p-modal__dialog.p-modal__dialog--medium.p-modal__dialog--lightbox.js-modal-stop
+			//- 		.p-modal__content
+			//- 			.p-modal__header
+			//- 				.sr-only(id="titleModal2") Modal title
+			//- 				button.p-modal__close.p-modal__close--absolute.c-btn.c-btn--icon-only.c-btn--white.js-modal-close(type="button")
+			//- 					svg(class="icon")
+			//- 						title Fermer cette fenêtre
+			//- 						use(xlink:href="#icon-x")
+			//- 			.p-modal__body
+			//- 				img(
+			//- 						class="lazyload",
+			//- 						data-src="https://picsum.photos/1000/1000", 
+			//- 						alt=""
+			//- 					) 

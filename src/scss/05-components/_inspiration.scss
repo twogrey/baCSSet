@@ -1,0 +1,150 @@
+.c-inspiration {
+	--link-color: var(--color-black);
+	--link-radius: 0;
+	--link-position: static;
+	--link-mw: 100%;
+	--link-fs: #{rem(19px)};
+	display: block;
+	height: 100%;
+
+	.js-slider-inspirations-with-flags & {
+		height: auto;
+
+		@include medium {
+			width: 50%;
+		}
+
+		&:last-child {
+			margin-top: var(--spacing);
+
+			@include medium {
+				margin-top: 0;
+				margin-left: var(--spacing-double);
+			}
+		}
+	}
+
+	&--alternative {
+		--link-color: var(--color-secondary);
+		--link-radius: 0.235em;
+		--link-position: absolute;
+		--link-py: calc(var(--spacing-third) * 2);
+		--link-offset: var(--spacing);
+		--link-mw: calc(100% - var(--link-offset) * 2);
+		--link-fs: #{rem(13px)};
+
+		@include large {
+			--link-py: calc(var(--spacing-third) * 2);
+			--link-px: var(--spacing);
+			--link-offset: calc(var(--spacing) * 1.5);
+			--link-fs: #{rem(16px)};
+		}
+	}
+
+	&--selectable {
+		position: relative;
+		cursor: pointer;
+
+		[type=checkbox],
+		[type=radio] {
+			--size: #{rem(42px)};
+			--background: var(--color-secondary-lightest);
+			--check-bc: #fff;
+			--check-bw: #{rem(3px)};
+			position: absolute;
+			top: var(--spacing);
+			right: var(--spacing);
+			border: 0;
+
+			&.focus-visible {
+				+ * {
+					box-shadow: 0 0 0 rem(2px) #fff, 0 0 0 rem(6px) var(--color-secondary-lightest);
+				}
+			}
+
+			&:checked {
+				--check-bc: #fff;
+
+				+ * {
+					box-shadow: 0 0 0 rem(2px) #fff, 0 0 0 rem(6px) var(--color-secondary);
+				}
+
+				&.focus-visible {
+					+ * {
+						box-shadow: 0 0 0 rem(2px) #fff, 0 0 0 rem(6px) var(--color-secondary-dark);
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		--inactive-shadow: 0 rem(2px) rem(8px) rgba(0, 0, 0, 0.08);
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		border-radius: rem(8px);
+		overflow: hidden;
+		box-shadow: 0 rem(2px) rem(8px) rgba(0, 0, 0, 0.08);
+		transition: box-shadow 0.2s;
+
+		&:focus-within {
+			box-shadow: 0 0 0 rem(3px) var(--color-secondary-lightest);
+		}
+
+		&--alternative {
+			--font-size: #{rem(16px)};
+
+			&:focus-within {
+				box-shadow: none;
+			}
+		}
+	}
+
+	.o-preserve-ratio {
+		--ratio: 67%;
+	}
+
+	&__link {
+		--px: var(--link-px, var(--spacing));
+		--py: var(--link-py, var(--spacing));
+		--font-size: var(--link-fs);
+		position: var(--link-position);
+		bottom: var(--link-offset, auto);
+		right: var(--link-offset, auto);
+		flex: 1 0 auto;
+		max-width: var(--link-mw, 100%);
+		border-radius: var(--link-radius);
+		color: var(--link-color);
+
+		@include small-plus {
+			--font-size: var(--link-fs);
+			--px: var(--spacing);
+		}
+
+		@include large {
+			--font-size: var(--link-fs);
+			--px: var(--link-px, calc(var(--spacing) * 1.5));
+			--py: var(--link-py, calc(var(--spacing) * 1.5));
+		}
+
+		&::before {
+			content: "";
+			position: absolute 0;
+		}
+	}
+
+	&__flag {
+		position: absolute;
+		z-index: 2;
+		top: var(--spacing-double);
+		left: 0;
+		padding: 0.4em 1.25em;
+		border-top-right-radius: rem(13px);
+		border-bottom-right-radius: rem(13px);
+		color: var(--color-black);
+		background-color: #fff;
+		box-shadow: rem(2px) 0 rem(4px) rgba(#000, 0.16);
+	}
+}

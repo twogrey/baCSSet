@@ -1,0 +1,157 @@
+@charset 'utf-8';
+
+/** -----------------------------------------------------------
+ *
+ * SETTINGS : collection of variables & other stuff that do not generate CSS.
+ *
+ * config ...................... Main configurations, features switches, core functions
+ * function ....................
+ * color ....................... Variables colors declarations
+ * typography .................. Font-face declarations, functions for texts,
+ *                               variables declarations
+ *
+ */
+
+@import '00-settings/config',
+	'00-settings/function',
+	'00-settings/color',
+	'00-settings/typography';
+
+/** -----------------------------------------------------------
+ *
+ * TOOLS : preprocessor functions that help write or extend properties on classes
+ *
+ * media-queries ............... List all MQ with mixins
+ * mixins ......................
+ * placeholders ................
+ *
+ */
+
+@import '01-tools/media-queries',
+	'01-tools/mixins',
+	'01-tools/placeholders';
+
+/** -----------------------------------------------------------
+ *
+ * VENDORS : third-party styles + grid system;
+ *
+ * normalize ................... necolas/normalize.css v8.0.1
+ * grid ........................ Grid system mixin based
+ * browser-update .............. Notify users for navigating in olds browsers
+ *
+ */
+
+@import '02-vendors/normalize',
+	'02-vendors/grid',
+	'02-vendors/browser-update';
+
+/** -----------------------------------------------------------
+ *
+ * ELEMENTS : HTML elements default appearance
+ *
+ * elements ....................
+ *
+ */
+
+@import '03-elements/elements';
+
+/** -----------------------------------------------------------
+ *
+ * OBJECTS : design patterns, such as layouts, where items are being arranged rather than
+ *           decorated. They are used across all pages
+ *
+ * aspect-ratio ................ Preserver 1:1, 4:3, 16:9 ratio;
+ * animation ................... Keyframes declarations
+ *
+ */
+
+@import '04-objects/aspect-ratio',
+	'04-objects/animation',
+	'04-objects/total-selected',
+	'04-objects/sticky-bar-reveal';
+
+/** -----------------------------------------------------------
+ *
+ * COMPONENTS : each component is fully functional by itself and does not rely on any other
+ *              components
+ *
+ * placeholder-img .............
+ * loader ......................
+ * button ...................... Plain, outlined, loading, sizes, colors variations, ...
+ * panel .......................
+ * breadcrumb ..................
+ * product card ................
+ *
+ */
+
+@import
+	'05-components/placeholder-img',
+	'05-components/loader',
+	'05-components/button',
+	'05-components/style',
+	'05-components/color-tone',
+	'05-components/panel',
+	'05-components/breadcrumb',
+	'05-components/inspiration',
+	'05-components/product-card',
+	'05-components/room';
+
+/** -----------------------------------------------------------
+ *
+ * PATTERNS : combination of components not scalable (header for example)
+ *
+ *
+ * offcanvas ................... Canvas mobile menu
+ * slider ......................
+ * accordion ...................
+ * tabs ........................
+ * modal ....................... Dialog box
+ *
+ */
+
+@import '06-patterns/offcanvas',
+	'06-patterns/hero',
+	'06-patterns/slider',
+	'06-patterns/accordion',
+	'06-patterns/tabs',
+	'06-patterns/modal',
+	'06-patterns/steps-thread',
+	'06-patterns/dropdown';
+
+/** -----------------------------------------------------------
+ *
+ * UTILITIES : Here are overrides, helpers, and specific classes that affect
+ * single pieces of the DOM. Because the purpose is to override settings coming from other
+ *  layers, this is the only place where !important is permitted.
+ *
+ * text ........................ alignments, sizes, weight, caps, ...
+ * spacing ..................... padding/margin classes
+ * colors ...................... text/bgcolor/border classes
+ * display ..................... non, block, inline-block, flex, inline-flex
+ * position ....................
+ * radius ......................
+ *
+ */
+
+@import '07-utilities/text',
+	'07-utilities/spacing',
+	'07-utilities/colors',
+	'07-utilities/display',
+	'07-utilities/flexbox',
+	'07-utilities/position',
+	'07-utilities/radius',
+	'07-utilities/size';
+
+/** -----------------------------------------------------------
+ *
+ * EXTRA NAMESPACE
+ *
+ *
+ * xxxxxxxx ....................
+ *
+ */
+
+@import '08-extra/header',
+	'08-extra/footer',
+	'08-extra/lazy',
+	'08-extra/filters-products';

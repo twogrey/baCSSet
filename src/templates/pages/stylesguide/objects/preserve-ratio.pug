@@ -1,0 +1,25 @@
+section.section.js-menu#Preserve-ratio
+	.row
+		.col-12
+			h1.section__title Preserve ratio element
+	.row.js-parent-snippet
+		.col-6.col-md-3
+			h2 1:1
+			.o-preserve-ratio.o-preserve-ratio--square.js-snippet
+				img(src="https://gradientjoy.com/200x300", alt="")
+		.col-6.col-md-3
+			h2 4:3
+			.o-preserve-ratio.o-preserve-ratio--four-thirds.js-snippet
+				//- In case you don't use a polyfill it is recommended that the first image candidate matches the fallback src
+				img(
+						class="lazyload",
+						data-src="/assets/dest/img/holy-768.jpg", 
+						alt="", 
+						data-srcset="/assets/dest/img/holy-768.jpg 768w, /assets/dest/img/holy-1080.jpg 1080w",
+						sizes="auto"
+					)
+		.col-12.col-md-6
+			h2 16:9
+			.o-preserve-ratio.js-snippet
+				iframe(data-src="https://www.youtube.com/embed/3LxyRuZxs2w?rel=0&amp;showinfo=0", title="youtube iframe test", class="lazyload")
+

@@ -1,0 +1,44 @@
+.col-12
+	h2 Radio &amp; Checkbox
+.col-12
+	.u-bg-lightgrey.u-p 
+		p 
+			b Notes :
+		ul
+			li 
+				| Grouper les checkboxes / radios avec 
+				code fieldset
+				|  sans oublier 
+				code legend
+				|. <br>Alternative : ajouter 
+				code role="group"
+				|  au conteneur ainsi que 
+				code aria-label
+				|  (ou 
+				code aria-labelledby
+				|  en référence au texte décrivant le groupe).
+.col-12.u-mb
+	.row.js-parent-snippet
+		.col-12.u-mb
+			.js-snippet
+				+inputs('1', false, 'Checkboxes', 'checkbox')
+.col-12.u-mb
+	.row.js-parent-snippet
+		.col-12.u-mb
+			.js-snippet
+				+inputs('2', false, 'Radios', 'radio')
+.col-12.u-mb
+	.row.js-parent-snippet
+		.col-12.u-mb
+			.js-snippet
+				+inputs('3', false, 'Switches', 'checkbox', true)
+.col-12.u-mb
+	.row.js-parent-snippet
+		.col-12.u-mb
+			.js-snippet
+				+inputs('4', true, 'Inline', 'checkbox')
+.col-12
+	.row.js-parent-snippet
+		.col-12.u-mb
+			.js-snippet
+				+inputs('5', true, 'Inline / Error message', 'checkbox', false, true)

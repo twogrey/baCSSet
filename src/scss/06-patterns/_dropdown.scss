@@ -1,0 +1,15 @@
+.p-dropdown {
+	display: none;
+
+	&.is-open {
+		display: block;
+	}
+
+	&-toggle {
+		&.is-open {
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}

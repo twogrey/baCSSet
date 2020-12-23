@@ -1,0 +1,89 @@
+section.section.js-menu#Breadcrumb
+	.row.js-parent-snippet
+		.col-12
+			h1.section__title Breadcrumb
+		.col-12
+			.u-bg-lightgrey.u-p 
+				p <b>Notes :</b>
+				ul
+					li Si l'utilisation de <code>nav</code> n'est pas possible : ajouter <code>role="navigation"</code> sur le conteneur ou sur l'élément <code>ol</code>.
+		.col-12.u-mb-half
+			nav(aria-label="Fil d'ariane", class="c-breadcrumb")
+				ol.c-breadcrumb__list
+					li.c-breadcrumb__item(aria-current="page") Homepage
+		.col-12.u-mb-half
+			nav(aria-label="Fil d'ariane", class="c-breadcrumb")
+				ol.c-breadcrumb__list
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") Homepage
+					li.c-breadcrumb__item(aria-current="page") Brand
+		.col-12.u-mb-half
+			nav(aria-label="Fil d'ariane", class="c-breadcrumb")
+				ol.c-breadcrumb__list
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") Homepage
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") Brand
+					li.c-breadcrumb__item(aria-current="page") Category
+		.col-12.u-mb-half
+			nav(aria-label="Fil d'ariane", class="c-breadcrumb")
+				ol.c-breadcrumb__list
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") Homepage
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") Brand
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") Category
+					li.c-breadcrumb__item(aria-current="page") Product
+		.col-12
+			nav(aria-label="Fil d'ariane", class="c-breadcrumb js-snippet")
+				ol.c-breadcrumb__list
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") 
+							svg(class="icon c-breadcrumb__icon", aria-hidden="true")
+								use(xlink:href="#icon-home")
+							| Homepage
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") 
+							svg(class="icon c-breadcrumb__icon", aria-hidden="true")
+								use(xlink:href="#icon-image")
+							| Brand
+					li.c-breadcrumb__item
+						a(href="#", class="c-breadcrumb__link") 
+							svg(class="icon c-breadcrumb__icon", aria-hidden="true")
+								use(xlink:href="#icon-tag")
+							| Category
+					li.c-breadcrumb__item(aria-current="page")
+						svg(class="icon c-breadcrumb__icon", aria-hidden="true")
+							use(xlink:href="#icon-cart")
+						| Product
+	.row
+		details.toggle-code
+			summary Toggle linked data
+			pre.u-bg-lightgrey.u-p
+				code
+					|{
+					|  "@context": "https://schema.org",
+					|  "@type": "BreadcrumbList",
+					|  "itemListElement": [{
+					|    "@type": "ListItem",
+					|    "position": 1,
+					|    "name": "Homepage",
+					|    "item": "https://........................"
+					|  }, {
+					|    "@type": "ListItem",
+					|    "position": 2,
+					|    "name": "Brand",
+					|    "item": "https://........................"
+					|  },{
+					|    "@type": "ListItem",
+					|    "position": 3,
+					|    "name": "Category",
+					|    "item": "https://........................"
+					|  },{
+					|    "@type": "ListItem",
+					|    "position": 4,
+					|    "name": "Product",
+					|    "item": "https://........................"
+					|  }]
+					|}

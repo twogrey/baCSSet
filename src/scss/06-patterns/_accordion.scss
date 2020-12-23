@@ -1,0 +1,40 @@
+@if $enable-accordion {  
+	.p-accordion {
+		--s: #{rem(20px)};
+
+		&:not(:last-child) {
+			margin-bottom: var(--spacing);
+		}
+
+		&__button {
+			justify-content: space-between;
+			width: 100%;
+			padding-right: var(--s);
+			padding-left: var(--s);
+			text-align: left;
+
+			&.is-open {
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+
+		&__icon {
+			transition: transform 0.2s;
+
+			.is-open > & {
+				transform: rotate(180deg);
+			}
+		}
+
+		&__content {
+			display: none;
+			padding: var(--s);
+			background-color: var(--color-lightgrey);
+
+			&.is-open {
+				display: block;
+			}
+		}
+	}
+}

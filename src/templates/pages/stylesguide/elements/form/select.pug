@@ -1,0 +1,48 @@
+.col-12
+	.row.js-parent-snippet
+		.col-12
+			h2 Select
+		.col-12.col-md-6.col-lg-4
+			.form-group
+				select.js-snippet(aria-label='select', name='lecture')
+					option(label='Choose a Lecture', disabled, selected) Choose a Lecture
+					optgroup(label='1.0 The History of the World: Part I')
+						option(label='Lecture 1.1', value='1.1') Lecture 1.1: In the Beginning
+						option(label='Lecture 1.2', value='1.2') Lecture 1.2: Stuck in the Middle
+						option(label='Lecture 1.3', value='1.3', disabled) Lecture 1.3: At the End
+					optgroup(label='2.0 The History of the World: Part II', disabled)
+						option(label='Lecture 2.2', value='2.1') Lecture 2.1: Wait! There's More
+		.col-12.col-md-6.col-lg-4
+			.form-group
+				select(aria-label='select')
+					option(disabled, selected) Choose one :
+					option Value 1
+					option Value 2
+					option Value 3
+		.col-12.col-md-6.col-lg-4
+			.form-group
+				select(aria-label='select')
+					option Value 1
+					option(selected) Value 2
+					option Value 3
+		.col-12.col-md-6.col-lg-4
+			.form-group
+				select(disabled, aria-label='select')
+					option Value 1
+					option(selected) Value 2
+					option Value 3
+				include message-help.pug
+		.col-12.col-md-6.col-lg-4
+			.form-group.error
+				select(aria-label='select')
+					option Value 1
+					option Value 2
+					option Value 3 
+				include message-error.pug
+		.col-12.col-md-6.col-lg-4
+			.form-group.valid
+				select(aria-label='select')
+					option Value 1
+					option Value 2
+					option(disabled) Value 3
+				include message-valid.pug

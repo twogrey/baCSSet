@@ -1,0 +1,120 @@
+/** --------------------------------------------
+ * 
+ * Justify / Align / Direction / Column
+ * 
+ -------------------------------------------- */
+
+$direction-values: (
+	'flex-row'             : 'row',
+	'flex-column'          : 'column' );
+
+$justify-values: (
+	'justify-start'   : 'flex-start',
+	'justify-center'  : 'center',
+	'justify-end'     : 'flex-end',
+	'justify-around'  : 'space-around',
+	'justify-between' : 'space-between' );
+
+$align-values: (
+	'align-start'     : 'flex-start',
+	'align-center'    : 'center',
+	'align-end'       : 'flex-end' );
+
+$wrap-values: (
+	'flex-wrap'       : 'wrap',
+	'flex-nowrap'     : 'nowrap' );
+
+@each $direction-name, $direction-value in($direction-values) {
+	.u-#{$direction-name} {
+		flex-direction: #{$direction-value} !important;
+	}
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.u-#{$prefix}-#{$direction-name} {
+				flex-direction: #{$direction-value} !important;
+			}
+		}
+	}
+}
+
+@each $justify-name, $justify-value in($justify-values) {
+	.u-#{$justify-name} {
+		justify-content: #{$justify-value} !important;
+	}
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.u-#{$prefix}-#{$justify-name} {
+				justify-content: #{$justify-value} !important;
+			}
+		}
+	}
+}
+
+@each $align-name, $align-value in($align-values) {
+	.u-#{$align-name} {
+		align-items: #{$align-value} !important;
+	}
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.u-#{$prefix}-#{$align-name} {
+				align-items: #{$align-value} !important;
+			}
+		}
+	}
+}
+
+@each $wrap-name, $wrap-value in($wrap-values) {
+	.u-#{$wrap-name} {
+		flex-wrap: #{$wrap-value} !important;
+	}
+
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.u-#{$prefix}-#{$wrap-name} {
+				flex-wrap: #{$wrap-value} !important;
+			}
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Order
+ * 
+ -------------------------------------------- */
+
+.u-order-first {
+	order: -1;
+}
+
+.u-order-last {
+	order: #{$nb-cols + 1};
+} 
+
+@each $name, $prefix in($grid-mq) {
+	@include mq(map-get($mq, $name)) {
+		.u-order-#{$prefix}-first {
+			order: -1;
+		}
+
+		.u-order-#{$prefix}-last {
+			order: #{$nb-cols + 1};
+		}
+	}
+}
+
+@for $i from 0 through 4 {
+	.u-order-#{$i} {
+		order: $i;
+	}
+	@each $name, $prefix in($grid-mq) {
+		@include mq(map-get($mq, $name)) {
+			.u-order-#{$prefix}-#{$i} {
+				order: $i;
+			}
+		}
+	}
+}

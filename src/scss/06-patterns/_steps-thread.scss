@@ -1,0 +1,167 @@
+.p-steps-thread {
+	$parent: &;
+	--counter-display: none;
+	--bubble-size: #{rem(36px)};
+	--bubble-bgcolor: var(--color-primary);
+	--bubble-color: #fff;
+	--bubble-font-size: #{rem(18px)};
+	--bubble-line-opacity: 1;
+	--bubble-border: 1px solid var(--color-primary);
+	--content-pb: 0;
+	--step-padding-x: #{rem(1px)};
+	--step-flex: auto;
+	--step-width: 20%;
+
+	font-size: #{rem(10px)};
+	line-height: 1.25;
+
+	@include small-plus {
+		--bubble-size: #{rem(48px)};
+		--step-padding-x: #{rem(2px)};
+		font-size: #{rem(13px)};
+	}
+
+	@include medium {
+		--step-flex: auto;
+		--step-padding-x: #{rem(2px)};
+	}
+
+	@include large {
+		--step-flex: auto;
+		--step-padding-x: #{rem(2px)};
+	}
+
+	&--alternative {
+		--counter-display: block;
+		--bubble-size: #{rem(58px)};
+		--bubble-bgcolor: var(--color-primary-dark);
+		--bubble-color: #fff;
+		--bubble-font-size: #{rem(24px)};
+		--bubble-line-opacity: 0.35;
+		--step-padding-x: 0;
+		--bubble-border: 0;	
+		--step-width: 100%;
+		font-size: rem(14px);
+
+		@include small-plus {
+			--bubble-size: #{rem(58px)};
+			--step-padding-x: 0;
+		}
+
+		@include medium {
+			--step-flex: calc(100% / 3);
+			--step-padding-x: var(--spacing);
+		}
+
+		@include large {
+			--step-flex: calc(100% / 3);
+			--step-padding-x: var(--spacing-double);
+			font-size: rem(16px);
+		}
+
+		#{$parent}__content {
+			display: block;
+
+			@include medium {
+				display: flex;
+			}
+		}
+
+		#{$parent}__item {
+			margin-bottom: var(--spacing-double);
+
+			@include medium {
+				margin-bottom: 0;
+			}
+
+			&:not(:last-child) {
+				&::after {
+					display: none;
+
+					@include medium {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		counter-reset: step;
+	}
+
+	&__item {
+		position: relative;
+		flex: 0 0 var(--step-flex);
+		width: var(--step-width);
+		padding: 0 var(--step-padding-x);
+		text-align: center;
+		counter-increment: step;
+		scroll-snap-align: start;
+
+		&:not(:last-child) {
+			&::after {
+				content: '';
+				position: absolute;
+				top: calc(var(--bubble-size) / 2);
+				left: calc(50% + var(--bubble-size) / 2);
+				width: calc(100% - var(--bubble-size));
+				height: rem(2px);
+				background-color: var(--color-primary);
+				opacity: var(--bubble-line-opacity);
+			}
+		}
+
+		&.active {
+			font-weight: $bold;
+			--bubble-line-opacity: 0.35;
+
+			~ * {
+				--bubble-line-opacity: 0.35;
+				--bubble-bgcolor: #fff;
+				--bubble-color: var(--color-primary);
+			}
+		}
+	}
+
+	&__bubble {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: var(--bubble-size);
+			height: var(--bubble-size);
+			margin: 0 auto var(--spacing-half);
+			border: var(--bubble-border);
+			border-radius: 50%;
+			font-size: var(--bubble-font-size);
+			font-weight: $semibold;
+			color: var(--bubble-color);
+			background-color: var(--bubble-bgcolor);
+
+			&::before { 
+				content: counter(step); 
+				display: var(--counter-display);
+			}
+	}
+
+	&__title {		
+		font-size: #{rem(18px)};
+		font-weight: $semibold;
+		margin: var(--spacing) 0;
+
+		@include large {
+			font-size: #{rem(24px)};
+		}
+	}
+
+	a {
+		display: block;
+		color: var(--color-black);
+	}
+}
+
+.p-steps-thread {
+}

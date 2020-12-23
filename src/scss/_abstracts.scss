@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+/** -----------------------------------------------------------
+ *
+ * Combination of all files that do not generate CSS.
+ * Used for styles files in /pages/
+ * 
+ */
+
+@import '00-settings/config',
+	'00-settings/function',
+	'00-settings/color',
+	'00-settings/typography';
+
+@import '01-tools/media-queries',
+	'01-tools/mixins',
+	'01-tools/placeholders';
