@@ -10,33 +10,17 @@ html(lang="en", class="touch")
 
 	body(class=bodyClass)
 
-		//--- Display splash screen at first session visit
-		//- script.
-		//- 	if (!sessionStorage.isVisited) {
-		//- 	  var splash = document.createElement('div');
-		//- 	  splash.classList.add('splash-screen');
-		//- 	  splash.setAttribute('aria-hidden', 'true');
-		//- 	  splash.innerHTML = '<div class="splash-screen__content"><div class="splash-screen__logo"><img src="dest/img/svg/code.svg" alt=""></div><div class="c-loader c-loader--white"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45"></circle></svg></div></div>';
-		//- 		document.querySelector('body').insertBefore(splash, document.querySelector('body').firstChild);
-		//- 		sessionStorage.isVisited = true;
-		//- 		setTimeout(function() {
-		//- 			document.querySelector('html').classList.remove('loading-page-done');
-		//- 		}, 10000);
-		//- 	}
+		include partials/skip-links.pug 
  	
 		div(style="display: none", aria-hidden="true")
 			include ../../dest/img/sprite.svg 
-
-		include partials/skip-links.pug 
 
 		//- include partials/header.pug 
 
 		main#content
 			block main
 
-		//- aside
-
-		//- include partials/footer.pug 
+		include partials/footer.pug 
 
 		//- Display a modal for old browsers users
 		script.
@@ -51,6 +35,6 @@ html(lang="en", class="touch")
 
 		//- Scripts
 		block scripts-footer 
-			script(src="js/vendors/easy-toggle-state.js")
-			script(src="js/vendors/tiny-slider.min.js")
-			script(src="js/scripts.min.js")
+			script(src="../../../js/vendors/easy-toggle-state.js")
+			script(src="../../../js/vendors/tiny-slider.min.js")
+			script(src="../../../js/scripts.min.js")

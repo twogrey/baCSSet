@@ -1,21 +1,19 @@
 @if $enable-skip-links {
 	.o-skip-links {
-		padding: var(--spacing);
+		--i: 0;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: var(--z-max);
+		border-right: rem(1px) solid var(--color-primary);
+		border-bottom: rem(1px) solid var(--color-primary);
+		padding: var(--spacing) var(--spacing-double);
 		background-color: #fff;
+		transform: translateY(calc(100% * (var(--i) - 1)));
+		transition: transform 0.2s;
 
 		&:focus-within {
-			position: fixed;
-			left: 0;
-			z-index: var(--z-max);
-			width: auto;
-			overflow: visible;
-			clip: auto;
-			white-space: normal;
-		}
-
-		a {
-			display: inline-block;
-			margin-right: var(--spacing);
+			--i: 1;
 		}
 	}
 
