@@ -9,22 +9,22 @@ $darkgrey  : mix(black, $grey, 50%);
 $color-primary          : #2980b9;
 $color-primary-lightest : mix(white, $color-primary, 66%);
 $color-primary-light    : mix(white, $color-primary, 33%);
-$color-primary-dark     : mix(black, $color-primary, 66%);
+$color-primary-dark     : mix(black, $color-primary, 33%);
 
 $color-secondary          : #B53471;
 $color-secondary-lightest : mix(white, $color-secondary, 66%);
 $color-secondary-light    : mix(white, $color-secondary, 33%);
-$color-secondary-dark     : mix(black, $color-secondary, 66%);
+$color-secondary-dark     : mix(black, $color-secondary, 33%);
 
 $color-error          : #df382b;
 $color-error-lightest : mix(white, $color-error, 66%);
 $color-error-light    : mix(white, $color-error, 33%);
-$color-error-dark     : mix(black, $color-error, 50%);
+$color-error-dark     : mix(black, $color-error, 33%);
 
 $color-success          : #27ae60;
 $color-success-lightest : mix(white, $color-success, 66%);
 $color-success-light    : mix(white, $color-success, 33%);
-$color-success-dark     : mix(black, $color-success, 50%);
+$color-success-dark     : mix(black, $color-success, 33%);
 
 $neutral-colors: (
 	'black'     : $black,

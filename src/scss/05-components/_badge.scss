@@ -1,7 +1,4 @@
 @if $enable-badge {
-	
-	// Base class
-	//
 
 	.c-badge {
 		display: inline-block;
@@ -15,35 +12,35 @@
 		vertical-align: baseline;
 		color: #fff;
 
-		// Colors
-		//
-		// Contextual variations (linked badges get darker on :hover).
-
 		@each $name, $color in($main-colors) {
 			&--#{$name} {
 				background-color: var(--color-#{$name});
 			}
 		}
 
-		// Empty badges collapse automatically
+		&--light {
+			color: var(--color-darkgrey);
+			background-color: var(--color-lightgrey);
+		}
+
+		&--dark {
+			color: #fff;
+			background-color: var(--color-black);
+		}
+
 		&:empty {
 			display: none;
 		}
 
-		// Pill badges
-		//
-		// Make them extra rounded with a modifier to replace v3's badges.
 		&--pill {
-			padding-right: 0.6em;
-			padding-left: 0.6em;
 			border-radius: 10rem;
 		}
 
 		&--abs {
-			--s: #{rem(18px)};
+			--s: #{rem(22px)};
 			position: absolute;
-			top: 0;
-			right: 0;
+			top: calc(var(--s) * -.45);
+			right: calc(var(--s) * -.45);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -51,14 +48,10 @@
 			height: var(--s);
 			padding: 0;
 			border-radius: 50%;
-			font-size: rem(12px);
-			font-weight: $regular;
-			transform: translate(25%, -25%);
 		}
 
 		.icon {
 			width: 0.75em;
-			height: 0.75em;
 		}
 	}
 

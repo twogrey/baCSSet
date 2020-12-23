@@ -1,234 +1,181 @@
-$button-focus-width: 0.2rem;
-$button-pseudo-element-loading: after;
-$button-line-height: 1.25;
-
 @if $enable-button {
+
+	$button-line-height: 1.25;
+
+	/**
+	 * Base
+	 */
 	.c-btn {
-		$parent: &;
-		--font-size: #{rem(14px)};
-		--px: calc(var(--spacing) * 1.5);
-		--py: calc(var(--px) * 0.4725);
+		--px: 1em;
+		--py: calc(var(--px) / 2);
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		padding: var(--py) var(--px);
-		border: 1px solid;
+		border: 1px solid var(--btn-border-color, var(--btn-background));
 		border-radius: 0.235em;
-		font-size: var(--font-size);
-		font-weight: $semibold;
+		font-size: 1rem;
 		line-height: $button-line-height;
 		text-decoration: none;
 		vertical-align: middle;
-		color: #fff;
 		cursor: pointer;
+		background-color: var(--btn-background);
 		user-select: none;
-		transition: opacity 0.2s, color 0.2s, border-color 0.2s, background-color 0.2s;
+		transition-property: opacity, color, border-color, background-color, box-shadow;
 		transition-timing-function: ease;
+		transition-duration: 0.2s;
 		-webkit-tap-highlight-color: transparent;
 		outline: none;
 
-		> span {
-			&:first-child {
-				margin-right: auto;
-			}
+		&:hover { text-decoration: none }
+
+		&:focus-visible,
+		&:active {
+			box-shadow: 0 0 0 0.3rem var(--btn-outline-color);
 		}
 
-		@include small-plus {
-			--font-size: #{rem(16px)};
-			--px: var(--spacing-double);
-		}
-
+		/**
+		 * Expanded
+		 */
 		&--block {
 			width: 100%;
 		}
 
-		.icon {
-			flex: 0 0 auto;
-			height: calc(#{var(--font-size)} * #{$button-line-height});
-			transition: transform 0.2s;
-
-			&:first-child {
-				margin-right: var(--px);
-
-				~ span {
-					margin-left: auto;
-				}
-			}
-
-			&:last-child {
-				margin-left: var(--px);
-			}
-
-			&:only-child {
-				margin-right: 0;
-				margin-left: 0;
-			}
-		}
-
-		&--icon-only {
-			padding-right: var(--py);
-			padding-left: var(--py);
-
-			.icon {
-				width: calc(#{var(--font-size)} * #{$button-line-height});
-			}
-		}
-
+		/**
+		 * Colors
+		 */
 		@each $name, $color in($main-colors) {
 			&--#{$name} {
-				border-color: var(--color-#{$name});
-				background-color: var(--color-#{$name});
+				--btn-background: var(--color-#{$name});
 				color: #fff;
 
 				&:hover {
-					border-color: var(--color-#{$name}-dark);
-					background-color: var(--color-#{$name}-dark);
+					--btn-background: var(--color-#{$name}-dark);
 					color: #fff;
 				}
-
-				&:focus-visible {
-					color: #fff;
-					outline-color: var(--color-#{$name}-light);
-					outline-style: solid;
-					outline-width: $button-focus-width;
-				}
-			}
-
-			&--outline-#{$name} {
-				border-color: var(--color-#{$name});
-				background-color: transparent;
-				color: var(--color-#{$name});
-
-				&:hover {
-					background-color: var(--color-#{$name});
-					color: #fff;
-				} 
 
 				&:focus-visible,
 				&:active {
-					outline-color: var(--color-#{$name}-light);
-					outline-style: solid;
-					outline-width: $button-focus-width;
+					--btn-outline-color: var(--color-#{$name}-lightest);
 				}
 			}
 		}
 
-		&:hover,
-		&.focus-visible {
-			text-decoration: none;
-		}
-
 		&--white {
-			border-color: transparent;
-			background-color: #fff;
-			color: var(--c, var(--color-secondary));
+			--btn-background: #fff;
+			color: var(--color-primary);
 
 			&:hover {
-				border-color: var(--color-secondary-lightest);
-				background-color: var(--color-secondary-lightest);
-				color: var(--color-secondary-dark);
-			}
-
-			&.focus-visible {
-				outline-color: var(--color-secondary-light);
-				outline-style: solid;
-				outline-width: $button-focus-width;
-			}
-		}
-
-		&--white-alt {
-			border-color: transparent;
-			background-color: #fff;
-			color: var(--c, var(--color-primary));
-
-			&:hover {
-				border-color: var(--color-primary-lightest);
-				background-color: var(--color-primary-lightest);
+				--btn-background: var(--color-primary-lightest);
 				color: var(--color-primary-dark);
 			}
 
-			&.focus-visible {
-				outline-color: var(--color-primary-light);
-				outline-style: solid;
-				outline-width: $button-focus-width;
+			&:focus-visible,
+			&:active {
+				--btn-outline-color: var(--color-lightgrey);
+			}
+		}
+
+		&--light {
+			--btn-background: var(--color-lightgrey);
+			color: var(--color-black);
+
+			&:hover {
+				--btn-background: var(--color-darkgrey);
+				color: #fff;
+			}
+
+			&:focus-visible,
+			&:active {
+				--btn-outline-color: var(--color-grey);
+			}
+		}
+
+		&--dark {
+			--btn-background: var(--color-black);
+			color: #fff;
+
+			&:hover {
+				--btn-background: var(--color-darkgrey);
+				color: #fff;
+			}
+
+			&:focus-visible,
+			&:active {
+				--btn-outline-color: var(--color-grey);
 			}
 		}
 
 		&--transparent {
-			border-color: transparent;
-			background-color: transparent;
-			color: var(--c, var(--color-black));
+			--btn-background: transparent;
+			color: var(--color-black);
 
 			&:hover {
-				background-color: rgba(#000, 0.1);
-				color: var(--c-hover, var(--color-black));
+				--btn-background: var(--color-lightgrey);
+				color: var(--color-black);
 			}
 
-			&.focus-visible {
-				outline-color: rgba(#000, 0.25);
-				outline-style: solid;
-				outline-width: $button-focus-width;
+			&:focus-visible,
+			&:active {
+				--btn-outline-color: var(--color-grey);
 			}
 		}
 
-		&--link {
-			border: 0;
-			text-decoration: underline;
+		&--outline {
+			--btn-border-color: var(--btn-background);
 			background-color: transparent;
-			color: var(--c, var(--color-black));
-			box-shadow: none;
+			color: var(--btn-background);
 
 			&:hover {
-				text-decoration: underline;
-				background-color: transparent;
-				color: var(--c-hover, var(--color-black));
-			}
-
-			&.focus-visible {
-				outline: auto;
-				text-decoration: underline;
-			}
-
-			.icon {
-				&:first-child {
-					margin-right: calc(var(--px) / 2);
-				}
-
-				&:last-child {
-					margin-left: calc(var(--px) / 2);
-				}
+				background-color: var(--btn-background);
+				color: #fff;
 			}
 		}
 
-		// @include medium {
-		// 	--font-size: #{rem(XXpx)};
-		// }
-
-		&--small {
-			--font-size: #{rem(11px)};
-
-			@include small-plus {
-				--font-size: #{rem(13px)};
-			}
-		}
-
-		// &--large {
-		// 	--font-size: #{rem(18px)};
-
-		// 	@include small-plus {
-		// 		--font-size: #{rem(XXpx)};
-		// 	}
-		// }
-
-		&--rounded {
-			border-radius: 10em;
-		}		
-
+		/**
+		 * Disabled
+		 */
 		&[disabled],
 		&.disabled,
 		form:invalid &[type="submit"] {
 			opacity: 0.5;
 			cursor: not-allowed;
 		}
+
+		/**
+		 * With an icon + text
+		 * With only an icon
+		 */
+		.icon {
+			--h: calc(#{$button-line-height} * 1em);
+			--w: 0.75em;
+			flex: 0 0 auto;
+			width: var(--w);
+			height: var(--h);
+			transition: transform 0.2s;
+
+			&:first-child { margin-right: var(--px) }
+
+			&:last-child { margin-left: var(--px) }
+
+			&:only-child {
+				--w: var(--h);
+				padding: 0 calc(var(--py) / 2);
+				margin-right: calc(var(--px) * -0.5);
+				margin-left: calc(var(--px) * -0.5);
+			}
+		}
+
+		/**
+		 * Differents sizes
+		 */
+		&--small { font-size: 0.75rem }
+
+		&--large { font-size: 1.25rem }
+
+		/**
+		 * Rounded corners
+		 */
+		&--rounded { border-radius: 10em }		
 	}
 }
