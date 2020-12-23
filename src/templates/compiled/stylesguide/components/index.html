@@ -59,14 +59,14 @@
         <div class="row no-gutters">
           <div class="col-12 col-md-3 col-lg-2 u-px-0 u-mb-0 menu-stylesguide">
             <ul class="list-unstyled" id="menuStylesguide" data-computed-style="width, height" data-computed-style-name="menu">
-              <li> <a href="../dest/pages/stylesguide/cheatsheet">Cheatsheet</a></li>
-              <li> <a href="../dest/pages/stylesguide/elements">Elements</a></li>
-              <li> <a href="../dest/pages/stylesguide/objects">Objects</a></li>
-              <li> <a class="active" href="../dest/pages/stylesguide/components">Components</a></li>
-              <li> <a href="../dest/pages/stylesguide/patterns">Patterns</a></li>
-              <li> <a href="../dest/pages/stylesguide/utilities">Utilities</a></li>
-              <li> <a href="../dest/pages/stylesguide/misc">Misc</a></li>
-              <li> <a href="../dest/pages/stylesguide/layout">Layout</a></li>
+              <li> <a href="../cheatsheet">Cheatsheet</a></li>
+              <li> <a href="../elements">Elements</a></li>
+              <li> <a href="../objects">Objects</a></li>
+              <li> <a class="active" href="../components">Components</a></li>
+              <li> <a href="../patterns">Patterns</a></li>
+              <li> <a href="../utilities">Utilities</a></li>
+              <li> <a href="../misc">Misc</a></li>
+              <li> <a href="../layout">Layout</a></li>
             </ul>
           </div>
           <div class="col-12 col-md-9 col-lg-10 u-px-0 u-mb-0">
@@ -437,22 +437,22 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <nav class="c-pagination js-snippet" aria-label="Pagination">
-                      <ul class="c-pagination__list list-unstyled">
-                        <li class="c-pagination__item c-pagination__item--prev"><a class="c-btn c-btn--outline-primary c-btn--small c-btn--icon-only" href="#" aria-label="Page précédente" aria-disabled="true" tabindex="-1" rel="prev"> 
+                    <nav class="js-snippet" aria-label="Pagination">
+                      <ol class="c-pagination list-unstyled">
+                        <li class="c-pagination__item"><a class="c-btn c-btn--outline c-btn--primary c-btn--small" href="#" aria-label="Page précédente" aria-disabled="true" tabindex="-1" rel="prev"> 
                             <svg class="icon" aria-hidden="true">
                               <use xlink:href="#icon-chevron-left"></use>
                             </svg></a></li>
-                        <li class="c-pagination__item c-pagination__item--next"><a class="c-btn c-btn--outline-primary c-btn--small c-btn--icon-only" href="#" aria-label="Page suivante" rel="next"> 
+                        <li class="c-pagination__item"><a class="c-btn c-btn--primary c-btn--small" href="#" aria-label="Page 1" aria-current="page"><span aria-hidden="true">1</span></a></li>
+                        <li class="c-pagination__item"><a class="c-btn c-btn--outline c-btn--primary c-btn--small" href="#" aria-label="Page 2"><span aria-hidden="true">2</span></a></li>
+                        <li class="c-pagination__item"><a class="c-btn c-btn--outline c-btn--primary c-btn--small" href="#" aria-label="Page 3"><span aria-hidden="true">3</span></a></li>
+                        <li class="c-pagination__item c-pagination__item--ellipsis" aria-hidden="true"><a class="c-btn c-btn--white c-btn--small" href="#" aria-disabled="true" tabindex="-1"><span>&hellip;</span></a></li>
+                        <li class="c-pagination__item"><a class="c-btn c-btn--outline c-btn--primary c-btn--small" href="#" aria-label="Page 99"><span aria-hidden="true">99</span></a></li>
+                        <li class="c-pagination__item"><a class="c-btn c-btn--outline c-btn--primary c-btn--small" href="#" aria-label="Page suivante" rel="next"> 
                             <svg class="icon" aria-hidden="true">
                               <use xlink:href="#icon-chevron-right"></use>
                             </svg></a></li>
-                        <li class="c-pagination__item"><a class="c-btn c-btn--primary c-btn--small" href="#" aria-label="Page 1" aria-current="page"><span aria-hidden="true">1</span></a></li>
-                        <li class="c-pagination__item"><a class="c-btn c-btn--outline-primary c-btn--small" href="#" aria-label="Page 2"><span aria-hidden="true">2</span></a></li>
-                        <li class="c-pagination__item"><a class="c-btn c-btn--outline-primary c-btn--small" href="#" aria-label="Page 3"><span aria-hidden="true">3</span></a></li>
-                        <li class="c-pagination__item c-pagination__item--ellipsis" aria-hidden="true"><a class="c-btn c-btn--white c-btn--small" href="#" aria-disabled="true" tabindex="-1"><span>&hellip;</span></a></li>
-                        <li class="c-pagination__item"><a class="c-btn c-btn--outline-primary c-btn--small" href="#" aria-label="Page 99"><span aria-hidden="true">99</span></a></li>
-                      </ul>
+                      </ol>
                     </nav>
                   </div>
                 </div>
@@ -462,85 +462,98 @@
                   <div class="col-12">
                     <h1 class="section__title">Panels</h1>
                   </div>
-                  <div class="col-12">
-                    <div class="u-bg-lightgrey u-p"> 
+                  <div class="col-12 u-mb-0">
+                    <div class="u-bg-lightgrey u-p u-mb-double">
                       <p><b>Notes :</b></p>
                       <ul>
                         <li>Ajouter <code>role="alert"</code> s'il s'agit d'une notification.</li>
                       </ul>
                     </div>
-                  </div>
-                  <div class="col-12">
-                                  <div class="c-panel c-panel--white js-snippet" id="msg_1">
-                                    <div class="c-panel__content">
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                    <div class="js-snippet">
+                                    <div class="c-panel c-panel--white u-mb-double c-panel--closable" id="msg_1">
+                                      <div class="c-panel__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                      </div>
+                                      <button class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--white" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_1" data-toggle-is-active> 
+                                        <svg class="icon">
+                                          <title>Cacher ce message</title>
+                                          <use xlink:href="#icon-x"></use>
+                                        </svg>
+                                      </button>
                                     </div>
-                                  </div>
-                  </div>
-                  <div class="col-12">
-                                  <div class="c-panel c-panel--primary js-snippet" id="msg_2">
-                                    <div class="c-panel__content">
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                    <div class="c-panel c-panel--primary u-mb-double c-panel--closable" id="msg_2">
+                                      <div class="c-panel__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                      </div>
+                                      <button class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--primary" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_2" data-toggle-is-active> 
+                                        <svg class="icon">
+                                          <title>Cacher ce message</title>
+                                          <use xlink:href="#icon-x"></use>
+                                        </svg>
+                                      </button>
                                     </div>
-                                  </div>
-                  </div>
-                  <div class="col-12">
-                                  <div class="c-panel c-panel--secondary js-snippet c-panel--closable" id="msg_3" aria-hidden='false'>
-                                    <div class="c-panel__content">
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                    <div class="c-panel c-panel--secondary u-mb-double c-panel--closable" id="msg_3">
+                                      <div class="c-panel__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                      </div>
+                                      <button class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--secondary" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_3" data-toggle-is-active> 
+                                        <svg class="icon">
+                                          <title>Cacher ce message</title>
+                                          <use xlink:href="#icon-x"></use>
+                                        </svg>
+                                      </button>
                                     </div>
-                                    <button class="c-panel__close" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_3" data-toggle-is-active> 
-                                      <svg class="icon">
-                                        <title>Cacher ce message</title>
-                                        <use xlink:href="#icon-x"></use>
-                                      </svg>
-                                    </button>
-                                  </div>
-                  </div>
-                  <div class="col-12">
-                                  <div class="c-panel c-panel--error js-snippet c-panel--closable" id="msg_4" aria-hidden='false'>
-                                    <div class="c-panel__content">
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                    <div class="c-panel c-panel--success u-mb-double c-panel--closable" id="msg_3">
+                                      <div class="c-panel__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                      </div>
+                                      <button class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--success" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_3" data-toggle-is-active> 
+                                        <svg class="icon">
+                                          <title>Cacher ce message</title>
+                                          <use xlink:href="#icon-x"></use>
+                                        </svg>
+                                      </button>
                                     </div>
-                                    <button class="c-panel__close" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_4" data-toggle-is-active> 
-                                      <svg class="icon">
-                                        <title>Cacher ce message</title>
-                                        <use xlink:href="#icon-x"></use>
-                                      </svg>
-                                    </button>
-                                  </div>
-                  </div>
-                  <div class="col-12">
-                                  <div class="c-panel c-panel--light js-snippet c-panel--closable" id="msg_5" aria-hidden='false'>
-                                    <div class="c-panel__content">
-                                      <h3 class="c-panel__title">Title</h3>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa <b>expedita minima ea</b>, rem laudantium reiciendis <i>reprehenderit pariatur in</i>.</p>
-                                      <hr>
-                                      <p>Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.</p>
+                                    <div class="c-panel c-panel--error u-mb-double c-panel--closable" id="msg_4">
+                                      <div class="c-panel__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.</p>
+                                      </div>
+                                      <button class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--error" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_4" data-toggle-is-active> 
+                                        <svg class="icon">
+                                          <title>Cacher ce message</title>
+                                          <use xlink:href="#icon-x"></use>
+                                        </svg>
+                                      </button>
                                     </div>
-                                    <button class="c-panel__close" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_5" data-toggle-is-active> 
-                                      <svg class="icon">
-                                        <title>Cacher ce message</title>
-                                        <use xlink:href="#icon-x"></use>
-                                      </svg>
-                                    </button>
-                                  </div>
-                  </div>
-                  <div class="col-12">
-                                  <div class="c-panel c-panel--dark js-snippet c-panel--closable" id="msg_6" aria-hidden='false'>
-                                    <div class="c-panel__content">
-                                      <h3 class="c-panel__title">Title</h3>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa <b>expedita minima ea</b>, rem laudantium reiciendis <i>reprehenderit pariatur in</i>.</p>
-                                      <hr>
-                                      <p>Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.</p>
+                                    <div class="c-panel c-panel--light u-mb-double c-panel--closable" id="msg_5">
+                                      <div class="c-panel__content">
+                                        <h3 class="c-panel__title">Title</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa <b>expedita minima ea</b>, rem laudantium reiciendis <i>reprehenderit pariatur in</i>.</p>
+                                        <hr>
+                                        <p>Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.</p>
+                                      </div>
+                                      <button class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--light" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_5" data-toggle-is-active> 
+                                        <svg class="icon">
+                                          <title>Cacher ce message</title>
+                                          <use xlink:href="#icon-x"></use>
+                                        </svg>
+                                      </button>
                                     </div>
-                                    <button class="c-panel__close" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_6" data-toggle-is-active> 
-                                      <svg class="icon">
-                                        <title>Cacher ce message</title>
-                                        <use xlink:href="#icon-x"></use>
-                                      </svg>
-                                    </button>
-                                  </div>
+                                    <div class="c-panel c-panel--dark u-mb-double c-panel--closable" id="msg_6">
+                                      <div class="c-panel__content">
+                                        <h3 class="c-panel__title">Title</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa <b>expedita minima ea</b>, rem laudantium reiciendis <i>reprehenderit pariatur in</i>.</p>
+                                        <hr>
+                                        <p>Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.</p>
+                                      </div>
+                                      <button class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--dark" type="button" data-toggle-class data-toggle-target-only data-toggle-target="#msg_6" data-toggle-is-active> 
+                                        <svg class="icon">
+                                          <title>Cacher ce message</title>
+                                          <use xlink:href="#icon-x"></use>
+                                        </svg>
+                                      </button>
+                                    </div>
+                    </div>
                   </div>
                 </div>
               </section>

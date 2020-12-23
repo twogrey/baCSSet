@@ -136,6 +136,7 @@
 		 * Disabled
 		 */
 		&[disabled],
+		&[aria-disabled="true"],
 		&.disabled,
 		form:invalid &[type="submit"] {
 			opacity: 0.5;

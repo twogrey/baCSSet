@@ -1,7 +1,7 @@
-mixin panel(id, classes, closable, longContent)
+mixin panel(id, variant, closable, longContent)
 	if(closable)
-		- classes = classes + ' c-panel--closable';
-	.c-panel(class=classes, id="msg_"+id)&attributes({"aria-hidden='false'": closable==true})
+		- closableClass = 'c-panel--closable';
+	.c-panel(class='c-panel--' + variant + ' u-mb-double ' + closableClass, id="msg_"+id)
 		.c-panel__content
 			if(longContent)
 				h3.c-panel__title Title
@@ -10,8 +10,8 @@ mixin panel(id, classes, closable, longContent)
 				p Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.
 			else
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.
-		if(closable)
-			button(type="button", class="c-panel__close", data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
+		if(closableClass)
+			button(type="button", class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--" + variant, data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
 				svg(class="icon")
 					title Cacher ce message
 					use(xlink:href="#icon-x")
@@ -20,20 +20,16 @@ section.section.js-menu#Panels
 	.row.js-parent-snippet
 		.col-12
 			h1.section__title Panels
-		.col-12
-			.u-bg-lightgrey.u-p 
+		.col-12.u-mb-0
+			.u-bg-lightgrey.u-p.u-mb-double
 				p <b>Notes :</b>
 				ul
 					li Ajouter <code>role="alert"</code> s'il s'agit d'une notification.
-		.col-12
-			+panel('1', 'c-panel--white js-snippet')
-		.col-12
-			+panel('2', 'c-panel--primary js-snippet')
-		.col-12
-			+panel('3', 'c-panel--secondary js-snippet', true)
-		.col-12
-			+panel('4', 'c-panel--error js-snippet', true)
-		.col-12
-			+panel('5', 'c-panel--light js-snippet', true, true)
-		.col-12
-			+panel('6', 'c-panel--dark js-snippet', true, true)
+			.js-snippet
+				+panel('1', 'white', true)
+				+panel('2', 'primary', true)
+				+panel('3', 'secondary', true)
+				+panel('3', 'success', true)
+				+panel('4', 'error', true)
+				+panel('5', 'light', true, true)
+				+panel('6', 'dark', true, true)

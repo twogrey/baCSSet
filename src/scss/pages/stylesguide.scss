@@ -202,7 +202,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 
 .toggle-code {    
 	display: block;
-	width: calc(100% - (var(--spacing)));
+	width: calc(100% - (var(--spacing-double)));
 	margin: 0 auto 1em;
 
 	summary {

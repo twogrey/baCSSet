@@ -5,7 +5,7 @@
 		padding: var(--s);
 		border: rem(1px) solid var(--border-color, currentColor);
 		border-left: rem(3px) solid var(--border-color, currentColor);
-		border-radius: var(--radius);
+		border-radius: 0.235em;
 		overflow: hidden;
 		background-color: var(--bg);
 		color: var(--color, var(--color-black));
@@ -48,7 +48,7 @@
 			color: inherit;
 
 			&:hover,
-			&.focus-visible {
+			&:focus {
 				outline-color: currentColor;
 				outline-style: dotted;
 				outline-width: rem(2px);
@@ -64,42 +64,8 @@
 			position: absolute;
 			top: rem(3px);
 			right: rem(3px);
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			width: calc(var(--s) * 1.5);
-			height: calc(var(--s) * 1.5);
 			border: 0;
-			border-radius: var(--radius);
-			overflow: hidden;
-			font-size: rem(14px);
-			background-color: transparent;
-			color: inherit;
-			cursor: pointer;
-			user-select: none;
-			outline: none;
-			-webkit-tap-highlight-color: transparent;
-
-			&::before {
-				content: '';
-				position: absolute 0;
-				box-shadow: inset 0 0 0 rem(2px) currentColor;
-				opacity: 0;
-				transition: opacity 0.2s;
-			}
-
-			&.focus-visible,
-			&:hover {
-				&::before {
-					opacity: 0.5;
-				}
-			}
-
-			&:active {
-				&::before {
-					opacity: 1;
-				}
-			}
+			outline: auto;
 		}
 	}
 

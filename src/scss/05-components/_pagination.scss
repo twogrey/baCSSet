@@ -1,0 +1,24 @@
+@if $enable-pagination {
+
+	.c-pagination {
+		--s: var(--spacing-half);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: calc(var(--s) * -1) 0;
+
+		&__item {
+			margin: var(--s);
+
+			&--ellipsis {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		[aria-disabled='true'] {
+			pointer-events: none;
+		}
+	}
+
+}
