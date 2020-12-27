@@ -1,0 +1,59 @@
+@if $enable-tooltip {
+
+	.simpletooltip_container {
+		--arrow-size: #{rem(10px)};
+		--bg: var(--color-black);
+		position: relative;
+	}
+
+	.p-tooltip {
+		position: relative;
+
+		+ .simpletooltip {
+			position: absolute;
+			z-index: 1;
+			left: 50%;
+			bottom: calc(100% + var(--arrow-size) * 2);
+			padding: 0.6em 0.8em;
+			border-radius: var(--radius);
+			font-size: rem(14px);
+			line-height: 1.25;
+			white-space: nowrap;
+			background-color: var(--bg);
+			color: #fff;
+			opacity: 0;
+			animation: o-fade-in 0.2s forwards;
+			transform: translateX(-50%);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: calc(50% - var(--arrow-size));
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: var(--arrow-size) var(--arrow-size) 0 var(--arrow-size);
+				border-color: var(--bg) transparent transparent transparent;
+			}
+
+			&[aria-hidden="true"] {
+				display: none;
+			}
+		}
+
+		&--block {
+			+ .simpletooltip {
+				white-space: normal;
+				width: 15em;
+			}
+		}
+
+		p & {
+			border-bottom: 1px dotted var(--color-primary);
+			text-decoration: none;
+			cursor: help;
+		}
+	}
+
+}

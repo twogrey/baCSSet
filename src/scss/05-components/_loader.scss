@@ -1,15 +1,8 @@
 @if $enable-loader {
 	.c-loader {
+		display: inline-flex;
 		--c: var(--color-primary);
 		--w: calc(var(--spacing) * 3);
-
-		&--small {
-			--w: calc(var(--spacing) * 1.125);
-		}
-
-		&--large {
-			--w: calc(var(--spacing) * 6);
-		}
 
 		&--overlay {
 			--bg: rgba(255, 255, 255, 0.5);
@@ -41,7 +34,7 @@
 			stroke-dasharray: 283;
 			stroke-dashoffset: 280;
 			stroke-linecap: round;
-			stroke-width: 5px;
+			stroke-width: 10px;
 		}
 	}
 

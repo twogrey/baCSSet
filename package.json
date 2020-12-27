@@ -39,6 +39,7 @@
     "stylelint": "9.10.*",
     "stylelint-config-sass-guidelines": "5.3.*",
     "stylelint-order": "3.1.*",
-    "stylelint-scss": "3.5.*"
+    "stylelint-scss": "3.5.*",
+    "van11y-accessible-simple-tooltip-aria": "^3.0.0"
   }
 }

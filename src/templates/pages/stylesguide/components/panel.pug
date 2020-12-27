@@ -11,6 +11,12 @@ mixin panel(id, variant, closable, longContent)
 			else
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil.
 		if(closableClass)
+			if(variant == 'white')
+				- variant = 'dark';
+			else if(variant == 'light')
+				- variant = 'dark';
+			else if(variant == 'dark')
+				- variant = 'light';
 			button(type="button", class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--" + variant, data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
 				svg(class="icon")
 					title Cacher ce message
@@ -25,11 +31,11 @@ section.section.js-menu#Panels
 				p <b>Notes :</b>
 				ul
 					li Ajouter <code>role="alert"</code> s'il s'agit d'une notification.
+			+panel('1', 'white', true)
+			+panel('2', 'primary', true)
+			+panel('3', 'secondary', true)
+			+panel('3', 'success', true)
+			+panel('4', 'error', true)
 			.js-snippet
-				+panel('1', 'white', true)
-				+panel('2', 'primary', true)
-				+panel('3', 'secondary', true)
-				+panel('3', 'success', true)
-				+panel('4', 'error', true)
 				+panel('5', 'light', true, true)
-				+panel('6', 'dark', true, true)
+			+panel('6', 'dark', true, true)

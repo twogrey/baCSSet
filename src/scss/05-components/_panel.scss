@@ -62,10 +62,14 @@
 
 		&__close {
 			position: absolute;
-			top: rem(3px);
-			right: rem(3px);
+			top: rem(2px);
+			right: rem(2px);
 			border: 0;
-			outline: auto;
+
+			&:active,
+			&:focus-visible {
+				outline: auto;
+			}
 		}
 	}
 

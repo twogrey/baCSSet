@@ -1,5 +1,5 @@
-mixin loader(size, overlay, white)
-	.c-loader.js-snippet(class={'c-loader--white': white==true,'c-loader--overlay': overlay==true,'c-loader--small': size=='small', 'c-loader--large': size=='large'})
+mixin loader(overlay, white)
+	.c-loader.js-snippet(class={'c-loader--white': white==true,'c-loader--overlay': overlay==true})
 		svg(viewBox="0 0 100 100", xmlns="http://www.w3.org/2000/svg")
 			circle(cx="50", cy="50", r="45")
 
@@ -8,29 +8,23 @@ section.section.js-menu#Loader
 		.col-12
 			h1.section__title Loader
 		.col.col-lg-4
-			h2 Small
-			+loader('small')
-		.col.col-lg-4
 			h2 Default
 			+loader()
-		.col-12.col-lg-4
-			h2 Large
-			+loader('large')
 		.col-12.col-lg-6
 			h2 With overlay
 			.c-panel.c-panel--primary
-				+loader('default', true)
+				+loader(true)
 				.c-panel__content
 					p
 						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quis, ab magni nostrum. Quidem id ipsum recusandae inventore quos accusamus dolorum, eos enim consequuntur! Vitae id amet ullam qui corrupti.
 		.col-12.col-lg-6
-			h2 With overlay (+ white version)
-			.c-panel.c-panel--secondary.c-panel--closable(id="msg_l1", aria-hidden="false")
-				+loader('default', true, true)
+			h2 With overlay &amp; white version
+			.c-panel.c-panel--closable(id="msg_l1", aria-hidden="false")
+				+loader(true, true)
 				.c-panel__content
 					p
 						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quis, ab magni nostrum. Quidem id ipsum recusandae inventore quos accusamus dolorum, eos enim consequuntur! Vitae id amet ullam qui corrupti.
-				button(type="button", class="c-panel__close", data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_l1", data-toggle-is-active) 
+				button(type="button", class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--secondary", data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_l1", data-toggle-is-active) 
 					svg(class="icon")
 						title Cacher ce message
 						use(xlink:href="#icon-x")

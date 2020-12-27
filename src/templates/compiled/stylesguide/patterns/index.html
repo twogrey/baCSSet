@@ -186,73 +186,35 @@ tns({
                   </details>
                 </div>
               </section>
-              <section class="section js-menu" id="Steps">
-                <div class="row js-parent-snippet">
+              <section class="section js-menu" id="Tooltips">
+                <div class="row">
                   <div class="col-12">
-                    <h1 class="section__title">Steps thread</h1>
+                    <h1 class="section__title">Tooltips</h1>
                   </div>
-                  <div class="col-12">
-                    <h2>Classic</h2>
+                </div>
+                <div class="row js-parent-snippet u-mb-half">
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <h2>Text</h2>
+                    <p>Lorem ipsum <span class="p-tooltip p-tooltip--block js-simple-tooltip js-snippet" tabindex="0" data-simpletooltip-text="Mollitia, labore! Nesciunt quibusdam, accusantium quam similique consequuntur eum, impedit, ex ea nobis hic, delectus numquam minima ab sapiente at.">dolor sit amet consectetur</span> quibusdam quam.</p>
                   </div>
-                  <div class="col-12">
-                    <section class="p-steps-thread">
-                      <div class="p-steps-thread__content">
-                        <article class="p-steps-thread__item"><span class="p-steps-thread__bubble"></span>
-                          <header class="p-steps-thread__title">Titre d'étape vraiment très long</header>
-                          <p>Lorem ipsum, dolor sit amet consectetur.</p>
-                        </article>
-                        <article class="p-steps-thread__item"><span class="p-steps-thread__bubble"></span>
-                          <header class="p-steps-thread__title">Kokoro</header>
-                          <p>Suscipit laborum harum, obcaecati voluptatum fugit maiores.</p>
-                        </article>
-                        <article class="p-steps-thread__item"><span class="p-steps-thread__bubble"></span>
-                          <header class="p-steps-thread__title">Schnaps </header>
-                          <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
-                        </article>
-                      </div>
-                    </section>
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <h2>Link</h2>
+                    <p><a class="p-tooltip js-simple-tooltip" href="#" data-simpletooltip-text="Hey Link !">I am a link</a></p>
                   </div>
-                  <div class="col-12">
-                    <h2>Alternative</h2>
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <h2>Input</h2>
+                    <div class="form-group">
+                      <label for="demoTooltipInput">Label</label>
+                      <input class="p-tooltip js-simple-tooltip" type="text" id="demoTooltipInput" data-simpletooltip-text="Hello !">
+                    </div>
                   </div>
-                  <div class="col-12">
-                    <section class="p-steps-thread p-steps-thread--alternative">
-                      <ol class="p-steps-thread__content list-unstyled">
-                        <li class="p-steps-thread__item"><a href="#">
-                            <div class="p-steps-thread__bubble">
-                              <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-check"></use>
-                              </svg>
-                            </div>Votre style déco</a></li>
-                        <li class="p-steps-thread__item active"><a href="#">
-                            <div class="p-steps-thread__bubble">
-                              <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-unlocked"></use>
-                              </svg>
-                            </div>Vos attentes</a></li>
-                        <li class="p-steps-thread__item">
-                          <div class="p-steps-thread__bubble">
-                            <svg class="icon" aria-hidden="true">
-                              <use xlink:href="#icon-locked"></use>
-                            </svg>
-                          </div>Votre pièce actuelle
-                        </li>
-                        <li class="p-steps-thread__item">
-                          <div class="p-steps-thread__bubble">
-                            <svg class="icon" aria-hidden="true">
-                              <use xlink:href="#icon-locked"></use>
-                            </svg>
-                          </div>Vous identifier
-                        </li>
-                        <li class="p-steps-thread__item">
-                          <div class="p-steps-thread__bubble">
-                            <svg class="icon" aria-hidden="true">
-                              <use xlink:href="#icon-locked"></use>
-                            </svg>
-                          </div>Récap. et paiement
-                        </li>
-                      </ol>
-                    </section>
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <h2>Button</h2>
+                    <button class="c-btn c-btn--primary c-btn--small p-tooltip js-simple-tooltip js-snippet" type="button" data-simpletooltip-text="Fermer" aria-label="Fermer">
+                      <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-x"></use>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </section>
@@ -294,6 +256,7 @@ tns({
     </script>
     <script src="../../../js/vendors/easy-toggle-state.js"></script>
     <script src="../../../js/vendors/tiny-slider.min.js"></script>
+    <script src="../../../../node_modules/van11y-accessible-simple-tooltip-aria/dist/van11y-accessible-simple-tooltip-aria.min.js"></script>
     <script src="../../../js/scripts.min.js"></script>
     <script src="../../../js/vendors/prism.js"></script>
     <script src="../../../js/vendors/prism-toolbar.js"></script>
