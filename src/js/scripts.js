@@ -38,18 +38,6 @@ window.addEventListener('resize', () => {
 	getScrollbarWidth();
 });
 
-/**
- *
- */
-
-function focusElement(elmt) {
-	if (html.classList.contains('not-touch')) {
-		elmt.focus();
-		elmt.classList.add('focus-visible');
-		elmt.setAttribute('data-focus-visible-added', '');
-	}
-}
-
 /* ------------------------------------*
     Modals
 *------------------------------------*/
@@ -152,10 +140,10 @@ document.querySelectorAll('[data-toggle-class*="offcanvas-is-open"]').forEach((t
 		if (event.target.isToggleActive) {
 			body.classList.add(toggle.getAttribute('data-toggle-class'));
 			const dest = document.getElementById(toggle.getAttribute('aria-controls'));
-			focusElement(dest.querySelectorAll(focusableSelector)[0]);
+			dest.querySelectorAll(focusableSelector)[0].focus();
 		} else {
 			body.classList.remove(toggle.getAttribute('data-toggle-class'));
-			focusElement(toggle);
+			toggle.focus();
 		}
 	}, false);
 });

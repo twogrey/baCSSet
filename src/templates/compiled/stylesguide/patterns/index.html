@@ -143,15 +143,42 @@
                 </div>
                 <div class="row js-parent-snippet">
                   <div class="col-12">
-                    <div class="p-slider js-slider-1 js-snippet">
+                    <div class="p-slider js-slider-demo js-snippet">
                       <div class="p-slider__content">
-                                      <div class="p-slider__item">1</div>
-                                      <div class="p-slider__item">2</div>
-                                      <div class="p-slider__item">3</div>
+                                      <div class="p-slider__item">
+                                        <div class="u-bg-lightgrey u-p u-h-100"><img class="u-mb-half" src="https://picsum.photos/400/200" loading="lazy" alt="">Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+                                        </div>
+                                      </div>
+                                      <div class="p-slider__item">
+                                        <div class="u-bg-lightgrey u-p u-h-100">Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+                                        </div>
+                                      </div>
+                                      <div class="p-slider__item">
+                                        <div class="u-bg-lightgrey u-p u-h-100">Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+                                        </div>
+                                      </div>
+                                      <div class="p-slider__item">
+                                        <div class="u-bg-lightgrey u-p u-h-100">Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+                                        </div>
+                                      </div>
+                                      <div class="p-slider__item">
+                                        <div class="u-bg-lightgrey u-p u-h-100">Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+                                        </div>
+                                      </div>
                       </div>
-                      <div class="p-slider__controls">
-                        <button class="c-btn c-btn--secondary c-btn--small p-slider__control p-slider__control--prev" type="button">Slide précédente</button>
-                        <button class="c-btn c-btn--secondary c-btn--small p-slider__control p-slider__control--next" type="button">Slide suivante</button>
+                      <div class="p-slider__controls" tabindex="-1">
+                        <button class="c-btn c-btn--primary c-btn--rounded c-btn--small p-slider__control p-slider__control--prev" type="button" aria-labelledby="slider-prev"> 
+                          <svg class="icon">
+                            <title id="slider-prev">Slide précédente</title>
+                            <use xlink:href="#icon-chevron-left"></use>
+                          </svg>
+                        </button>
+                        <button class="c-btn c-btn--primary c-btn--rounded c-btn--small p-slider__control p-slider__control--next" type="button" aria-labelledby="slider-next">
+                          <svg class="icon">
+                            <title id="slider-next">Slide suivante</title>
+                            <use xlink:href="#icon-chevron-right"></use>
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -159,28 +186,31 @@
                 <div class="row">
                   <details class="toggle-code">
                     <summary>Toggle script</summary>
-                    <pre><code class="language-js">var slider1 = document.querySelector('.js-slider-1');
+                    <pre><code class="language-js">var demoSlider = document.querySelector('.js-slider-demo');
+ 
 tns({
-    container: slider1.querySelector('.p-slider__content'),
+    container: demoSlider.querySelector('.p-slider__content'),
     items: 1,
     slideBy: 'page',
-    controlsContainer: slider1.querySelector('.p-slider__controls'),
-    loop: false,
+    nav: 'true',
     navPosition: 'bottom',
-    arrowKeys: true,
+    controlsContainer: demoSlider.querySelector('.p-slider__controls'),
+    arrowKeys: true, 
+    autoplayButtonOutput: false,
+    loop: false,
     responsive: {
-        640: {
-            items: 2
-        },
-        1024: {
-            items: 3
+        576: {
+            items: 2,
+            gutter: baseFontSize * getComputedStyle(html).getPropertyValue('--spacing-unitless')
         },
         1200: {
-            items: 4
+            items: 3,
+            //edgePadding: baseFontSize * parseInt(getComputedStyle(html).getPropertyValue('--spacing-unitless'))
         }
     },
+    preventScrollOnTouch: 'auto',
     onInit: function() {
-        slider1.style.display = 'block';
+        demoSlider.style.display = 'block';
     }
 });</code></pre>
                   </details>
@@ -313,14 +343,14 @@ tns({
       
     </script>
     <script src="../../../js/vendors/easy-toggle-state.js"></script>
-    <script src="../../../js/vendors/tiny-slider.min.js"></script>
+    <script src="../../../../node_modules/tiny-slider/dist/min/tiny-slider.js"></script>
     <script src="../../../../node_modules/van11y-accessible-simple-tooltip-aria/dist/van11y-accessible-simple-tooltip-aria.min.js"></script>
     <script src="../../../../node_modules/van11y-accessible-tab-panel-aria/dist/van11y-accessible-tab-panel-aria.min.js"></script>
     <script src="../../../js/scripts.min.js"></script>
     <script src="../../../js/vendors/prism.js"></script>
     <script src="../../../js/vendors/prism-toolbar.js"></script>
     <script src="../../../js/vendors/prism-copy-to-clipboard.js"></script>
-    <script src="../../../js/components/sliders.min.js"></script>
     <script src="../../../js/pages/stylesguide.min.js"></script>
+    <script src="../../../js/components/sliders.min.js"></script>
   </body>
 </html>

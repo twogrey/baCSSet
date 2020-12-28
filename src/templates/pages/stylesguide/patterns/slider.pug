@@ -1,5 +1,12 @@
-mixin slide(content)
-	.p-slider__item #{content}
+mixin slide(img)
+	.p-slider__item
+		.u-bg-lightgrey.u-p.u-h-100
+			if(img) 
+				img(src="https://picsum.photos/400/200", loading="lazy", class="u-mb-half" , alt="") 
+			| Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+
+mixin pagination-item
+	button(type="button")
 
 section.section.js-menu#Slider
 	.row
@@ -16,40 +23,51 @@ section.section.js-menu#Slider
 					li Avec l'option <code>onInit</code>, prévoir un loader ou un placeholder pendant l'init du slider. Par défaut, sa propriété <code>display</code> passe de <code>none</code> à <code>block</code>.
 	.row.js-parent-snippet
 		.col-12
-			.p-slider.js-slider-1.js-snippet
+			.p-slider.js-slider-demo.js-snippet
 				.p-slider__content
-					+slide('1')
-					+slide('2')
-					+slide('3') 
-				.p-slider__controls
-					button(type="button", class="c-btn c-btn--secondary c-btn--small p-slider__control p-slider__control--prev") Slide précédente
-					button(type="button", class="c-btn c-btn--secondary c-btn--small p-slider__control p-slider__control--next") Slide suivante
+					+slide(true)
+					+slide
+					+slide
+					+slide
+					+slide
+				.p-slider__controls(tabindex="-1")
+					button(type="button", class="c-btn c-btn--primary c-btn--rounded c-btn--small p-slider__control p-slider__control--prev", aria-labelledby="slider-prev") 
+						svg(class="icon")
+							title#slider-prev Slide précédente
+							use(xlink:href="#icon-chevron-left")
+					button(type="button", class="c-btn c-btn--primary c-btn--rounded c-btn--small p-slider__control p-slider__control--next", aria-labelledby="slider-next")
+						svg(class="icon")
+							title#slider-next Slide suivante
+							use(xlink:href="#icon-chevron-right")
 	.row
 		details(class="toggle-code")
 			summary Toggle script
 			pre
 				code(class="language-js")
-					| var slider1 = document.querySelector('.js-slider-1');
+					| var demoSlider = document.querySelector('.js-slider-demo');
+					| 
 					| tns({
-					|     container: slider1.querySelector('.p-slider__content'),
+					|     container: demoSlider.querySelector('.p-slider__content'),
 					|     items: 1,
 					|     slideBy: 'page',
-					|     controlsContainer: slider1.querySelector('.p-slider__controls'),
-					|     loop: false,
+					|     nav: 'true',
 					|     navPosition: 'bottom',
-					|     arrowKeys: true,
+					|     controlsContainer: demoSlider.querySelector('.p-slider__controls'),
+					|     arrowKeys: true, 
+					|     autoplayButtonOutput: false,
+					|     loop: false,
 					|     responsive: {
-					|         640: {
-					|             items: 2
-					|         },
-					|         1024: {
-					|             items: 3
+					|         576: {
+					|             items: 2,
+					|             gutter: baseFontSize * getComputedStyle(html).getPropertyValue('--spacing-unitless')
 					|         },
 					|         1200: {
-					|             items: 4
+					|             items: 3,
+					|             //edgePadding: baseFontSize * parseInt(getComputedStyle(html).getPropertyValue('--spacing-unitless'))
 					|         }
 					|     },
+					|     preventScrollOnTouch: 'auto',
 					|     onInit: function() {
-					|         slider1.style.display = 'block';
+					|         demoSlider.style.display = 'block';
 					|     }
 					| });
