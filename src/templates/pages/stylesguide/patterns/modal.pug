@@ -3,34 +3,25 @@ section.section.js-menu#Modals
 		.col-12
 			h1.section__title Modal
 		.col-12
-			button(type="button", class="c-btn c-btn--primary u-mr-half u-mb-half js-modal js-snippet", data-modal-id="modal1") Open modal (plain text)
+			button(type="button", class="c-btn c-btn--primary u-mr-half u-mb-half js-modal js-snippet", data-modal-id="modal1", aria-haspopup="dialog") Open modal (plain text)
 
-			.p-modal.js-snippet#modal1(role="dialog", aria-labelledby="titleModal1", aria-hidden="true", style="display: none")
-				.p-modal__dialog.p-modal__dialog--medium.js-modal-stop
+			dialog.p-modal.js-snippet#modal1(role="dialog", aria-labelledby="titleModal1")
+				.p-modal__dialog.p-modal__dialog--medium.js-modal-stop(role="document")
 					.p-modal__content
-						.container
-							.row.u-pt-double
-								.col
-									header.h3-like(id="titleModal1") 
-										span.u-text-regular Modal 
-										span.u-text-primary title
-								.col-auto
-									button.p-modal__close.c-btn.c-btn--icon-only.c-btn--transparent.js-modal-close(type="button")
-										svg(class="icon")
-											title Fermer cette fenêtre
-											use(xlink:href="#icon-x")
+						.p-modal__header
+							h1(id="titleModal1", class="p-modal__title") Modal title
+							button.c-btn.c-btn--transparent.js-modal-close(type="button", aria-labelledby="demoModalClose1")
+								svg(class="icon")
+									title#demoModalClose1 Fermer cette fenêtre modale
+									use(xlink:href="#icon-x")
 						.p-modal__body
-							.container
-								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!
-								div
-									input(type="text")
-						.p-modal__footer
-							.container
-								.row.u-align-center.u-justify-center.u-pt-double
-									.col-auto
-										button(type="button", class="c-btn c-btn--white") Button
-									.col-auto
-										button(type="button", class="c-btn c-btn--secondary") Button
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!
+							div
+								label(for="demoInputModal") Label
+								input(type="text", id="demoInputModal")
+						.p-modal__footer 
+							button(type="button", class="c-btn c-btn--error c-btn--outline js-modal-close") Fermer
+							button(type="button", class="c-btn c-btn--primary") Button 
 			
 			//- button(type="button", class="c-btn c-btn--primary u-mr-half u-mb-half js-modal", data-modal-id="modal2") Open modal (Lightbox for image)
 

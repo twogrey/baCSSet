@@ -78,48 +78,33 @@
                     <h1 class="section__title">Modal</h1>
                   </div>
                   <div class="col-12">
-                    <button class="c-btn c-btn--primary u-mr-half u-mb-half js-modal js-snippet" type="button" data-modal-id="modal1">Open modal (plain text)</button>
-                    <div class="p-modal js-snippet" id="modal1" role="dialog" aria-labelledby="titleModal1" aria-hidden="true" style="display: none">
-                      <div class="p-modal__dialog p-modal__dialog--medium js-modal-stop">
+                    <button class="c-btn c-btn--primary u-mr-half u-mb-half js-modal js-snippet" type="button" data-modal-id="modal1" aria-haspopup="dialog">Open modal (plain text)</button>
+                    <dialog class="p-modal js-snippet" id="modal1" role="dialog" aria-labelledby="titleModal1">
+                      <div class="p-modal__dialog p-modal__dialog--medium js-modal-stop" role="document">
                         <div class="p-modal__content">
-                          <div class="container">
-                            <div class="row u-pt-double">
-                              <div class="col">
-                                <header class="h3-like" id="titleModal1"> <span class="u-text-regular">Modal </span><span class="u-text-primary">title</span></header>
-                              </div>
-                              <div class="col-auto">
-                                <button class="p-modal__close c-btn c-btn--icon-only c-btn--transparent js-modal-close" type="button">
-                                  <svg class="icon">
-                                    <title>Fermer cette fenêtre</title>
-                                    <use xlink:href="#icon-x"></use>
-                                  </svg>
-                                </button>
-                              </div>
-                            </div>
+                          <div class="p-modal__header">
+                            <h1 class="p-modal__title" id="titleModal1">Modal title</h1>
+                            <button class="c-btn c-btn--transparent js-modal-close" type="button" aria-labelledby="demoModalClose1">
+                              <svg class="icon">
+                                <title id="demoModalClose1">Fermer cette fenêtre modale</title>
+                                <use xlink:href="#icon-x"></use>
+                              </svg>
+                            </button>
                           </div>
                           <div class="p-modal__body">
-                            <div class="container">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
-                              <div>
-                                <input type="text">
-                              </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
+                            <div>
+                              <label for="demoInputModal">Label</label>
+                              <input type="text" id="demoInputModal">
                             </div>
                           </div>
-                          <div class="p-modal__footer">
-                            <div class="container">
-                              <div class="row u-align-center u-justify-center u-pt-double">
-                                <div class="col-auto">
-                                  <button class="c-btn c-btn--white" type="button">Button</button>
-                                </div>
-                                <div class="col-auto">
-                                  <button class="c-btn c-btn--secondary" type="button">Button</button>
-                                </div>
-                              </div>
-                            </div>
+                          <div class="p-modal__footer"> 
+                            <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
+                            <button class="c-btn c-btn--primary" type="button">Button </button>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </dialog>
                   </div>
                 </div>
               </section>
@@ -353,5 +338,6 @@ tns({
     <script src="../../../js/vendors/prism-copy-to-clipboard.js"></script>
     <script src="../../../js/pages/stylesguide.min.js"></script>
     <script src="../../../js/components/sliders.min.js"></script>
+    <script src="../../../js/components/modals.min.js"></script>
   </body>
 </html>
