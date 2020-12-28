@@ -1,9 +1,8 @@
 mixin tab(position)
 	li.js-tablist__item
-		a(href="#tab"+position, class="c-btn c-btn--white js-tablist__link")
-			span= 'Tab #'+position
+		a(href="#tab"+position, class="c-btn c-btn--white js-tablist__link")= 'Tab #'+position
 
-mixin tabContent(position, content)
+mixin tabContent(position)
 	.js-tabcontent(id="tab"+position)
 		h2= 'Tab title #'+position
 		p 
@@ -14,13 +13,25 @@ mixin tabContent(position, content)
 section.section.js-menu#Tabs
 	.row.js-parent-snippet
 		.col-12
-			h1.section__title Tabs
+			h1.section__title Tabs		
 		.col-12
-			.p-tabs.js-tabs.js-snippet(data-tabs-prefix-class="p", data-existing-hx="h2")
+			.u-bg-lightgrey.u-p 
+				p 
+					b Notes :
+				ul
+					li 
+							| Si pas de <code>code hx 
+							|  dans le contenu, ajouter l’attribut 
+							code data-existing-hx="h2"
+							|  à l’élément 
+							code .js-tabs
+							| .
+		.col-12
+			.js-tabs.js-snippet(data-tabs-prefix-class="p")
 				ul.list-unstyled.js-tablist
 					+tab('1')
 					+tab('2')
 					+tab('3')
-				+tabContent('1', "Content 1 <h2>test</h2>")
-				+tabContent('2', "Content 2")
-				+tabContent('3', "Content 3")
+				+tabContent('1')
+				+tabContent('2')
+				+tabContent('3')

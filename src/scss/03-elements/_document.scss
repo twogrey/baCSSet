@@ -61,6 +61,7 @@ body {
 	color: #fff;
 }
 
-.sr-only {
+.sr-only,
+.invisible {
 	@extend %hidden;
 }
