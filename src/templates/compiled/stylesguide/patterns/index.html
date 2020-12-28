@@ -252,19 +252,33 @@ tns({
                 </div>
               </section>
               <section class="section js-menu" id="Tabs">
-                <div class="row js-parent-snippet u-mb-half">
+                <div class="row js-parent-snippet">
                   <div class="col-12">
                     <h1 class="section__title">Tabs</h1>
                   </div>
                   <div class="col-12">
-                    <div class="p-tabs" role="tablist">
-                                    <button class="p-tabs__item" type="button" id="tab_1" role="tab" data-toggle-class data-toggle-target="#tabPanel_1" data-toggle-radio-group="tabsGroup" data-toggle-arrows aria-controls="tabPanel_1" aria-selected="false" aria-setsize="3" aria-posinset="1" data-toggle-is-active tabindex="0"><span>Tab #1</span></button>
-                                    <button class="p-tabs__item" type="button" id="tab_2" role="tab" data-toggle-class data-toggle-target="#tabPanel_2" data-toggle-radio-group="tabsGroup" data-toggle-arrows aria-controls="tabPanel_2" aria-selected="false" aria-setsize="3" aria-posinset="2" tabindex="-1"><span>Tab #2</span></button>
-                                    <button class="p-tabs__item" type="button" id="tab_3" role="tab" data-toggle-class data-toggle-target="#tabPanel_3" data-toggle-radio-group="tabsGroup" data-toggle-arrows aria-controls="tabPanel_3" aria-selected="false" aria-setsize="3" aria-posinset="3" tabindex="-1"><span>Tab #3</span></button>
+                    <div class="p-tabs js-tabs js-snippet" data-tabs-prefix-class="p" data-existing-hx="h2">
+                      <ul class="list-unstyled js-tablist">
+                                      <li class="js-tablist__item"><a class="c-btn c-btn--white js-tablist__link" href="#tab1"><span>Tab #1</span></a></li>
+                                      <li class="js-tablist__item"><a class="c-btn c-btn--white js-tablist__link" href="#tab2"><span>Tab #2</span></a></li>
+                                      <li class="js-tablist__item"><a class="c-btn c-btn--white js-tablist__link" href="#tab3"><span>Tab #3</span></a></li>
+                      </ul>
+                                    <div class="js-tabcontent" id="tab1">
+                                      <h2>Tab title #1</h2>
+                                      <p>
+                                         Lorem ipsum dolor sit, <a href="#">amet consectetur</a> 	adipisicing elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos. Autem enim beatae eos culpa quia labore quo iusto. Doloremque, optio necessitatibus possimus praesentium?</p>
+                                    </div>
+                                    <div class="js-tabcontent" id="tab2">
+                                      <h2>Tab title #2</h2>
+                                      <p>
+                                         Lorem ipsum dolor sit, <a href="#">amet consectetur</a> 	adipisicing elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos. Autem enim beatae eos culpa quia labore quo iusto. Doloremque, optio necessitatibus possimus praesentium?</p>
+                                    </div>
+                                    <div class="js-tabcontent" id="tab3">
+                                      <h2>Tab title #3</h2>
+                                      <p>
+                                         Lorem ipsum dolor sit, <a href="#">amet consectetur</a> 	adipisicing elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos. Autem enim beatae eos culpa quia labore quo iusto. Doloremque, optio necessitatibus possimus praesentium?</p>
+                                    </div>
                     </div>
-                                  <div id="tabPanel_1" role="tabpanel" aria-labelledby="tab_1" aria-hidden="false" class="p-tab-content">Content 1</div>
-                                  <div id="tabPanel_2" role="tabpanel" aria-labelledby="tab_2" class="p-tab-content">Content 2</div>
-                                  <div id="tabPanel_3" role="tabpanel" aria-labelledby="tab_3" class="p-tab-content">Content 3</div>
                   </div>
                 </div>
               </section>
@@ -290,6 +304,7 @@ tns({
     <script src="../../../js/vendors/easy-toggle-state.js"></script>
     <script src="../../../js/vendors/tiny-slider.min.js"></script>
     <script src="../../../../node_modules/van11y-accessible-simple-tooltip-aria/dist/van11y-accessible-simple-tooltip-aria.min.js"></script>
+    <script src="../../../../node_modules/van11y-accessible-tab-panel-aria/dist/van11y-accessible-tab-panel-aria.min.js"></script>
     <script src="../../../js/scripts.min.js"></script>
     <script src="../../../js/vendors/prism.js"></script>
     <script src="../../../js/vendors/prism-toolbar.js"></script>
