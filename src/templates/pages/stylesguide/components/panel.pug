@@ -17,9 +17,9 @@ mixin panel(id, variant, closable, longContent)
 				- variant = 'dark';
 			else if(variant == 'dark')
 				- variant = 'light';
-			button(type="button", class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--" + variant, data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
+			button(type="button", aria-labelledby="demoClosePanel"+id, class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--" + variant, data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
 				svg(class="icon")
-					title Cacher ce message
+					title(id="demoClosePanel"+id) Cacher ce message
 					use(xlink:href="#icon-x")
 
 section.section.js-menu#Panels

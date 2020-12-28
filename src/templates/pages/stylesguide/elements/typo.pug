@@ -25,10 +25,9 @@ section.section.js-menu#Text
 					dd Chrome has everything you need to make the most of the web, like quick answers in your address bar, one-click translation, and personalized articles.
 				hr
 				p 
-					a(href="#", target="_blank", rel="noopener") 
+					a(href="#", target="_blank", rel="noopener", aria-describedby="new-window") 
 						| Lorem ipsum dolor
-						svg(class="icon")
-							title Ce lien ouvre un nouvel onglet
+						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-new-tab")
 					| &nbsp;sit amet, consectetur adipisicing elit. Porro aliquam vero, quidem error nisi quaerat, nobis rem eius. Quidem id numquam voluptate, vero delectus quibusdam. Necessitatibus quaerat architecto, ullam earum 35<sup>€</sup><sub>99</sub>.
 		.col-12.col-lg-6
@@ -53,3 +52,6 @@ section.section.js-menu#Text
 							li List subitem
 							li List subitem
 					li List item
+
+div(hidden)
+	#new-window Ce lien ouvre un nouvel onglet

@@ -103,10 +103,9 @@
                         <dd>Chrome has everything you need to make the most of the web, like quick answers in your address bar, one-click translation, and personalized articles.</dd>
                       </dl>
                       <hr>
-                      <p> <a href="#" target="_blank" rel="noopener">
+                      <p> <a href="#" target="_blank" rel="noopener" aria-describedby="new-window">
                            Lorem ipsum dolor
-                          <svg class="icon">
-                            <title>Ce lien ouvre un nouvel onglet</title>
+                          <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-new-tab"></use>
                           </svg></a>&nbsp;sit amet, consectetur adipisicing elit. Porro aliquam vero, quidem error nisi quaerat, nobis rem eius. Quidem id numquam voluptate, vero delectus quibusdam. Necessitatibus quaerat architecto, ullam earum 35<sup>€</sup><sub>99</sub>.</p>
                     </div>
@@ -142,6 +141,9 @@
                   </div>
                 </div>
               </section>
+              <div hidden>
+                <div id="new-window">Ce lien ouvre un nouvel onglet</div>
+              </div>
               <section class="section js-menu" id="Tables">
                 <div class="row">
                   <div class="col-12">
@@ -741,9 +743,9 @@
                         <div class="form-group error">
                           <div class="input-action"> 
                             <input type="text" aria-label="Input text with a stuck button">
-                            <button class="c-btn c-btn--outline c-btn--primary c-btn--icon-only" type="button">
+                            <button class="c-btn c-btn--outline c-btn--primary" type="button" aria-labelledby="demoInputActionBtn">
                               <svg class="icon">
-                                <title>Action</title>
+                                <title id="demoInputActionBtn">Action</title>
                                 <use xlink:href="#icon-check"></use>
                               </svg>
                             </button>
