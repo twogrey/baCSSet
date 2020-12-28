@@ -192,29 +192,62 @@ tns({
                     <h1 class="section__title">Tooltips</h1>
                   </div>
                 </div>
-                <div class="row js-parent-snippet u-mb-half">
-                  <div class="col-12 col-sm-6 col-md-3">
-                    <h2>Text</h2>
-                    <p>Lorem ipsum <span class="p-tooltip p-tooltip--block js-simple-tooltip js-snippet" tabindex="0" data-simpletooltip-text="Mollitia, labore! Nesciunt quibusdam, accusantium quam similique consequuntur eum, impedit, ex ea nobis hic, delectus numquam minima ab sapiente at.">dolor sit amet consectetur</span> quibusdam quam.</p>
+                <div class="row js-parent-snippet u-mb">
+                  <div class="col-12"> 
+                    <h2>Default (top)</h2>
                   </div>
-                  <div class="col-12 col-sm-6 col-md-3">
-                    <h2>Link</h2>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <h3>Text</h3>
+                    <p>Lorem ipsum <span class="p-tooltip p-tooltip--block js-simple-tooltip js-snippet" tabindex="0" data-simpletooltip-text="Mollitia, labore! Nesciunt quibusdam, accusantium quam similique consequuntur eum, impedit, ex ea nobis hic.">dolor sit amet consectetur</span> quibusdam quam.</p>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <h3>Link</h3>
                     <p><a class="p-tooltip js-simple-tooltip" href="#" data-simpletooltip-text="Hey Link !">I am a link</a></p>
                   </div>
-                  <div class="col-12 col-sm-6 col-md-3">
-                    <h2>Input</h2>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <h3>Input</h3>
                     <div class="form-group">
                       <label for="demoTooltipInput">Label</label>
                       <input class="p-tooltip js-simple-tooltip" type="text" id="demoTooltipInput" data-simpletooltip-text="Hello !">
                     </div>
                   </div>
-                  <div class="col-12 col-sm-6 col-md-3">
-                    <h2>Button</h2>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <h3>Button</h3>
                     <button class="c-btn c-btn--primary c-btn--small p-tooltip js-simple-tooltip js-snippet" type="button" data-simpletooltip-text="Fermer" aria-label="Fermer">
                       <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-x"></use>
                       </svg>
                     </button>
+                  </div>
+                </div>
+                <div class="row js-parent-snippet u-mb">
+                  <div class="col-12"> 
+                    <h2>Others directions</h2>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <h3>Bottom</h3>
+                    <button class="c-btn c-btn--primary p-tooltip p-tooltip--bottom js-simple-tooltip js-snippet" type="button" data-simpletooltip-text="Tooltip content">Bottom</button>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <h3>Left</h3>
+                    <button class="c-btn c-btn--primary p-tooltip p-tooltip--left js-simple-tooltip" type="button" data-simpletooltip-text="Tooltip content">Left</button>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <h3>Right</h3>
+                    <button class="c-btn c-btn--primary p-tooltip p-tooltip--right js-simple-tooltip" type="button" data-simpletooltip-text="Tooltip content">Right</button>
+                  </div>
+                </div>
+                <div class="row js-parent-snippet u-mb-half">
+                  <div class="col-12"> 
+                    <h2>Responsive</h2>
+                  </div>
+                  <div class="col-12">
+                    <h3>Right, then top at medium MQ</h3>
+                    <button class="c-btn c-btn--primary p-tooltip p-tooltip--right p-tooltip--top-mq js-simple-tooltip js-snippet" type="button" data-simpletooltip-text="Tooltip content">Button</button>
+                  </div>
+                  <div class="col-12">
+                    <h3>Top, then bottom at medium MQ</h3>
+                    <button class="c-btn c-btn--primary p-tooltip p-tooltip--bottom-mq js-simple-tooltip js-snippet" type="button" data-simpletooltip-text="Tooltip content">Button</button>
                   </div>
                 </div>
               </section>

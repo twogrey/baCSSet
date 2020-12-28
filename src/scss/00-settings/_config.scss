@@ -49,7 +49,14 @@ $enable-modal: true;
 $enable-accordion: false;
 $enable-slider: true;
 $enable-tabs: true;
-$enable-tooltip: true;
+$enable-tooltip: true; // default direction is top
+	$enable-tooltip-top-mq: true;
+	$enable-tooltip-bottom: true;
+	$enable-tooltip-bottom-mq: true;
+	$enable-tooltip-left: true;
+	$enable-tooltip-left-mq: true;
+	$enable-tooltip-right: true;
+	$enable-tooltip-right-mq: true;
 
 /** --------------------------------------------
  * 

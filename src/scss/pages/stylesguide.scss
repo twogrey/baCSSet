@@ -262,6 +262,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 
 	@include medium {
 		@include scrollbar(rem(15px), $color-secondary);
+		z-index: auto;
 		height: 100vh;
 		overflow-y: auto;
 		box-shadow: none;

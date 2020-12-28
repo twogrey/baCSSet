@@ -2,24 +2,47 @@ section.section.js-menu#Tooltips
 	.row
 		.col-12
 			h1.section__title Tooltips
-	.row.js-parent-snippet.u-mb-half
-		.col-12.col-sm-6.col-md-3
-			h2 Text
+	.row.js-parent-snippet.u-mb
+		.col-12 
+			h2 Default (top)
+		.col-12.col-sm-6.col-lg-3
+			h3 Text
 			p
 				| Lorem ipsum 
-				span.p-tooltip.p-tooltip--block.js-simple-tooltip.js-snippet(tabindex="0", data-simpletooltip-text="Mollitia, labore! Nesciunt quibusdam, accusantium quam similique consequuntur eum, impedit, ex ea nobis hic, delectus numquam minima ab sapiente at.") dolor sit amet consectetur
+				span.p-tooltip.p-tooltip--block.js-simple-tooltip.js-snippet(tabindex="0", data-simpletooltip-text="Mollitia, labore! Nesciunt quibusdam, accusantium quam similique consequuntur eum, impedit, ex ea nobis hic.") dolor sit amet consectetur
 				|  quibusdam quam.
-		.col-12.col-sm-6.col-md-3
-			h2 Link
+		.col-12.col-sm-6.col-lg-3
+			h3 Link
 			p
 				a(href="#", class="p-tooltip js-simple-tooltip", data-simpletooltip-text="Hey Link !") I am a link
-		.col-12.col-sm-6.col-md-3
-			h2 Input
+		.col-12.col-sm-6.col-lg-3
+			h3 Input
 			.form-group
 				label(for="demoTooltipInput") Label
 				input(type="text", id="demoTooltipInput" class="p-tooltip js-simple-tooltip", data-simpletooltip-text="Hello !")
-		.col-12.col-sm-6.col-md-3
-			h2 Button
+		.col-12.col-sm-6.col-lg-3
+			h3 Button
 			button(type="button", class="c-btn c-btn--primary c-btn--small p-tooltip js-simple-tooltip js-snippet", data-simpletooltip-text="Fermer", aria-label="Fermer")
 				svg.icon(aria-hidden="true")
 					use(xlink:href="#icon-x")
+	.row.js-parent-snippet.u-mb
+		.col-12 
+			h2 Others directions
+		.col-12.col-sm-6.col-lg-3
+			h3 Bottom
+			button(type="button", class="c-btn c-btn--primary p-tooltip p-tooltip--bottom js-simple-tooltip js-snippet", data-simpletooltip-text="Tooltip content") Bottom
+		.col-12.col-sm-6.col-lg-3
+			h3 Left
+			button(type="button", class="c-btn c-btn--primary p-tooltip p-tooltip--left js-simple-tooltip", data-simpletooltip-text="Tooltip content") Left
+		.col-12.col-sm-6.col-lg-3
+			h3 Right
+			button(type="button", class="c-btn c-btn--primary p-tooltip p-tooltip--right js-simple-tooltip", data-simpletooltip-text="Tooltip content") Right
+	.row.js-parent-snippet.u-mb-half
+		.col-12 
+			h2 Responsive
+		.col-12
+			h3 Right, then top at medium MQ
+			button(type="button", class="c-btn c-btn--primary p-tooltip p-tooltip--right p-tooltip--top-mq js-simple-tooltip js-snippet", data-simpletooltip-text="Tooltip content") Button
+		.col-12
+			h3 Top, then bottom at medium MQ
+			button(type="button", class="c-btn c-btn--primary p-tooltip p-tooltip--bottom-mq js-simple-tooltip js-snippet", data-simpletooltip-text="Tooltip content") Button

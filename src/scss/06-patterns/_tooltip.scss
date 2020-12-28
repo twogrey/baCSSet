@@ -1,19 +1,97 @@
+@mixin tooltip-default-values {
+	--top: auto;
+	--left: 50%;
+	--bottom: var(--offset);
+	--right: auto;
+	--dir-y: 1;
+	--dir-x: 0;
+	--arrow-top: calc(100% - 1px);
+	--arrow-left: var(--arrow-align);
+	--arrow-bottom: auto;
+	--arrow-right: auto;
+	--arrow-dir: polygon(50% 50%, 0 0, 100% 0);
+}
+
+@mixin tooltip-top {
+	+ .simpletooltip {
+		@include tooltip-default-values;
+	}
+}
+
+@mixin tooltip-bottom {
+	+ .simpletooltip {
+		--top: var(--offset);
+		--left: 50%;
+		--bottom: auto;
+		--right: auto;
+		--dir-y: 1;
+		--dir-x: 0;
+		--arrow-top: auto;
+		--arrow-left: var(--arrow-align);
+		--arrow-bottom: calc(100% - 1px);
+		--arrow-right: auto;
+		--arrow-dir: polygon(50% 50%, 0 100%, 100% 100%);
+	}
+}
+
+@mixin tooltip-right {
+	+ .simpletooltip {
+		--top: 50%;
+		--left: var(--offset);
+		--bottom: auto;
+		--right: auto;
+		--dir-y: 0;
+		--dir-x: 1;
+		--arrow-top: var(--arrow-align);
+		--arrow-left: auto;
+		--arrow-bottom: auto;
+		--arrow-right: calc(100% - 1px);
+		--arrow-dir: polygon(50% 50%, 100% 0, 100% 100%);
+	}
+}
+
+@mixin tooltip-left {
+	+ .simpletooltip {
+		--top: 50%;
+		--left: auto;
+		--right: var(--offset);
+		--bottom: auto;
+		--dir-y: 0;
+		--dir-x: 1;
+		--arrow-top: var(--arrow-align);
+		--arrow-left: calc(100% - 1px);
+		--arrow-bottom: auto;
+		--arrow-right: auto;
+		--arrow-dir: polygon(50% 50%, 0 0, 0 100%);
+	}
+}
+
 @if $enable-tooltip {
 
 	.simpletooltip_container {
-		--arrow-size: #{rem(10px)};
+		--arrow-size: #{rem(16px)};
 		--bg: var(--color-black);
 		position: relative;
+		display: inline-block;
+
+		p & {
+			display: inline;
+		}
 	}
 
 	.p-tooltip {
 		position: relative;
 
 		+ .simpletooltip {
+			--offset: calc(100% + var(--arrow-size));
+			--arrow-align: calc(50% - var(--arrow-size) / 2);
+			@include tooltip-default-values;
 			position: absolute;
 			z-index: 1;
-			left: 50%;
-			bottom: calc(100% + var(--arrow-size) * 2);
+			top: var(--top);
+			left: var(--left);
+			bottom: var(--bottom);
+			right: var(--right);
 			padding: 0.6em 0.8em;
 			border-radius: var(--radius);
 			font-size: rem(14px);
@@ -23,18 +101,19 @@
 			color: #fff;
 			opacity: 0;
 			animation: o-fade-in 0.2s forwards;
-			transform: translateX(-50%);
+			transform: translate(calc(-50% * var(--dir-y)), calc(-50% * var(--dir-x)));
 
 			&::before {
 				content: '';
 				position: absolute;
-				top: 100%;
-				left: calc(50% - var(--arrow-size));
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: var(--arrow-size) var(--arrow-size) 0 var(--arrow-size);
-				border-color: var(--bg) transparent transparent transparent;
+				top: var(--arrow-top);
+				bottom: var(--arrow-bottom);
+				left: var(--arrow-left);
+				right: var(--arrow-right);
+				width: var(--arrow-size);
+				height: var(--arrow-size);
+				background-color: var(--bg);
+				clip-path: var(--arrow-dir);
 			}
 
 			&[aria-hidden="true"] {
@@ -42,17 +121,79 @@
 			}
 		}
 
+		p & {
+			border-bottom: 1px dotted var(--color-primary);
+			text-decoration: none;
+			cursor: help;
+		}
+
+		/**
+		 * Others directions
+		 */
+
+		@if $enable-tooltip-bottom {
+			&--bottom {
+				@include tooltip-bottom;
+			}
+		}
+
+		@if $enable-tooltip-left {
+			&--left {
+				@include tooltip-left;
+			}
+		}
+
+		@if $enable-tooltip-right {
+			&--right {
+				@include tooltip-right;
+			}
+		}
+
+		/**
+		 * Responsive
+		 */
+
+		@if $enable-tooltip-top-mq {
+			@include medium {
+				&--top-mq {
+					@include tooltip-top;
+				}
+			}
+		}
+
+		@if $enable-tooltip-bottom-mq {
+			@include medium {
+				&--bottom-mq {
+					@include tooltip-bottom;
+				}
+			}
+		}
+
+		@if $enable-tooltip-left-mq {
+			@include medium {
+				&--left-mq {
+					@include tooltip-left;
+				}
+			}
+		}
+
+		@if $enable-tooltip-right-mq {
+			@include medium {
+				&--right-mq {
+					@include tooltip-right;
+				}
+			}
+		}
+
+		/**
+		 * Block Text (no force nowrap)
+		 */
+
 		&--block {
 			+ .simpletooltip {
 				white-space: normal;
 				width: 15em;
 			}
-		}
-
-		p & {
-			border-bottom: 1px dotted var(--color-primary);
-			text-decoration: none;
-			cursor: help;
 		}
 	}
 
