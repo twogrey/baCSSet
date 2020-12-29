@@ -1,8 +1,6 @@
 @if $enable-tabs {
 	
 	.p-tabs {
-		$parent: &;
-
 		&__list {
 			display: inline-flex;
 			border: rem(1px) solid var(--color-primary-light);

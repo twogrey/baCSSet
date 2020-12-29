@@ -203,7 +203,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 .toggle-code {    
 	display: block;
 	width: calc(100% - (var(--spacing-double)));
-	margin: 0 auto 1em;
+	margin: 0 auto var(--spacing);
 
 	summary {
 		display: flex;
@@ -241,7 +241,12 @@ div.code-toolbar > .toolbar span.focus-visible {
 }
 
 .section {
-	margin-bottom: var(--spacing);
+	padding-bottom: var(--spacing-triple);
+
+	&:not(:last-child) {
+		border-bottom: 1px solid var(--color-lightgrey);
+		margin-bottom: var(--spacing-quad);
+	}
 
 	&__title {
 		padding: rem(10px) rem(20px);
@@ -273,6 +278,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		margin: 0;
 		padding: var(--spacing-half);
 		list-style: none;
 
@@ -281,12 +287,9 @@ div.code-toolbar > .toolbar span.focus-visible {
 		}
 
 		> li {
+			margin-top: 0;
 			@include medium {
 				margin-bottom: var(--spacing);
-			}
-
-			@include large {
-				margin-bottom: var(--spacing-half);
 			}
 
 			> a {
@@ -312,6 +315,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 	}
 
 	li {
+		margin-top: var(--spacing-quarter);
 		line-height: 1.25;
 	}
 

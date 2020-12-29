@@ -2,39 +2,34 @@ section.section.js-menu#Badges
 	.row
 		.col-12
 			h1.section__title Badges
-		.col-12 
-			.row.js-parent-snippet
-				.col.u-mb-0
-					h2 Standard
-					span(class="c-badge c-badge--primary u-mr-half u-mb-half js-snippet") Primary
-					span(class="c-badge c-badge--secondary u-mr-half u-mb-half") Secondary
-					span(class="c-badge c-badge--success u-mr-half u-mb-half") Success
-					span(class="c-badge c-badge--error u-mr-half u-mb-half") Error
-					span(class="c-badge c-badge--light u-mr-half u-mb-half") Light
-					span(class="c-badge c-badge--dark u-mr-half u-mb-half") Dark
-					span(class="c-badge c-badge--primary u-mr-half u-mb-half") 1
-					span(class="c-badge c-badge--primary u-mr-half u-mb-half") 10
-					span(class="c-badge c-badge--primary u-mr-half u-mb-half")
-						svg(class="icon")
-							title Text
-							use(xlink:href="#icon-check")
-		.col-12
-			.row.js-parent-snippet
-				.col.u-mb-0
-					h2 Pill
-					span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half js-snippet") Primary
-					span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half") 1
-					span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half") 10
-					span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half")
-						svg(class="icon")
-							title Text
-							use(xlink:href="#icon-check")
-		.col-12
-			.row.js-parent-snippet
-				.col.u-mb-0
-					h2 Pastille
-					button(type="button", class="c-btn c-btn--primary u-pos-relative u-mr-half u-mb-half js-snippet", aria-describedby="idPastille") 
-						| Messages
-						span(id="idPastille", class="c-badge c-badge--abs c-badge--dark") 1 <span class="sr-only">unread message</span>
-
-
+	.row.js-parent-snippet.u-mb
+		.col.u-mb-half
+			h2 Standard
+			span(class="c-badge c-badge--primary u-mr-half u-mb-half js-snippet") Primary
+			span(class="c-badge c-badge--secondary u-mr-half u-mb-half") Secondary
+			span(class="c-badge c-badge--success u-mr-half u-mb-half") Success
+			span(class="c-badge c-badge--error u-mr-half u-mb-half") Error
+			span(class="c-badge c-badge--light u-mr-half u-mb-half") Light
+			span(class="c-badge c-badge--dark u-mr-half u-mb-half") Dark
+			span(class="c-badge c-badge--primary u-mr-half u-mb-half") 1
+			span(class="c-badge c-badge--primary u-mr-half u-mb-half") 10
+			span(class="c-badge c-badge--primary u-mr-half u-mb-half")
+				svg(class="icon")
+					title Text
+					use(xlink:href="#icon-check")
+	.row.js-parent-snippet.u-mb
+		.col.u-mb-half
+			h2 Pill
+			span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half js-snippet") Primary
+			span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half") 1
+			span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half") 10
+			span(class="c-badge c-badge--pill c-badge--primary u-mr-half u-mb-half")
+				svg(class="icon")
+					title Text
+					use(xlink:href="#icon-check")
+	.row.js-parent-snippet
+		.col.u-mb-half
+			h2 Pastille
+			button(type="button", class="c-btn c-btn--primary u-pos-relative u-mr-half u-mb-half js-snippet", aria-describedby="idPastille") 
+				| Messages
+				span(id="idPastille", class="c-badge c-badge--abs c-badge--dark") 1 <span class="sr-only">unread message</span>
