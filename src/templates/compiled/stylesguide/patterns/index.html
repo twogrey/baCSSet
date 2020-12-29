@@ -73,38 +73,246 @@
             <div class="god-section-title">Patterns </div>
             <div class="container u-py-md u-px-md-double">
               <section class="section js-menu" id="Modals">
-                <div class="row js-parent-snippet">
+                <div class="row js-parent-snippet u-mb">
                   <div class="col-12">
-                    <h1 class="section__title">Modal</h1>
+                    <h1 class="section__title">Modals</h1>
                   </div>
                   <div class="col-12">
-                    <button class="c-btn c-btn--primary u-mr-half u-mb-half js-modal js-snippet" type="button" data-modal-id="modal1" aria-haspopup="dialog">Open modal (plain text)</button>
-                    <dialog class="p-modal js-snippet" id="modal1" role="dialog" aria-labelledby="titleModal1">
-                      <div class="p-modal__dialog p-modal__dialog--medium js-modal-stop" role="document">
-                        <div class="p-modal__content">
-                          <div class="p-modal__header">
-                            <h1 class="p-modal__title" id="titleModal1">Modal title</h1>
-                            <button class="c-btn c-btn--transparent js-modal-close" type="button">
-                              <svg class="icon">
-                                <title>Fermer cette fenêtre modale</title>
-                                <use xlink:href="#icon-x"></use>
-                              </svg>
-                            </button>
-                          </div>
-                          <div class="p-modal__body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
-                            <div>
-                              <label for="demoInputModal">Label</label>
-                              <input type="text" id="demoInputModal">
-                            </div>
-                          </div>
-                          <div class="p-modal__footer"> 
-                            <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
-                            <button class="c-btn c-btn--primary" type="button">Button </button>
-                          </div>
-                        </div>
-                      </div>
-                    </dialog>
+                    <h2>Default</h2>
+                  </div>
+                  <div class="col-12">
+                    <button class="c-btn c-btn--primary js-modal js-snippet" type="button" data-modal-id="modal1" aria-haspopup="dialog">Open modal (plain text)</button>
+                                  <dialog class="p-modal js-snippet" role="dialog" aria-labelledby="titleModal1" id="modal1">
+                                    <div class="p-modal__dialog js-modal-stop p-modal__dialog--medium  undefined" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title" id="titleModal1">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--transparent" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body">
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
+                                          <div>
+                                            <label for="demoInputModal1">Label</label>
+                                            <input type="text" id="demoInputModal1">
+                                          </div>
+                                        </div>
+                                        <div class="p-modal__footer"> 
+                                          <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
+                                          <button class="c-btn c-btn--primary" type="button">Button </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
+                  </div>
+                </div>
+                <div class="row js-parent-snippet u-mb">
+                  <div class="col-12">
+                    <h2>Sizes</h2>
+                  </div>
+                  <div class="col-auto">
+                    <button class="c-btn c-btn--primary js-modal" type="button" data-modal-id="modal2" aria-haspopup="dialog">Small</button>
+                                  <dialog class="p-modal js-snippet" role="dialog" aria-labelledby="titleModal2" id="modal2">
+                                    <div class="p-modal__dialog js-modal-stop p-modal__dialog--small  undefined" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title" id="titleModal2">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--transparent" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body">
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
+                                          <div>
+                                            <label for="demoInputModal2">Label</label>
+                                            <input type="text" id="demoInputModal2">
+                                          </div>
+                                        </div>
+                                        <div class="p-modal__footer"> 
+                                          <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
+                                          <button class="c-btn c-btn--primary" type="button">Button </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
+                  </div>
+                  <div class="col-auto">
+                    <button class="c-btn c-btn--primary js-modal" type="button" data-modal-id="modal3" aria-haspopup="dialog">Large</button>
+                                  <dialog class="p-modal" role="dialog" aria-labelledby="titleModal3" id="modal3">
+                                    <div class="p-modal__dialog js-modal-stop p-modal__dialog--large  undefined" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title" id="titleModal3">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--transparent" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body">
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
+                                          <div>
+                                            <label for="demoInputModal3">Label</label>
+                                            <input type="text" id="demoInputModal3">
+                                          </div>
+                                        </div>
+                                        <div class="p-modal__footer"> 
+                                          <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
+                                          <button class="c-btn c-btn--primary" type="button">Button </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
+                  </div>
+                  <div class="col-auto">
+                    <button class="c-btn c-btn--primary js-modal" type="button" data-modal-id="modal4" aria-haspopup="dialog">Large-plus</button>
+                                  <dialog class="p-modal" role="dialog" aria-labelledby="titleModal4" id="modal4">
+                                    <div class="p-modal__dialog js-modal-stop p-modal__dialog--large-plus  undefined" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title" id="titleModal4">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--transparent" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body">
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
+                                          <div>
+                                            <label for="demoInputModal4">Label</label>
+                                            <input type="text" id="demoInputModal4">
+                                          </div>
+                                        </div>
+                                        <div class="p-modal__footer"> 
+                                          <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
+                                          <button class="c-btn c-btn--primary" type="button">Button </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
+                  </div>
+                  <div class="col-auto">
+                    <button class="c-btn c-btn--primary js-modal" type="button" data-modal-id="modal5" aria-haspopup="dialog">Fullscreen</button>
+                                  <dialog class="p-modal" role="dialog" aria-labelledby="titleModal5" id="modal5">
+                                    <div class="p-modal__dialog js-modal-stop   undefined" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title" id="titleModal5">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--transparent" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body">
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!</p>
+                                          <div>
+                                            <label for="demoInputModal5">Label</label>
+                                            <input type="text" id="demoInputModal5">
+                                          </div>
+                                        </div>
+                                        <div class="p-modal__footer"> 
+                                          <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
+                                          <button class="c-btn c-btn--primary" type="button">Button </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
+                  </div>
+                </div>
+                <div class="row js-parent-snippet u-mb">
+                  <div class="col-12">
+                    <h2>Viewport height</h2>
+                  </div>
+                  <div class="col-auto">
+                    <button class="c-btn c-btn--primary js-modal" type="button" data-modal-id="modal6" aria-haspopup="dialog">Open modal</button>
+                                  <dialog class="p-modal js-snippet" role="dialog" aria-labelledby="titleModal6" id="modal6">
+                                    <div class="p-modal__dialog js-modal-stop p-modal__dialog--medium p-modal__dialog--viewport undefined" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title" id="titleModal6">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--transparent" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body">
+                                          <div class="u-mb u-text-center"><img src="../../../img/holy-placeholder.jpg" loading="lazy" alt=""></div>
+                                          <p>Carrot cake sweet roll topping. Jelly danish fruitcake cheesecake oat cake pastry. Jujubes apple pie cotton candy tootsie roll toffee jelly-o jujubes. Carrot cake dessert sweet gummi bears ice cream gummi bears sesame snaps cake. Bonbon liquorice jelly. Liquorice <a href="#">link</a> bonbon. Chocolate bar ice cream dragée. Bear claw cotton candy sugar plum. Pudding carrot cake tiramisu soufflé tart tootsie roll jujubes. Tart bear claw topping jelly beans chocolate jujubes. Chupa chups powder muffin chocolate cake caramels halvah marzipan wafer. Sweet ice cream tootsie roll dragée. </p>
+                                          <p>Pie bear claw cheesecake toffee. Sweet jelly chocolate bar soufflé. Croissant tootsie roll cotton candy sweet powder pudding icing cake. Apple pie jelly-o bonbon. Croissant cake ice cream chocolate bar croissant. Cotton candy chocolate tiramisu topping dessert tiramisu soufflé ice cream oat cake. Candy topping gummi bears jelly beans apple pie. Lemon drops bear claw sugar plum lemon drops. Chocolate muffin gingerbread. Muffin marzipan chocolate gummies toffee muffin cotton candy tart pastry. Caramels liquorice macaroon chocolate cake lemon drops. Donut liquorice pastry toffee. Chocolate brownie ice cream candy. Lemon drops soufflé carrot cake jujubes oat cake jelly-o.</p>
+                                          <p>Jelly beans chupa chups macaroon wafer danish oat cake oat cake cotton candy. Caramels pie jelly-o fruitcake. Fruitcake macaroon tart gingerbread candy icing. Sugar plum topping powder chocolate cake liquorice liquorice. Danish caramels soufflé cookie halvah lemon drops cake tiramisu. Chocolate cake sweet roll caramels jelly beans sesame snaps chupa chups. Tootsie roll donut gummi bears chocolate cake marshmallow. Tart toffee jujubes. Biscuit cheesecake wafer apple pie chocolate bar. Tootsie roll macaroon wafer toffee. Lollipop oat cake icing lollipop tootsie roll pastry icing bonbon tart. Icing biscuit gummi bears pudding. Icing soufflé cake marshmallow tart croissant soufflé tootsie roll jelly-o.</p>
+                                          <p>Sweet roll donut jujubes gingerbread pudding. Donut marshmallow croissant sweet brownie tootsie roll. Chocolate bar cake bear claw bonbon halvah. Jelly-o candy canes muffin jelly-o jelly sweet. Bonbon cheesecake caramels topping. Chupa chups macaroon donut. Sugar plum apple pie dessert tiramisu donut powder toffee macaroon. Chocolate bar lemon drops macaroon. Powder chocolate bar cotton candy pastry muffin chupa chups jelly-o sweet. Candy chocolate wafer tootsie roll soufflé sesame snaps. Carrot cake bonbon pastry topping. Cupcake marzipan dragée sweet roll.</p>
+                                          <p>Tart fruitcake marzipan candy fruitcake. Sugar plum marzipan topping. Chocolate bar icing oat cake apple pie jelly beans. Cupcake sesame snaps wafer tiramisu cheesecake apple pie lemon drops dragée chocolate. Sesame snaps biscuit danish jelly cheesecake jujubes dragée candy. Muffin cookie muffin pastry pie donut. Pastry marzipan halvah jelly beans sweet caramels gummi bears. Halvah cupcake jelly beans bonbon fruitcake jelly-o jelly. Pie sweet roll chocolate soufflé marzipan bear claw. Cookie dessert bear claw tootsie roll dessert. Sugar plum bear claw croissant. Apple pie topping wafer toffee wafer.</p>
+                                          <div>
+                                            <label for="demoInputModal6">Label</label>
+                                            <input type="text" id="demoInputModal6">
+                                          </div>
+                                        </div>
+                                        <div class="p-modal__footer"> 
+                                          <button class="c-btn c-btn--error c-btn--outline js-modal-close" type="button">Fermer</button>
+                                          <button class="c-btn c-btn--primary" type="button">Button </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
+                  </div>
+                </div>
+                <div class="row js-parent-snippet">
+                  <div class="col-12">
+                    <h2>Lightbox</h2>
+                  </div>
+                  <div class="col-auto">
+                    <button class="c-btn c-btn--primary js-modal" type="button" data-modal-id="modal7" aria-haspopup="dialog">Open image in fullscreen modal</button>
+                                  <dialog class="p-modal js-snippet" role="dialog" aria-labelledby="titleModal7" id="modal7">
+                                    <div class="p-modal__dialog js-modal-stop   p-modal__dialog--lightbox" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title sr-only" id="titleModal7">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--white" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body"><img src="https://picsum.photos/1920/1200" srcset="https://picsum.photos/768/1200 768w, https://picsum.photos/1200/1200 1200w, https://picsum.photos/1920/1200 1920w" loading="lazy" alt="" width="1920" height="1200">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
+                  </div>
+                  <div class="col-auto">
+                    <button class="c-btn c-btn--primary js-modal" type="button" data-modal-id="modal8" aria-haspopup="dialog">Open image in medium modal</button>
+                                  <dialog class="p-modal js-snippet" role="dialog" aria-labelledby="titleModal8" id="modal8">
+                                    <div class="p-modal__dialog js-modal-stop p-modal__dialog--medium  p-modal__dialog--lightbox" role="document">
+                                      <div class="p-modal__content">
+                                        <div class="p-modal__header">
+                                          <h1 class="p-modal__title sr-only" id="titleModal8">Modal title</h1>
+                                          <button class="p-modal__close c-btn js-modal-close c-btn--white" type="button">
+                                            <svg class="icon">
+                                              <title>Fermer cette fenêtre modale</title>
+                                              <use xlink:href="#icon-x"></use>
+                                            </svg>
+                                          </button>
+                                        </div>
+                                        <div class="p-modal__body"><img src="https://picsum.photos/1920/1200" srcset="https://picsum.photos/768/1200 768w, https://picsum.photos/1200/1200 1200w, https://picsum.photos/1920/1200 1920w" loading="lazy" alt="" width="1920" height="1200">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </dialog>
                   </div>
                 </div>
               </section>
