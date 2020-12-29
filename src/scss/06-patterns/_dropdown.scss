@@ -65,6 +65,8 @@
 		}
 
 		&__toggle {
+			text-align: left;
+			
 			&[aria-expanded="true"] {
 				--i: 1;
 			}

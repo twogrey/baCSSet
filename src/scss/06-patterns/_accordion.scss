@@ -1,40 +1,39 @@
 @if $enable-accordion {  
 	.p-accordion {
-		--s: #{rem(20px)};
+		--p: var(--spacing);
 
-		&:not(:last-child) {
-			margin-bottom: var(--spacing);
-		}
-
-		&__button {
+		&__toggle {
+			--px: var(--p);
+			--py: var(--p);
 			justify-content: space-between;
 			width: 100%;
-			padding-right: var(--s);
-			padding-left: var(--s);
+			border-radius: 0;
 			text-align: left;
 
-			&.is-open {
-				border-bottom-right-radius: 0;
-				border-bottom-left-radius: 0;
+			&[aria-expanded="true"] {
+				--i: 1;
+				color: var(--color-primary);
 			}
 		}
 
-		&__icon {
-			transition: transform 0.2s;
+		&__header {
+			margin: 0;
 
-			.is-open > & {
-				transform: rotate(180deg);
+			&:not(:last-of-type) {
+				border-bottom: 1px solid var(--color-lightgrey);
 			}
 		}
 
 		&__content {
-			display: none;
-			padding: var(--s);
-			background-color: var(--color-lightgrey);
+			padding: var(--p);
 
-			&.is-open {
-				display: block;
+			&[aria-hidden="true"] {
+				display: none;
 			}
+		}
+
+		&__icon {
+			transform: rotate(#{calc(180deg * var(--i, 0)});
 		}
 	}
 }
