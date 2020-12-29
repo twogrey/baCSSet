@@ -1,7 +1,7 @@
-mixin icon(aria)
-	if(aria)
+mixin icon(text)
+	if(text)
 		svg(class="icon")
-			title(id=aria) text
+			title text
 			use(xlink:href="#icon-x")
 	else
 		svg(class="icon", aria-hidden="true")
@@ -54,8 +54,8 @@ section.section.js-menu#Buttons
 				button(type="button", class="c-btn c-btn--primary c-btn--rounded u-mr u-mb") 
 					+icon
 					span Rounded
-				button(type="button", class="c-btn c-btn--primary c-btn--rounded c-btn--icon-only u-mr u-mb", aria-labelledby="demoBtn1")
-					+icon('demoBtn1')
+				button(type="button", class="c-btn c-btn--primary c-btn--rounded c-btn--icon-only u-mr u-mb")
+					+icon(true)
 		.col-12.col-md-6.u-d-flex.u-flex-column.js-parent-snippet
 			.u-mb-a.js-snippet
 				h2 With icons
@@ -74,26 +74,26 @@ section.section.js-menu#Buttons
 				button(type="button", class="c-btn c-btn--primary u-mr u-mb")
 					+icon
 					span Button
-				button(type="button", class="c-btn c-btn--primary u-mr u-mb", aria-labelledby="demoBtn2")
-					+icon('demoBtn2')
-				button(type="button", class="c-btn c-btn--primary c-btn--outline u-mr u-mb", aria-labelledby="demoBtn3")
-					+icon('demoBtn3')
+				button(type="button", class="c-btn c-btn--primary u-mr u-mb")
+					+icon(true)
+				button(type="button", class="c-btn c-btn--primary c-btn--outline u-mr u-mb")
+					+icon(true)
 		.col-12.col-md-6.u-d-flex.u-flex-column.js-parent-snippet
 			.u-mb-a.js-snippet
 				h2 Sizes
-				button(type="button", class="c-btn c-btn--dark c-btn--small u-mr u-mb", aria-labelledby="demoBtn4")
-					+icon('demoBtn4')
+				button(type="button", class="c-btn c-btn--dark c-btn--small u-mr u-mb")
+					+icon(true)
 				button(type="button", class="c-btn c-btn--dark c-btn--small u-mr u-mb") Small
 				button(type="button", class="c-btn c-btn--dark c-btn--small u-mr u-mb")
 					+icon
 					span Small
 				button(type="button", class="c-btn c-btn--primary u-mr u-mb") Normal
-				button(type="button", class="c-btn c-btn--primary u-mr u-mb", aria-labelledby="demoBtn5")
-					+icon('demoBtn5')
+				button(type="button", class="c-btn c-btn--primary u-mr u-mb")
+					+icon(true)
 				button(type="button", class="c-btn c-btn--primary u-mr u-mb")
 					+icon
 					span Normal
-				button(type="button", class="c-btn c-btn--dark c-btn--large u-mr u-mb", aria-labelledby="demoBtn6")
+				button(type="button", class="c-btn c-btn--dark c-btn--large u-mr u-mb")
 					+icon('demoBtn6')
 				button(type="button", class="c-btn c-btn--dark c-btn--large u-mr u-mb") Large
 				button(type="button", class="c-btn c-btn--dark c-btn--large u-mr u-mb")
