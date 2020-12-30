@@ -473,6 +473,89 @@
                   </div>
                 </div>
               </section>
+              <section class="section js-menu" id="offcanvass">
+                <div class="row js-parent-snippet u-mb">
+                  <div class="col-12">
+                    <h1 class="section__title">Offcanvas</h1>
+                  </div>
+                  <div class="col-12">
+                    <h2>Default</h2>
+                  </div>
+                  <div class="col-auto">
+                    <nav class="js-snippet">
+                      <button class="c-btn c-btn--primary js-offcanvas" type="button" data-offcanvas-id="offcanvas1" aria-expanded="false">Open offcanvas</button>
+                                    <div class="p-offcanvas" aria-labelledby="titleOffcanvas1" id="offcanvas1">
+                                      <div class="p-offcanvas__wrap js-offcanvas-stop">
+                                        <div class="p-offcanvas__content">
+                                          <div class="p-offcanvas__header">
+                                            <h1 class="p-offcanvas__title" id="titleoffcanvas1">Offcanvas title</h1>
+                                            <button class="p-offcanvas__close c-btn c-btn--transparent js-offcanvas-close" type="button">
+                                              <svg class="icon">
+                                                <title>Fermer</title>
+                                                <use xlink:href="#icon-x"></use>
+                                              </svg>
+                                            </button>
+                                          </div>
+                                          <div class="p-offcanvas__body">
+                                            <ul>
+                                              <li><a href="#">Menu item #1</a></li>
+                                              <li><a href="#">Menu item #2</a></li>
+                                              <li><a href="#">Menu item #3</a></li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                    </nav>
+                  </div>
+                  <div class="col-auto">
+                    <aside class="js-snippet">
+                      <button class="c-btn c-btn--primary js-offcanvas" type="button" data-offcanvas-id="offcanvas2" aria-expanded="false">Open offcanvas (right)</button>
+                                    <div class="p-offcanvas" aria-labelledby="titleOffcanvas2" id="offcanvas2">
+                                      <div class="p-offcanvas__wrap js-offcanvas-stop p-offcanvas__wrap--right">
+                                        <div class="p-offcanvas__content">
+                                          <div class="p-offcanvas__header">
+                                            <h1 class="p-offcanvas__title" id="titleoffcanvas2">Offcanvas title</h1>
+                                            <button class="p-offcanvas__close c-btn c-btn--transparent js-offcanvas-close" type="button">
+                                              <svg class="icon">
+                                                <title>Fermer</title>
+                                                <use xlink:href="#icon-x"></use>
+                                              </svg>
+                                            </button>
+                                          </div>
+                                          <div class="p-offcanvas__body">
+                                            <div class="row">
+                                              <div class="col-12 u-mb">
+                                                <div class="form-group">
+                                                  <label for="demoInputOffcanvasA2">Label</label>
+                                                  <input type="text" id="demoInputOffcanvasA2">
+                                                </div>
+                                              </div>
+                                              <div class="col-12 u-mb">
+                                                <div class="form-group">
+                                                  <label for="demoInputOffcanvasB2">Label</label>
+                                                  <input type="text" id="demoInputOffcanvasB2">
+                                                </div>
+                                              </div>
+                                              <div class="col-auto u-mb u-ml-a">
+                                                <div class="form-group">
+                                                  <button class="c-btn c-btn--error c-btn--outline js-offcanvas-close" type="button">Fermer</button>
+                                                </div>
+                                              </div>
+                                              <div class="col-auto u-mb">
+                                                <div class="form-group">
+                                                  <button class="c-btn c-btn--success" type="button">Valider</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                    </aside>
+                  </div>
+                </div>
+              </section>
               <section class="section js-menu" id="Slider">
                 <div class="row">
                   <div class="col-12">
@@ -704,5 +787,6 @@ tns({
     <script src="../../../js/pages/stylesguide.min.js"></script>
     <script src="../../../js/components/sliders.min.js"></script>
     <script src="../../../js/components/modals.min.js"></script>
+    <script src="../../../js/components/offcanvas.min.js"></script>
   </body>
 </html>

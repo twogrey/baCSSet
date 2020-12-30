@@ -1,13 +1,11 @@
 let modal = null;
-let focusables = [];
-let previouslyFocusedElement = null;
-
-const focusableSelector = 'button:not([disabled]), a[href], input:not([type="hidden"]):not([disabled]), textarea:not([disabled]), select:not([disabled]), [contenteditable]';
+let modalFocusables = [];
+let previouslyFocusedElementModal = null;
 
 const openModal = function (modalID) {
 	// Keep current modal & his trigger
 	modal = document.querySelector('#'+modalID);
-	previouslyFocusedElement = document.querySelector(':focus');
+	previouslyFocusedElementModal = document.querySelector(':focus');
 
 	// Add specific styles to <body>
 	body.classList.add('modal-is-open');
@@ -16,8 +14,8 @@ const openModal = function (modalID) {
 	modal.setAttribute('open', '');
 
 	// Check focusable elements in the modal then give focus to the first one
-	focusables = Array.from(modal.querySelectorAll(focusableSelector));
-	focusables[0].focus();
+	modalFocusables = Array.from(modal.querySelectorAll(focusableSelector));
+	modalFocusables[0].focus();
 
 	// Init closing modal functions
 	modal.addEventListener('click', closeModal);
@@ -34,8 +32,8 @@ const closeModal = function () {
 	}
 
 	// Give focus to the trigger
-	if (previouslyFocusedElement !== null) {
-		previouslyFocusedElement.focus();
+	if (previouslyFocusedElementModal !== null) {
+		previouslyFocusedElementModal.focus();
 	}
 
 	// Add fading-out class to modal
@@ -52,7 +50,7 @@ const closeModal = function () {
 	const hideModal = function () {
 		// Undo all the things
 		modal.classList.remove('is-hiding');
-		modal.removeAttribute('open');
+		modal.removeAttribute('open', '');
 		body.classList.remove('modal-is-open');
 		modal.removeEventListener('animationend', hideModal);
 		modal = null;
@@ -66,6 +64,32 @@ const closeModal = function () {
 const stopPropagation = function (e) {
 	e.stopPropagation();
 };
+
+const focusInModal = function (e) {
+	e.preventDefault();
+	let index = modalFocusables.findIndex((f) => f === modal.querySelector(':focus'));
+	if (e.shiftKey === true) {
+		index--;
+	} else {
+		index++;
+	}
+	if (index >= modalFocusables.length) {
+		index = 0;
+	}
+	if (index < 0) {
+		index = modalFocusables.length - 1;
+	}
+	modalFocusables[index].focus();
+};
+
+window.addEventListener('keydown', (e) => {
+	if (e.key === 'Escape' || e.key === 'Esc') {
+		closeModal(e);
+	}
+	if (e.key === 'Tab' && modal !== null) {
+		focusInModal(e);
+	}
+});
 
 document.querySelectorAll('.js-modal').forEach((a) => {
 	a.addEventListener('click', () => {

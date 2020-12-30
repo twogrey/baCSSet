@@ -1,253 +1,99 @@
 @if $enable-offcanvas {
 
-	$offcanvas-transition-duration: 0.5s;
+	.offcanvas-is-open { 
+		overflow: hidden;
 
-	.p-offcanvas-overlay {
-		position: fixed;
-		top: var(--header-height);
-		left: 0;
-		bottom: 0;
-		right: 0;
-		z-index: var(--z-offcanvas);
-		background-color: rgba(#000, 0.5);
-		opacity: 0;
-		pointer-events: none;
-		cursor: pointer;
-		transition: opacity $offcanvas-transition-duration;
-		-webkit-tap-highlight-color: transparent;
-
-		@include medium {
-			display: none;
-		}
-
-		[class*='offcanvas-is-open'] > & {
-			opacity: 1;
-			pointer-events: auto;
-		}
-	}
-
-	.p-offcanvas-trigger {
-		@include medium {
-			display: none;
-		}
-		
-		&--menu {
-			--i: 0;
-			--deg: 45deg;
-
-			path {
-				transform-origin: center;
-				transition: transform $offcanvas-transition-duration, opacity $offcanvas-transition-duration;
-
-				&:nth-of-type(1),
-				&:nth-of-type(4) {
-					opacity: calc(1 - var(--i));
-				}
-
-				&:nth-of-type(2) {
-					transform: rotate(calc(var(--i) * var(--deg)));
-				}
-
-				&:nth-of-type(3) {
-					transform: rotate(calc(var(--i) * -1 * var(--deg)));
-				}
-			}
-
-			.main-header--alternative & {
-				--c: #fff;
-				--c-hover: var(--c);
-			}
-
-			&.menu-mobile-offcanvas-is-open {
-				--i: 1;
-				--c: var(--color-black);
-			}
-
-			body.header-is-sticky & {
-				--c: var(--color-black);
-			}
+		.not-touch & {
+			padding-right: var(--scrollbar-width);
 		}
 	}
 
 	.p-offcanvas {
-		--i: 1;
 		position: fixed;
-		top: var(--header-height);
+		z-index: var(--z-max);
+		top: 0;
 		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: var(--z-offcanvas);
-		pointer-events: none;
-		opacity: calc(1 - var(--i, 1));
-		transform: translateX(calc(var(--i, 1) * -100%));
-		transition: transform $offcanvas-transition-duration, opacity $offcanvas-transition-duration;
+		display: none;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(#000, 0.85); 
 
-		@include medium {
-			--i: 0;
-			position: static;
-			z-index: 0;
-			max-width: none;
-			box-shadow: none;
-			transition: none;
+		&.is-active {
+			display: block;
+			animation: o-fade-in 0.3s;
 		}
 
-		[class*='offcanvas-is-open'] > & {
-			--i: 0;
+		&.is-hiding {
+			animation: o-fade-out 0.3s;
+		}
+
+		&__wrap {
+			--i: -1;
+			width: rem(300px);
+			height: 100vh;
+			padding: var(--spacing);
+			background-color: #fff;
+			overflow-y: auto;
+
+			@include small-plus {
+				width: rem(500px);
+			}
+
+			.is-active > & {
+				animation: reveal-on-offcanvas 0.3s forwards;
+			}
+
+			.is-hiding > & {
+				animation: reveal-off-offcanvas 0.3s;
+			}
+
+			&--right {
+				--i: 1;
+				margin-left: auto;
+			}
 		}
 
 		&__content {
-			@include scrollbar(rem(4px), $color-secondary);
-			max-height: 100%;
-			background-color: #fff;
-			overflow-y: auto;
-			pointer-events: auto;
 
-			@include medium {
-				max-height: none;
-				overflow-y: visible;
-				background-color: transparent;
-			}
 		}
 
-		&__list {
-			padding: var(--spacing) var(--spacing) var(--spacing-double);
-			text-align: center;
+		&__header {
+			display: flex;
+			align-self: flex-start;
+			margin-bottom: var(--spacing);
+		}
 
-			@include medium {
-				display: flex;
-				justify-content: flex-end;
-				align-items: center;
-				padding: 0;
-			}
+		&__title {
+			@include heading(4);
+			align-self: center;
+			margin-bottom: 0;
+			margin-right: var(--spacing);
+		}
 
-			a {
-				position: relative;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: calc(var(--spacing) * 1.5) 0;
-				font-size: rem(21px);
-				font-weight: $semibold;
-				text-align: center;
-				color: var(--color-black);
+		&__body {
 
-				@include medium {
-					padding: var(--spacing-half) calc(var(--spacing) * 0.75);
-					font-size: rem(12px);
-				}
+		}
 
-				@include large {
-					padding: var(--spacing-half) var(--spacing);
-					font-size: rem(14px);
-				}
-
-				&:hover,
-				&[aria-current] {
-					color: var(--color-primary);
-					text-decoration: none;
-				}
-
-				.main-header--alternative & {
-					@include medium {
-						color: #fff;
-
-						&:hover,
-						&[aria-current] {
-							color: var(--color-primary);
-						}
-					}
-				}
-
-				&.is-active {
-					color: var(--color-primary);
-
-					&::after {
-						content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSIxMiI-PHBhdGggZD0iTTM3LjM5MyA0LjkyYy0yLjI4MS0uMjM3LTYuNDk0LS4yMDctNy4yMTUtLjM1Ny0uNzIyLS4xNS0uNTE2LS4xMDcuMTU0LS4xNTktLjE2OC4wMTMtLjM3NC0uMDMtLjQ3Ny0uMDVsLS4zMDktLjA2Ni4wMjUuMjkzLS45NC0uMzRjLTMuNjczLjA0OC0xMi4wODctLjEyOC0xOS44MDUuMzE4LS42NjkuMDUyLS43ODYuMjY3LTEuMzkuMjg0LS4xMTctLjE2Ny4xNTQtLjE1OS40MTEtLjI5NmwtLjY5Ni4xNDFjLS4yMDUuNzIyLTIuMDg3LjQyNi0zLjMxMiAxLjA4LS4zMjEuMTctLjMyLjU1My0uNjQzLjcyNS42NzEuMzMgMi43NzEgMS4xOTggMy42OTkgMS4zOTEuNzIyLjE1IDMuMTA1LjAyNiA1LjI4My0uMTQyIDIuMTc4LS4xNjcgMi44NDgtLjIyIDMuNTU2LS4yMTUgMy4wOTItLjEyIDMuNzg5LS4yNjIgNi4wNDMtLjMxOCA0LjE3NS0uMDg2IDguNzQ5LS4yMzMgMTEuMzY1LS40MDMgMS4wNy0uMTEyIDEuNTU5LS4yOTcgMS41MzMtLjU5IDEuMDctLjExIDEuNzY1LS4yNTIgMi4yMTctLjQ5NC41MTQtLjI3NS41OTEtLjU0NS41MDEtLjgwM3oiIGZpbGw9IiM2N0JGQUMiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg");
-						position: absolute;
-						bottom: 0;
-						left: 50%;
-						transform: translateX(-50%);
-
-						@include medium {
-							transform: translate(-50%, 50%);
-						}
-					}
-				}
-
-				.icon {
-					font-size: 1.5em;
-				}
-
-				&.user-tab {
-					display: none;
-
-					@include medium {
-						display: flex;
-						margin-left: calc(var(--spacing) * 0.75);
-						padding-left: calc(var(--spacing) * 1.25);
-						border-left: rem(1px) solid var(--color-black);
-
-						.main-header--alternative & {
-							border-left-color: #fff;
-						}
-
-						body.header-is-sticky & {
-							border-left-color: var(--color-black);
-
-							@include medium {
-								border-left-color: #fff;
-							}
-						}
-					}
-					@include large {
-						margin-left: var(--spacing);
-						padding-left: var(--spacing-double);
-					}
-
-					&::after {
-						@include medium {
-							transform: translate(calc(-50% + var(--spacing) * 0.25), 50%);
-						}
-
-						@include large {
-							transform: translate(calc(-50% + var(--spacing-half)), 50%);
-						}
-					}
-
-					span {
-						display: none;
-
-						@include large {
-							display: inline-block;
-							margin-left: var(--spacing);
-						}
-					}
-				}
-			}
+		&__close {
+			margin-left: auto;
 		}
 	}
 
-	body[class*='offcanvas-is-open'] {
-		overflow: hidden;
-
-		@include medium {
-			overflow: auto;
+	@keyframes reveal-on-offcanvas {
+		from {
+			transform: translateX(calc(100% * var(--i)));
 		}
-
-		.not-touch & {
-			padding-right: var(--scrollbar-width);
-
-			@include medium {
-				padding-right: 0;
-			}
+		to {
+			transform: none;
 		}
 	}
 
-	body.menu-mobile-offcanvas-is-open {
-		--header-shadow: none;	
-
-		@include medium {
-			--header-shadow: 0 #{rem(2px)} #{rem(16px)} rgba(0, 0, 0, 0.1);
+	@keyframes reveal-off-offcanvas {
+		from {
+			transform: none;
+		}
+		to {
+			transform: translateX(calc(100% * var(--i)));
 		}
 	}
 

@@ -11,7 +11,7 @@ a {
 		text-decoration: underline;
 	}
 
-	&.focus-visible,
+	&:focus-visible,
 	&:hover {
 		color: var(--color-primary-dark);
 	}
@@ -19,7 +19,7 @@ a {
 	&.secondary {
 		color: var(--color-secondary);
 
-		&.focus-visible,
+		&:focus-visible,
 		&:hover {
 			color: var(--color-secondary-dark);
 		}
