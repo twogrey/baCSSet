@@ -3,29 +3,27 @@ section.section.js-menu#Images
 		.col-12
 			h1.section__title Images
 		.col-12
-			p Pour les <code>img</code> dont le contenu est à caractère informatif :
-			.u-bg-lightgrey.u-p 
-				ul
-					li Fournir une alternative textuelle avec l'attribut <code>alt</code> (sans oublier de "." à la fin pour marquer un temps d'arrêt pour les synthèses vocales).
+			h2 Images à caractère informatif
+			p Fournir une alternative textuelle avec l'attribut <code>alt</code> (sans oublier de "." à la fin pour marquer un temps d'arrêt pour les synthèses vocales).
 		.col-12
-			p Pour les <code>img</code> redondants ou de type décoratif :
-			.u-bg-lightgrey.u-p 
-				ul
-					li Ajouter <code>alt=""</code>.
+			h2 Images décoratives
+			p Ajouter <code>alt=""</code>.
 	.row.js-parent-snippet
 		.col-12
 			h2 Img as a link
 			a(href="#").js-snippet
-				img(src="dest/img/misc/holy-placeholder.jpg", alt="Accessible image")
+				span.sr-only Text accessible link
+				img(src="../../../img/holy-placeholder.jpg", loading="lazy", alt="")
 	.row.js-parent-snippet
 		.col-12
 			h2 Img as a link with visible link text
 			a(href="#").js-snippet
-				img(src="dest/img/misc/holy-placeholder.jpg", alt="")
-				span.u-d-block Accessible image 
+				img(src="../../../img/holy-placeholder.jpg", loading="lazy", alt="")
+				span.u-d-block Text accessible link
 	.row.js-parent-snippet
 		.col-12
 			h2 Logo as a link in h1
 			h1.js-snippet
-				a(href="#", title="Website name, short desc")
-					img(src="dest/img/misc/holy-placeholder.jpg", alt="Accueil - WebsiteName.com")
+				a(href="#")
+					span.sr-only Website name, short desc
+					img(src="../../../img/holy-placeholder.jpg", loading="lazy", alt="")

@@ -12,12 +12,11 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css */
  */
 
 code:not([class]) {
-	padding: 0.1em 0.4em;
+	padding: 0 0.2em;
 	font-size: 1rem;
 	font-weight: 400;
 	vertical-align: baseline;
-	background-color: var(--color-secondary-lightest);
-	color: var(--color-secondary-dark);
+	color: var(--color-secondary);
 
 	h2 & {
 		margin-left: 1rem;

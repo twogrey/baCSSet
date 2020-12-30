@@ -1,0 +1,55 @@
+@if $enable-borders {
+
+	$default: #{rem(1px)} solid var(--color-grey) !important;
+
+	.u-border {
+		border: $default;
+	}
+
+	/**
+	 * Colors
+	 */
+
+	@each $name, $color in($all-colors) {
+		.u-border-#{$name} {
+			border-color: var(--color-#{$name}) !important;
+		}
+	}
+
+	.u-border-white {
+		border-color: #fff !important;
+	}
+
+	.u-border-transparent {
+		border-color: transparent !important;
+	}
+
+	/**
+	 * Sides
+	 */
+	.u-border-0 {
+		border-width: 0 !important;
+	}
+
+	@each $name in('top', 'right', 'bottom', 'left') {
+		.u-border-#{$name} {
+			border-#{$name}: $default;
+		}
+	}
+
+	@each $name in('top', 'right', 'bottom', 'left') {
+		.u-border-#{$name}-0 {
+			border-#{$name}: 0 !important;
+		}
+	}
+
+	/**
+	 * Sizes
+	 */
+	@each $name, $val in('1': rem(1px), '2': rem(2px), '4': rem(4px)) {
+		.u-border-#{$name} {
+			border-width: #{$val} !important;
+		}
+	}
+
+}

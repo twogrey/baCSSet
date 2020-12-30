@@ -1,17 +1,15 @@
-/** --------------------------------------------
- * 
- * 
- * 
- -------------------------------------------- */
-
 :root {
 	--radius: #{rem(4px)};
 }
 
-.u-radius {
-	border-radius: var(--radius) !important;
-}
+@if $enable-radius {
 
-.u-rounded {
-	border-radius: rem(5000px) !important;
+	.u-radius {
+		border-radius: var(--radius) !important;
+	}
+
+	.u-rounded {
+		border-radius: rem(5000px) !important;
+	}
+
 }

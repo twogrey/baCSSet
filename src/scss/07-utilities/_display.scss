@@ -19,19 +19,3 @@ $display-values: (
 		}
 	}
 }
-
-@if $enable-vertical-align-utilities {
-	.u-va-m {
-		vertical-align: middle !important;
-	}
-
-	.u-va-b {
-		vertical-align: baseline !important;
-	}
-}
-
-@if $enable-borders-utilities {
-	.u-shadow {
-		box-shadow: 0 rem(2px) rem(8px) rgba(#000, 0.08) !important;
-	}
-}

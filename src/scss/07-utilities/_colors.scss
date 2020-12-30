@@ -4,61 +4,16 @@
 	}
 }
 
-@each $name, $color in($all-colors) {
-	.u-text-#{$name} {
-		color: var(--color-#{$name}) !important;
-	}
+@if $enable-colors {
 
-	.u-bg-#{$name} {
-		background-color: var(--color-#{$name}) !important;
-	}
-
-	@if $enable-borders-utilities {
-		.u-border-#{$name} {
-			border-color: var(--color-#{$name}) !important;
+	@each $name, $color in($all-colors) {
+		.u-text-#{$name} {
+			color: var(--color-#{$name}) !important;
 		}
 	}
-}
 
-.u-text-black {
-	color: var(--color-black) !important;
-}
-
-.u-bg-black {
-	background-color: var(--color-black) !important;
-}
-
-@if $enable-borders-utilities {
-	.u-border-black {
-		border-color: var(--color-black) !important;
-	}
-}
-
-.u-text-white {
-	color: #fff !important;
-}
-
-.u-bg-white {
-	background-color: #fff !important;
-}
-
-@if $enable-borders-utilities {
-	.u-border-white {
-		border-color: #fff !important;
-	}
-}
-
-.u-bg-transparent {
-	background-color: transparent !important;
-}
-
-@if $enable-borders-utilities {
-	.u-border-transparent {
-		border-color: transparent !important;
+	.u-text-white {
+		color: #fff !important;
 	}
 
-	.u-border {
-		border-width: rem(1px) !important;
-		border-style: solid !important;
-	}
 }

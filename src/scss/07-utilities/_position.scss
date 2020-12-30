@@ -1,17 +1,21 @@
-$position-values: (
-	'-static'   : 'static', 
-	'-relative' : 'relative' );
+@if $enable-position {
 
-@each $pos-name, $pos-value in($position-values) {
-	.u-pos#{$pos-name} {
-		position: #{$pos-value} !important;
-	}
+	$position-values: (
+		'-static'   : 'static', 
+		'-relative' : 'relative' );
 
-	@each $name, $prefix in($grid-mq) {
-		@include mq(map-get($mq, $name)) {
-			.u-pos-#{$prefix}#{$pos-name} {
-				position: #{$pos-value} !important;
+	@each $pos-name, $pos-value in($position-values) {
+		.u-pos#{$pos-name} {
+			position: #{$pos-value} !important;
+		}
+
+		@each $name, $prefix in($grid-mq) {
+			@include mq(map-get($mq, $name)) {
+				.u-pos-#{$prefix}#{$pos-name} {
+					position: #{$pos-value} !important;
+				}
 			}
 		}
 	}
+
 }

@@ -1,31 +1,12 @@
-.col-12.col-lg-3
-	code .u-[spacing][dir]-[null/sm/md/lg]-[x]
-.col-12.col-md-4.col-lg-3
-	ul
-		li <i>spacing</i>
-			ul.smaller
-				li <b>p</b> (padding)
-				li <b>m</b> (margin)
-				li <b>nm</b> (negative margin)
-.col-12.col-md-4.col-lg-3
-	ul
-		li <i>dir</i>
-			ul.smaller
-				li <b>l</b> (left)
-				li <b>r</b> (right)
-				li <b>t</b> (top)
-				li <b>b</b> (bottom)
-				li <b>x</b> (left & right)
-				li <b>y</b> (top & bottom)
-				li <i>null</i> (all directions)
-.col-12.col-md-4.col-lg-3
-	ul 
-		li <i>x</i>
-			ul.smaller
-				li <b>0</b> (zero spacing)
-				li <b>quarter</b> (quarter of <code>--spacing</code>)
-				li <b>half</b> (half of <code>--spacing</code>)
-				li <i>null</i> (<code>--spacing</code>)
-				li <b>double</b> (double of <code>--spacing</code>)
-				li <b>quad</b> (quadruple of <code>--spacing</code>)
-				li <b>a</b> (auto)
+.col-12
+	code .u-{p/m/nm}{t/r/b/l/x/y}-{sm/md/lg}-{0/quarter/third/half/double/triple/quad/quint}
+.col-12.col-sm-6
+	h2 Examples
+	div(class="u-bg-lightgrey u-p u-mb")
+		div(class="u-bg-primary-lightest u-text-primary-dark") .u-p
+	div(class="u-bg-lightgrey u-pl u-mb")
+		div(class="u-bg-primary-lightest u-text-primary-dark") .u-pl
+	div(class="u-bg-lightgrey u-py-double u-mb")
+		div(class="u-bg-primary-lightest u-text-primary-dark") .u-py-double
+	div(class="u-bg-lightgrey u-px-md-triple u-mb")
+		div(class="u-bg-primary-lightest u-text-primary-dark") .u-px-md-triple 

@@ -1,2 +1,24 @@
 .col-12
-	code(style="word-break:break-word") .u-d-[null/sm/md/lg]-[none/inline-block/block/inline-flex/flex]
+	code .u-d-{sm/md/lg}-{none/inline/inline-block/block/inline-flex/flex}
+	table.u-mt
+		thead
+			tr
+				th Screen sizes
+				th Class
+		tbody
+			tr
+				td Hidden on all
+				td
+					code .u-d-none
+			tr
+				td Visible only for sm and plus
+				td
+					code .u-d-none .u-d-sm-block
+			tr
+				td Visible only for md and plus
+				td
+					code .u-d-none .u-d-md-block
+			tr
+				td Visible only for lg and plus
+				td
+					code .u-d-none .u-d-lg-block

@@ -72,16 +72,6 @@
           <div class="col-12 col-md-9 col-lg-10 u-px-0 u-mb-0">
             <div class="god-section-title">Misc </div>
             <div class="container u-py-md u-px-md-double">
-              <section class="section js-menu" id="Colors-contrast">
-                <div class="row">
-                  <div class="col-12">
-                    <h1 class="section__title">Colors</h1>
-                  </div>
-                  <div class="col-12">
-                    <p>Utiliser les DevTools pour contrôler le contrast des couleurs de texte vis-à-vis de celles de leurs fonds. </p><img src="dest/img/misc/colors-contrast.jpg" alt="">
-                  </div>
-                </div>
-              </section>
               <section class="section js-menu" id="Iframe">
                 <div class="row">
                   <div class="col-12">
@@ -111,113 +101,38 @@
                     <h1 class="section__title">Images</h1>
                   </div>
                   <div class="col-12">
-                    <p>Pour les <code>img</code> dont le contenu est à caractère informatif :</p>
-                    <div class="u-bg-lightgrey u-p"> 
-                      <ul>
-                        <li>Fournir une alternative textuelle avec l'attribut <code>alt</code> (sans oublier de "." à la fin pour marquer un temps d'arrêt pour les synthèses vocales).</li>
-                      </ul>
-                    </div>
+                    <h2>Images à caractère informatif</h2>
+                    <p>Fournir une alternative textuelle avec l'attribut <code>alt</code> (sans oublier de "." à la fin pour marquer un temps d'arrêt pour les synthèses vocales).</p>
                   </div>
                   <div class="col-12">
-                    <p>Pour les <code>img</code> redondants ou de type décoratif :</p>
-                    <div class="u-bg-lightgrey u-p"> 
-                      <ul>
-                        <li>Ajouter <code>alt=""</code>.</li>
-                      </ul>
-                    </div>
+                    <h2>Images décoratives</h2>
+                    <p>Ajouter <code>alt=""</code>.</p>
                   </div>
                 </div>
                 <div class="row js-parent-snippet">
                   <div class="col-12">
-                    <h2>Img as a link</h2><a class="js-snippet" href="#"><img src="dest/img/misc/holy-placeholder.jpg" alt="Accessible image"></a>
+                    <h2>Img as a link</h2><a class="js-snippet" href="#"><span class="sr-only">Text accessible link</span><img src="../../../img/holy-placeholder.jpg" loading="lazy" alt=""></a>
                   </div>
                 </div>
                 <div class="row js-parent-snippet">
                   <div class="col-12">
-                    <h2>Img as a link with visible link text</h2><a class="js-snippet" href="#"><img src="dest/img/misc/holy-placeholder.jpg" alt=""><span class="u-d-block">Accessible image </span></a>
+                    <h2>Img as a link with visible link text</h2><a class="js-snippet" href="#"><img src="../../../img/holy-placeholder.jpg" loading="lazy" alt=""><span class="u-d-block">Text accessible link</span></a>
                   </div>
                 </div>
                 <div class="row js-parent-snippet">
                   <div class="col-12">
                     <h2>Logo as a link in h1</h2>
-                    <h1 class="js-snippet"><a href="#" title="Website name, short desc"><img src="dest/img/misc/holy-placeholder.jpg" alt="Accueil - WebsiteName.com"></a></h1>
+                    <h1 class="js-snippet"><a href="#"><span class="sr-only">Website name, short desc</span><img src="../../../img/holy-placeholder.jpg" loading="lazy" alt=""></a></h1>
                   </div>
                 </div>
               </section>
               <section class="section js-menu" id="Menu">
                 <div class="row">
                   <div class="col-12">
-                    <h1 class="section__title">Menu</h1>
-                  </div>
-                </div>
-                <div class="row js-parent-snippet u-mb-half">
-                  <div class="col-12">
-                    <h2>Mobile/Tablet trigger</h2>
+                    <h1 class="section__title">Main menu</h1>
                   </div>
                   <div class="col-12">
-                    <button class="c-btn c-btn--secondary c-btn--icon-only p-offcanvas-trigger p-offcanvas-trigger--menu js-toggle-menu js-snippet" type="button" data-toggle-escape data-toggle-class="menu-mobile-offcanvas-is-open" data-toggle-target="#menu" aria-controls="menu" aria-expanded="false">
-                      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                        <title>Afficher/Masquer le menu principal</title>
-                        <path d="M.8 3.8h14.4c.5 0 .8-.4.8-.8s-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z"></path>
-                        <path d="M.8 8.8h14.4c.5 0 .8-.4.8-.8s-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z"></path>
-                        <path d="M.8 8.8h14.4c.5 0 .8-.4.8-.8s-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z"></path>
-                        <path d="M.8 13.8h14.4c.4 0 .8-.3.8-.8 0-.4-.3-.8-.8-.8H.8c-.5 0-.8.4-.8.8s.3.8.8.8z"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="row js-parent-snippet">
-                  <div class="col-12">
-                    <h2>Navigation</h2>
-                  </div>
-                  <div class="col-12">
-                    <div class="u-bg-lightgrey u-p"> 
-                      <p><b>Notes :</b></p>
-                      <ul>
-                        <li>Ajouter <code>aria-current="page"</code> sur le lien courant.</li>
-                        <li>Ajouter <code>aria-current="true"</code> sur les ancêtres du lien courant.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="c-panel c-panel--white u-d-lg-none"> 
-                      <div class="c-panel__content">
-                        <p>Menu is offscreen. Toggle it with the button above.</p>
-                      </div>
-                    </div>
-                    <nav id="menu" aria-label="Principale" aria-hidden="true">
-                      <div class="p-offcanvas-overlay" aria-hidden="true" data-toggle-trigger-off></div>
-                      <div class="p-offcanvas">
-                        <div class="p-offcanvas__content">
-                          <ul class="p-offcanvas__list list-unstyled">
-                            <li><a href="dest/pages/stylesguide/misc" aria-current="page">Misc (current)</a></li>
-                            <li> <a href="#" role="button" id="exempleToggleSubMenu2" data-toggle-class="is-open" data-toggle-target-next aria-expanded="false" aria-controls="exempleSubMenu2" aria-haspopup="listbox">
-                                 Menu link #2
-                                <svg class="icon" aria-hidden="true">
-                                  <use xlink:href="#icon-chevron-down"></use>
-                                </svg></a>
-                              <ul id="exempleSubMenu2" role="listbox" aria-labelledby="exempleToggleSubMenu2" aria-hidden="true">
-                                <li><a href="#">Sub menu link #2-1</a></li>
-                                <li><a href="#">Sub menu link #2-2</a></li>
-                                <li><a href="#">Sub menu link #2-3</a></li>
-                              </ul>
-                            </li>
-                            <li><a href="#" role="button" id="exempleToggleSubMenu3" data-toggle-class="is-open" data-toggle-outside data-toggle-target-next aria-expanded="false" aria-controls="exempleSubMenu3" aria-haspopup="listbox">
-                                 Menu link #3
-                                <svg class="icon" aria-hidden="true">
-                                  <use xlink:href="#icon-chevron-down"></use>
-                                </svg></a>
-                              <ul id="exempleSubMenu3" role="listbox" aria-labelledby="exempleToggleSubMenu3" aria-hidden="true">
-                                <li><a href="#">Sub menu link #3-1</a></li>
-                                <li><a href="#">Sub menu link #3-2</a></li>
-                              </ul>
-                            </li>
-                            <li><a href="#">Menu link #4</a></li>
-                            <li><a href="#">Menu link #5</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </nav>
+                    <p>Ajouter <code>aria-current="page"</code> sur le lien courant et <code>aria-current="true"</code> sur les ancêtres du lien courant.</p>
                   </div>
                 </div>
               </section>
@@ -229,7 +144,8 @@
                   <div class="col-12">
                     <article class="js-snippet">
                       <h3 id="headline-RML-Example">Storms Hit East Coast</h3>
-                      <p>Torrential rain and gale force winds have struck the east coast, causing flooding in many coastal towns. <a href="#" id="link-RML-Example" aria-labelledby="link-RML-Example headline-RML-Example">Read more</a></p>
+                      <p>Torrential rain and gale force winds have struck the east coast, causing flooding in many coastal towns. <a href="#" aria-labelledby="link-RML-Example headline-RML-Example">
+                           Read more<span id="link-RML-Example" hidden>Read more about</span></a></p>
                     </article>
                   </div>
                 </div>

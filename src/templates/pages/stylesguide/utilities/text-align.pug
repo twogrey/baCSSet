@@ -1,18 +1,8 @@
 .col-12
-	.u-mb
-		code(style="word-break:break-word") .u-text-[null/sm/md/lg]-[left/center/right/justify]
-	.row.js-parent-snippet.u-mb-half
-		.col-12.u-mb-0
-			p.u-text-left Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae recusandae excepturi libero eos nobis distinctio impedit vel? Consectetur magnam ad amet minima, possimus porro alias a autem aut? Totam, accusamus.
-			div(hidden)
-				p.u-text-left.js-snippet
-	.row.js-parent-snippet.u-mb-half
-		.col-12.u-mb-0
-			p.u-text-md-center Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae recusandae excepturi libero eos nobis distinctio impedit vel? Consectetur magnam ad amet minima, possimus porro alias a autem aut? Totam, accusamus.
-			div(hidden)
-				p.u-text-md-left.js-snippet
-	.row.js-parent-snippet
-		.col-12.u-mb-0
-			p.u-text-lg-right Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae recusandae excepturi libero eos nobis distinctio impedit vel? Consectetur magnam ad amet minima, possimus porro alias a autem aut? Totam, accusamus.
-			div(hidden)
-				p.u-text-lg-right.js-snippet
+	code .u-text-{sm/md/lg}-{left/center/right}
+.col-12
+	h2 Examples
+	div(class="u-text-left u-bg-primary-lightest u-text-primary-dark u-p u-mb") .u-text-left
+	div(class="u-text-center u-bg-primary-lightest u-text-primary-dark u-p u-mb") .u-text-center
+	div(class="u-text-right u-bg-primary-lightest u-text-primary-dark u-p u-mb") .u-text-right
+	div(class="u-text-md-center u-bg-primary-lightest u-text-primary-dark u-p u-mb") This text is centered only for medium (and plus) screen

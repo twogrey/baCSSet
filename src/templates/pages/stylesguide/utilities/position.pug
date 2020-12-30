@@ -1,2 +1,29 @@
 .col-12
-	code(style="word-break:break-word") .u-pos-[null/sm/md/lg]-[static/relative]
+	code .u-pos-{sm/md/lg}-{static/relative}
+	table.u-mt
+		thead
+			tr
+				th Screen sizes
+				th Class
+		tbody
+			tr
+				td Static on all
+				td
+					code .u-pos-static
+					|  or nothing
+			tr
+				td Relative on all
+				td
+					code .u-pos-relative
+			tr
+				td Relative only for sm and plus
+				td
+					code .u-sm-relative
+			tr
+				td Relative only for md and plus
+				td
+					code .u-md-relative
+			tr
+				td Relative only for lg and plus
+				td
+					code .u-lg-relative

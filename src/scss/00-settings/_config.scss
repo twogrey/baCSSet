@@ -59,15 +59,16 @@ $enable-tooltip: true; // default direction is top
 	$enable-tooltip-right: true;
 	$enable-tooltip-right-mq: true;
 
-/** --------------------------------------------
- * 
- * Enable/disable rulesets
- * 
- -------------------------------------------- */
 
-$enable-borders-utilities        : false;
-$enable-shadow-utilities         : false;
-$enable-vertical-align-utilities : false;
+/**
+ * Utilities
+ */
+$enable-colors      : true;
+$enable-backgrounds : true;
+$enable-borders     : true;
+$enable-position    : true;
+$enable-radius      : true;
+$enable-shadow : true;
 
 /** --------------------------------------------
  * 
