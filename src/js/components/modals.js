@@ -65,6 +65,7 @@ const stopPropagation = function (e) {
 	e.stopPropagation();
 };
 
+// Focus trap
 const focusInModal = function (e) {
 	e.preventDefault();
 	let index = modalFocusables.findIndex((f) => f === modal.querySelector(':focus'));
@@ -83,6 +84,7 @@ const focusInModal = function (e) {
 };
 
 window.addEventListener('keydown', (e) => {
+	// Close modal by pressing Esc
 	if (e.key === 'Escape' || e.key === 'Esc') {
 		closeModal(e);
 	}

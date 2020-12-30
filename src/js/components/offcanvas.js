@@ -1,12 +1,16 @@
 let offcanvas = null;
 let offcanvasFocusables = [];
-let previouslyFocusedElementoffcanvas = null;
+let previouslyFocusedElementOffcanvas = null;
 
 const openOffcanvas = function (offcanvasID) {
-	// Keep current offcanvas & his trigger
+	// Keep current offcanvas
 	offcanvas = document.querySelector('#'+offcanvasID);
-	previouslyFocusedElementoffcanvas = document.querySelector(':focus');
-	previouslyFocusedElementoffcanvas.setAttribute('aria-expanded', 'true');
+
+	// Keep trigger
+	previouslyFocusedElementOffcanvas = document.querySelector(':focus');
+	if (previouslyFocusedElementOffcanvas.getAttribute('aria-expanded')) {
+		previouslyFocusedElementOffcanvas.setAttribute('aria-expanded', 'true');
+	}
 
 	// Add specific styles to <body>
 	body.classList.add('offcanvas-is-open');
@@ -33,9 +37,9 @@ const closeOffcanvas = function () {
 	}
 
 	// Give focus to the trigger
-	if (previouslyFocusedElementoffcanvas !== null) {
-		previouslyFocusedElementoffcanvas.focus();
-		previouslyFocusedElementoffcanvas.setAttribute('aria-expanded', 'false');
+	previouslyFocusedElementOffcanvas.focus();
+	if (previouslyFocusedElementOffcanvas.getAttribute('aria-expanded')) {
+		previouslyFocusedElementOffcanvas.setAttribute('aria-expanded', 'false');
 	}
 
 	// Add fading-out class to offcanvas
@@ -67,6 +71,7 @@ const stopPropagation = function (e) {
 	e.stopPropagation();
 };
 
+// Focus trap
 const focusInOffcanvas = function (e) {
 	e.preventDefault();
 	let index = offcanvasFocusables.findIndex((f) => f === offcanvas.querySelector(':focus'));
@@ -85,6 +90,7 @@ const focusInOffcanvas = function (e) {
 };
 
 window.addEventListener('keydown', (e) => {
+	// Close modal by pressing Esc
 	if (e.key === 'Escape' || e.key === 'Esc') {
 		closeOffcanvas(e);
 	}
@@ -97,4 +103,15 @@ document.querySelectorAll('.js-offcanvas').forEach((a) => {
 	a.addEventListener('click', () => {
 		openOffcanvas(a.getAttribute('data-offcanvas-id'));
 	});
+});
+
+var resizeTimer;
+
+window.addEventListener('resize', (e) => {
+	if(offcanvas && offcanvas.classList.contains('p-offcanvas--mq') && window.innerWidth > mqMedium) {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function() {
+			closeOffcanvas(e);
+		}, 250);
+	}
 });

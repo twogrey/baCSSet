@@ -9,8 +9,12 @@
 	}
 
 	.p-offcanvas {
+		--w: #{rem(300px)};
+		--i: -1;
+		--wrap-p: var(--spacing);
+		--title-mr: var(--spacing);
 		position: fixed;
-		z-index: var(--z-max);
+		z-index: var(--z-offcanvas);
 		top: 0;
 		left: 0;
 		display: none;
@@ -18,43 +22,50 @@
 		height: 100vh;
 		background-color: rgba(#000, 0.85); 
 
+		@include small-plus {
+			--w: #{rem(500px)};
+		}
+
 		&.is-active {
+			--wrap-anim: reveal-on-offcanvas 0.3s forwards;
 			display: block;
 			animation: o-fade-in 0.3s;
 		}
 
 		&.is-hiding {
+			--wrap-anim: reveal-off-offcanvas 0.3s;
 			animation: o-fade-out 0.3s;
 		}
 
-		&__wrap {
-			--i: -1;
-			width: rem(300px);
-			height: 100vh;
-			padding: var(--spacing);
-			background-color: #fff;
-			overflow-y: auto;
+		&--right {
+			--i: 1;
+			--ml: auto;
+		}
 
-			@include small-plus {
-				width: rem(500px);
-			}
-
-			.is-active > & {
-				animation: reveal-on-offcanvas 0.3s forwards;
-			}
-
-			.is-hiding > & {
-				animation: reveal-off-offcanvas 0.3s;
-			}
-
-			&--right {
-				--i: 1;
-				margin-left: auto;
+		&--mq {
+			@include medium {
+				--w: auto;
+				--ml: 0;
+				--wrap-anim: none !important;
+				--close-display: none;
+				--wrap-p: 0;
+				--title-mr: 0;
+				position: static;
+				display: block;
+				height: auto;
+				background-color: transparent;
+				animation-duration: 0.001s !important;
 			}
 		}
 
-		&__content {
-
+		&__wrap {
+			width: var(--w);
+			height: 100%;
+			margin-left: var(--ml);
+			padding: var(--wrap-p);
+			background-color: #fff;
+			overflow-y: auto;
+			animation: var(--wrap-anim);
 		}
 
 		&__header {
@@ -67,14 +78,11 @@
 			@include heading(4);
 			align-self: center;
 			margin-bottom: 0;
-			margin-right: var(--spacing);
-		}
-
-		&__body {
-
+			margin-right: var(--title-mr);
 		}
 
 		&__close {
+			display: var(--close-display);
 			margin-left: auto;
 		}
 	}

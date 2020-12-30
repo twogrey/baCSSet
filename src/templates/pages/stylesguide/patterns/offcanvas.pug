@@ -1,43 +1,49 @@
-mixin offcanvas(id, align)
-	.p-offcanvas(aria-labelledby="titleOffcanvas"+id, id="offcanvas"+id)
-		- var alignClass = '';
-		if(align)
-			- alignClass = 'p-offcanvas__wrap--'+align;
-		.p-offcanvas__wrap.js-offcanvas-stop(class=alignClass)
+mixin offcanvas(id, align, responsive)
+	- var responsiveClass = '';
+	- var alignClass = '';
+	if(responsive)
+		- responsiveClass = 'p-offcanvas--mq';
+	if(align)
+		- alignClass = 'p-offcanvas--'+align;
+	.p-offcanvas(class=alignClass+' '+responsiveClass, aria-labelledby="titleOffcanvas"+id, id="offcanvas"+id)
+		.p-offcanvas__wrap.js-offcanvas-stop
 			.p-offcanvas__content
 				.p-offcanvas__header
-					h1(id="titleoffcanvas"+id, class="p-offcanvas__title") Offcanvas title
+					h1(id="titleOffcanvas"+id, class="p-offcanvas__title") Offcanvas title
 					button.p-offcanvas__close.c-btn.c-btn--transparent.js-offcanvas-close(type="button")
 						svg(class="icon")
 							title Fermer
 							use(xlink:href="#icon-x")
 				.p-offcanvas__body
-					if(align == 'right')
-						.row
-							.col-12.u-mb
-								.form-group
-									label(for="demoInputOffcanvasA"+id) Label
-									input(type="text", id="demoInputOffcanvasA"+id)
-							.col-12.u-mb
-								.form-group
-									label(for="demoInputOffcanvasB"+id) Label
-									input(type="text", id="demoInputOffcanvasB"+id)
-							.col-auto.u-mb.u-ml-a
-								.form-group
-									button(type="button", class="c-btn c-btn--error c-btn--outline js-offcanvas-close") Fermer
-							.col-auto.u-mb
-								.form-group
-									button(type="button", class="c-btn c-btn--success") Valider
+					if(responsive)
+						p Offcanvas in &lt; 768px res. Default flow in &gt;= 768px res.
 					else
-						ul
-							li
-								a(href="#") Menu item #1
-							li
-								a(href="#") Menu item #2
-							li
-								a(href="#") Menu item #3
+						if(align == 'right')
+							.row
+								.col-12.u-mb
+									.form-group
+										label(for="demoInputOffcanvasA"+id) Label
+										input(type="text", id="demoInputOffcanvasA"+id)
+								.col-12.u-mb
+									.form-group
+										label(for="demoInputOffcanvasB"+id) Label
+										input(type="text", id="demoInputOffcanvasB"+id)
+								.col-auto.u-mb.u-ml-a
+									.form-group
+										button(type="button", class="c-btn c-btn--error c-btn--outline js-offcanvas-close") Fermer
+								.col-auto.u-mb
+									.form-group
+										button(type="button", class="c-btn c-btn--success") Valider
+						else
+							ul
+								li
+									a(href="#") Menu item #1
+								li
+									a(href="#") Menu item #2
+								li
+									a(href="#") Menu item #3
 
-section.section.js-menu#offcanvass
+section.section.js-menu#Offcanvas
 	.row.js-parent-snippet.u-mb
 		.col-12
 			h1.section__title Offcanvas
@@ -51,3 +57,10 @@ section.section.js-menu#offcanvass
 			aside.js-snippet
 				button(type="button", class="c-btn c-btn--primary js-offcanvas", data-offcanvas-id="offcanvas2", aria-expanded="false") Open offcanvas (right)
 				+offcanvas('2', 'right')
+	.row.js-parent-snippet
+		.col-12
+			h2 Displayed at medium MQ
+		.col-12
+			aside.js-snippet
+				button(type="button", class="c-btn c-btn--primary js-offcanvas u-d-md-none", data-offcanvas-id="offcanvas3", aria-expanded="false") Open offcanvas (right)
+				+offcanvas('3', false, true)
