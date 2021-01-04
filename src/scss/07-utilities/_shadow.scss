@@ -1,15 +1,14 @@
 @if $enable-shadow {
-
 	.u-shadow-none {
 		box-shadow: none !important;
 	}
 
 	.u-shadow {
-		box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 	}
 
 	.u-shadow-lg {
-		box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 	}
 
 }

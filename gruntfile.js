@@ -199,7 +199,7 @@ module.exports = function (grunt) {
            * [Adds vendor prefixes, using data from Can I Use]
            */
 					autoprefixer({
-						browsers: [ 'IE 11', 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
+						browsers: [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
 					}),
 					/**
 	         * [Pack same CSS media query rules]
@@ -389,10 +389,10 @@ module.exports = function (grunt) {
 				files: `${templatesPath}**/*`,
 				tasks: [ 'pug', 'htmlmin:dist', 'htmllint', 'accessibility' ],
 			},
-			// stylelint: {
-			//     files: [scssPath + '**/*.scss'],
-			//     tasks: ['shell:lint']
-			// },
+			stylelint: {
+			    files: [scssPath + '**/*.scss'],
+			    tasks: ['shell:lint']
+			},
 			style: {
 				files: [ `${scssPath}**/*.scss`, `!${scssPath}pages/**/*.scss` ],
 				tasks: [ 'sass:dist', 'postcss:dist' ],

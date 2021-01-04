@@ -1,5 +1,4 @@
 @if $enable-dropdown {
-	
 	.p-dropdown {
 		&--absolute {
 			--item-white-space: normal;
@@ -19,19 +18,19 @@
 
 		&__list {
 			position: var(--list-position, static);
-			z-index: 1;
 			top: calc(100% + var(--spacing-half));
-			left: var(--list-left, 0);
 			right: var(--list-right, 0);
-			list-style: none;
-			padding: .5em 0;
+			left: var(--list-left, 0);
+			z-index: 1;
 			margin: var(--spacing-half) 0 0;
+			padding: 0.5em 0;
 			border: 1px solid var(--color-grey);
 			border-radius: var(--radius);
 			background-color: #fff;
 			animation: o-fade-in 0.2s;
+			list-style: none;
 
-			&[aria-hidden="true"] {
+			&[aria-hidden='true'] {
 				display: none;
 			}
 		}
@@ -39,35 +38,35 @@
 		&__item {
 			display: block;
 			width: 100%;
-			padding: .5em 1em;
+			padding: 0.5em 1em;
 			border: 0;
-			box-shadow: none;
-			white-space: var(--item-white-space, nowrap);
-			line-height: 1.25;
 			font-size: 1em;
+			line-height: 1.25;
 			text-align: left;
-			color: var(--color-black);
+			white-space: var(--item-white-space, nowrap);
 			background-color: transparent;
+			color: var(--color-black);
+			box-shadow: none;
 			cursor: pointer;
 			transition: background-color 0.2s, color 0.2s;
 
 			&:hover,
 			&:focus-visible {
-				color: var(--color-black);
-				background-color: var(--color-lightgrey);
 				text-decoration: none;
+				background-color: var(--color-lightgrey);
+				color: var(--color-black);
 			}
 
 			&:active {
-				color: #fff;
 				background-color: var(--color-primary);
+				color: #fff;
 			}
 		}
 
 		&__toggle {
 			text-align: left;
 			
-			&[aria-expanded="true"] {
+			&[aria-expanded='true'] {
 				--i: 1;
 			}
 		}

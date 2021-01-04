@@ -50,16 +50,16 @@ form {
 		color: var(--message-c, inherit);
 	}
 
-	.help { display: block }
+	.help { display: block; }
 
-	.message { display: var(--message-d) } 
+	.message { display: var(--message-d); } 
 
 	&.error,
-	&.valid { --message-d: block }
+	&.valid { --message-d: block; }
 
-	&.error { --message-c: #{$input-error-border-color} }
+	&.error { --message-c: #{$input-error-border-color}; }
 
-	&.valid { --message-c: #{$input-valid-border-color} }
+	&.valid { --message-c: #{$input-valid-border-color}; }
 }
 
 /** --------------------------------------------

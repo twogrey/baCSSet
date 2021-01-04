@@ -1,8 +1,7 @@
 @if $enable-badge {
-
 	.c-badge {
 		display: inline-block;
-		padding: .35em .65em;
+		padding: 0.35em 0.65em;
 		border-radius: rem(4px);
 		font-size: rem(12px);
 		font-weight: $semibold;
@@ -19,13 +18,13 @@
 		}
 
 		&--light {
-			color: var(--color-darkgrey);
 			background-color: var(--color-lightgrey);
+			color: var(--color-darkgrey);
 		}
 
 		&--dark {
-			color: #fff;
 			background-color: var(--color-black);
+			color: #fff;
 		}
 
 		&:empty {
@@ -39,8 +38,8 @@
 		&--abs {
 			--s: #{rem(22px)};
 			position: absolute;
-			top: calc(var(--s) * -.45);
-			right: calc(var(--s) * -.45);
+			top: calc(var(--s) * -0.45);
+			right: calc(var(--s) * -0.45);
 			display: flex;
 			align-items: center;
 			justify-content: center;

@@ -5,8 +5,8 @@
 		font-style: $style;
 		font-display: $display; // optional for text, swap for headings, block for font icon
 		@if $woff2 {
-		src: url('../font/' + $font-name + '/' + $file-name + '.woff2') format('woff2'),
-			url('../font/' + $font-name + '/' + $file-name + '.woff') format('woff');
+			src: url('../font/' + $font-name + '/' + $file-name + '.woff2') format('woff2'),
+				url('../font/' + $font-name + '/' + $file-name + '.woff') format('woff');
 		} @else {
 			src: url('../font/' + $font-name + '/' + $file-name + '.woff') format('woff');
 		}
@@ -34,8 +34,7 @@ $text-line-height: 1.5;
 $text-margin-bottom: var(--spacing);
 
 $link-color: var(--color-primary);
-$link-color-active: var(--color-primary-dark); 
+$link-color-active: var(--color-primary-dark);
 
 $link-color-secondary: var(--color-secondary);
 $link-color-secondary-active: var(--color-secondary-dark);
-	

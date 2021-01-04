@@ -10,7 +10,7 @@
 			border-radius: 0;
 			text-align: left;
 
-			&[aria-expanded="true"] {
+			&[aria-expanded='true'] {
 				--i: 1;
 				color: var(--color-primary);
 			}
@@ -27,7 +27,7 @@
 		&__content {
 			padding: var(--p);
 
-			&[aria-hidden="true"] {
+			&[aria-hidden='true'] {
 				display: none;
 			}
 		}

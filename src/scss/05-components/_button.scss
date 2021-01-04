@@ -18,16 +18,37 @@
 		line-height: $button-line-height;
 		text-decoration: none;
 		vertical-align: middle;
-		cursor: pointer;
 		background-color: var(--btn-background);
+		cursor: pointer;
 		user-select: none;
-		transition-property: opacity, color, border-color, background-color, box-shadow;
 		transition-timing-function: ease;
 		transition-duration: 0.2s;
+		transition-property: opacity, color, border-color, background-color, box-shadow;
 		-webkit-tap-highlight-color: transparent;
 		outline: none;
 
-		&:hover { text-decoration: none }
+		/**
+		 * Colors
+		 */
+		@each $name, $color in($main-colors) {
+			&--#{$name} {
+				--btn-background: var(--color-#{$name});
+				color: #fff;
+
+				&:hover,
+				&[aria-selected='true'] {
+					--btn-background: var(--color-#{$name}-dark);
+					color: #fff;
+				}
+
+				&:focus-visible,
+				&:active {
+					--btn-outline-color: var(--color-#{$name}-lightest);
+				}
+			}
+		}
+
+		&:hover { text-decoration: none; }
 
 		&:focus-visible,
 		&:active {
@@ -41,33 +62,12 @@
 			width: 100%;
 		}
 
-		/**
-		 * Colors
-		 */
-		@each $name, $color in($main-colors) {
-			&--#{$name} {
-				--btn-background: var(--color-#{$name});
-				color: #fff;
-
-				&:hover,
-				&[aria-selected="true"] {
-					--btn-background: var(--color-#{$name}-dark);
-					color: #fff;
-				}
-
-				&:focus-visible,
-				&:active {
-					--btn-outline-color: var(--color-#{$name}-lightest);
-				}
-			}
-		}
-
 		&--white {
 			--btn-background: #fff;
 			color: var(--color-primary);
 
 			&:hover,
-			&[aria-selected="true"] {
+			&[aria-selected='true'] {
 				--btn-background: var(--color-primary-lightest);
 				color: var(--color-primary-dark);
 			}
@@ -83,7 +83,7 @@
 			color: var(--color-black);
 
 			&:hover,
-			&[aria-selected="true"] {
+			&[aria-selected='true'] {
 				--btn-background: var(--color-darkgrey);
 				color: #fff;
 			}
@@ -99,7 +99,7 @@
 			color: #fff;
 
 			&:hover,
-			&[aria-selected="true"] {
+			&[aria-selected='true'] {
 				--btn-background: var(--color-darkgrey);
 				color: #fff;
 			}
@@ -115,7 +115,7 @@
 			color: var(--color-black);
 
 			&:hover,
-			&[aria-selected="true"] {
+			&[aria-selected='true'] {
 				--btn-background: var(--color-lightgrey);
 				color: var(--color-black);
 			}
@@ -141,9 +141,9 @@
 		 * Disabled
 		 */
 		&[disabled],
-		&[aria-disabled="true"],
+		&[aria-disabled='true'],
 		&.disabled,
-		form:invalid &[type="submit"] {
+		form:invalid &[type='submit'] {
 			opacity: 0.5;
 			cursor: not-allowed;
 		}
@@ -160,28 +160,28 @@
 			height: var(--h);
 			transition: transform 0.2s;
 
-			&:first-child { margin-right: var(--px) }
+			&:first-child { margin-right: var(--px); }
 
-			&:last-child { margin-left: var(--px) }
+			&:last-child { margin-left: var(--px); }
 
 			&:only-child {
 				--w: var(--h);
-				padding: 0 calc(var(--py) / 2);
 				margin-right: calc(var(--px) * -0.5);
 				margin-left: calc(var(--px) * -0.5);
+				padding: 0 calc(var(--py) / 2);
 			}
 		}
 
 		/**
 		 * Differents sizes
 		 */
-		&--small { font-size: 0.75rem }
+		&--small { font-size: 0.75rem; }
 
-		&--large { font-size: 1.25rem }
+		&--large { font-size: 1.25rem; }
 
 		/**
 		 * Rounded corners
 		 */
-		&--rounded { border-radius: 10em }		
+		&--rounded { border-radius: 10em; }		
 	}
 }

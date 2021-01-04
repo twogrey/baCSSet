@@ -1,5 +1,4 @@
 @if $enable-offcanvas {
-
 	.offcanvas-is-open { 
 		overflow: hidden;
 
@@ -14,13 +13,13 @@
 		--wrap-p: var(--spacing);
 		--title-mr: var(--spacing);
 		position: fixed;
-		z-index: var(--z-offcanvas);
 		top: 0;
 		left: 0;
+		z-index: var(--z-offcanvas);
 		display: none;
 		width: 100%;
 		height: 100vh;
-		background-color: rgba(#000, 0.85); 
+		background-color: rgba(#000, 0.85);
 
 		@include small-plus {
 			--w: #{rem(500px)};
@@ -63,8 +62,8 @@
 			height: 100%;
 			margin-left: var(--ml);
 			padding: var(--wrap-p);
-			background-color: #fff;
 			overflow-y: auto;
+			background-color: #fff;
 			animation: var(--wrap-anim);
 		}
 
@@ -77,8 +76,8 @@
 		&__title {
 			@include heading(4);
 			align-self: center;
-			margin-bottom: 0;
 			margin-right: var(--title-mr);
+			margin-bottom: 0;
 		}
 
 		&__close {
@@ -91,6 +90,7 @@
 		from {
 			transform: translateX(calc(100% * var(--i)));
 		}
+
 		to {
 			transform: none;
 		}
@@ -100,6 +100,7 @@
 		from {
 			transform: none;
 		}
+
 		to {
 			transform: translateX(calc(100% * var(--i)));
 		}

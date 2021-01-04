@@ -1,8 +1,8 @@
 @if $enable-loader {
 	.c-loader {
-		display: inline-flex;
 		--c: var(--color-primary);
 		--w: calc(var(--spacing) * 3);
+		display: inline-flex;
 
 		&--overlay {
 			--bg: rgba(255, 255, 255, 0.5);

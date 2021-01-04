@@ -32,7 +32,7 @@
 					border-width: 0.2em 0 0.2em 0.4em;
 					border-style: solid;
 					border-color: transparent transparent transparent var(--color-black);
-					opacity: var(--o, .25);
+					opacity: var(--o, 0.25);
 				}
 			}
 
@@ -41,7 +41,7 @@
 			}
 
 			&:last-child {
-				--o: .5;
+				--o: 0.5;
 				color: var(--color-black);
 			}
 		}

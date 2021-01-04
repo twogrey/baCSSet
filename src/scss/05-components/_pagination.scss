@@ -1,5 +1,4 @@
 @if $enable-pagination {
-
 	.c-pagination {
 		--s: var(--spacing-half);
 		display: flex;
@@ -11,8 +10,8 @@
 			margin: var(--s);
 
 			&--ellipsis {
-				margin-left: 0;
 				margin-right: 0;
+				margin-left: 0;
 			}
 		}
 

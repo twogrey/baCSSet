@@ -4,8 +4,6 @@
       "stylelint-order"
    ],
    "ignoreFiles":[
-      "02-vendors/_icons.scss",
-      "02-vendors/_tiny-slider.scss",
       "02-vendors/_browser-update.scss",
       "pages/stylesguide.scss"
    ],

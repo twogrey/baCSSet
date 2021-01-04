@@ -32,12 +32,12 @@
 		height: var(--size);
 		margin: 0;
 		border: $input-border-width solid var(--bc, var(--border));
+		border-radius: rem(2px);
 		vertical-align: top;
 		background: var(--b);
-		border-radius: rem(2px);
 		cursor: pointer;
-		outline: none;
 		transition: background 0.3s, border-color 0.3s;
+		outline: none;
 		appearance: none;
 
 		&::after {
@@ -67,7 +67,7 @@
 				--bc: var(--border);
 			}
 
-			& ~ label {
+			~ label {
 				cursor: not-allowed;
 			}
 		}
@@ -92,21 +92,20 @@
 			}
 		}
 
-		& ~ label {
+		~ label {
 			margin-bottom: 0;
 			padding-left: calc(var(--mr) / 2);
 			font-size: rem(14px);
 			font-weight: $regular;
 			line-height: 1.5;
 
-			.error & { color: var(--color-error) }
-			.valid & { color: var(--color-success) }
+			.error & { color: var(--color-error); }
+			.valid & { color: var(--color-success); }
 		}
 	}
 
 	input[type='checkbox'] {
 		&:not(.switch) {
-
 			&::after {
 				top: 50%;
 				left: 50%;
