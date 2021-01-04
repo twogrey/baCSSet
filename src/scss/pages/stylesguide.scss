@@ -12,10 +12,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css */
  */
 
 code:not([class]) {
+  display: inline-block;
+  max-width: 100%;
+	overflow: auto;
 	padding: 0 0.2em;
 	font-size: 1rem;
 	font-weight: 400;
-	vertical-align: baseline;
+	vertical-align: middle;
 	color: var(--color-secondary);
 
 	h2 & {

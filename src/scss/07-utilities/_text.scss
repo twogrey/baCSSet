@@ -1,10 +1,10 @@
 /** --------------------------------------------
  * 
- * 
+ * Alignments
  * 
  -------------------------------------------- */
 
-@each $value in('left', 'center', 'right', 'justify') {
+@each $value in('left', 'center', 'right') {
 	.u-text-#{$value} {
 		text-align: #{$value} !important;
 	}
@@ -20,55 +20,76 @@
 
 /** --------------------------------------------
  * 
- * 
+ * Sizes
  * 
  -------------------------------------------- */
 
-.u-text-smaller {
+.u-fs-smaller {
 	font-size: 75% !important;
 }
 
-.u-text-bigger {
+.u-fs-larger {
 	font-size: 125% !important;
 }
 
-.u-text-size-1 {
+.u-fs-1 {
 	font-size: 1.375rem !important;
 }
 
-.u-text-size-2 {
+.u-fs-2 {
 	font-size: 1.1875rem !important;
 }
 
-.u-text-size-3 {
+.u-fs-3 {
 	font-size: 1rem !important;
 }
 
-.u-text-size-4 {
+.u-fs-4 {
 	font-size: 0.8125rem !important;
 }
 
-.u-text-size-5 {
+.u-fs-5 {
 	font-size: 0.6875rem !important;
 }
 
-.u-text-fluid {
+.u-fs-fluid {
 	font-size: clamp(calc(var(--min) * 1rem), calc(var(--min) * 100 / var(--mq-sm-unitless) * 0.5vw), calc(var(--max) * 1rem)) !important;
 }
 
 /** --------------------------------------------
  * 
- * 
+ * Reset a text's color, so that it inherits the color from its parent.
  * 
  -------------------------------------------- */
 
-.u-nowrap {
+.u-text-reset {
+	color: inherit !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Text wrapping
+ * 
+ -------------------------------------------- */
+
+.u-text-nowrap {
 	white-space: nowrap !important;
 }
 
 /** --------------------------------------------
  * 
+ * Word break
  * 
+ -------------------------------------------- */
+
+.u-text-break {
+	word-break: break-word !important; // To avoid issues with flex containers
+  overflow-wrap: break-word !important;
+}
+
+/** --------------------------------------------
+ * 
+ * Text transform
  * 
  -------------------------------------------- */
 
@@ -78,25 +99,29 @@
 
 /** --------------------------------------------
  * 
- * 
+ * Font weight & italic
  * 
  -------------------------------------------- */
 
-.u-text-regular {
+.u-fw-regular {
 	font-weight: $regular !important;
 }
 
-.u-text-semibold {
+.u-fw-semibold {
 	font-weight: $semibold !important;
 }
 
-.u-text-bold {
+.u-fw-bold {
 	font-weight: $bold !important;
+} 
+
+.u-fst-i {
+	font-style: italic !important;
 } 
 
 /** --------------------------------------------
  * 
- * 
+ * Line height
  * 
  -------------------------------------------- */
 
@@ -104,17 +129,21 @@
 	line-height: 1 !important;
 }
 
-.u-lh-1-25 {
+.u-lh-sm {
 	line-height: 1.25 !important;
 }
 
-.u-lh-1-5 {
+.u-lh-base {
 	line-height: 1.5 !important;
+}
+
+.u-lh-lg {
+	line-height: 2 !important;
 }
 
 /** --------------------------------------------
  * 
- * 
+ * Serif font
  * 
  -------------------------------------------- */
 
@@ -124,7 +153,7 @@
 
 /** --------------------------------------------
  * 
- * 
+ * Text decoration
  * 
  -------------------------------------------- */
 
@@ -132,6 +161,6 @@
 	text-decoration: underline !important;
 }
 
-.u-text-no-underline {
+.u-text-decoration-none {
 	text-decoration: none !important;
 }

@@ -5,13 +5,6 @@ block append vars
 
 block content
 
-	section.section.js-menu#Colors
-		.row
-			.col-12
-				h1.section__title Colors
-		.row
-			include colors.pug
-
 	section.section.js-menu#Backgrounds
 		.row
 			.col-12
@@ -25,6 +18,13 @@ block content
 				h1.section__title Borders
 		.row
 			include borders.pug
+
+	section.section.js-menu#Colors
+		.row
+			.col-12
+				h1.section__title Colors
+		.row
+			include colors.pug
 
 	section.section.js-menu#Display
 		.row
@@ -54,30 +54,9 @@ block content
 		.row
 			include spacing.pug
 
-	section.section.js-menu#Alignment
+	section.section.js-menu#Text
 		.row
 			.col-12
-				h1.section__title Text alignment
+				h1.section__title Text
 		.row
-			include text-align.pug
-
-	section.section.js-menu#Size
-		.row
-			.col-12
-				h1.section__title Text size
-		.row
-			include text-size.pug
-
-	section.section.js-menu#Weight
-		.row
-			.col-12
-				h1.section__title Text weight
-		.row
-			include text-weight.pug
-
-	section.section.js-menu#Transform
-		.row
-			.col-12
-				h1.section__title Text transform
-		.row
-			include text-transform.pug
+			include text.pug
