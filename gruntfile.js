@@ -119,6 +119,25 @@ module.exports = function (grunt) {
     	all: [ pagesBuildPath + '**/*.unmin.html' ]
     },
 		/**
+     * [A11y tests]
+     */
+		accessibility: {
+			options: {
+				accessibilityLevel: 'WCAG2AA'
+			},
+      dist: {
+        options: {
+          force: true,
+          reportLevels: {
+            notice: false,
+            warning: false,
+            error: true
+          }
+        },
+        src: [pagesBuildPath + '**/*.unmin.html']
+      }
+		},
+		/**
 	   * [Sass compiler]
 	   */
 		sass: {
@@ -368,7 +387,7 @@ module.exports = function (grunt) {
 			},
 			pug: {
 				files: `${templatesPath}**/*`,
-				tasks: [ 'pug', 'htmlmin:dist', 'htmllint' ],
+				tasks: [ 'pug', 'htmlmin:dist', 'htmllint', 'accessibility' ],
 			},
 			// stylelint: {
 			//     files: [scssPath + '**/*.scss'],
