@@ -2,15 +2,16 @@ module.exports = function (grunt) {
 	const sass = require('node-sass');
 
 	/**
-     * [Just-in-time plugin loader: improve speed tasks]
-     */
+   * [Just-in-time plugin loader: improve speed tasks]
+   */
 	require('jit-grunt')(grunt, {
-		svgmin: 'grunt-svgmin'
+		svgmin: 'grunt-svgmin',
+		htmllint: 'grunt-html'
 	});
 
 	/**
-     * [Paths]
-     */
+   * [Paths]
+   */
 	const buildPath = 'dest/';
 
 	const imgBuildPath = `${buildPath}img/`;
@@ -18,7 +19,6 @@ module.exports = function (grunt) {
 	const imgMiscBuildPath = imgBuildPath;
 	const fontBuildPath = `${buildPath}font/`;
 	const jsBuildPath = `${buildPath}js/`;
-	const jsBuildVendorsPath = `${jsBuildPath}vendors/`;
 	const jsBuildComponentsPath = `${jsBuildPath}components/`;
 	const jsBuildPagesPath = `${jsBuildPath}pages/`;
 	const cssBuildPath = `${buildPath}css/`;
@@ -33,7 +33,6 @@ module.exports = function (grunt) {
 	const scssPath = `${sourcesPath}scss/`;
 	const fontPath = `${sourcesPath}font/`;
 	const jsPath = `${sourcesPath}js/`;
-	const jsVendorsPath = `${jsPath}vendors/`;
 	const jsComponentsPath = `${jsPath}components/`;
 	const jsPagesPath = `${jsPath}pages/`;
 	const templatesPath = `${sourcesPath}templates/`;
@@ -80,8 +79,8 @@ module.exports = function (grunt) {
 					expand: true,
 					src: [ '**/index.pug' ],
 					cwd: `${templatesPath}pages/`,
-					dest: `${templatesPath}compiled/`,
-					ext: '.html',
+					dest: `${pagesBuildPath}`,
+					ext: '.unmin.html',
 				} ],
 			},
 		},
@@ -97,22 +96,28 @@ module.exports = function (grunt) {
 			dist: {
 				files: [ {
 					expand: true,
-					src: [ '**/*.html' ],
-					cwd: `${templatesPath}compiled/`,
-					dest: pagesBuildPath,
+					src: [ '**/*.unmin.html' ],
+					cwd: `${pagesBuildPath}`,
+					dest: `${pagesBuildPath}`,
 					ext: '.html',
 				} ],
-			},
-			emails: {
-				files: [ {
-					expand: true,
-					src: [ '**/*.html' ],
-					cwd: `../../views/emails`,
-					dest: `../../views/emails`,
-					ext: '.html',
-				} ],
-			},
+			}
 		},
+		/**
+     * [HTML Validation]
+     */
+    htmllint: {
+		  options: {
+		  	noLangDetect: true,
+		  	force: true,
+		    ignore: 
+		    	[
+		    		'The “dialog” element is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
+		    		'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.'
+		    	]
+		  },
+    	all: [ pagesBuildPath + '**/*.unmin.html' ]
+    },
 		/**
 	   * [Sass compiler]
 	   */
@@ -219,7 +224,6 @@ module.exports = function (grunt) {
 				cleanup: [ 'fill', 'style' ],
 				includeTitleElement: false,
 				svg: {
-					viewBox: '0 0 100 100',
 					xmlns: 'http://www.w3.org/2000/svg',
 				},
 			},
@@ -237,7 +241,7 @@ module.exports = function (grunt) {
 				// '-W083': true,
 				esversion: 6,
 			},
-			dist: [ `${jsPath}**/*.js`, `!${jsPath}vendors/**/*.js`, `!${jsPagesPath}prism.js` ],
+			dist: [ `${jsPath}**/*.js` ],
 		},
 		/**
      * [Babel transpiler]
@@ -319,18 +323,13 @@ module.exports = function (grunt) {
 					dest: svgBuildPath,
 					ext: '.svg',
 				} ],
-			},
+			}
 		},
 		/**
-     * [Image optimization via tinypng service]
+     * [Images JPG/PNG optimization]
      */
-		tinypng: {
-			options: {
-				apiKey: '1l9rX6nGJShw71jrXYWV7bNwrGs5PsCd',
-				summarize: true,
-				stopOnImageError: true,
-			},
-			misc: {
+		image: {
+			dist: {
 				expand: true,
 				src: [ '*.jpg', '*.png' ],
 				cwd: imgMiscPath,
@@ -345,7 +344,6 @@ module.exports = function (grunt) {
 				force: true,
 			},
 			svg: `${svgBuildPath}*.svg`,
-			vendorsJs: `${jsBuildVendorsPath}*.js`,
 			componentsJs: `${jsBuildComponentsPath}*.js`,
 			pagesJs: `${jsBuildPagesPath}*.js`,
 			font: [ `${fontBuildPath}/*` ]
@@ -359,44 +357,18 @@ module.exports = function (grunt) {
 				src: [ '**' ],
 				cwd: fontPath,
 				dest: fontBuildPath,
-			},
-			vendorsJs: {
-				expand: true,
-				src: [ '**' ],
-				cwd: jsVendorsPath,
-				dest: jsBuildVendorsPath,
-			},
+			}
 		},
-    mjml: {
-        dist: {
-            files: [{
-                expand: true,
-                cwd: '../../views/emails',
-                src: ['**/*.mjml'],
-                dest: '../../views/emails',
-                ext: '.html',
-                extDot: 'first'
-            }]
-        }
-    },
 		/**
-         * [Run tasks whenever watched files change]
-         */
+	   * [Run tasks whenever watched files change]
+	   */
 		watch: {
 			options: {
 				spawn: false,
 			},
-			restart: {
-				files: 'gruntfile.js',
-				tasks: [ 'watch' ],
-			},
 			pug: {
 				files: `${templatesPath}**/*`,
-				tasks: [ 'pug', 'htmlmin:dist' ],
-			},
-			mjml: {
-				files: `../../views/emails/**/*.mjml`,
-				tasks: [ 'mjml', 'htmlmin:emails' ],
+				tasks: [ 'pug', 'htmlmin:dist', 'htmllint' ],
 			},
 			// stylelint: {
 			//     files: [scssPath + '**/*.scss'],
@@ -412,7 +384,7 @@ module.exports = function (grunt) {
 			},
 			sprite: {
 				files: `${iconsPath}*.svg`,
-				tasks: [ 'svgstore', 'pug' ],
+				tasks: [ 'svgstore', 'pug', 'htmlmin:dist' ],
 			},
 			svg: {
 				files: `${svgPath}*.svg`,
@@ -420,7 +392,7 @@ module.exports = function (grunt) {
 			},
 			imgMisc: {
 				files: [ `${imgMiscPath}*` ],
-				tasks: [ 'newer:tinypng:misc' ],
+				tasks: [ 'newer:image' ],
 			},
 			jshint: {
 				files: [ `${jsPath}**/*.js` ],
@@ -438,10 +410,6 @@ module.exports = function (grunt) {
 				files: [ `${jsPagesPath}**/*.js` ],
 				tasks: [ 'newer:babel:pages', 'newer:uglify:pages' ],
 			},
-			copyVendorsJs: {
-				files: [ `${jsVendorsPath}*.js` ],
-				tasks: [ 'clean:vendorsJs', 'copy:vendorsJs' ],
-			},
 			copyFont: {
 				files: `${fontPath}**/*`,
 				tasks: [ 'clean:font', 'copy:font' ],
@@ -453,8 +421,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build:templates', [ 'pug', 'htmlmin:dist' ]);
 
-	grunt.registerTask('build:emails', [ 'mjml', 'htmlmin:emails' ]);
-
 	grunt.registerTask('lint:styles', [ 'shell:lint' ]);
 
 	grunt.registerTask('build:styles', [ 'svgstore', 'clean:font', 'copy:font', 'sass', 'postcss' ]);
@@ -463,13 +429,11 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build:componentsJs', [ 'clean:componentsJs', 'babel:components', 'uglify:components' ]);
 
-	grunt.registerTask('build:vendorsJs', [ 'clean:vendorsJs', 'copy:vendorsJs' ]);
-
 	grunt.registerTask('build:mainJs', [ 'babel:dist', 'uglify:dist' ]);
 
-	grunt.registerTask('build:js', [ 'build:pagesJs', 'build:vendorsJs', 'build:componentsJs', 'build:mainJs' ]);
+	grunt.registerTask('build:js', [ 'build:pagesJs', 'build:componentsJs', 'build:mainJs' ]);
 
-	grunt.registerTask('build:img', [ 'clean:svg', 'svgmin', 'tinypng:misc' ]);
+	grunt.registerTask('build:img', [ 'clean:svg', 'svgmin', 'image' ]);
 
 	grunt.registerTask('build', [ 'build:styles', 'build:js' ]);
 };

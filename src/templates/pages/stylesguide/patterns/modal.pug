@@ -1,5 +1,5 @@
 mixin modal(id, size, viewport, lightbox, snippet)
-	dialog.p-modal(role="dialog", aria-labelledby="titleModal"+id, id="modal"+id, class={'js-snippet':snippet})
+	dialog.p-modal(aria-labelledby="titleModal"+id, id="modal"+id, class={'js-snippet':snippet})
 		- var sizeClass = '';
 		- var viewportClass = '';
 		if(size)
@@ -18,7 +18,7 @@ mixin modal(id, size, viewport, lightbox, snippet)
 							use(xlink:href="#icon-x")
 				.p-modal__body
 					if(lightbox)
-						img(src="https://picsum.photos/1920/1200", srcset="https://picsum.photos/768/1200 768w, https://picsum.photos/1200/1200 1200w, https://picsum.photos/1920/1200 1920w", loading="lazy", alt="", width="1920", height="1200")
+						img(src="https://picsum.photos/1920/1200", srcset="https://picsum.photos/768/1200 768w, https://picsum.photos/1200/1200 1200w, https://picsum.photos/1920/1200 1920w", sizes="100vw" loading="lazy", alt="", width="1920", height="1200")
 					else
 						if(viewport)
 							.u-mb.u-text-center
