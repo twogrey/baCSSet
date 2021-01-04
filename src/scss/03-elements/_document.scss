@@ -65,3 +65,9 @@ body {
 .invisible {
 	@extend %hidden;
 }
+
+@keyframes loading-page-running {
+	to {
+		transform: translateX(90%);
+	}
+}

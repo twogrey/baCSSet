@@ -164,3 +164,15 @@
 .u-text-decoration-none {
 	text-decoration: none !important;
 }
+
+/** --------------------------------------------
+ * 
+ * Text truncation
+ * 
+ -------------------------------------------- */
+
+.u-text-truncate {
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+}
