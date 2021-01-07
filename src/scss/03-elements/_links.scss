@@ -15,13 +15,4 @@ a {
 	&:hover {
 		color: var(--color-primary-dark);
 	}
-
-	&.secondary {
-		color: var(--color-secondary);
-
-		&:focus-visible,
-		&:hover {
-			color: var(--color-secondary-dark);
-		}
-	}
 }

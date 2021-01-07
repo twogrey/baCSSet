@@ -61,7 +61,7 @@ module.exports = function (grunt) {
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://localhost/framework2/',
+				proxy: 'http://localhost/framework-2021/',
 			},
 		},
 		/**
