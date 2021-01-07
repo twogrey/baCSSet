@@ -5,6 +5,12 @@ a {
 
 	p & {
 		text-decoration: underline;
+
+		&:focus-visible {
+			outline-color: currentColor;
+			outline-style: dotted;
+			outline-width: rem(2px);
+		}
 	}
 
 	&:hover {

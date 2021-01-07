@@ -133,6 +133,7 @@
 				border-radius: 50%;
 				background: var(--ab, var(--border));
 				transform: translateX(var(--x, 0));
+				transition: transform 0.2s;
 			}
 
 			&:checked {

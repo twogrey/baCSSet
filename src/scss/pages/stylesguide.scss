@@ -353,7 +353,7 @@ div.code-toolbar > .toolbar span.focus-visible {
  -------------------------------------------- */
 
 .cheatsheet {
-	border: 1px solid var(--color-secondary);
+	border: 1px solid var(--color-black);
 
 	@include mq($medium-plus-screen) {
 		display: grid;
@@ -361,15 +361,13 @@ div.code-toolbar > .toolbar span.focus-visible {
 		grid-template-areas: 
 			'colors typography typography typography' 
 			'colors buttons buttons links' 
-			'form form form form' 
-			'loader c alerts alerts' 
-			'b c alerts alerts';
+			'form form form form';
 	}
 
 	> [class*='a-'] {
 		position: relative;
 		padding: var(--spacing-double);
-		border: 1px solid var(--color-secondary);
+		border: 1px solid var(--color-black);
 	}
 
 	.legend {
@@ -379,7 +377,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 		padding: 0 10px;
 		line-height: 1;
 		font-weight: $semibold;
-		color: var(--color-secondary);
+		color: var(--color-primary);
 		text-transform: uppercase;
 		background-color: #fff;
 	}
