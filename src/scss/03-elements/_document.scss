@@ -46,7 +46,7 @@ body {
 		background-color: var(--color-secondary);
 		pointer-events: none;
 		transition: opacity 0.3s;
-		animation: loading-page-running 5s both ease-in;
+		animation: loading-page-running 5s both ease-in-out;
 
 		.loading-page-done & {
 			opacity: 0;

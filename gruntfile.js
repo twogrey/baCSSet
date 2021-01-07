@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 	const cssnano = require('cssnano');
 	const rucksack = require('rucksack-css');
 	const autoprefixer = require('autoprefixer');
-	const mqpacker = require('css-mqpacker');
+	const mqpacker = require('postcss-combine-media-query');
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -204,9 +204,7 @@ module.exports = function (grunt) {
 					/**
 	         * [Pack same CSS media query rules]
 	         */
-					mqpacker({
-						sort: true,
-					}),
+					mqpacker(),
 					/**
            * [Optimize CSS size]
            */
