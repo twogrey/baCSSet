@@ -1,6 +1,6 @@
 /** --------------------------------------------
  * 
- * 
+ *  /!\ Use it only for pages/ scss files
  * 
  -------------------------------------------- */
 
@@ -9,25 +9,6 @@
 		@content;
 	}
 } 
-
-/** --------------------------------------------
- * 
- * 
- * 
- -------------------------------------------- */
-
-@mixin show-for($width, $display: block) {
-	display: none !important;
-	@include mq(map-get($mq, $width)) {
-		display: #{$display} !important; 
-	}
-}
-
-@mixin hide-for($width) {
-	@include mq(map-get($mq, $width)) {
-		display: none !important;
-	}
-}
 
 /** --------------------------------------------
 * 

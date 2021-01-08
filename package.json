@@ -35,6 +35,7 @@
     "mjml": "^4.7.1",
     "node-sass": "^4.13.1",
     "postcss-combine-media-query": "^1.0.1",
+    "postcss-extract-media-query": "^2.0.0",
     "prismjs": "^1.23.0",
     "rucksack-css": "1.0.*",
     "stylelint": "9.10.*",

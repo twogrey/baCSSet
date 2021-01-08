@@ -1,10 +1,4 @@
 @mixin small {
-	@media screen and (min-width: map-get($mq, 'small')) {
-		@content;
-	}
-}
-
-@mixin small-plus {
 	@media screen and (min-width: map-get($mq, 'small-plus')) {
 		@content;
 	}
@@ -16,7 +10,8 @@
 	}
 }
 
-@mixin medium-plus {
+// /!\ Use it only for pages/**/*.scss files
+@mixin medium-plus { 
 	@media screen and (min-width: map-get($mq, 'medium-plus')) {
 		@content;
 	}
@@ -28,6 +23,7 @@
 	}
 }
 
+// /!\ Use it only for pages/**/*.scss files
 @mixin large-plus {
 	@media screen and (min-width: map-get($mq, 'large-plus')) {
 		@content;

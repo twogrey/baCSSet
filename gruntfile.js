@@ -44,6 +44,7 @@ module.exports = function (grunt) {
 	const rucksack = require('rucksack-css');
 	const autoprefixer = require('autoprefixer');
 	const mqpacker = require('postcss-combine-media-query');
+	const mqextract = require('postcss-extract-media-query');
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -181,39 +182,54 @@ module.exports = function (grunt) {
      * [Apply several post-processors to CSS using PostCSS]
      */
 		postcss: {
-			options: {
-				map: {
-					inline: false, // save all sourcemaps as separate files...
-					annotation: `${cssBuildPath}/sourcemaps/`, // ...to the specified directory
-				},
-				processors: [
-					/**
-           * [A little bag of CSS superpowers]
-           */
-					rucksack({
-						autoprefixer: false,
-						fontPath: false,
-						hexRGBA: false,
-					}),
-					/**
-           * [Adds vendor prefixes, using data from Can I Use]
-           */
-					autoprefixer({
-						browsers: [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
-					}),
-					/**
-	         * [Pack same CSS media query rules]
-	         */
-					mqpacker(),
-					/**
-           * [Optimize CSS size]
-           */
-					cssnano({
-						safe: true,
-					}),
-				],
-			},
 			dist: {
+				options: {
+					map: {
+						inline: false, // save all sourcemaps as separate files...
+						annotation: `${cssBuildPath}/sourcemaps/`, // ...to the specified directory
+					},
+					processors: [
+						/**
+	           * [A little bag of CSS superpowers]
+	           */
+						rucksack({
+							autoprefixer: false,
+							fontPath: false,
+							hexRGBA: false,
+						}),
+						/**
+	           * [Adds vendor prefixes, using data from Can I Use]
+	           */
+						autoprefixer({
+							browsers: [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
+						}),
+						/**
+		         * [Pack same CSS media query rules]
+		         */
+						mqpacker(),
+						/**
+	           * [Optimize CSS size]
+	           */
+						cssnano({
+							safe: true,
+						}),
+						/**
+		         * [Extract all @media rules and emit them as separate files]
+		         */
+						mqextract({
+							output: {
+								path: cssBuildPath,
+								name: '[name]-[query].min.[ext]'
+							},
+							extractAll: false,
+							queries: {
+				        'screen and (min-width:36rem)': 'sm',
+				        'screen and (min-width:48rem)': 'md',
+				        'screen and (min-width:75rem)': 'lg'
+					    }
+						}),
+					],
+				},
 				files: [ {
 					expand: true,
 					cwd: cssBuildPath,
@@ -223,6 +239,38 @@ module.exports = function (grunt) {
 				} ],
 			},
 			pages: {
+				options: {
+					map: {
+						inline: false, // save all sourcemaps as separate files...
+						annotation: `${cssBuildPath}/sourcemaps/`, // ...to the specified directory
+					},
+					processors: [
+						/**
+	           * [A little bag of CSS superpowers]
+	           */
+						rucksack({
+							autoprefixer: false,
+							fontPath: false,
+							hexRGBA: false,
+						}),
+						/**
+	           * [Adds vendor prefixes, using data from Can I Use]
+	           */
+						autoprefixer({
+							browsers: [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
+						}),
+						/**
+		         * [Pack same CSS media query rules]
+		         */
+						mqpacker(),
+						/**
+	           * [Optimize CSS size]
+	           */
+						cssnano({
+							safe: true,
+						}),
+					],
+				},
 				files: [ {
 					expand: true,
 					cwd: cssBuildPath,
@@ -230,7 +278,7 @@ module.exports = function (grunt) {
 					dest: cssBuildPath,
 					ext: '.min.css',
 				} ],
-			},
+			}
 		},
 		/**
      * [Generate SVG sprite]

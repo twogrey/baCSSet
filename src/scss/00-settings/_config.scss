@@ -89,24 +89,24 @@ $spacing: 1rem;
  * Breakpoints
  */
 
-$small-screen: 20rem !default;
-$small-plus-screen: 36rem !default;
+$tiny-screen: 20rem !default;
+$small-screen: 36rem !default;
 $medium-screen: 48rem !default;
 $medium-plus-screen: 62rem !default;
 $large-screen: 75rem !default;
 $large-plus-screen: 90rem !default;
    
 $grid-mq: (
-	'small-plus' : 'sm',
-	'medium': 'md',
-	'large': 'lg'
+	'small'  : 'sm',
+	'medium' : 'md',
+	'large'  : 'lg'
 );
 
 $mq: (
-	'small'      : $small-screen,
-	'small-plus' : $small-plus-screen,
-	'medium'     : $medium-screen,
-	'medium-plus': $medium-plus-screen,
-	'large'      : $large-screen,
-	'large-plus' : $large-plus-screen
+	'tiny'        : $tiny-screen,
+	'small'       : $small-screen,
+	'medium'      : $medium-screen,
+	'medium-plus' : $medium-plus-screen,
+	'large'       : $large-screen,
+	'large-plus'  : $large-plus-screen
 );

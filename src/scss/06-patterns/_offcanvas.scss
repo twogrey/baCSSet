@@ -21,7 +21,7 @@
 		height: 100vh;
 		background-color: rgba(#000, 0.85);
 
-		@include small-plus {
+		@include small {
 			--w: #{rem(500px)};
 		}
 
