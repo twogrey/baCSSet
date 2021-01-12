@@ -233,7 +233,7 @@ module.exports = function (grunt) {
 				files: [ {
 					expand: true,
 					cwd: cssBuildPath,
-					src: [ '*.css', '!**/*.min.css' ],
+					src: [ 'styles.css' ],
 					dest: cssBuildPath,
 					ext: '.min.css',
 				} ],
@@ -411,7 +411,7 @@ module.exports = function (grunt) {
 			svg: `${svgBuildPath}*.svg`,
 			componentsJs: `${jsBuildComponentsPath}*.js`,
 			pagesJs: `${jsBuildPagesPath}*.js`,
-			font: [ `${fontBuildPath}/*` ]
+			font: [ `${fontBuildPath}*` ]
 		},
 		/**
      * [Copy to the build folder the sources that are not generated/processed/compiled]
@@ -440,6 +440,9 @@ module.exports = function (grunt) {
 			    tasks: ['shell:lint']
 			},
 			style: {
+				options: {
+					spawn: true
+				},
 				files: [ `${scssPath}**/*.scss`, `!${scssPath}pages/**/*.scss` ],
 				tasks: [ 'sass:dist', 'postcss:dist' ],
 			},

@@ -30,7 +30,6 @@
     "grunt-shell": "3.0.*",
     "grunt-svgmin": "5.0.*",
     "grunt-svgstore": "2.0.*",
-    "grunt-tinypng": "^0.7.0",
     "jit-grunt": "0.10.*",
     "mjml": "^4.7.1",
     "node-sass": "^4.13.1",
