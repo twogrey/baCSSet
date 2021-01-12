@@ -1,7 +1,7 @@
 @if $enable-loader {
 	.c-loader {
 		--c: var(--color-primary);
-		--w: calc(var(--spacing) * 3);
+		--w: calc(var(--sp) * 3);
 		display: inline-flex;
 
 		&--overlay {

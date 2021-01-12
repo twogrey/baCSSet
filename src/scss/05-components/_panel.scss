@@ -1,6 +1,6 @@
 @if $enable-panel {
 	.c-panel {
-		--s: var(--spacing);
+		--s: var(--sp);
 		position: relative;
 		padding: var(--s);
 		border: rem(1px) solid var(--border-color, currentColor);

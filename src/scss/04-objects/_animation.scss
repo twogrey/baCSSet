@@ -26,7 +26,7 @@
 
 @keyframes o-translate-from-top {
 	from {
-		transform: translateY(calc(var(--spacing-double) * -1));
+		transform: translateY(calc(var(--sp-2) * -1));
 	}
 
 	to {
@@ -40,6 +40,6 @@
 	}
 
 	to {
-		transform: translateY(var(--spacing-double));
+		transform: translateY(var(--sp-2));
 	}
 }

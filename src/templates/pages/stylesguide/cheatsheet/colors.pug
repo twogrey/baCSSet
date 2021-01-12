@@ -1,16 +1,16 @@
 mixin color(color, shades)
 	.col-12.u-mb-0
-		.u-pt.u-pb-double(class="u-bg-"+color)
+		.u-pt.u-pb-2(class="u-bg-"+color)
 	if shades
 		.col-3.u-mb-0
-			.u-pt.u-pb-half(class="u-bg-"+color+"-lightest")
+			.u-pt.u-pb-1-2(class="u-bg-"+color+"-lightest")
 		.col-3.u-mb-0
-			.u-pt.u-pb-half(class="u-bg-"+color+"-light")
+			.u-pt.u-pb-1-2(class="u-bg-"+color+"-light")
 		.col-3.u-mb-0
-			.u-pt.u-pb-half(class="u-bg-"+color)
+			.u-pt.u-pb-1-2(class="u-bg-"+color)
 		.col-3.u-mb-0
-			.u-pt.u-pb-half(class="u-bg-"+color+"-dark")
-	.col-12.u-mt-quarter
+			.u-pt.u-pb-1-2(class="u-bg-"+color+"-dark")
+	.col-12.u-mt-1-4
 		.u-text-semibold= color.charAt(0).toUpperCase() + color.slice(1)
 
 .row.no-gutters
@@ -21,9 +21,9 @@ mixin color(color, shades)
 	.col-12.u-mb-0
 		.u-py(class="u-bg-grey")
 	.col-6.u-mb-0
-		.u-py-half(class="u-bg-lightgrey")
+		.u-py-1-2(class="u-bg-lightgrey")
 	.col-6.u-mb-0
-		.u-py-half(class="u-bg-darkgrey")
-	.col-12.u-mt-quarter
+		.u-py-1-2(class="u-bg-darkgrey")
+	.col-12.u-mt-1-4
 		.u-text-semibold Neutral
 	+color('black', false)

@@ -1,6 +1,6 @@
 @if $enable-pagination {
 	.c-pagination {
-		--s: var(--spacing-half);
+		--s: var(--sp-1-2);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;

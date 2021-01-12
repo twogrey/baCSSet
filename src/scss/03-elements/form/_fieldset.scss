@@ -1,11 +1,11 @@
 @if $enable-form-fieldset {
 	fieldset {
 		margin: 0;
-		padding: calc(var(--spacing) / 1.125) var(--spacing) calc(var(--spacing) / 2) var(--spacing);
+		padding: calc(var(--sp) / 1.125) var(--sp) calc(var(--sp) / 2) var(--sp);
 		border: 2px solid $lightgrey;
 
 		legend {
-			padding: 0 calc(var(--spacing) / 1.75);
+			padding: 0 calc(var(--sp) / 1.75);
 			font-weight: $bold;
 		}
 

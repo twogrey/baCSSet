@@ -1,12 +1,12 @@
 @if $enable-form-choices {
 	.form-check {
-		--mr: var(--spacing-double);
+		--mr: var(--sp-2);
 		display: flex;
 		align-items: center;
 
 		&:not(:only-child),
 		&:not(:first-child) { 
-			margin-top: var(--spacing-half);
+			margin-top: var(--sp-1-2);
 		}
 
 		&--inline {

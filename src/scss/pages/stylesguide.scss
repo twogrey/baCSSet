@@ -204,8 +204,8 @@ div.code-toolbar > .toolbar span.focus-visible {
 
 .toggle-code {    
 	display: block;
-	width: calc(100% - (var(--spacing-double)));
-	margin: 0 auto var(--spacing);
+	width: calc(100% - (var(--sp-2)));
+	margin: 0 auto var(--sp);
 
 	summary {
 		display: flex;
@@ -218,7 +218,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 			content: '';
 			flex: 1 1 auto;
 			height: 1px;
-			margin-left: var(--spacing-half);
+			margin-left: var(--sp-1-2);
 			background-color: var(--color-primary);
 		}
 	}
@@ -231,8 +231,8 @@ div.code-toolbar > .toolbar span.focus-visible {
  -------------------------------------------- */
  
 .god-section-title {
-	padding: var(--spacing-double);
-	margin-bottom: var(--spacing);
+	padding: var(--sp-2);
+	margin-bottom: var(--sp);
 	line-height: 1.25;
 	font-size: responsive rem(30px) rem(50px);
 	text-transform: uppercase;
@@ -243,11 +243,11 @@ div.code-toolbar > .toolbar span.focus-visible {
 }
 
 .section {
-	padding-bottom: var(--spacing-triple);
+	padding-bottom: var(--sp-3);
 
 	&:not(:last-child) {
 		border-bottom: 1px solid var(--color-lightgrey);
-		margin-bottom: var(--spacing-quad);
+		margin-bottom: var(--sp-4);
 	}
 
 	&__title {
@@ -281,7 +281,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 		flex-wrap: wrap;
 		justify-content: center;
 		margin: 0;
-		padding: var(--spacing-half);
+		padding: var(--sp-1-2);
 		list-style: none;
 
 		@include medium {
@@ -291,7 +291,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 		> li {
 			margin-top: 0;
 			@include medium {
-				margin-bottom: var(--spacing);
+				margin-bottom: var(--sp);
 			}
 
 			> a {
@@ -317,18 +317,18 @@ div.code-toolbar > .toolbar span.focus-visible {
 	}
 
 	li {
-		margin-top: var(--spacing-quarter);
+		margin-top: var(--sp-1-4);
 		line-height: 1.25;
 	}
 
 	a {	
 		display: block;
-		padding: var(--spacing-half);
+		padding: var(--sp-1-2);
 		text-decoration: none;
 		color: $typo-color;
 
 		@include medium {
-			padding: var(--spacing-quarter);
+			padding: var(--sp-1-4);
 		}
 
 		&:hover {
@@ -366,7 +366,7 @@ div.code-toolbar > .toolbar span.focus-visible {
 
 	> [class*='a-'] {
 		position: relative;
-		padding: var(--spacing-double);
+		padding: var(--sp-2);
 		border: 1px solid var(--color-black);
 	}
 
@@ -397,19 +397,19 @@ div.code-toolbar > .toolbar span.focus-visible {
 
 #Grid {
 	.section__content {
-		padding: var(--spacing);
+		padding: var(--sp);
 		background-color: var(--color-grey);
 
 		.row {
 			&:not(:last-child) {
-				margin-bottom: var(--spacing);
+				margin-bottom: var(--sp);
 			}
 		}
 
 		.col,
 		[class*='col-'] {
-			padding-top: var(--spacing-half);
-			padding-bottom: var(--spacing-half);
+			padding-top: var(--sp-1-2);
+			padding-bottom: var(--sp-1-2);
 			margin-bottom: 0;
 			font-family: monospace;
 			text-align: center;

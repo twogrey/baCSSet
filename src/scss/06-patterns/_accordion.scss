@@ -1,6 +1,6 @@
 @if $enable-accordion {  
 	.p-accordion {
-		--p: var(--spacing);
+		--p: var(--sp);
 
 		&__toggle {
 			--px: var(--p);

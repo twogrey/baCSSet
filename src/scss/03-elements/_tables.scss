@@ -10,14 +10,14 @@
 		text-align: left;
 
 		caption {
-			margin-bottom: var(--spacing);
+			margin-bottom: var(--sp);
 			font-size: 1.5rem;
 			font-weight: $semibold;
 		}
 
 		td,
 		th {
-			padding: var(--spacing-half);
+			padding: var(--sp-1-2);
 		}
 
 		tr {

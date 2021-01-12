@@ -24,14 +24,14 @@ $typo-color: var(--color-black);
 
 $heading-font-family: $typo-font-family;
 $heading-line-height: 1.1;
-$heading-margin-bottom: var(--spacing);
+$heading-margin-bottom: var(--sp);
 $heading-margin-top: $heading-margin-bottom;
 $heading-weight: $semibold;
 $heading-color: $typo-color;
 
 $text-color: $typo-color;
 $text-line-height: 1.5;
-$text-margin-bottom: var(--spacing);
+$text-margin-bottom: var(--sp);
 
 $link-color: var(--color-primary);
 $link-color-active: var(--color-primary-dark);

@@ -1,7 +1,7 @@
 mixin panel(id, variant, closable, longContent)
 	if(closable)
 		- closableClass = 'c-panel--closable';
-	.c-panel(class='c-panel--' + variant + ' u-mb-double ' + closableClass, id="msg_"+id)
+	.c-panel(class='c-panel--' + variant + ' u-mb-2 ' + closableClass, id="msg_"+id)
 		.c-panel__content
 			if(longContent)
 				h2.c-panel__title Title
@@ -27,7 +27,7 @@ section.section.js-menu#Panels
 		.col-12
 			h1.section__title Panels
 		.col-12.u-mb-0
-			.u-bg-lightgrey.u-p.u-mb-double
+			.u-bg-lightgrey.u-p.u-mb-2
 				p <b>Notes :</b>
 				ul
 					li Ajouter <code>role="alert"</code> s'il s'agit d'une notification.

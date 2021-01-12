@@ -2,7 +2,7 @@
 	.p-tabs {
 		&__list {
 			display: inline-flex;
-			margin-bottom: var(--spacing);
+			margin-bottom: var(--sp);
 			border: rem(1px) solid var(--color-primary-light);
 			border-radius: var(--radius);
 		}
@@ -40,7 +40,7 @@
 		}
 
 		&__content {
-			padding: var(--spacing);
+			padding: var(--sp);
 			background-color: var(--color-lightgrey);
 
 			&[aria-hidden='true'] {

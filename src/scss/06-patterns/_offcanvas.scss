@@ -10,8 +10,8 @@
 	.p-offcanvas {
 		--w: #{rem(300px)};
 		--i: -1;
-		--wrap-p: var(--spacing);
-		--title-mr: var(--spacing);
+		--wrap-p: var(--sp);
+		--title-mr: var(--sp);
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -70,7 +70,7 @@
 		&__header {
 			display: flex;
 			align-self: flex-start;
-			margin-bottom: var(--spacing);
+			margin-bottom: var(--sp);
 		}
 
 		&__title {

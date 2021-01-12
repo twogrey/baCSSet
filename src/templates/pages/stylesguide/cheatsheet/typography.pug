@@ -1,5 +1,5 @@
 mixin weight(val)
-	- var content = '<div class="u-mb-half" style="font-size: calc(2 * var(--spacing)); line-height: 1">Aa<br></div><div style="font-size: calc(0.8 * var(--spacing)); line-height: 1">'+val.charAt(0).toUpperCase() + val.slice(1)+'</div>';
+	- var content = '<div class="u-mb-1-2 h1-like u-lh-1">Aa</div><div class="u-lh-1 u-fs-4">'+val.charAt(0).toUpperCase() + val.slice(1)+'</div>';
 	.col
 		if val !== 'normal'
 			div(class="u-fw-" + val) 
