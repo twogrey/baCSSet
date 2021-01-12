@@ -15,7 +15,7 @@ if(demoSlider) {
         responsive: {
             576: {
                 items: 2,
-                gutter: baseFontSize * getComputedStyle(html).getPropertyValue('--spacing-unitless')
+                gutter: baseFontSize * getComputedStyle(html).getPropertyValue('--sp-unitless')
             },
             1200: {
                 items: 3
