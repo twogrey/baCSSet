@@ -201,7 +201,7 @@ module.exports = function (grunt) {
 	           * [Adds vendor prefixes, using data from Can I Use]
 	           */
 						autoprefixer({
-							browsers: [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
+							overrideBrowserslist : [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
 						}),
 						/**
 		         * [Pack same CSS media query rules]
@@ -257,7 +257,7 @@ module.exports = function (grunt) {
 	           * [Adds vendor prefixes, using data from Can I Use]
 	           */
 						autoprefixer({
-							browsers: [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
+							overrideBrowserslist : [ 'last 2 Chrome versions', 'last 2 Firefox versions', 'last 2 Edge versions', 'last 2 Safari versions', 'last 2 Opera versions', 'last 2 iOS versions', 'last 2 ChromeAndroid versions' ],
 						}),
 						/**
 		         * [Pack same CSS media query rules]
