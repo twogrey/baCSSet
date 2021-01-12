@@ -435,20 +435,16 @@ module.exports = function (grunt) {
 				files: `${templatesPath}**/*`,
 				tasks: [ 'pug', 'htmlmin:dist', 'htmllint', 'accessibility' ],
 			},
-			stylelint: {
-			    files: [scssPath + '**/*.scss'],
-			    tasks: ['shell:lint']
-			},
 			style: {
 				options: {
 					spawn: true
 				},
 				files: [ `${scssPath}**/*.scss`, `!${scssPath}pages/**/*.scss` ],
-				tasks: [ 'sass:dist', 'postcss:dist' ],
+				tasks: [ 'shell:lint', 'sass:dist', 'postcss:dist' ],
 			},
 			stylePages: {
 				files: [ `${scssPath}pages/**/*.scss` ],
-				tasks: [ 'newer:sass:pages', 'newer:postcss:pages' ],
+				tasks: [ 'shell:lint', 'newer:sass:pages', 'newer:postcss:pages' ],
 			},
 			sprite: {
 				files: `${iconsPath}*.svg`,
