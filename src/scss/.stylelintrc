@@ -204,9 +204,9 @@
             ]
          }
       ],
+      "scss/at-extend-no-missing-placeholder":null,
       "selector-max-compound-selectors":4,
       "selector-max-id":1,
-      "at-rule-disallowed-list":null,
       "indentation":"tab",
       "selector-no-qualifying-type":[
          true,
