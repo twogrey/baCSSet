@@ -31,10 +31,10 @@
 .container {
 	width: 100%;
 	max-width: $large-plus-screen;
-	margin-right: auto;
-	margin-left: auto;
 	padding-right: var(--sp);
 	padding-left: var(--sp);
+	margin-right: auto;
+	margin-left: auto;
 
 	&--fluid {
 		max-width: none;
@@ -69,9 +69,9 @@
 [class*='col-'] {
 	position: relative;
 	width: 100%;
-	margin-bottom: var(--sp-2);
 	padding-right: var(--sp);
 	padding-left: var(--sp);
+	margin-bottom: var(--sp-2);
 }
 
 .col {

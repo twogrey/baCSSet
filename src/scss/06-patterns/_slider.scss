@@ -50,9 +50,9 @@
 				box-sizing: content-box;
 				width: $size / 2;
 				height: $size / 2;
-				margin: $outline-width;
 				padding: $size / 4;
 				border: 0;
+				margin: $outline-width;
 				border-radius: 50%;
 				background-color: var(--color-primary-lightest);
 				background-clip: content-box;

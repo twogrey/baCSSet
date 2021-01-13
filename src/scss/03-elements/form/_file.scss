@@ -6,11 +6,11 @@
 
 		// stylelint-disable-next-line selector-pseudo-element-no-unknown
 		&::file-selector-button {
-			margin: (-$input-padding-y) (-$input-padding-x);
 			padding: $input-padding-y $input-padding-x;
 			border-width: 0;
 			border-style: solid;
 			border-color: inherit;
+			margin: (-$input-padding-y) (-$input-padding-x);
 			border-radius: 0;
 			background-color: var(--color-lightgrey);
 			pointer-events: none;
@@ -25,11 +25,11 @@
 		}
 
 		&::-webkit-file-upload-button {
-			margin: (-$input-padding-y) (-$input-padding-x);
 			padding: $input-padding-y $input-padding-x;
 			border-width: 0;
 			border-style: solid;
 			border-color: inherit;
+			margin: (-$input-padding-y) (-$input-padding-x);
 			border-radius: 0;
 			background-color: var(--color-lightgrey);
 			pointer-events: none;

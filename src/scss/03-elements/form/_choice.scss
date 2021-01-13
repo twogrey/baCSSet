@@ -30,8 +30,8 @@
 		display: inline-block;
 		flex-shrink: 0;
 		height: var(--size);
-		margin: 0;
 		border: $input-border-width solid var(--bc, var(--border));
+		margin: 0;
 		border-radius: rem(2px);
 		vertical-align: top;
 		background: var(--b);
@@ -93,8 +93,8 @@
 		}
 
 		~ label {
-			margin-bottom: 0;
 			padding-left: calc(var(--mr) / 2);
+			margin-bottom: 0;
 			font-size: rem(14px);
 			font-weight: $regular;
 			line-height: 1.5;

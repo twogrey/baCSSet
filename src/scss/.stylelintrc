@@ -18,7 +18,6 @@
          "custom-properties",
          "at-variables",
          "declarations",
-         "at-rules",
          "rules"
       ],
       "order/properties-order":[
@@ -49,11 +48,6 @@
          "height",
          "min-height",
          "max-height",
-         "margin",
-         "margin-top",
-         "margin-right",
-         "margin-bottom",
-         "margin-left",
          "padding",
          "padding-top",
          "padding-right",
@@ -87,6 +81,11 @@
          "border-image-outset",
          "border-image-repeat",
          "border-spacing",
+         "margin",
+         "margin-top",
+         "margin-right",
+         "margin-bottom",
+         "margin-left",
          "border-radius",
          "border-top-left-radius",
          "border-top-right-radius",
@@ -205,9 +204,9 @@
             ]
          }
       ],
-      "scss/at-extend-no-missing-placeholder":null,
       "selector-max-compound-selectors":4,
       "selector-max-id":1,
+      "at-rule-disallowed-list":null,
       "indentation":"tab",
       "selector-no-qualifying-type":[
          true,

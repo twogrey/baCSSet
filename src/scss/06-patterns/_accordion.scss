@@ -33,7 +33,7 @@
 		}
 
 		&__icon {
-			transform: rotate(#{calc(180deg * var(--i, 0)});
+			transform: rotate(calc(180deg * var(--i, 0)));
 		}
 	}
 }

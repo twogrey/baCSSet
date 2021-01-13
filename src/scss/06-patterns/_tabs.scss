@@ -2,8 +2,8 @@
 	.p-tabs {
 		&__list {
 			display: inline-flex;
-			margin-bottom: var(--sp);
 			border: rem(1px) solid var(--color-primary-light);
+			margin-bottom: var(--sp);
 			border-radius: var(--radius);
 		}
 
