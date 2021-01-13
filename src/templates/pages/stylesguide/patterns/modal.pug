@@ -22,7 +22,7 @@ mixin modal(id, size, viewport, lightbox, snippet)
 					else
 						if(viewport)
 							.u-mb.u-text-center
-								img(src="../../../img/holy-placeholder.jpg", loading="lazy", alt="")
+								img(src="dest/img/holy-placeholder.jpg", loading="lazy", alt="")
 							p Carrot cake sweet roll topping. Jelly danish fruitcake cheesecake oat cake pastry. Jujubes apple pie cotton candy tootsie roll toffee jelly-o jujubes. Carrot cake dessert sweet gummi bears ice cream gummi bears sesame snaps cake. Bonbon liquorice jelly. Liquorice <a href="#">link</a> bonbon. Chocolate bar ice cream dragée. Bear claw cotton candy sugar plum. Pudding carrot cake tiramisu soufflé tart tootsie roll jujubes. Tart bear claw topping jelly beans chocolate jujubes. Chupa chups powder muffin chocolate cake caramels halvah marzipan wafer. Sweet ice cream tootsie roll dragée. 
 							p Pie bear claw cheesecake toffee. Sweet jelly chocolate bar soufflé. Croissant tootsie roll cotton candy sweet powder pudding icing cake. Apple pie jelly-o bonbon. Croissant cake ice cream chocolate bar croissant. Cotton candy chocolate tiramisu topping dessert tiramisu soufflé ice cream oat cake. Candy topping gummi bears jelly beans apple pie. Lemon drops bear claw sugar plum lemon drops. Chocolate muffin gingerbread. Muffin marzipan chocolate gummies toffee muffin cotton candy tart pastry. Caramels liquorice macaroon chocolate cake lemon drops. Donut liquorice pastry toffee. Chocolate brownie ice cream candy. Lemon drops soufflé carrot cake jujubes oat cake jelly-o.
 							p Jelly beans chupa chups macaroon wafer danish oat cake oat cake cotton candy. Caramels pie jelly-o fruitcake. Fruitcake macaroon tart gingerbread candy icing. Sugar plum topping powder chocolate cake liquorice liquorice. Danish caramels soufflé cookie halvah lemon drops cake tiramisu. Chocolate cake sweet roll caramels jelly beans sesame snaps chupa chups. Tootsie roll donut gummi bears chocolate cake marshmallow. Tart toffee jujubes. Biscuit cheesecake wafer apple pie chocolate bar. Tootsie roll macaroon wafer toffee. Lollipop oat cake icing lollipop tootsie roll pastry icing bonbon tart. Icing biscuit gummi bears pudding. Icing soufflé cake marshmallow tart croissant soufflé tootsie roll jelly-o.
@@ -41,15 +41,15 @@ mixin modal(id, size, viewport, lightbox, snippet)
 section.section.js-menu#Modals
 	.row.js-parent-snippet.u-mb
 		.col-12
-			h1.section__title Modals
+			h3.section__title Modals
 		.col-12
-			h2 Default
+			h4 Default
 		.col-12
 			button(type="button", class="c-btn c-btn--primary js-modal js-snippet", data-modal-id="modal1", aria-haspopup="dialog") Open modal (plain text)
 			+modal('1', 'medium', false, false, true)
 	.row.js-parent-snippet.u-mb
 		.col-12
-			h2 Sizes
+			h4 Sizes
 		.col-auto
 			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal2", aria-haspopup="dialog") Small
 			+modal('2', 'small', false, false, true)
@@ -64,13 +64,13 @@ section.section.js-menu#Modals
 			+modal('5')
 	.row.js-parent-snippet.u-mb
 		.col-12
-			h2 Viewport height
+			h4 Viewport height
 		.col-auto
 			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal6", aria-haspopup="dialog") Open modal
 			+modal('6', 'medium', true, false, true)
 	.row.js-parent-snippet
 		.col-12
-			h2 Lightbox
+			h4 Lightbox
 		.col-auto
 			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal7", aria-haspopup="dialog") Open image in fullscreen modal
 			+modal('7', '', false, true, true)

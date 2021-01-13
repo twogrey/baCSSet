@@ -17,7 +17,7 @@ a {
 		text-decoration: underline;
 	}
 
-	&:focus-visible,
+	&:not(.c-btn):focus-visible,
 	&:hover {
 		color: var(--color-primary-dark);
 	}

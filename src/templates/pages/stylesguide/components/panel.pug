@@ -4,7 +4,7 @@ mixin panel(id, variant, closable, longContent)
 	.c-panel(class='c-panel--' + variant + ' u-mb-2 ' + closableClass, id="msg_"+id)
 		.c-panel__content
 			if(longContent)
-				h2.c-panel__title Title
+				h4.c-panel__title Title
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa <b>expedita minima ea</b>, rem laudantium reiciendis <i>reprehenderit pariatur in</i>.
 				hr
 				p Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.
@@ -25,7 +25,7 @@ mixin panel(id, variant, closable, longContent)
 section.section.js-menu#Panels
 	.row.js-parent-snippet
 		.col-12
-			h1.section__title Panels
+			h3.section__title Panels
 		.col-12.u-mb-0
 			.u-bg-lightgrey.u-p.u-mb-2
 				p <b>Notes :</b>

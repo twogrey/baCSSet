@@ -77,6 +77,10 @@
 		p & {
 			display: inline;
 		}
+
+		label + & {
+			display: block;
+		}
 	}
 
 	.p-tooltip {

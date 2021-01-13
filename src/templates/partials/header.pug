@@ -1,4 +1,17 @@
-header.main-header
-	| header
-	nav
-		| menu
+header.u-bg-white.u-border-bottom.u-border-grey
+	.container.container--fluid
+		.row.u-align-center.u-pt
+			.col-auto.u-mb
+				h1.u-d-flex.u-align-center.h3-like
+					img(src="dest/img/svg/logo.svg", width="40", height="40", alt="")
+					span.u-ml Framework
+			.col-auto.u-mb-1-2.u-ml-a
+				nav.u-d-flex.u-flex-wrap.u-align-center
+					a(href="dest/pages/stylesguide/cheatsheet", class="c-btn c-btn--dark u-mx-1-2 u-mb-1-2 u-ml-a")
+						svg(class="icon", aria-hidden="true")
+							use(xlink:href="#icon-code")
+						span Styles guide
+					a(href="dest/pages/demo", class="c-btn c-btn--dark u-mx-1-2 u-mb-1-2 u-ml-a")
+						svg(class="icon", aria-hidden="true")
+							use(xlink:href="#icon-eye")
+						span Demo page

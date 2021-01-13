@@ -7,24 +7,6 @@
 	}
 
 	/**
-	 * Colors
-	 */
-
-	@each $name, $color in($all-colors) {
-		.u-border-#{$name} {
-			border-color: var(--color-#{$name}) !important;
-		}
-	}
-
-	.u-border-white {
-		border-color: #fff !important;
-	}
-
-	.u-border-transparent {
-		border-color: transparent !important;
-	}
-
-	/**
 	 * Sides
 	 */
 	.u-border-0 {
@@ -50,6 +32,23 @@
 		.u-border-#{$name} {
 			border-width: #{$val} !important;
 		}
+	}
+
+	/**
+	 * Colors
+	 */
+	@each $name, $color in($all-colors) {
+		.u-border-#{$name} {
+			border-color: var(--color-#{$name}) !important;
+		}
+	}
+
+	.u-border-white {
+		border-color: #fff !important;
+	}
+
+	.u-border-transparent {
+		border-color: transparent !important;
 	}
 
 }

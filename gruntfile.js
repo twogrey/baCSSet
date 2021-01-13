@@ -114,7 +114,8 @@ module.exports = function (grunt) {
 		    ignore: 
 		    	[
 		    		'The “dialog” element is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-		    		'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.'
+		    		'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
+		    		'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).'
 		    	]
 		  },
     	all: [ pagesBuildPath + '**/*.unmin.html' ]

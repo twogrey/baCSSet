@@ -2,7 +2,7 @@ extends ../../wrapper.pug
 
 mixin linkMenu(name)
 	li 
-		a(href="../"+name.toLowerCase(), class={'active': name==sectionTitle}) #{name}
+		a(href="dest/pages/stylesguide/"+name.toLowerCase(), class={'active': name==sectionTitle}) #{name}
 
 block title-page
 	title Styles Guide - Framework
@@ -11,7 +11,7 @@ block vars
 	- var bodyClass = 'stylesguide-page';
 
 block append styles
-	link(href="../../../css/pages/stylesguide.min.css", rel="stylesheet")
+	link(href="dest/css/pages/stylesguide.min.css", rel="stylesheet")
 
 block main
 	.container.container--fluid.u-px-0
@@ -32,15 +32,15 @@ block main
 
 			.col-12.col-md-9.col-lg-10.u-px-0.u-mb-0
 				 
-				.god-section-title #{sectionTitle} 
+				h2.god-section-title #{sectionTitle} 
 				.container.u-py-md.u-px-md-2
 					block content
 
 block append scripts-footer
-		script(src="../../../../node_modules/prismjs/prism.js")
-		script(src="../../../../node_modules/prismjs/plugins/toolbar/prism-toolbar.js")
-		script(src="../../../../node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js")
-		script(src="../../../js/pages/stylesguide.min.js")
-		script(src="../../../js/components/sliders.min.js")
-		script(src="../../../js/components/modals.min.js")
-		script(src="../../../js/components/offcanvas.min.js")
+		script(src="node_modules/prismjs/prism.js")
+		script(src="node_modules/prismjs/plugins/toolbar/prism-toolbar.js")
+		script(src="node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js")
+		script(src="dest/js/pages/stylesguide.min.js")
+		script(src="dest/js/components/sliders.min.js")
+		script(src="dest/js/components/modals.min.js")
+		script(src="dest/js/components/offcanvas.min.js")

@@ -33,17 +33,17 @@ mixin dropdown(id, text, link, absolute, align, active)
 section.section.js-menu#Dropdowns
 	.row
 		.col-12
-			h1.section__title Dropdowns
+			h3.section__title Dropdowns
 	.row.js-parent-snippet.u-mb
 		.col-12
-			h2 Default
+			h4 Default
 		.col-auto
 			+dropdown('1', 'Choose an action (open by default)', false, false, false, true)
 		.col-auto
 			+dropdown('2', 'Go to', true)
 	.row.js-parent-snippet
 		.col-12
-			h2 Absolute
+			h4 Absolute
 		.col-auto
 			+dropdown('3', 'Choose an action', false, true, false, false)
 		.col-auto
