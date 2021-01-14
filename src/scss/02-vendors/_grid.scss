@@ -25,14 +25,19 @@
 :root {
 	--mq-sm-unitless: #{strip-unit($small-screen)};
 	--mq-md-unitless: #{strip-unit($medium-screen)};
-	--mq-lg-unitless: #{strip-unit($large-screen)}; 
+	--mq-lg-unitless: #{strip-unit($large-screen)};
+	--gutter: var(--sp);
+
+	@include medium {
+		--gutter: var(--sp-2);
+	}
 }
 
 .container {
 	width: 100%;
 	max-width: $large-plus-screen;
-	padding-right: var(--sp);
-	padding-left: var(--sp);
+	padding-right: var(--gutter);
+	padding-left: var(--gutter);
 	margin-right: auto;
 	margin-left: auto;
 
@@ -44,8 +49,8 @@
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	margin-right: calc(var(--sp) / -1);
-	margin-left: calc(var(--sp) / -1);
+	margin-right: calc(var(--gutter) / -2);
+	margin-left: calc(var(--gutter) / -2);
 }
 
 .no-gutters {
@@ -69,9 +74,9 @@
 [class*='col-'] {
 	position: relative;
 	width: 100%;
-	padding-right: var(--sp);
-	padding-left: var(--sp);
-	margin-bottom: var(--sp-2);
+	padding-right: calc(var(--gutter) / 2);
+	padding-left: calc(var(--gutter) / 2);
+	margin-bottom: var(--gutter);
 }
 
 .col {

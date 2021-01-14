@@ -16,9 +16,13 @@ html(lang="en", class="touch")
 			include ../../dest/img/sprite.svg 
 
 		include partials/header.pug 
+			
+		block before-main
 
 		main#content
 			block main
+			
+		block after-main
 
 		include partials/footer.pug 
 
