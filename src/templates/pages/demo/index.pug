@@ -3,21 +3,21 @@ extends ../../wrapper.pug
 block title-page
 	title Demo page - Framework
 
-mixin article(id)
-	.col-12.col-sm-6
+mixin post(id)
+	.col-12.col-sm-6.col-md-12.col-lg-6
 		article.u-radius.u-border.u-border-lightgrey.u-p.u-h-100.u-d-flex.u-flex-column.u-shadow
-			h3(id="titleArticle"+id) Article title
+			h3(id="titlePost"+id) Post title
 			.o-preserve-ratio.u-mb.u-nmr.u-nml
 				img(src="https://picsum.photos/400/200", loading="lazy", alt="")
 			p.u-fs-4.u-mb-0 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aliquam vero, quidem error nisi quaerat, nobis rem eius. Quidem id numquam voluptate, vero delectus quibusdam. Necessitatibus quaerat architecto, ullam earum !
 			.u-d-flex.u-flex-wrap.u-align-end.u-mt-a
-				a(href="#", aria-labelledby="linkArticle"+id+" titleArticle"+id, class="c-btn c-btn--secondary c-btn--small u-mt") 
+				a(href="#", aria-labelledby="linkPost"+id+" titlePost"+id, class="c-btn c-btn--secondary c-btn--small u-mt") 
 					svg(class="icon", aria-hidden="true")
 						use(xlink:href="#icon-chevron-right")
-					span Read more
-					span(id="linkArticle"+id, hidden) Read more about
+					span(aria-hidden="true") Read more
+					span(id="linkPost"+id, class="sr-only") Read more about
 				time(datetime="PT10M", class="u-ml-a c-badge c-badge--light u-mt") 
-					span.sr-only Temps de lecture : 10 minutes
+					span.sr-only Reading time : 10 minutes
 					span(aria-hidden="true") 10m
 
 block main
@@ -28,25 +28,50 @@ block main
 					h2.h1-like Demo page
 					p.u-fs-2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quo suscipit nisi in blanditiis at mollitia expedita nulla non laboriosam amet, perferendis, odio veritatis aut reprehenderit labore veniam architecto debitis?
 					div
-						a(href="#", class="c-btn c-btn--primary u-mx-1-2") Main action
-						a(href="#", class="c-btn c-btn--primary c-btn--outline u-mx-1-2") Secondary action
-	.container.u-py-2.u-py-md-5
+						a(href="#", class="c-btn c-btn--primary u-mt u-mx-1-2") Main action
+						a(href="#", class="c-btn c-btn--primary c-btn--outline u-mt u-mx-1-2") Secondary action
+	.container.u-py-2.u-pt-md-4.u-pb-md-2
 		.row
-			section.col-12.col-md-9
-				h2.u-border-bottom.u-border-lightgrey.u-pb.u-mb-2 Articles
+			section.col-12.col-md-8.col-lg-9.u-mb-md-0
+				h2.u-border-bottom.u-border-lightgrey.u-pb.u-mb-2 Posts
 				.row
-					+article('1')
-					+article('2')
-					+article('3')
-					+article('4')
-			aside.col-12.col-md-3
+					+post('1')
+					+post('2')
+					+post('3')
+					+post('4')
+			aside.col-12.col-md-4.col-lg-3.u-mb-md-0
 				h2.u-border-bottom.u-border-lightgrey.u-pb.u-mb-2 Annexe
-				form(action="/", method="post", role="search")
-					.form-group
-						label(for="searchInput") Rechercher un article
-						input(type="search", id="searchInput", name="searchInput")
-					.form-group.u-text-right.u-mt-1-2
-						button(type="submit", class="c-btn c-btn--primary") Soumettre
+				section
+					h3(class="u-p u-bg-lightgrey u-radius h5-like") Want more ?
+					form(action="/", method="post", role="search")
+						.form-group
+							label(for="searchInput") Search a post
+							input(type="search", id="searchInput", name="searchInput")
+						.form-group.u-text-right.u-mt-1-2
+							button(type="submit", class="c-btn c-btn--primary") Submit
+				section.u-mt-2
+					h3(id="recentsPostsTitle", class="u-p u-bg-lightgrey u-radius h5-like") Recents posts
+					nav(aria-labelledby="recentsPostsTitle", class="u-nmt-1-2")
+						ul.list-unstyled
+							li
+								a(href="#", class="u-py-1-2 u-d-block") Post title #3
+							li
+								a(href="#", class="u-py-1-2 u-d-block u-border-top u-border-lightgrey") Post title #2
+							li
+								a(href="#", class="u-py-1-2 u-d-block u-border-top u-border-lightgrey") Post title #1
+				section.u-mt-2
+					h3(id="contactUsTitle", class="u-p u-bg-lightgrey u-radius h5-like") Contact us
+					address(aria-labelledby="contactUsTitle", class="u-nmt-1-2")
+						a(href="mailto:", class="u-py-1-2 u-d-block")
+							svg(class="icon u-mr", aria-hidden="true")
+								use(xlink:href="#icon-envelop") 
+							| admin@test.fr
+						a(href="tel:", class="u-py-1-2 u-d-block u-border-top u-border-lightgrey")
+							svg(class="icon u-mr", aria-hidden="true")
+								use(xlink:href="#icon-user") 
+							| (311) 444-3479
+
+
 
 		
 
