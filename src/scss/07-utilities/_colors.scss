@@ -7,12 +7,12 @@
 @if $enable-colors {
 
 	@each $name, $color in($all-colors) {
-		.u-text-#{$name} {
+		.text-#{$name} {
 			color: var(--color-#{$name}) !important;
 		}
 	}
 
-	.u-text-white {
+	.text-white {
 		color: #fff !important;
 	}
 

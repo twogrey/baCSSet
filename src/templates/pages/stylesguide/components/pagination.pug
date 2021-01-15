@@ -3,36 +3,36 @@ section.section.js-menu#Pagination
 		.col-12
 			h3.section__title Pagination
 		.col-12
-			.u-bg-lightgrey.u-p 
+			.bg-lightgrey.p 
 				p <b>Notes :</b>
 				ul
 					li Ajouter <code>aria-live="polite"</code> sur le conteneur mis à jour par une pagination en AJAX.
 					li Pour une pagination en AJAX, modifier les attributs <code>aria-disabled</code>, <code>aria-current</code> et <code>tabindex</code> lors d'un changement de page.
 		.col-12
 			nav(aria-label="Pagination", class="js-snippet")
-				ol.c-pagination.list-unstyled
-					li.c-pagination__item
-						a(href="#", aria-disabled="true", tabindex="-1", rel="prev", class="c-btn c-btn--outline c-btn--primary c-btn--small") 
+				ol.pagination.list-unstyled
+					li.pagination__item
+						a(href="#", aria-disabled="true", tabindex="-1", rel="prev", class="btn btn--outline btn--primary btn--small") 
 							svg(class="icon")
 								title Page précédente
 								use(xlink:href="#icon-chevron-left")
-					li.c-pagination__item
-						a(href="#", aria-label="Page 1", aria-current="page", class="c-btn c-btn--primary c-btn--small")
+					li.pagination__item
+						a(href="#", aria-label="Page 1", aria-current="page", class="btn btn--primary btn--small")
 							span(aria-hidden="true") 1
-					li.c-pagination__item
-						a(href="#", aria-label="Page 2", class="c-btn c-btn--outline c-btn--primary c-btn--small")
+					li.pagination__item
+						a(href="#", aria-label="Page 2", class="btn btn--outline btn--primary btn--small")
 							span(aria-hidden="true") 2
-					li.c-pagination__item
-						a(href="#", aria-label="Page 3", class="c-btn c-btn--outline c-btn--primary c-btn--small")
+					li.pagination__item
+						a(href="#", aria-label="Page 3", class="btn btn--outline btn--primary btn--small")
 							span(aria-hidden="true") 3
-					li.c-pagination__item.c-pagination__item--ellipsis(aria-hidden="true")
-						a(href="#", aria-disabled="true", tabindex="-1", class="c-btn c-btn--white c-btn--small")
+					li.pagination__item.pagination__item--ellipsis(aria-hidden="true")
+						a(href="#", aria-disabled="true", tabindex="-1", class="btn btn--white btn--small")
 							span &hellip;
-					li.c-pagination__item
-						a(href="#", aria-label="Page 99", class="c-btn c-btn--outline c-btn--primary c-btn--small")
+					li.pagination__item
+						a(href="#", aria-label="Page 99", class="btn btn--outline btn--primary btn--small")
 							span(aria-hidden="true") 99
-					li.c-pagination__item
-						a(href="#", rel="next", class="c-btn c-btn--outline c-btn--primary c-btn--small") 
+					li.pagination__item
+						a(href="#", rel="next", class="btn btn--outline btn--primary btn--small") 
 							svg(class="icon")
 								title Page suivante
 								use(xlink:href="#icon-chevron-right")

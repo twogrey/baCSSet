@@ -7,13 +7,13 @@ $display-values: (
 	'-inline-flex'  : 'inline-flex' );
 
 @each $d-name, $d-value in($display-values) {
-	.u-d#{$d-name} {
+	.d#{$d-name} {
 		display: #{$d-value} !important;
 	}
 
 	@each $name, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $name)) {
-			.u-d-#{$prefix}#{$d-name} {
+			.d-#{$prefix}#{$d-name} {
 				display: #{$d-value} !important;
 			}
 		}

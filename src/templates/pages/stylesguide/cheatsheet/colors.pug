@@ -1,29 +1,29 @@
 mixin color(color, shades)
-	.col-12.u-mb-0
-		.u-pt.u-pb-2(class="u-bg-"+color)
+	.col-12.mb-0
+		.pt.pb-2(class="bg-"+color)
 	if shades
-		.col-3.u-mb-0
-			.u-pt.u-pb-1-2(class="u-bg-"+color+"-lightest")
-		.col-3.u-mb-0
-			.u-pt.u-pb-1-2(class="u-bg-"+color+"-light")
-		.col-3.u-mb-0
-			.u-pt.u-pb-1-2(class="u-bg-"+color)
-		.col-3.u-mb-0
-			.u-pt.u-pb-1-2(class="u-bg-"+color+"-dark")
-	.col-12.u-mt-1-4
-		.u-text-semibold= color.charAt(0).toUpperCase() + color.slice(1)
+		.col-3.mb-0
+			.pt.pb-1-2(class="bg-"+color+"-lightest")
+		.col-3.mb-0
+			.pt.pb-1-2(class="bg-"+color+"-light")
+		.col-3.mb-0
+			.pt.pb-1-2(class="bg-"+color)
+		.col-3.mb-0
+			.pt.pb-1-2(class="bg-"+color+"-dark")
+	.col-12.mt-1-4
+		.text-semibold= color.charAt(0).toUpperCase() + color.slice(1)
 
 .row.no-gutters
 	+color('primary', true)
 	+color('secondary', true)
 	+color('error', true)
 	+color('success', true)
-	.col-12.u-mb-0
-		.u-py(class="u-bg-grey")
-	.col-6.u-mb-0
-		.u-py-1-2(class="u-bg-lightgrey")
-	.col-6.u-mb-0
-		.u-py-1-2(class="u-bg-darkgrey")
-	.col-12.u-mt-1-4
-		.u-text-semibold Neutral
+	.col-12.mb-0
+		.py(class="bg-grey")
+	.col-6.mb-0
+		.py-1-2(class="bg-lightgrey")
+	.col-6.mb-0
+		.py-1-2(class="bg-darkgrey")
+	.col-12.mt-1-4
+		.text-semibold Neutral
 	+color('black', false)

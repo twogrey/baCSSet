@@ -6,26 +6,26 @@ section.section.js-menu#Grid
 			.col-12
 				.section__content
 					.container
-						.row(class='u-'+val)
+						.row(class=''+val)
 							.col-3
 								| .col-3
 							.col-3
 								| .col-3
 							.col-3
 								| .col-3
-				.row.js-parent-snippet.u-mt-1-2
-					.row(class='u-d-none js-snippet u-'+val) ...
+				.row.js-parent-snippet.mt-1-2
+					.row(class='d-none js-snippet '+val) ...
 		each val in ['align-start', 'align-center', 'align-end']
 			.col-12
 				.section__content
 					.container
-						.row.u-justify-center(class='u-'+val)
+						.row.justify-center(class=''+val)
 							.col-4(style="min-height: 60px")
 								| .col-4
 							.col-4
 								| .col-4
-				.row.js-parent-snippet.u-mt-1-2
-					.row(class='u-d-none js-snippet u-'+val) ...
+				.row.js-parent-snippet.mt-1-2
+					.row(class='d-none js-snippet '+val) ...
 		.col-12
 			h3.section__title#columns Columns
 		.col-12
@@ -34,7 +34,7 @@ section.section.js-menu#Grid
 					.row
 						- var n = 1;
 						while n <= 12
-							.col-1.u-px-0.u-border-transparent.u-bg-primary.u-text-white.u-border-left.u-border-right= n
+							.col-1.px-0.border-transparent.bg-primary.text-white.border-left.border-right= n
 							- n++; 
 					.row
 						.col
@@ -71,17 +71,17 @@ section.section.js-menu#Grid
 						.col-12.col-md-4.col-lg-3
 							| .col-12.col-md-4.col-lg-3
 					.row
-						.col-6.col-offset-3
-							| .col-6.col-offset-3
+						.col-6.offset-3
+							| .col-6.offset-3
 					.row
-						.col-4.u-order-md-1
-							| .col-4.u-order-md-1 
+						.col-4.order-md-1
+							| .col-4.order-md-1 
 						.col-4
 							| .col-4
 					.row
-						.col-12.col-md-3.u-order-md-1
-							| .col-12.col-md-3.u-order-md-1 
-						.col-12.col-md-3.u-order-md-last
-							| .col-3.u-order-md-last 
+						.col-12.col-md-3.order-md-1
+							| .col-12.col-md-3.order-md-1 
+						.col-12.col-md-3.order-md-last
+							| .col-3.order-md-last 
 						.col-3
 							| .col-3

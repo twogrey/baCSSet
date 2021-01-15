@@ -1,8 +1,8 @@
 mixin accordion-item(id, active)
-	h2.p-accordion__header
+	h2.accordion__header
 		button(
 			type="button",
-			class="c-btn c-btn--transparent c-btn--large p-accordion__toggle",
+			class="btn btn--transparent btn--large accordion__toggle",
 			id="buttonForPanel_"+id,
 			data-toggle-class="is-open",
 			data-toggle-target="#panel_"+id,
@@ -12,10 +12,10 @@ mixin accordion-item(id, active)
 			aria-controls="panel_"+id,
 			aria-expanded="false")&attributes({"data-toggle-is-active": active})
 			span Accordion item #{id}
-			svg(class="icon p-accordion__icon" aria-hidden="true")
+			svg(class="icon accordion__icon" aria-hidden="true")
 				use(xlink:href="#icon-chevron-down")
 	div(
-		class="p-accordion__content",
+		class="accordion__content",
 		id="panel_"+id,
 		role="region",
 		aria-labelledby="buttonForPanel_"+id,
@@ -28,7 +28,7 @@ section.section.js-menu#Accordion
 			h3.section__title Accordion
 	.row.js-parent-snippet
 		.col-12
-			section.p-accordion.js-snippet
+			section.accordion.js-snippet
 				+accordion-item('1', true)
 				+accordion-item('2', false)
 				+accordion-item('3', false)

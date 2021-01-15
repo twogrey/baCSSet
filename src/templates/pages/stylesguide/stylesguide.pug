@@ -14,11 +14,11 @@ block append styles
 	link(href="dest/css/pages/stylesguide.min.css", rel="stylesheet")
 
 block main
-	.container.container--fluid.u-px-0
+	.container.container--fluid.px-0
 		
 		.row.no-gutters
 
-			.col-12.col-md-3.col-lg-2.u-px-0.u-mb-0.menu-stylesguide
+			.col-12.col-md-3.col-lg-2.px-0.mb-0.menu-stylesguide
 
 				ul#menuStylesguide.list-unstyled(data-computed-style="width, height", data-computed-style-name="menu")
 					+linkMenu('Cheatsheet')
@@ -30,10 +30,10 @@ block main
 					+linkMenu('Misc')
 					+linkMenu('Layout')
 
-			.col-12.col-md-9.col-lg-10.u-px-0.u-mb-0
+			.col-12.col-md-9.col-lg-10.px-0.mb-0
 				 
 				h2.god-section-title #{sectionTitle} 
-				.container.u-py-md.u-px-md-2
+				.container.py-md.px-md-2
 					block content
 
 block append scripts-footer

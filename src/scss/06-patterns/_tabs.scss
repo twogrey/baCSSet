@@ -1,5 +1,5 @@
 @if $enable-tabs {
-	.p-tabs {
+	.tabs {
 		&__list {
 			display: inline-flex;
 			border: rem(1px) solid var(--color-primary-light);
@@ -19,21 +19,21 @@
 			}
 
 			&:first-child {
-				.c-btn {
+				.btn {
 					border-top-right-radius: 0;
 					border-bottom-right-radius: 0;
 				}
 			}
 
 			&:last-child {
-				.c-btn {
+				.btn {
 					border-top-left-radius: 0;
 					border-bottom-left-radius: 0;
 				}
 			}
 
 			&:not(:first-child):not(:last-child) {
-				.c-btn {
+				.btn {
 					border-radius: 0;
 				}
 			}

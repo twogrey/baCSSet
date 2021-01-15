@@ -3,11 +3,11 @@
 }
 
 @if $enable-radius {
-	.u-radius {
+	.radius {
 		border-radius: var(--radius) !important;
 	}
 
-	.u-rounded {
+	.rounded {
 		border-radius: rem(5000px) !important;
 	}
 

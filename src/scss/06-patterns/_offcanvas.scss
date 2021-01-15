@@ -7,7 +7,7 @@
 		}
 	}
 
-	.p-offcanvas {
+	.offcanvas {
 		--w: #{rem(300px)};
 		--i: -1;
 		--wrap-p: var(--sp);
@@ -28,12 +28,12 @@
 		&.is-active {
 			--wrap-anim: reveal-on-offcanvas 0.3s forwards;
 			display: block;
-			animation: o-fade-in 0.3s;
+			animation: fade-in 0.3s;
 		}
 
 		&.is-hiding {
 			--wrap-anim: reveal-off-offcanvas 0.3s;
-			animation: o-fade-out 0.3s;
+			animation: fade-out 0.3s;
 		}
 
 		&--right {

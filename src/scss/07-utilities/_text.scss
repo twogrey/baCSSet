@@ -5,13 +5,13 @@
  -------------------------------------------- */
 
 @each $value in('left', 'center', 'right') {
-	.u-text-#{$value} {
+	.text-#{$value} {
 		text-align: #{$value} !important;
 	}
 
 	@each $name, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $name)) {
-			.u-text-#{$prefix}-#{$value} {
+			.text-#{$prefix}-#{$value} {
 				text-align: #{$value} !important;
 			}
 		}
@@ -24,35 +24,35 @@
  * 
  -------------------------------------------- */
 
-.u-fs-smaller {
+.fs-smaller {
 	font-size: 75% !important;
 }
 
-.u-fs-larger {
+.fs-larger {
 	font-size: 125% !important;
 }
 
-.u-fs-1 {
+.fs-1 {
 	font-size: 1.375rem !important;
 }
 
-.u-fs-2 {
+.fs-2 {
 	font-size: 1.1875rem !important;
 }
 
-.u-fs-3 {
+.fs-3 {
 	font-size: 1rem !important;
 }
 
-.u-fs-4 {
+.fs-4 {
 	font-size: 0.8125rem !important;
 }
 
-.u-fs-5 {
+.fs-5 {
 	font-size: 0.6875rem !important;
 }
 
-.u-fs-fluid {
+.fs-fluid {
 	font-size: clamp(calc(var(--min) * 1rem), calc(var(--min) * 100 / var(--mq-sm-unitless) * 0.5vw), calc(var(--max) * 1rem)) !important;
 }
 
@@ -62,7 +62,7 @@
  * 
  -------------------------------------------- */
 
-.u-text-reset {
+.text-reset {
 	color: inherit !important;
 }
 
@@ -72,7 +72,7 @@
  * 
  -------------------------------------------- */
 
-.u-text-nowrap {
+.text-nowrap {
 	white-space: nowrap !important;
 }
 
@@ -82,7 +82,7 @@
  * 
  -------------------------------------------- */
 
-.u-text-break {
+.text-break {
 	word-break: break-word !important; // To avoid issues with flex containers
 	overflow-wrap: break-word !important;
 }
@@ -93,7 +93,7 @@
  * 
  -------------------------------------------- */
 
-.u-caps {
+.caps {
 	text-transform: uppercase !important;
 }
 
@@ -103,19 +103,19 @@
  * 
  -------------------------------------------- */
 
-.u-fw-regular {
+.fw-regular {
 	font-weight: $regular !important;
 }
 
-.u-fw-semibold {
+.fw-semibold {
 	font-weight: $semibold !important;
 }
 
-.u-fw-bold {
+.fw-bold {
 	font-weight: $bold !important;
 } 
 
-.u-fst-i {
+.fst-i {
 	font-style: italic !important;
 } 
 
@@ -125,19 +125,19 @@
  * 
  -------------------------------------------- */
 
-.u-lh-1 {
+.lh-1 {
 	line-height: 1 !important;
 }
 
-.u-lh-sm {
+.lh-sm {
 	line-height: 1.25 !important;
 }
 
-.u-lh-base {
+.lh-base {
 	line-height: 1.5 !important;
 }
 
-.u-lh-lg {
+.lh-lg {
 	line-height: 2 !important;
 }
 
@@ -147,7 +147,7 @@
  * 
  -------------------------------------------- */
 
-.u-text-serif {
+.text-serif {
 	font-family: $typo-font-family-serif !important;
 }
 
@@ -157,11 +157,11 @@
  * 
  -------------------------------------------- */
 
-.u-text-underline {
+.text-underline {
 	text-decoration: underline !important;
 }
 
-.u-text-decoration-none {
+.text-decoration-none {
 	text-decoration: none !important;
 }
 
@@ -171,7 +171,7 @@
  * 
  -------------------------------------------- */
 
-.u-text-truncate {
+.text-truncate {
 	overflow: hidden !important;
 	text-overflow: ellipsis !important;
 	white-space: nowrap !important;

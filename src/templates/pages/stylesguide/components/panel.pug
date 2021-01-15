@@ -1,10 +1,10 @@
 mixin panel(id, variant, closable, longContent)
 	if(closable)
-		- closableClass = 'c-panel--closable';
-	.c-panel(class='c-panel--' + variant + ' u-mb-2 ' + closableClass, id="msg_"+id)
-		.c-panel__content
+		- closableClass = 'panel--closable';
+	.panel(class='panel--' + variant + ' mb-2 ' + closableClass, id="msg_"+id)
+		.panel__content
 			if(longContent)
-				h4.c-panel__title Title
+				h4.panel__title Title
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur <a href="#">distinctio sequi</a> nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa <b>expedita minima ea</b>, rem laudantium reiciendis <i>reprehenderit pariatur in</i>.
 				hr
 				p Nihil qui assumenda, excepturi mollitia harum magni amet ut ipsa expedita minima ea rem laudantium reiciendis, reprehenderit.
@@ -17,7 +17,7 @@ mixin panel(id, variant, closable, longContent)
 				- variant = 'dark';
 			else if(variant == 'dark')
 				- variant = 'light';
-			button(type="button", class="c-panel__close c-btn c-btn--small c-btn--outline c-btn--" + variant, data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
+			button(type="button", class="panel__close btn btn--small btn--outline btn--" + variant, data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
 				svg(class="icon")
 					title Cacher ce message
 					use(xlink:href="#icon-x")
@@ -26,8 +26,8 @@ section.section.js-menu#Panels
 	.row.js-parent-snippet
 		.col-12
 			h3.section__title Panels
-		.col-12.u-mb-0
-			.u-bg-lightgrey.u-p.u-mb-2
+		.col-12.mb-0
+			.bg-lightgrey.p.mb-2
 				p <b>Notes :</b>
 				ul
 					li Ajouter <code>role="alert"</code> s'il s'agit d'une notification.

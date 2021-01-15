@@ -133,7 +133,7 @@
 
 @each $name, $prefix in($grid-mq) {
 	@include mq(map-get($mq, $name)) {
-		.col-#{$prefix}-offset-0 {
+		.#{$prefix}-offset-0 {
 			margin-left: 0;
 		}
 	}
@@ -142,13 +142,13 @@
 @for $i from 1 through ($nb-cols - 1) {
 	$val: percentage($i/$nb-cols);
 
-	.col-offset-#{$i} {
+	.offset-#{$i} {
 		margin-left: $val;
 	}
 
 	@each $name, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $name)) {
-			.col-#{$prefix}-offset-#{$i} {
+			.#{$prefix}-offset-#{$i} {
 				margin-left: $val;
 			}
 		}

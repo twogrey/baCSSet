@@ -1,10 +1,10 @@
-@keyframes o-rotate {
+@keyframes rotate {
 	to {
 		transform: rotate(1turn);
 	}
 }
 
-@keyframes o-fade-in {
+@keyframes fade-in {
 	from {
 		opacity: 0;
 	}
@@ -14,7 +14,7 @@
 	}
 }
 
-@keyframes o-fade-out {
+@keyframes fade-out {
 	from {
 		opacity: 1;
 	}
@@ -24,7 +24,7 @@
 	}
 }
 
-@keyframes o-translate-from-top {
+@keyframes translate-from-top {
 	from {
 		transform: translateY(calc(var(--sp-2) * -1));
 	}
@@ -34,7 +34,7 @@
 	}
 }
 
-@keyframes o-translate-to-bottom {
+@keyframes translate-to-bottom {
 	from {
 		transform: translateY(0);
 	}

@@ -1,27 +1,27 @@
 mixin modal(id, size, viewport, lightbox, snippet)
-	dialog.p-modal(aria-labelledby="titleModal"+id, id="modal"+id, class={'js-snippet':snippet})
+	dialog.modal(aria-labelledby="titleModal"+id, id="modal"+id, class={'js-snippet':snippet})
 		- var sizeClass = '';
 		- var viewportClass = '';
 		if(size)
-			- sizeClass = 'p-modal__dialog--'+size;
+			- sizeClass = 'modal__dialog--'+size;
 		if(viewport)
-			- viewportClass = 'p-modal__dialog--viewport';
+			- viewportClass = 'modal__dialog--viewport';
 		if(lightbox)
-			- lightboxClass = 'p-modal__dialog--lightbox';
-		.p-modal__dialog.js-modal-stop(role="document", class=sizeClass+' '+viewportClass+' '+lightboxClass)
-			.p-modal__content
-				.p-modal__header
-					h1(id="titleModal"+id, class="p-modal__title" class={'sr-only': lightbox}) Modal title
-					button.p-modal__close.c-btn.js-modal-close(type="button", class={'c-btn--transparent': !lightbox, 'c-btn--white': lightbox})
+			- lightboxClass = 'modal__dialog--lightbox';
+		.modal__dialog.js-modal-stop(role="document", class=sizeClass+' '+viewportClass+' '+lightboxClass)
+			.modal__content
+				.modal__header
+					h1(id="titleModal"+id, class="modal__title" class={'sr-only': lightbox}) Modal title
+					button.modal__close.btn.js-modal-close(type="button", class={'btn--transparent': !lightbox, 'btn--white': lightbox})
 						svg(class="icon")
 							title Fermer cette fenêtre modale
 							use(xlink:href="#icon-x")
-				.p-modal__body
+				.modal__body
 					if(lightbox)
 						img(src="https://picsum.photos/1920/1200", srcset="https://picsum.photos/768/1200 768w, https://picsum.photos/1200/1200 1200w, https://picsum.photos/1920/1200 1920w", sizes="100vw" loading="lazy", alt="", width="1920", height="1200")
 					else
 						if(viewport)
-							.u-mb.u-text-center
+							.mb.text-center
 								img(src="dest/img/holy-placeholder.jpg", loading="lazy", alt="")
 							p Carrot cake sweet roll topping. Jelly danish fruitcake cheesecake oat cake pastry. Jujubes apple pie cotton candy tootsie roll toffee jelly-o jujubes. Carrot cake dessert sweet gummi bears ice cream gummi bears sesame snaps cake. Bonbon liquorice jelly. Liquorice <a href="#">link</a> bonbon. Chocolate bar ice cream dragée. Bear claw cotton candy sugar plum. Pudding carrot cake tiramisu soufflé tart tootsie roll jujubes. Tart bear claw topping jelly beans chocolate jujubes. Chupa chups powder muffin chocolate cake caramels halvah marzipan wafer. Sweet ice cream tootsie roll dragée. 
 							p Pie bear claw cheesecake toffee. Sweet jelly chocolate bar soufflé. Croissant tootsie roll cotton candy sweet powder pudding icing cake. Apple pie jelly-o bonbon. Croissant cake ice cream chocolate bar croissant. Cotton candy chocolate tiramisu topping dessert tiramisu soufflé ice cream oat cake. Candy topping gummi bears jelly beans apple pie. Lemon drops bear claw sugar plum lemon drops. Chocolate muffin gingerbread. Muffin marzipan chocolate gummies toffee muffin cotton candy tart pastry. Caramels liquorice macaroon chocolate cake lemon drops. Donut liquorice pastry toffee. Chocolate brownie ice cream candy. Lemon drops soufflé carrot cake jujubes oat cake jelly-o.
@@ -34,46 +34,46 @@ mixin modal(id, size, viewport, lightbox, snippet)
 							label(for="demoInputModal"+id) Label
 							input(type="text", id="demoInputModal"+id)
 				if(!lightbox)
-					.p-modal__footer 
-						button(type="button", class="c-btn c-btn--error c-btn--outline js-modal-close") Fermer
-						button(type="button", class="c-btn c-btn--primary") Button 
+					.modal__footer 
+						button(type="button", class="btn btn--error btn--outline js-modal-close") Fermer
+						button(type="button", class="btn btn--primary") Button 
 
 section.section.js-menu#Modals
-	.row.js-parent-snippet.u-mb
+	.row.js-parent-snippet.mb
 		.col-12
 			h3.section__title Modals
 		.col-12
 			h4 Default
 		.col-12
-			button(type="button", class="c-btn c-btn--primary js-modal js-snippet", data-modal-id="modal1", aria-haspopup="dialog") Open modal (plain text)
+			button(type="button", class="btn btn--primary js-modal js-snippet", data-modal-id="modal1", aria-haspopup="dialog") Open modal (plain text)
 			+modal('1', 'medium', false, false, true)
-	.row.js-parent-snippet.u-mb
+	.row.js-parent-snippet.mb
 		.col-12
 			h4 Sizes
 		.col-auto
-			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal2", aria-haspopup="dialog") Small
+			button(type="button", class="btn btn--primary js-modal", data-modal-id="modal2", aria-haspopup="dialog") Small
 			+modal('2', 'small', false, false, true)
 		.col-auto
-			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal3", aria-haspopup="dialog") Large
+			button(type="button", class="btn btn--primary js-modal", data-modal-id="modal3", aria-haspopup="dialog") Large
 			+modal('3', 'large')
 		.col-auto
-			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal4", aria-haspopup="dialog") Large-plus
+			button(type="button", class="btn btn--primary js-modal", data-modal-id="modal4", aria-haspopup="dialog") Large-plus
 			+modal('4', 'large-plus')
 		.col-auto
-			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal5", aria-haspopup="dialog") Fullscreen
+			button(type="button", class="btn btn--primary js-modal", data-modal-id="modal5", aria-haspopup="dialog") Fullscreen
 			+modal('5')
-	.row.js-parent-snippet.u-mb
+	.row.js-parent-snippet.mb
 		.col-12
 			h4 Viewport height
 		.col-auto
-			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal6", aria-haspopup="dialog") Open modal
+			button(type="button", class="btn btn--primary js-modal", data-modal-id="modal6", aria-haspopup="dialog") Open modal
 			+modal('6', 'medium', true, false, true)
 	.row.js-parent-snippet
 		.col-12
 			h4 Lightbox
 		.col-auto
-			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal7", aria-haspopup="dialog") Open image in fullscreen modal
+			button(type="button", class="btn btn--primary js-modal", data-modal-id="modal7", aria-haspopup="dialog") Open image in fullscreen modal
 			+modal('7', '', false, true, true)
 		.col-auto
-			button(type="button", class="c-btn c-btn--primary js-modal", data-modal-id="modal8", aria-haspopup="dialog") Open image in medium modal
+			button(type="button", class="btn btn--primary js-modal", data-modal-id="modal8", aria-haspopup="dialog") Open image in medium modal
 			+modal('8', 'medium', false, true, true)

@@ -1,6 +1,6 @@
 mixin tab(position)
 	li.js-tablist__item
-		a(href="#tab"+position, class="c-btn c-btn--white js-tablist__link")= 'Tab #'+position
+		a(href="#tab"+position, class="btn btn--white js-tablist__link")= 'Tab #'+position
 
 mixin tabContent(position)
 	.js-tabcontent(id="tab"+position)
@@ -15,7 +15,7 @@ section.section.js-menu#Tabs
 		.col-12
 			h3.section__title Tabs		
 		.col-12
-			.u-bg-lightgrey.u-p 
+			.bg-lightgrey.p 
 				p 
 					b Notes :
 				ul
@@ -28,7 +28,7 @@ section.section.js-menu#Tabs
 							code .js-tabs
 							| .
 		.col-12
-			.js-tabs.js-snippet(data-tabs-prefix-class="p")
+			.js-tabs.js-snippet
 				ul.list-unstyled.js-tablist
 					+tab('1')
 					+tab('2')

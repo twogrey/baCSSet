@@ -7,7 +7,7 @@
 		}
 	}
 
-	.p-modal {
+	.modal {
 		--p: var(--sp);
 		--section-p: var(--p);
 		--body-border: 1px solid var(--color-lightgrey);
@@ -27,11 +27,11 @@
 
 		&[open] {
 			display: flex;
-			animation: o-fade-in 0.3s both;
+			animation: fade-in 0.3s both;
 		}
 
 		&.is-hiding {
-			animation-name: o-fade-out;
+			animation-name: fade-out;
 		}
 
 		&__dialog {
@@ -40,10 +40,10 @@
 			border-radius: var(--radius);
 			overflow: hidden;
 			background-color: #fff;
-			animation: o-translate-from-top 0.3s both;
+			animation: translate-from-top 0.3s both;
 
 			.is-hiding > & {
-				animation-name: o-translate-to-bottom;
+				animation-name: translate-to-bottom;
 			}
 
 			&--small {

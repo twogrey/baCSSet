@@ -108,7 +108,7 @@ document.querySelectorAll('.js-offcanvas').forEach((a) => {
 var resizeTimer;
 
 window.addEventListener('resize', (e) => {
-	if(offcanvas && offcanvas.classList.contains('p-offcanvas--mq') && window.innerWidth > mqMedium) {
+	if(offcanvas && offcanvas.classList.contains('offcanvas--mq') && window.innerWidth > mqMedium) {
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(function() {
 			closeOffcanvas(e);
