@@ -5,19 +5,19 @@ mixin loader(overlay, white)
 
 section.section.js-menu#Loader
 	.row.js-parent-snippet
-		.col-12
+		div(class="col-12")
 			h3.section__title Loader
-		.col-12
+		div(class="col-12")
 			h4 Default
 			+loader()
-		.col-12.col-lg-6
+		div(class="col-12 lg:col-6")
 			h4 With overlay
 			.panel.panel--primary
 				+loader(true)
 				.panel__content
 					p
 						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quis, ab magni nostrum. Quidem id ipsum recusandae inventore quos accusamus dolorum, eos enim consequuntur! Vitae id amet ullam qui corrupti.
-		.col-12.col-lg-6
+		div(class="col-12 lg:col-6")
 			h4 With overlay &amp; white version
 			.panel.panel--closable(id="msg_l1", aria-hidden="false")
 				+loader(true, true)

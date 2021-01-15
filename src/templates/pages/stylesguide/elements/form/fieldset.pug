@@ -15,11 +15,11 @@ mixin fieldset-content(id)
 .col-12
 	h2 Fieldset
 	.row.js-parent-snippet
-		.col-12.col-lg-4
+		.col-12.lg:col-4
 			fieldset.js-snippet
 				legend Legend
 				+fieldset-content('1')
-		.col-12.col-lg-4
+		.col-12.lg:col-4
 			fieldset(disabled)
 				legend Legend (disabled fieldset)
 				+fieldset-content('2')

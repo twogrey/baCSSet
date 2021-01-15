@@ -8,11 +8,11 @@ section.section.js-menu#Grid
 					.container
 						.row(class=''+val)
 							.col-3
-								| .col-3
+								| col-3
 							.col-3
-								| .col-3
+								| col-3
 							.col-3
-								| .col-3
+								| col-3
 				div(class="row js-parent-snippet mt-0.5")
 					.row(class='d-none js-snippet '+val) ...
 		each val in ['align-start', 'align-center', 'align-end']
@@ -21,9 +21,9 @@ section.section.js-menu#Grid
 					.container
 						.row.justify-center(class=''+val)
 							.col-4(style="min-height: 60px")
-								| .col-4
+								| col-4
 							.col-4
-								| .col-4
+								| col-4
 				div(class="row js-parent-snippet mt-0.5")
 					.row(class='d-none js-snippet '+val) ...
 		.col-12
@@ -37,51 +37,51 @@ section.section.js-menu#Grid
 							.col-1.px-0.border-transparent.bg-primary.text-white.border-left.border-right= n
 							- n++; 
 					.row
-						.col
-							| .col
+						div(class="col")
+							| col
 					.row
-						.col
-							| .col
-						.col
-							| .col
+						div(class="col")
+							| col
+						div(class="col")
+							| col
 					.row
-						.col
-							| .col
-						.col
-							| .col
-						.col
-							| .col
+						div(class="col")
+							| col
+						div(class="col")
+							| col
+						div(class="col")
+							| col
 					.row
-						.col-4
-							| .col-4
-						.col-auto
-							| .col-auto
-						.col
-							| .col
+						div(class="col-4")
+							| col-4
+						div(class="col-auto")
+							| col-auto
+						div(class="col")
+							| col
 					.row
-						.col-6.col-sm-4
-							| .col-6.col-sm-4
-						.col
-							| .col
+						div(class="col-6 sm:col-4")
+							| col-6 sm:col-4
+						div(class="col")
+							| col
 					.row
-						.col-12.col-md-4.col-lg-3
-							| .col-12.col-md-4.col-lg-3
-						.col-12.col-md-4.col-lg-3
-							| .col-12.col-md-4.col-lg-3
-						.col-12.col-md-4.col-lg-3
-							| .col-12.col-md-4.col-lg-3
+						div(class="col-12 md:col-4 lg:col-3")
+							| col-12 md:col-4 lg:col-3
+						div(class="col-12 md:col-4 lg:col-3")
+							| col-12 md:col-4 lg:col-3
+						div(class="col-12 md:col-4 lg:col-3")
+							| col-12 md:col-4 lg:col-3
 					.row
-						.col-6.offset-3
-							| .col-6.offset-3
+						div(class="col-6 offset-3")
+							| col-6 offset-3
 					.row
-						.col-4.order-md-1
-							| .col-4.order-md-1 
-						.col-4
-							| .col-4
+						div(class="col-4 md:order-1")
+							| col-4 md:order-1 
+						div(class="col-4")
+							| col-4
 					.row
-						.col-12.col-md-3.order-md-1
-							| .col-12.col-md-3.order-md-1 
-						.col-12.col-md-3.order-md-last
-							| .col-3.order-md-last 
-						.col-3
-							| .col-3
+						div(class="col-12 md:col-3 md:order-1")
+							| col-12 md:col-3 md:order-1 
+						div(class="col-12 md:col-3 md:order-last")
+							| col-3 md:order-last 
+						div(class="col-3")
+							| col-3

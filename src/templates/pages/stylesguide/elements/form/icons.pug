@@ -1,14 +1,14 @@
 .col-12
 	h2 With icons
 	.row.js-parent-snippet
-		.col-12.col-md-4
+		div(class="col-12 md:col-4")
 			.form-group.js-snippet
 				label(for="inputWithIconsLeft") Left
 				.input-icon
 					svg(class="icon", aria-hidden="true")
 						use(xlink:href="#icon-x")
 					input(type="text", id="inputWithIconsLeft")
-		.col-12.col-md-4
+		div(class="col-12 md:col-4")
 			.form-group
 				label(for="inputWithIconsRight") Right
 				.input-icon

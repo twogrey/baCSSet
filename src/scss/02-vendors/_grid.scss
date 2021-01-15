@@ -93,13 +93,13 @@
 
 @each $name, $prefix in($grid-mq) {
 	@include mq(map-get($mq, $name)) {
-		.col-#{$prefix} {
+		.#{$prefix}\:col {
 			flex-grow: 1;
 			flex-basis: 0;
 			max-width: 100%;
 		}
 
-		.col-#{$prefix}-auto {
+		.#{$prefix}\:col-auto {
 			flex: 0 0 auto;
 			width: auto;
 			max-width: 100%;
@@ -117,7 +117,7 @@
 
 	@each $name, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $name)) {
-			.col-#{$prefix}-#{$i} {
+			.#{$prefix}\:col-#{$i} {
 				flex: 0 0 var(--#{$prefix}-w, #{$val});
 				max-width: var(--#{$prefix}-w, #{$val});
 			}
@@ -133,7 +133,7 @@
 
 @each $name, $prefix in($grid-mq) {
 	@include mq(map-get($mq, $name)) {
-		.#{$prefix}-offset-0 {
+		.#{$prefix}\:offset-0 {
 			margin-left: 0;
 		}
 	}
@@ -148,7 +148,7 @@
 
 	@each $name, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $name)) {
-			.#{$prefix}-offset-#{$i} {
+			.#{$prefix}\:offset-#{$i} {
 				margin-left: $val;
 			}
 		}

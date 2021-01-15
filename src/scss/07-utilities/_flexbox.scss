@@ -33,7 +33,7 @@
 
 		@each $name, $prefix in($grid-mq) {
 			@include mq(map-get($mq, $name)) {
-				.#{$prefix}-#{$direction-name} {
+				.#{$prefix}\:#{$direction-name} {
 					flex-direction: #{$direction-value} !important;
 				}
 			}
@@ -47,7 +47,7 @@
 
 		@each $name, $prefix in($grid-mq) {
 			@include mq(map-get($mq, $name)) {
-				.#{$prefix}-#{$justify-name} {
+				.#{$prefix}\:#{$justify-name} {
 					justify-content: #{$justify-value} !important;
 				}
 			}
@@ -61,7 +61,7 @@
 
 		@each $name, $prefix in($grid-mq) {
 			@include mq(map-get($mq, $name)) {
-				.#{$prefix}-#{$align-name} {
+				.#{$prefix}\:#{$align-name} {
 					align-items: #{$align-value} !important;
 				}
 			}
@@ -75,7 +75,7 @@
 
 		@each $name, $prefix in($grid-mq) {
 			@include mq(map-get($mq, $name)) {
-				.#{$prefix}-#{$wrap-name} {
+				.#{$prefix}\:#{$wrap-name} {
 					flex-wrap: #{$wrap-value} !important;
 				}
 			}
@@ -98,11 +98,11 @@
 
 	@each $name, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $name)) {
-			.order-#{$prefix}-first {
+			.#{$prefix}\:order-first {
 				order: -1;
 			}
 
-			.order-#{$prefix}-last {
+			.#{$prefix}\:order-last {
 				order: #{$nb-cols + 1};
 			}
 		}
@@ -114,7 +114,7 @@
 		}
 		@each $name, $prefix in($grid-mq) {
 			@include mq(map-get($mq, $name)) {
-				.order-#{$prefix}-#{$i} {
+				.#{$prefix}\:order-#{$i} {
 					order: $i;
 				}
 			}

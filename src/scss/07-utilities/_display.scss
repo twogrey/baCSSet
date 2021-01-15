@@ -13,7 +13,7 @@ $display-values: (
 
 	@each $name, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $name)) {
-			.d-#{$prefix}#{$d-name} {
+			.#{$prefix}\:d#{$d-name} {
 				display: #{$d-value} !important;
 			}
 		}

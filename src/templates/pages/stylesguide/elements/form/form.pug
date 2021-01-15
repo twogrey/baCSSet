@@ -2,14 +2,14 @@
 	h2 Form
 .col-12
 	.row.js-parent-snippet
-		.col-12.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3
+		div(class="col-12 md:col-8 md:offset-2 lg:col-6 lg:offset-3")
 			form.js-snippet
 				.row
-					.col-12.text-right
+					div(class="col-12 text-right")
 						.text-smaller(aria-hidden="true") 
 							span.text-primary.fw-bold * 
 							| Champs obligatoires
-					.col-12
+					div(class="col-12")
 						.form-group(role="group", aria-labelledby="titleGroupDemoFormRadios")
 							.label(id="titleGroupDemoFormRadios") Genre
 							.form-check.form-check--inline
@@ -18,31 +18,31 @@
 							.form-check.form-check--inline
 								input(type="radio", name="groupDemoFormRadios", id="groupDemoFormRadios2", required)
 								label(for="groupDemoFormRadios2") Femme
-					.col-12.col-md-6
+					div(class="col-12 md:col-6")
 						.form-group
 							label(for="firstname") First name&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
 							input(type="text", id="firstname", required)
-					.col-12.col-md-6
+					div(class="col-12 md:col-6")
 						.form-group
 							label(for="lastname") Last name&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
 							input(type="text", id="lastname", required)
-					.col-12
+					div(class="col-12")
 						.form-group
 							label(for="email") E-mail&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
 							.input-icon.input-icon--right
 								input(type="email", id="email", required)
 								svg(class="icon", aria-hidden="true")
 									use(xlink:href="#icon-envelope")
-					.col-12
+					div(class="col-12")
 						.form-group
 							label(for="pwd") Password&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
 							input(type="password", id="pwd", pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$", title="Votre mot de passe doit contenir au moins 8 caractères et comporter au moins un chiffre, une lettre minuscule et une lettre majuscule." required)
 							span.help Votre mot de passe doit contenir au moins 8 caractères et comporter au moins un chiffre, une lettre minuscule et une lettre majuscule.
-					.col-12
+					div(class="col-12")
 						.form-group
 							.form-check
 								input(type="checkbox", name="optin", id="optin", required)
 								label(for="optin") I accept use terms. 
-					.col-12.mb-0
+					div(class="col-12 mb-0")
 						.form-group
 							button(type="submit", class="btn btn--success") Submit

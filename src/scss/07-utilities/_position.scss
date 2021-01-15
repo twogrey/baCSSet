@@ -11,7 +11,7 @@
 
 		@each $name, $prefix in($grid-mq) {
 			@include mq(map-get($mq, $name)) {
-				.pos-#{$prefix}#{$pos-name} {
+				.#{$prefix}\:pos#{$pos-name} {
 					position: #{$pos-value} !important;
 				}
 			}

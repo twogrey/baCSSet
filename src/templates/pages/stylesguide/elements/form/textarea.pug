@@ -2,24 +2,24 @@
 	h2 Textarea
 .col-12
 	.row.js-parent-snippet
-		.col-12.col-md-6.col-lg-4
+		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
 				textarea(placeholder="Placeholder", aria-label="textarea")
-		.col-12.col-md-6.col-lg-4
+		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
 				textarea(aria-label="textarea") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
-		.col-12.col-md-6.col-lg-4
+		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
 				textarea(readonly, aria-label="textarea") (readonly) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
-		.col-12.col-md-6.col-lg-4
+		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
 				textarea.js-snippet(disabled, aria-label="textarea") (disabled) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
 				include message-help.pug
-		.col-12.col-md-6.col-lg-4
+		div(class="col-12 md:col-6 lg:col-4")
 			.form-group.error
 				textarea(aria-label="textarea") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
 				include message-error.pug
-		.col-12.col-md-6.col-lg-4
+		div(class="col-12 md:col-6 lg:col-4")
 			.form-group.valid
 				textarea(aria-label="textarea") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
 				include message-valid.pug

@@ -31,7 +31,7 @@ $utility-spacings: (
 			.#{$sp}#{$dir}#{$name} { #{$spacing}#{$direction}: #{$value} !important; }
 			@each $bp, $prefix in($grid-mq) {
 				@include mq(map-get($mq, $bp)) {
-					.#{$sp}#{$dir}-#{$prefix}#{$name} {
+					.#{$prefix}\:#{$sp}#{$dir}#{$name} {
 						#{$spacing}#{$direction}: #{$value} !important;
 					}
 				}
@@ -52,7 +52,7 @@ $utility-spacings: (
 			.nm#{$dir}#{$name} { margin#{$direction}: calc(#{$value} * -1) !important; }
 			@each $bp, $prefix in($grid-mq) {
 				@include mq(map-get($mq, $bp)) {
-					.nm#{$dir}-#{$prefix}#{$name} {
+					.#{$prefix}\:nm#{$dir}#{$name} {
 						margin#{$direction}: calc(#{$value} * -1) !important;
 					}
 				}
@@ -85,17 +85,17 @@ $utility-spacings: (
 
 		@each $bp, $prefix in($grid-mq) {
 			@include mq(map-get($mq, $bp)) {
-				.#{$sp}x-#{$prefix}#{$name} { 
+				.#{$prefix}\:#{$sp}x#{$name} { 
 					#{$spacing}-left: #{$value} !important;
 					#{$spacing}-right: #{$value} !important; 
 				}
 
-				.#{$sp}y-#{$prefix}#{$name} { 
+				.#{$prefix}\:#{$sp}y#{$name} { 
 					#{$spacing}-top: #{$value} !important;
 					#{$spacing}-bottom: #{$value} !important; 
 				}
 
-				.#{$sp}-#{$prefix}#{$name} { 
+				.#{$prefix}\:#{$sp}#{$name} { 
 					#{$spacing}: #{$value} !important; 
 				}
 			}
@@ -115,7 +115,7 @@ $utility-spacings: (
 	
 	@each $bp, $prefix in($grid-mq) {
 		@include mq(map-get($mq, $bp)) {
-			.m#{$dir}-#{$prefix}-a {
+			.#{$prefix}\:m#{$dir}-a {
 				margin#{$direction}: auto !important;
 			}
 		}
@@ -138,17 +138,17 @@ $utility-spacings: (
 
 @each $bp, $prefix in($grid-mq) {
 	@include mq(map-get($mq, $bp)) {
-		.mx-#{$prefix}-a {
+		.#{$prefix}\:mx-a {
 			margin-right: auto !important;
 			margin-left: auto !important;
 		}
 
-		.my-#{$prefix}-a {
+		.#{$prefix}\:my-a {
 			margin-top: auto !important;
 			margin-bottom: auto !important;
 		}
 
-		.m-#{$prefix}-a {
+		.#{$prefix}\:m-a {
 			margin: auto !important;
 		}
 	}

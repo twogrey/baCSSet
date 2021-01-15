@@ -1,28 +1,28 @@
 .row
-	.col-12.col-md-6.col-lg-4
+	div(class="col-12 md:col-6 lg:col-4")
 		.form-group
 			label(for="cheatSheetInput1") Default input
 			input(type="text", id="cheatSheetInput1", placeholder="Placeholder")
 			span.help A message here.
-	.col-12.col-md-6.col-lg-4
+	div(class="col-12 md:col-6 lg:col-4")
 		.form-group
 			label(for="cheatSheetInput2") Disabled input
 			input(type="text", id="cheatSheetInput2", placeholder="Placeholder", disabled)
-	.col-12.col-md-6.col-lg-4
+	div(class="col-12 md:col-6 lg:col-4")
 		.form-group
 			label(for="cheatSheetInput3") Read-only input
 			input(type="text", id="cheatSheetInput3", placeholder="Placeholder", value="Text", readonly)
-	.col-12.col-md-6.col-lg-4
+	div(class="col-12 md:col-6 lg:col-4")
 		.form-group.valid
 			label(for="cheatSheetInput4") Valid input
 			input(type="text", id="cheatSheetInput4", placeholder="Placeholder")
 			span.message Your value is valid.
-	.col-12.col-md-6.col-lg-4
+	div(class="col-12 md:col-6 lg:col-4")
 		.form-group.error
 			label(for="cheatSheetInput5") Invalid input
 			input(type="text", id="cheatSheetInput5", placeholder="Placeholder")
 			span.message There's an error.
-	.col-12.col-md-6.col-lg-4
+	div(class="col-12 md:col-6 lg:col-4")
 		.form-group
 			label(for="cheatSheetSelect") Select
 			select(id="cheatSheetSelect")
@@ -33,9 +33,9 @@
 			label(for="cheatSheetTextarea") Textarea
 			textarea(placeholder="Placeholder", id="cheatSheetTextarea")
 			span.help A message here.
-	.col-12.col-md-4.mb-md-0
+	div(class="col-12 md:col-4 md:mb-0")
 		+inputs('1', false, 'Checkboxes', 'checkbox')
-	.col-12.col-md-4.mb-md-0
+	div(class="col-12 md:col-4 md:mb-0")
 		+inputs('2', false, 'Radios', 'radio')
-	.col-12.col-md-4.mb-md-0
+	div(class="col-12 md:col-4 md:mb-0")
 		+inputs('3', false, 'Switches', 'checkbox', true)
