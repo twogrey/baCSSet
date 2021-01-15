@@ -10,9 +10,9 @@ $direction-spacings: (
 
 $utility-spacings: (
 	'-0'   : '0', 
-	'-1-4' : #{to-fixed(($spacing / 4), 2)},
-	'-1-3' : #{to-fixed(($spacing / 3), 2)},
-	'-1-2' : #{to-fixed(($spacing / 2), 2)},
+	'-0#{\.}25' : #{to-fixed(($spacing / 4), 2)},
+	'-0#{\.}33' : #{to-fixed(($spacing / 3), 2)},
+	'-0#{\.}5' : #{to-fixed(($spacing / 2), 2)},
 	''     : #{$spacing},
 	'-2'   : #{$spacing * 2},
 	'-3'   : #{$spacing * 3},

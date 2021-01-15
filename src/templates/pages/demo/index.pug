@@ -28,8 +28,8 @@ block main
 					h2.h1-like Demo page
 					p.fs-2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quo suscipit nisi in blanditiis at mollitia expedita nulla non laboriosam amet, perferendis, odio veritatis aut reprehenderit labore veniam architecto debitis?
 					div
-						a(href="#", class="btn btn--primary mt mx-1-2") Main action
-						a(href="#", class="btn btn--primary btn--outline mt mx-1-2") Secondary action
+						a(href="#", class="btn btn--primary mt mx-0.5") Main action
+						a(href="#", class="btn btn--primary btn--outline mt mx-0.5") Secondary action
 	.container.py-2.pt-md-4.pb-md-2
 		.row
 			section.col-12.col-md-8.col-lg-9.mb-md-0
@@ -44,29 +44,29 @@ block main
 				section
 					h3(class="p bg-lightgrey radius h5-like") Want more ?
 					form(action="/", method="post", role="search")
-						.form-group
+						div(class="form-group")
 							label(for="searchInput") Search a post
 							input(type="search", id="searchInput", name="searchInput")
-						.form-group.text-right.mt-1-2
+						div(class="form-group text-right mt-0.5")
 							button(type="submit", class="btn btn--primary") Submit
 				section.mt-2
 					h3(id="recentsPostsTitle", class="p bg-lightgrey radius h5-like") Recents posts
-					nav(aria-labelledby="recentsPostsTitle", class="nmt-1-2")
+					nav(aria-labelledby="recentsPostsTitle", class="nmt-0.5")
 						ul.list-unstyled
 							li
-								a(href="#", class="py-1-2 d-block") Post title #3
+								a(href="#", class="py-0.5 d-block") Post title #3
 							li
-								a(href="#", class="py-1-2 d-block border-top border-lightgrey") Post title #2
+								a(href="#", class="py-0.5 d-block border-top border-lightgrey") Post title #2
 							li
-								a(href="#", class="py-1-2 d-block border-top border-lightgrey") Post title #1
+								a(href="#", class="py-0.5 d-block border-top border-lightgrey") Post title #1
 				section.mt-2
 					h3(id="contactUsTitle", class="p bg-lightgrey radius h5-like") Contact us
-					address(aria-labelledby="contactUsTitle", class="nmt-1-2")
-						a(href="mailto:", class="py-1-2 d-block")
+					address(aria-labelledby="contactUsTitle", class="nmt-0.5")
+						a(href="mailto:", class="py-0.5 d-block")
 							svg(class="icon mr", aria-hidden="true")
 								use(xlink:href="#icon-envelop") 
 							| admin@test.fr
-						a(href="tel:", class="py-1-2 d-block border-top border-lightgrey")
+						a(href="tel:", class="py-0.5 d-block border-top border-lightgrey")
 							svg(class="icon mr", aria-hidden="true")
 								use(xlink:href="#icon-user") 
 							| (311) 444-3479
