@@ -204,23 +204,19 @@ div.code-toolbar > .toolbar span.focus-visible {
 
 .toggle-code {    
 	display: block;
-	width: calc(100% - (var(--sp-2)));
+	width: calc(100% - (var(--sp)));
 	margin: 0 auto var(--sp);
 
+	@include medium {
+		width: calc(100% - (var(--sp-2)));
+	}
+
 	summary {
-		display: flex;
-		align-items: center;
+		padding: var(--sp-1-2) var(--sp);
 		font-size: rem(14px);
 		text-transform: uppercase;
 		font-weight: bold;
-
-		&::after {
-			content: '';
-			flex: 1 1 auto;
-			height: 1px;
-			margin-left: var(--sp-1-2);
-			background-color: var(--color-primary);
-		}
+		background-color: var(--color-lightgrey);
 	}
 }
 

@@ -8,7 +8,7 @@ const openOffcanvas = function (offcanvasID) {
 
 	// Keep trigger
 	previouslyFocusedElementOffcanvas = document.querySelector(':focus');
-	if (previouslyFocusedElementOffcanvas.getAttribute('aria-expanded')) {
+	if (previouslyFocusedElementOffcanvas !== null && previouslyFocusedElementOffcanvas.getAttribute('aria-expanded')) {
 		previouslyFocusedElementOffcanvas.setAttribute('aria-expanded', 'true');
 	}
 
@@ -37,9 +37,11 @@ const closeOffcanvas = function () {
 	}
 
 	// Give focus to the trigger
-	previouslyFocusedElementOffcanvas.focus();
-	if (previouslyFocusedElementOffcanvas.getAttribute('aria-expanded')) {
-		previouslyFocusedElementOffcanvas.setAttribute('aria-expanded', 'false');
+	if (previouslyFocusedElementOffcanvas !== null) {
+		previouslyFocusedElementOffcanvas.focus();
+		if (previouslyFocusedElementOffcanvas.getAttribute('aria-expanded')) {
+			previouslyFocusedElementOffcanvas.setAttribute('aria-expanded', 'false');
+		}
 	}
 
 	// Add fading-out class to offcanvas

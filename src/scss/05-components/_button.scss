@@ -21,11 +21,14 @@
 		background-color: var(--btn-background);
 		cursor: pointer;
 		user-select: none;
-		transition-timing-function: ease;
-		transition-duration: 0.2s;
-		transition-property: opacity, color, border-color, background-color, box-shadow;
 		-webkit-tap-highlight-color: transparent;
 		outline: none;
+
+		html:not(.touch) & {
+			transition-timing-function: ease;
+			transition-duration: 0.2s;
+			transition-property: opacity, color, border-color, background-color, box-shadow;
+		}
 
 		/**
 		 * Colors

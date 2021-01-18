@@ -1,7 +1,12 @@
 a {
 	text-decoration: none;
 	color: var(--color-primary);
-	transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+	html:not(.touch) & {
+		transition-timing-function: ease;
+		transition-duration: 0.2s;
+		transition-property: color, border-color, background-color;
+	}
 
 	p & {
 		text-decoration: underline;
@@ -18,7 +23,7 @@ a {
 	}
 
 	&:not(.btn):focus-visible,
-	&:hover {
+	&:not(.btn):hover {
 		color: var(--color-primary-dark);
 	}
 }

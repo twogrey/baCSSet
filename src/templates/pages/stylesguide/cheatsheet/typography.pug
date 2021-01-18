@@ -1,11 +1,7 @@
 mixin weight(val)
-	- var content = '<div class="mb-0.5 h1-like lh-1">Aa</div><div class="lh-1 fs-4">'+val.charAt(0).toUpperCase() + val.slice(1)+'</div>';
 	.col
-		if val !== 'normal'
-			div(class="fw-" + val) 
-				| !{content}
-		else 
-			| !{content}
+		div(class="mb-0.5 h1-like lh-1 fw-"+val) Aa
+		div(class="fs-4 fw-"+val)= val.charAt(0).toUpperCase() + val.slice(1)
 
 .row.mb
 	+weight('bold')
@@ -22,7 +18,7 @@ mixin weight(val)
 			h5 H5 Heading
 			h6 H6 Heading
 	div(class="col-12 md:col")
-			p(class="caps fw-semibold text-primary") Body text
+			p(class="caps fw-semibold text-primary mt md:mt-0") Body text
 			p Jelly beans chocolate cake dessert chocolate. Wafer gingerbread topping macaroon cupcake tiramisu.
 			p.fw-semibold Croissant cookie biscuit cake. Dessert lollipop sesame snaps chocolate bar jujubes.
 			p

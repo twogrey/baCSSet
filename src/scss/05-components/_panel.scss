@@ -46,6 +46,12 @@
 
 		a {
 			color: inherit;
+
+			&:not(.btn):hover {
+				outline-color: currentColor;
+				outline-style: dotted;
+				outline-width: rem(2px);
+			}
 		}
 
 		&__title {
