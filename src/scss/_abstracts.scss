@@ -8,10 +8,10 @@
  */
 
 @import '00-settings/config',
-	'00-settings/function',
 	'00-settings/color',
 	'00-settings/typography';
 
 @import '01-tools/media-queries',
+	'01-settings/function',
 	'01-tools/mixins',
 	'01-tools/placeholders';
