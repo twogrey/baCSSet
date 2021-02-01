@@ -39,26 +39,6 @@ window.addEventListener('resize', () => {
 });
 
 /* ------------------------------------*
-    Offcanvas :
-    - Apply class to body element
-    - When opening, focus on first element of target container
-    - When closing, focus back to the trigger
-*------------------------------------*/
-
-document.querySelectorAll('[data-toggle-class*="offcanvas-is-open"]').forEach((toggle) => {
-	toggle.addEventListener('toggleAfter', (event) => {
-		if (event.target.isToggleActive) {
-			body.classList.add(toggle.getAttribute('data-toggle-class'));
-			const dest = document.getElementById(toggle.getAttribute('aria-controls'));
-			dest.querySelectorAll(focusableSelector)[0].focus();
-		} else {
-			body.classList.remove(toggle.getAttribute('data-toggle-class'));
-			toggle.focus();
-		}
-	}, false);
-});
-
-/* ------------------------------------*
     Expose element dimensions
 *------------------------------------*/
 

@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 	const cssnano = require('cssnano');
 	const rucksack = require('rucksack-css');
 	const autoprefixer = require('autoprefixer');
-	const mqpacker = require('postcss-combine-media-query');
+	const mqsort = require('node-css-mqpacker');
 	const mqextract = require('postcss-extract-media-query');
 
 	grunt.initConfig({
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://localhost/framework-2021/',
+				proxy: 'http://localhost/baCSSet/',
 			},
 		},
 		/**
@@ -207,7 +207,9 @@ module.exports = function (grunt) {
 						/**
 		         * [Pack same CSS media query rules]
 		         */
-						mqpacker(),
+						mqsort({
+	          	sort: true
+	          }),
 						/**
 	           * [Optimize CSS size]
 	           */
@@ -263,7 +265,9 @@ module.exports = function (grunt) {
 						/**
 		         * [Pack same CSS media query rules]
 		         */
-						mqpacker(),
+						mqsort({
+	          	sort: true
+	          }),
 						/**
 	           * [Optimize CSS size]
 	           */

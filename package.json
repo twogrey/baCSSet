@@ -1,5 +1,5 @@
 {
-  "name": "framework-front",
+  "name": "baCSSet",
   "devDependencies": {
     "grunt-accessibility": "^6.0.0",
     "grunt-browser-sync": "^2.2.0",
@@ -32,7 +32,7 @@
     "grunt-svgmin": "^6.0.1",
     "grunt-svgstore": "^2.0.0",
     "jit-grunt": "^0.10.0",
-    "postcss-combine-media-query": "^1.0.1",
+    "node-css-mqpacker": "^8.0.1",
     "postcss-extract-media-query": "^2.0.0",
     "prismjs": "^1.23.0",
     "rucksack-css": "^1.0.2",
