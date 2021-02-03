@@ -115,7 +115,11 @@ module.exports = function (grunt) {
 		    	[
 		    		'The “dialog” element is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
 		    		'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
-		    		'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).'
+		    		'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).',
+		    		'The “banner” role is unnecessary for element “header”.',
+		    		'The “contentinfo” role is unnecessary for element “footer”.',
+		    		'The “main” role is unnecessary for element “main”.',
+		    		'The “navigation” role is unnecessary for element “nav”.'
 		    	]
 		  },
     	all: [ pagesBuildPath + '**/*.unmin.html' ]
@@ -136,7 +140,7 @@ module.exports = function (grunt) {
             error: true
           }
         },
-        src: [pagesBuildPath + '**/*.unmin.html']
+        src: [ pagesBuildPath + '**/*.unmin.html' ]
       }
 		},
 		/**
