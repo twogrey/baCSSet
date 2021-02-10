@@ -22,7 +22,6 @@
 		cursor: pointer;
 		user-select: none;
 		-webkit-tap-highlight-color: transparent;
-		outline: none;
 
 		html:not(.touch) & {
 			transition-timing-function: ease;
@@ -44,7 +43,6 @@
 					color: #fff;
 				}
 
-				&:focus-visible,
 				&:active {
 					--btn-outline-color: var(--color-#{$name}-lightest);
 				}
@@ -53,7 +51,6 @@
 
 		&:hover { text-decoration: none; }
 
-		&:focus-visible,
 		&:active {
 			box-shadow: 0 0 0 0.3rem var(--btn-outline-color);
 		}
@@ -75,7 +72,6 @@
 				color: var(--color-primary-dark);
 			}
 
-			&:focus-visible,
 			&:active {
 				--btn-outline-color: var(--color-lightgrey);
 			}
@@ -91,7 +87,6 @@
 				color: #fff;
 			}
 
-			&:focus-visible,
 			&:active {
 				--btn-outline-color: var(--color-grey);
 			}
@@ -107,7 +102,6 @@
 				color: #fff;
 			}
 
-			&:focus-visible,
 			&:active {
 				--btn-outline-color: var(--color-grey);
 			}
@@ -123,7 +117,6 @@
 				color: var(--color-black);
 			}
 
-			&:focus-visible,
 			&:active {
 				--btn-outline-color: var(--color-grey);
 			}

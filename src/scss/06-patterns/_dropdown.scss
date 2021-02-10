@@ -50,8 +50,7 @@
 			cursor: pointer;
 			transition: background-color 0.2s, color 0.2s;
 
-			&:hover,
-			&:focus-visible {
+			&:hover {
 				text-decoration: none;
 				background-color: var(--color-lightgrey);
 				color: var(--color-black);

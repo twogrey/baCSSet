@@ -20,7 +20,6 @@
 		--size: #{rem(21px)};
 		--active: #{$input-focus-border-color};
 		--active-inner: #fff;
-		--focus: 2px rgba(39, 94, 254, 0.3);
 		--border: #{$input-border-color};
 		--border-hover: #{$input-hover-border-color};
 		--b: #{$input-background-color};
@@ -37,7 +36,6 @@
 		background: var(--b);
 		cursor: pointer;
 		transition: background 0.3s, border-color 0.3s;
-		outline: none;
 		appearance: none;
 
 		&::after {
@@ -47,10 +45,6 @@
 			left: 0;
 			display: block;
 			transition: opacity 0.2s;
-		}
-
-		&:focus-visible {
-			outline: auto;
 		}
 
 		&:checked {

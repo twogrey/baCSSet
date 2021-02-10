@@ -192,11 +192,8 @@ div.code-toolbar > .toolbar span {
 }
 
 div.code-toolbar > .toolbar a:hover,
-div.code-toolbar > .toolbar a.focus-visible,
 div.code-toolbar > .toolbar button:hover,
-div.code-toolbar > .toolbar button.focus-visible,
-div.code-toolbar > .toolbar span:hover,
-div.code-toolbar > .toolbar span.focus-visible {
+div.code-toolbar > .toolbar span:hover {
 	background: #fff;
 	color: #333;
 	text-decoration: none;

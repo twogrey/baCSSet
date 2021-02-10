@@ -57,6 +57,19 @@ body {
 	}
 }
 
+:focus,
+:focus-visible {
+	outline-offset: 4px;
+}
+
+:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+:focus-visible {
+	outline-style: auto;
+}
+
 ::selection {
 	background-color: var(--color-primary-dark);
 	color: #fff;

@@ -59,10 +59,8 @@
 				box-shadow: none;
 				cursor: pointer;
 				transition: background-color 0.2s;
-				outline: none;
 
-				&:hover,
-				&:focus-visible {
+				&:hover {
 					outline: $outline-width / 2 dotted var(--color-primary);
 				}
 			}

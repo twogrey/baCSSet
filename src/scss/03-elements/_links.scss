@@ -10,19 +10,12 @@ a {
 
 	p & {
 		text-decoration: underline;
-
-		&:focus-visible {
-			outline-color: currentColor;
-			outline-style: dotted;
-			outline-width: rem(2px);
-		}
 	}
 
 	&:hover {
 		text-decoration: underline;
 	}
 
-	&:not(.btn):focus-visible,
 	&:not(.btn):hover {
 		color: var(--color-primary-dark);
 	}
