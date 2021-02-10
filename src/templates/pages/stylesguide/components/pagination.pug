@@ -6,15 +6,13 @@ section.section.js-menu#Pagination
 			.bg-lightgrey.p 
 				p <b>Notes :</b>
 				ul
-					li Ajouter <code>aria-live="polite"</code> sur le conteneur mis à jour par une pagination en AJAX.
 					li Pour une pagination en AJAX, modifier les attributs <code>aria-disabled</code>, <code>aria-current</code> et <code>tabindex</code> lors d'un changement de page.
 		.col-12
 			nav(aria-label="Pagination", class="js-snippet")
 				ol.pagination.list-unstyled
 					li.pagination__item
-						a(href="#", aria-disabled="true", tabindex="-1", rel="prev", class="btn btn--outline btn--primary btn--small") 
-							svg(class="icon")
-								title Page précédente
+						a(href="#", aria-disabled="true", tabindex="-1", rel="prev", class="btn btn--outline btn--primary btn--small", aria-label="Page précédente") 
+							svg(class="icon", aria-hidden="true")
 								use(xlink:href="#icon-chevron-left")
 					li.pagination__item
 						a(href="#", aria-label="Page 1", aria-current="page", class="btn btn--primary btn--small")
@@ -32,7 +30,6 @@ section.section.js-menu#Pagination
 						a(href="#", aria-label="Page 99", class="btn btn--outline btn--primary btn--small")
 							span(aria-hidden="true") 99
 					li.pagination__item
-						a(href="#", rel="next", class="btn btn--outline btn--primary btn--small") 
-							svg(class="icon")
-								title Page suivante
+						a(href="#", rel="next", class="btn btn--outline btn--primary btn--small", aria-label="Page suivante") 
+							svg(class="icon", aria-hidden="true")
 								use(xlink:href="#icon-chevron-right")

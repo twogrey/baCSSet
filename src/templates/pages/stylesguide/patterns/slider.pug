@@ -31,13 +31,11 @@ section.section.js-menu#Slider
 					+slide
 					+slide
 				.slider__controls(tabindex="-1")
-					button(type="button", class="btn btn--primary btn--rounded btn--small slider__control slider__control--prev") 
-						svg(class="icon")
-							title Slide précédente
+					button(type="button", class="btn btn--primary btn--rounded btn--small slider__control slider__control--prev", aria-label="Slide précédente") 
+						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-chevron-left")
-					button(type="button", class="btn btn--primary btn--rounded btn--small slider__control slider__control--next")
-						svg(class="icon")
-							title Slide suivante
+					button(type="button", class="btn btn--primary btn--rounded btn--small slider__control slider__control--next", aria-label="Slide suivante")
+						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-chevron-right")
 	.row
 		details(class="toggle-code")

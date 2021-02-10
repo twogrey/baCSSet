@@ -13,9 +13,8 @@ section.section.js-menu#Badges
 			span(class="badge badge--dark mr-0.5 mb-0.5") Dark
 			span(class="badge badge--primary mr-0.5 mb-0.5") 1
 			span(class="badge badge--primary mr-0.5 mb-0.5") 10
-			span(class="badge badge--primary mr-0.5 mb-0.5")
-				svg(class="icon")
-					title Text
+			span(class="badge badge--primary mr-0.5 mb-0.5", aria-label="text")
+				svg(class="icon", aria-hidden="true")
 					use(xlink:href="#icon-check")
 	.row.js-parent-snippet.mb
 		div(class="col mb-0.5")
@@ -23,13 +22,13 @@ section.section.js-menu#Badges
 			span(class="badge badge--pill badge--primary mr-0.5 mb-0.5 js-snippet") Primary
 			span(class="badge badge--pill badge--primary mr-0.5 mb-0.5") 1
 			span(class="badge badge--pill badge--primary mr-0.5 mb-0.5") 10
-			span(class="badge badge--pill badge--primary mr-0.5 mb-0.5")
-				svg(class="icon")
-					title Text
+			span(class="badge badge--pill badge--primary mr-0.5 mb-0.5", aria-label="text")
+				svg(class="icon", aria-hidden="true")
 					use(xlink:href="#icon-check")
 	.row.js-parent-snippet
 		div(class="col mb-0.5")
 			h4 Pastille
 			button(type="button", class="btn btn--primary pos-relative mr-0.5 mb-0.5 js-snippet", aria-describedby="idPastille") 
 				| Messages
-				span(id="idPastille", class="badge badge--abs badge--dark") 1 <span class="sr-only">unread message</span>
+				span(class="badge badge--abs badge--dark", aria-hidden="true") 1 
+				span(id="idPastille", hidden) 1 unread message

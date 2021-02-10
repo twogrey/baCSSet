@@ -13,9 +13,8 @@ mixin modal(id, size, viewport, lightbox, snippet)
 			.modal__content
 				.modal__header
 					h1(id="titleModal"+id, class="modal__title" class={'sr-only': lightbox}) Modal title
-					button.modal__close.btn.js-modal-close(type="button", class={'btn--transparent': !lightbox, 'btn--white': lightbox})
-						svg(class="icon")
-							title Fermer cette fenêtre modale
+					button.modal__close.btn.js-modal-close(type="button", class={'btn--transparent': !lightbox, 'btn--white': lightbox}, aria-label="Fermer cette fenêtre modale")
+						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-x")
 				.modal__body
 					if(lightbox)

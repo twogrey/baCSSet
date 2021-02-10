@@ -10,9 +10,8 @@ mixin offcanvas(id, align, responsive)
 			.offcanvas__content
 				.offcanvas__header
 					h3(id="titleOffcanvas"+id, class="offcanvas__title") Offcanvas title
-					button.offcanvas__close.btn.btn--transparent.js-offcanvas-close(type="button")
-						svg(class="icon")
-							title Fermer
+					button.offcanvas__close.btn.btn--transparent.js-offcanvas-close(type="button", aria-label="Fermer")
+						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-x")
 				.offcanvas__body
 					if(responsive)

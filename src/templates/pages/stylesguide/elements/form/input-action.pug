@@ -11,9 +11,8 @@
 			.form-group.error
 				.input-action 
 					input(type='text', aria-label='Input text with a stuck button')
-					button(type="button", class="btn btn--outline btn--primary")
-						svg(class="icon")
-							title Action
+					button(type="button", class="btn btn--outline btn--primary", aria-label="Action")
+						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-check")
 				include message-error.pug
 		div(class="col-12 md:col-6 lg:col-4")

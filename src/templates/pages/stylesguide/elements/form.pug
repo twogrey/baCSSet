@@ -10,7 +10,6 @@ section.section.js-menu#Form
 				ul
 					li Pour chaque champ, toujours fournir un <code>label</code> ou un attribut <code>aria-label</code>.
 					li Ajouter un <code>id</code> à un message accompagnant un champ qui, lui, sera pourvu d'un <code>aria-describedby</code> en référence à ce même <code>id</code>.
-					li Ajouter <code>role="alert"</code> à un message d'erreur lié à un champ dont la valeur saisie est invalide (son attribut <code>aria-describedby</code> doit alors contenir l'<code>id</code> du message d'erreur).
 					li Pour les champs numériques, si la valeur n'est pas incrémentable (comme un code postal), préférer <code>&lt;input type="text" inputmode="numeric" pattern="[0-9]*"&gt;</code>.
 	.row
 		include form/text.pug

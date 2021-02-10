@@ -24,8 +24,7 @@ section.section.js-menu#Loader
 				.panel__content
 					p
 						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quis, ab magni nostrum. Quidem id ipsum recusandae inventore quos accusamus dolorum, eos enim consequuntur! Vitae id amet ullam qui corrupti.
-				button(type="button", class="panel__close btn btn--small btn--outline btn--secondary", data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_l1", data-toggle-is-active) 
-					svg(class="icon")
-						title Cacher ce message
+				button(type="button", class="panel__close btn btn--small btn--outline btn--secondary", data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_l1", data-toggle-is-active, aria-label="Cacher ce message") 
+					svg(class="icon", aria-hidden="true")
 						use(xlink:href="#icon-x")
 

@@ -1,29 +1,25 @@
-mixin icon(text)
-	if(text)
-		svg(class="icon")
-			title text
-			use(xlink:href="#icon-x")
-	else
-		svg(class="icon", aria-hidden="true")
-			use(xlink:href="#icon-x")
+mixin icon
+	svg(class="icon", aria-hidden="true")
+		use(xlink:href="#icon-x")
 
 section.section.js-menu#Buttons
 	.row
 		.col-12
 			h3.section__title Buttons
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet")
-			.mb-a
-				h4 Plain
-				a(href="#", class="btn btn--primary mr mb") Base link
-				input(type="submit", class="btn btn--primary mr mb", value="Input submit")
-				button(type="button", class="btn btn--primary mr mb js-snippet") Button
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet")
-			.mb-a
-				h4 Expanded
-				button(type="button", class="btn btn--primary btn--block mb js-snippet") Expanded
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet")
-			.mb-a.js-snippet
-				h4 Colors
+	.row.js-parent-snippet.mb-3
+		.col-12.mb
+			h4 Plain
+			a(href="#", class="btn btn--primary mr mb") Base link
+			input(type="submit", class="btn btn--primary mr mb", value="Input submit")
+			button(type="button", class="btn btn--primary mr mb js-snippet") Button
+	.row.js-parent-snippet.mb-3
+		.col-12.mb
+			h4 Expanded
+			button(type="button", class="btn btn--primary btn--block mb js-snippet") Expanded
+	.row.js-parent-snippet.mb-3
+		.col-12.mb
+			h4 Colors
+			.js-snippet
 				button(type="button", class="btn btn--primary mr mb") Primary
 				button(type="button", class="btn btn--secondary mr mb") Secondary
 				button(type="button", class="btn btn--error mr mb") Error
@@ -32,70 +28,71 @@ section.section.js-menu#Buttons
 				button(type="button", class="btn btn--light mr mb") Light
 				button(type="button", class="btn btn--dark mr mb") Dark
 				button(type="button", class="btn btn--transparent mr mb") Transparent
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet")
-			.mb-a.js-snippet
-				h4 Outline
+	.row.js-parent-snippet.mb-3
+		.col-12.mb
+			h4 Outline
+			.js-snippet
 				button(type="button", class="btn btn--outline btn--primary mr mb") Primary
 				button(type="button", class="btn btn--outline btn--secondary mr mb") Secondary
 				button(type="button", class="btn btn--outline btn--error mr mb") Error
 				button(type="button", class="btn btn--outline btn--success mr mb") Success
 				button(type="button", class="btn btn--outline btn--light mr mb") Light
 				button(type="button", class="btn btn--outline btn--dark mr mb") Dark
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet")
-			.mb-a.js-snippet
-				h4 Disabled
-				button(type="button", class="btn btn--primary mr mb", disabled) Button
-				a(href="#", class="btn btn--white mr mb disabled", aria-disabled="true") Base Link
-				button(type="button", class="btn btn--outline btn--primary mr mb", disabled) Button outline
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet")
-			.mb-a.js-snippet
-				h4 Rounded
-				button(type="button", class="btn btn--primary btn--rounded mr mb") Rounded
-				button(type="button", class="btn btn--primary btn--rounded mr mb") 
-					+icon
-					span Rounded
-				button(type="button", class="btn btn--primary btn--rounded btn--icon-only mr mb")
-					+icon(true)
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet md:mb-0")
-			.mb-a.js-snippet
-				h4 With icons
-				button(type="button", class="btn btn--primary mr mb")
-					+icon
-					span Button
-				button(type="button", class="btn btn--primary mr mb") 
-					span Button
-					+icon
-				button(type="button", class="btn btn--outline btn--primary mr mb") 
-					+icon
-					span Button
-				a(href="#", class="btn btn--white mr mb") 
-					+icon
-					span Button
-				button(type="button", class="btn btn--primary mr mb")
-					+icon
-					span Button
-				button(type="button", class="btn btn--primary mr mb")
-					+icon(true)
-				button(type="button", class="btn btn--primary btn--outline mr mb")
-					+icon(true)
-		div(class="col-12 md:col-6 d-flex flex-column js-parent-snippet md:mb-0")
-			.mb-a.js-snippet
-				h4 Sizes
-				button(type="button", class="btn btn--dark btn--small mr mb")
-					+icon(true)
-				button(type="button", class="btn btn--dark btn--small mr mb") Small
-				button(type="button", class="btn btn--dark btn--small mr mb")
-					+icon
-					span Small
-				button(type="button", class="btn btn--primary mr mb") Normal
-				button(type="button", class="btn btn--primary mr mb")
-					+icon(true)
-				button(type="button", class="btn btn--primary mr mb")
-					+icon
-					span Normal
-				button(type="button", class="btn btn--dark btn--large mr mb")
-					+icon('demoBtn6')
-				button(type="button", class="btn btn--dark btn--large mr mb") Large
-				button(type="button", class="btn btn--dark btn--large mr mb")
-					+icon
-					span Large
+	.row.js-parent-snippet.mb-3
+		.col-12.mb
+			h4 Disabled
+			button(type="button", class="btn btn--primary mr mb", disabled) Button
+			a(href="#", class="btn btn--white mr mb disabled", aria-disabled="true") Base Link
+			button(type="button", class="btn btn--outline btn--primary mr mb js-snippet", disabled) Button outline
+	.row.js-parent-snippet.mb-3
+		.col-12.mb
+			h4 Rounded
+			button(type="button", class="btn btn--primary btn--rounded mr mb js-snippet") Rounded
+			button(type="button", class="btn btn--primary btn--rounded mr mb") 
+				+icon
+				span Rounded
+			button(type="button", class="btn btn--primary btn--rounded mr mb", aria-label="Text")
+				+icon
+	.row.js-parent-snippet.mb-3
+		.col-12.mb
+			h4 With icons
+			button(type="button", class="btn btn--primary mr mb js-snippet")
+				+icon
+				span Button
+			button(type="button", class="btn btn--primary mr mb") 
+				span Button
+				+icon
+			button(type="button", class="btn btn--outline btn--primary mr mb") 
+				+icon
+				span Button
+			a(href="#", class="btn btn--white mr mb") 
+				+icon
+				span Button
+			button(type="button", class="btn btn--primary mr mb")
+				+icon
+				span Button
+			button(type="button", class="btn btn--primary mr mb", aria-label="Text")
+				+icon
+			button(type="button", class="btn btn--primary btn--outline mr mb", aria-label="Text")
+				+icon
+	.row.js-parent-snippet
+		.col-12.mb
+			h4 Sizes
+			button(type="button", class="btn btn--dark btn--small mr mb", aria-label="Text")
+				+icon
+			button(type="button", class="btn btn--dark btn--small mr mb js-snippet") Small
+			button(type="button", class="btn btn--dark btn--small mr mb")
+				+icon
+				span Small
+			button(type="button", class="btn btn--primary mr mb") Normal
+			button(type="button", class="btn btn--primary mr mb", aria-label="Text")
+				+icon
+			button(type="button", class="btn btn--primary mr mb")
+				+icon
+				span Normal
+			button(type="button", class="btn btn--dark btn--large mr mb", aria-label="Text")
+				+icon('demoBtn6')
+			button(type="button", class="btn btn--dark btn--large mr mb") Large
+			button(type="button", class="btn btn--dark btn--large mr mb")
+				+icon
+				span Large

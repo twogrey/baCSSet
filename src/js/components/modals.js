@@ -6,7 +6,7 @@ const openModal = function (modalID) {
 	// Keep current modal & his trigger
 	modal = document.querySelector('#'+modalID);
 	previouslyFocusedElementModal = document.querySelector(':focus');
-console.log(previouslyFocusedElementModal);
+	
 	// Add specific styles to <body>
 	body.classList.add('modal-is-open');
 
