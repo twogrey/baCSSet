@@ -3,10 +3,14 @@ mixin input(type, groupId, id, disabled, inline, checked, toggle)
 		input(type=type, name=type+"Example"+groupId, id=type+"Example"+groupId+id)&attributes({"disabled": disabled==true, "checked": checked==true, "class='switch'": toggle==true})
 		label(for=type+"Example"+groupId+id)= type.toString().charAt(0).toUpperCase() + type.toString().slice(1)
 
-mixin inputs(id, inline, title, type, toggle, message)
-	.form-group(role="group", aria-labelledby="titleGroup"+id, class={'error': message==true})
+mixin inputs(id, inline, title, type, toggle, error)
+	if error == true
+		- var describedby = 'titleGroup'+id+'-error';
+	.form-group(role="group", aria-labelledby="titleGroup"+id, class={'error': error==true}, aria-describedby=describedby)
 		if title
 			.label(id="titleGroup"+id)= title
+		if error
+			+errorMsg('titleGroup'+id+'-error')
 		if type == 'checkbox' && !toggle
 			+input(type, id, '1', false, inline)
 			+input(type, id, '2', false, inline, true)
@@ -22,8 +26,6 @@ mixin inputs(id, inline, title, type, toggle, message)
 			+input(type, id, '10', false, inline, true, true)
 			+input(type, id, '11', true, inline, false, true)
 			+input(type, id, '12', true, inline, true, true)
-		if message
-			span(class='message') There's an error
 
 mixin errorMsg(id)
 	span.message(id=id) There's an error.
