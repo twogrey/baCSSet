@@ -1,10 +1,14 @@
-mixin input(type)
+mixin input(type, id, error, help)
+	if error == true
+		- var describedBy = id+'-error';
+	if help == true
+		- var describedBy = id+'-help';
 	if type == 'text'
-		input(type='text', aria-label='Input text with prefix or suffix')
+		input(type='text', id=type+id, aria-describedby=describedBy)
 	if type == 'select'
-		select(aria-label='Select with prefix or suffix')
+		select(id=type+id, aria-describedby=describedBy)
 	if type == 'textarea'
-		textarea(aria-label='Textarea with prefix or suffix')
+		textarea(id=type+id, aria-describedby=describedBy)
 
 .col-12
 	h2 Prepend / Append
@@ -13,35 +17,34 @@ mixin input(type)
 		each val, index in ['text', 'select', 'textarea']
 			div(class="col-12 md:col-6 lg:col-4")
 				.form-group
+					label(for=val+"prependAppend1") Label
 					.input-group
 						span.add Prefix
-						+input(val)
+						+input(val, 'prependAppend1')
 			div(class="col-12 md:col-6 lg:col-4") 
 				.form-group
+					label(for=val+"prependAppend2") Label
 					.input-group
-						+input(val)
+						+input(val, 'prependAppend2')
 						span.add Suffix
 			div(class="col-12 md:col-6 lg:col-4")
 				.form-group(class={'js-snippet': val=='text'})
+					label(for=val+"prependAppend3") Label
 					.input-group
 						span.add Prefix
-						+input(val)
+						+input(val, 'prependAppend3')
 						span.add Suffix
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
+				label(for="textprependAppend4") Label
+				+helpMsg('prependAppend4-help')
 				.input-group
 					span.add Prefix
-					+input('text')
-				include message-help.pug
+					+input('text', 'prependAppend4', false, true)
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group.error
+				label(for="textprependAppend5") Label
+				+errorMsg('prependAppend5-error')
 				.input-group
 					span.add Prefix
-					+input('text')
-				include message-error.pug
-		div(class="col-12 md:col-6 lg:col-4")
-			.form-group.valid
-				.input-group
-					span.add Prefix
-					+input('text')
-				include message-valid.pug
+					+input('text', 'prependAppend5', true)

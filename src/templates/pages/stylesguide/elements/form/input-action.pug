@@ -3,24 +3,17 @@
 	.row.js-parent-snippet
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group.js-snippet
+				label(for="inputAction1") Label
+				+helpMsg('inputAction1-help')
 				.input-action 
-					input(type='text', aria-label='Input text with a stuck button')
-					button(type="button", class="btn btn--outline btn--primary") Action
-				include message-help.pug
+					input(type='text', id="inputAction1", aria-describedby="inputAction1-help")
+					button(type="button", class="btn btn--outline btn--dark") Action
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group.error
+				label(for="inputAction2") Label
+				+errorMsg('inputAction2-error')
 				.input-action 
-					input(type='text', aria-label='Input text with a stuck button')
-					button(type="button", class="btn btn--outline btn--primary", aria-label="Action")
+					input(type='text', id="inputAction2", aria-describedby="inputAction2-error")
+					button(type="button", class="btn btn--outline btn--dark", aria-label="Action")
 						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-check")
-				include message-error.pug
-		div(class="col-12 md:col-6 lg:col-4")
-			.form-group.valid
-				.input-action 
-					input(type='text', aria-label='Input text with a stuck button')
-					button(type="button", class="btn btn--outline btn--primary")
-						svg(class="icon", aria-hidden="true")
-							use(xlink:href="#icon-envelop")
-						span Send
-				include message-valid.pug

@@ -13,37 +13,38 @@ each val, index in ['text', 'date', 'search', 'file']
 						|  au conteneur.
 	.col-12
 		.row.js-parent-snippet&attributes({"role='search'": val=='search', "aria-label='Demo Search'": val=='search'})
-			div(class=".col-12 md:col-6 lg:col-4")
+			div(class="col-12 md:col-6 lg:col-4")
 				.form-group
+					label(for=val+"inputWithoutValue") Label
 					if val == 'date' || val == 'file'
-						input(type=val, aria-label=val)
+						input(type=val, id=val+'inputWithoutValue')
 					else
-						input(type=val, placeholder=val+' placeholder', aria-label=val)
-			div(class=".col-12 md:col-6 lg:col-4")
+						input(type=val, id=val+'inputWithoutValue', placeholder=val+' placeholder')
+			div(class="col-12 md:col-6 lg:col-4")
 				.form-group
+					label(for=val+"inputWithValue") Label
 					if val == 'date' || val == 'file'
-						input(type=val, aria-label=val)
+						input(type=val, id=val+'inputWithValue')
 					else
-						input(type=val, value=val+' value', aria-label=val)
+						input(type=val, id=val+'inputWithValue', value=val+' value')
 			if val != 'file'
-				div(class=".col-12 md:col-6 lg:col-4")
+				div(class="col-12 md:col-6 lg:col-4")
 					.form-group
+						label(for=val+"inputReadonly") Label
 						if val == 'date'
-							input(type=val, readonly, aria-label=val)
+							input(type=val, id=val+'inputReadonly', readonly)
 						else
-							input(type=val, value=val+' readonly', readonly, aria-label=val)
-			div(class=".col-12 md:col-6 lg:col-4")
+							input(type=val, id=val+'inputReadonly', value=val+' readonly', readonly)
+			div(class="col-12 md:col-6 lg:col-4")
 				.form-group(class="js-snippet")
+					label(for=val+"inputDisabled") Label
+					+helpMsg(val+'inputDisabled-help')
 					if val == 'date' || val == 'file'
-						input(type=val, disabled, aria-label=val)
+						input(type=val, disabled, id=val+"inputDisabled", aria-describedby=val+'inputDisabled-help')
 					else
-						input(type=val, value=val+' disabled', disabled, aria-label=val)
-					include message-help.pug
-			div(class=".col-12 md:col-6 lg:col-4")
+						input(type=val, value=val+' disabled', id=val+"inputDisabled", disabled, aria-describedby=val+'inputDisabled-help')
+			div(class="col-12 md:col-6 lg:col-4")
 				.form-group.error
-					input(type=val, aria-label=val)
-					include message-error.pug
-			div(class=".col-12 md:col-6 lg:col-4")
-				.form-group.valid
-					input(type=val, aria-label=val)
-					include message-valid.pug
+					label(for=val+"inputError") Label
+					+errorMsg(val+'inputError-error')
+					input(type=val, id=val+"inputError", aria-describedby=val+'inputError-error')

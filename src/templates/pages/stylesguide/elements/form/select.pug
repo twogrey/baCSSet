@@ -4,7 +4,8 @@
 			h2 Select
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				select.js-snippet(aria-label='select', name='lecture')
+				label(for="select1") Label
+				select.js-snippet(id='select1', name='lecture')
 					option(label='Choose a Lecture', disabled, selected) Choose a Lecture
 					optgroup(label='1.0 The History of the World: Part I')
 						option(label='Lecture 1.1', value='1.1') Lecture 1.1: In the Beginning
@@ -14,35 +15,32 @@
 						option(label='Lecture 2.2', value='2.1') Lecture 2.1: Wait! There's More
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				select(aria-label='select')
+				label(for="select2") Label
+				select(id='select2')
 					option(disabled, selected) Choose one :
 					option Value 1
 					option Value 2
 					option Value 3
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				select(aria-label='select')
+				label(for="selectSelected") Label
+				select(id='selectSelected')
 					option Value 1
 					option(selected) Value 2
 					option Value 3
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				select(disabled, aria-label='select')
+				label(for="selectDisabled") Label
+				+helpMsg('selectDisabled-help')
+				select(id='selectDisabled', disabled, aria-describedby='selectDisabled-help')
 					option Value 1
 					option(selected) Value 2
 					option Value 3
-				include message-help.pug
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group.error
-				select(aria-label='select')
+				label(for="selectError") Label
+				+errorMsg('selectError-error')
+				select(id='selectError', aria-describedby='selectError-error')
 					option Value 1
 					option Value 2
 					option Value 3 
-				include message-error.pug
-		div(class="col-12 md:col-6 lg:col-4")
-			.form-group.valid
-				select(aria-label='select')
-					option Value 1
-					option Value 2
-					option(disabled) Value 3
-				include message-valid.pug

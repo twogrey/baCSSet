@@ -4,22 +4,23 @@
 	.row.js-parent-snippet
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				textarea(placeholder="Placeholder", aria-label="textarea")
+				label(for="textareaWithoutValue") Label
+				textarea(placeholder="Placeholder", id="textareaWithoutValue")
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				textarea(aria-label="textarea") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
+				label(for="textareaWithValue") Label
+				textarea(id="textareaWithValue") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				textarea(readonly, aria-label="textarea") (readonly) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
+				label(for="textareaReadonly") Label
+				textarea(readonly, id="textareaReadonly") (readonly) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group
-				textarea.js-snippet(disabled, aria-label="textarea") (disabled) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
-				include message-help.pug
+				label(for="textareaDisabled") Label
+				+helpMsg('textareaDisabled-help')
+				textarea.js-snippet(disabled, id="textareaDisabled", aria-describedby="textareaDisabled-help") (disabled) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
 		div(class="col-12 md:col-6 lg:col-4")
 			.form-group.error
-				textarea(aria-label="textarea") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
-				include message-error.pug
-		div(class="col-12 md:col-6 lg:col-4")
-			.form-group.valid
-				textarea(aria-label="textarea") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.
-				include message-valid.pug
+				label(for="textareaError") Label
+				+errorMsg('textareaError-error')
+				textarea(id="textareaError", aria-describedby="textareaError-error") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque dicta et consequuntur.

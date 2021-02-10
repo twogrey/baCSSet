@@ -36,8 +36,8 @@
 					div(class="col-12")
 						.form-group
 							label(for="pwd") Password&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
-							input(type="password", id="pwd", pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$", title="Votre mot de passe doit contenir au moins 8 caractères et comporter au moins un chiffre, une lettre minuscule et une lettre majuscule." required)
-							span.help Votre mot de passe doit contenir au moins 8 caractères et comporter au moins un chiffre, une lettre minuscule et une lettre majuscule.
+							span.help(id="formatPwd") Votre mot de passe doit contenir au moins 8 caractères et comporter au moins un chiffre, une lettre minuscule et une lettre majuscule.
+							input(type="password", aria-describedby="formatPwd", id="pwd", pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$", title="Votre mot de passe doit contenir au moins 8 caractères et comporter au moins un chiffre, une lettre minuscule et une lettre majuscule." required)
 					div(class="col-12")
 						.form-group
 							.form-check

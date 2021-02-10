@@ -23,4 +23,10 @@ mixin inputs(id, inline, title, type, toggle, message)
 			+input(type, id, '11', true, inline, false, true)
 			+input(type, id, '12', true, inline, true, true)
 		if message
-			span(class='message', role='alert') There's an error
+			span(class='message') There's an error
+
+mixin errorMsg(id)
+	span.message(id=id) There's an error.
+
+mixin helpMsg(id)
+	span.help(id=id) Help text.

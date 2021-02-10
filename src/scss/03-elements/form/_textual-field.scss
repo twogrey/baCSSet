@@ -62,10 +62,10 @@
 			&:focus { --focus-color: var(--color-error-lightest); }
 		}
 
-		.valid & {
-			border-color: $input-valid-border-color;
-			&:focus { --focus-color: var(--color-success-lightest); }
-		}    
+		// .valid & {
+		// 	border-color: $input-valid-border-color;
+		// 	&:focus { --focus-color: var(--color-success-lightest); }
+		// }    
 	}
 
 	textarea {
