@@ -3,7 +3,7 @@ mixin tab(position)
 		a(href="#tab"+position, class="btn btn--white js-tablist__link")= 'Tab #'+position
 
 mixin tabContent(position)
-	.js-tabcontent(id="tab"+position)
+	.js-tabcontent(id="tab"+position, tabindex="0")
 		h4= 'Tab title #'+position
 		p 
 			| Lorem ipsum dolor sit, 

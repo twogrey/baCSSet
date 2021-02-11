@@ -9,7 +9,7 @@ mixin modal(id, size, viewport, lightbox, snippet)
 			- viewportClass = 'modal__dialog--viewport';
 		if(lightbox)
 			- lightboxClass = 'modal__dialog--lightbox';
-		.modal__dialog.js-modal-stop(role="document", class=sizeClass+' '+viewportClass+' '+lightboxClass)
+		.modal__dialog.js-modal-stop(class=sizeClass+' '+viewportClass+' '+lightboxClass)
 			.modal__content
 				.modal__header
 					h1(id="titleModal"+id, class="modal__title" class={'sr-only': lightbox}) Modal title
