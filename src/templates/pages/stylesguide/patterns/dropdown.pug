@@ -15,10 +15,8 @@ mixin dropdown(id, text, link, absolute, align, active)
 			svg(class="icon dropdown__icon", aria-hidden="true")
 				use(xlink:href="#icon-chevron-down")
 		ul(
-			class="dropdown__list",
-			id="dropdownList"+id,
-			aria-labelledby="dropdownButton"+id,
-			aria-hidden="true")
+			class="dropdown__content",
+			id="dropdownList"+id)
 			each i in [1, 2, 3]
 				li
 					if(link)

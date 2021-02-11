@@ -16,7 +16,7 @@
 			--list-left: auto;
 		}
 
-		&__list {
+		&__content {
 			position: var(--list-position, static);
 			top: calc(100% + var(--sp-1-2));
 			right: var(--list-right, 0);
@@ -30,7 +30,7 @@
 			animation: o-fade-in 0.2s;
 			list-style: none;
 
-			&[aria-hidden='true'] {
+			&:not(.is-active) {
 				display: none;
 			}
 		}
