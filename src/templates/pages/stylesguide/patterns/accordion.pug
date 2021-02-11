@@ -1,26 +1,10 @@
 mixin accordion-item(id, active)
-	h2.accordion__header
-		button(
-			type="button",
-			class="btn btn--transparent btn--large accordion__toggle",
-			id="buttonForPanel_"+id,
-			data-toggle-class="is-open",
-			data-toggle-target="#panel_"+id,
-			data-toggle-group="accordion",
-			data-toggle-arrows,
-			data-toggle-is-active,
-			aria-controls="panel_"+id,
-			aria-expanded="false")&attributes({"data-toggle-is-active": active})
-			span Accordion item #{id}
-			svg(class="icon accordion__icon" aria-hidden="true")
-				use(xlink:href="#icon-chevron-down")
-	div(
-		class="accordion__content",
-		id="panel_"+id,
-		role="region",
-		aria-labelledby="buttonForPanel_"+id,
-		aria-hidden="true") 
-			p Cake danish gummi bears cookie. <a href="#">Biscuit pastry</a> cake sugar plum. Danish lollipop biscuit gingerbread sesame snaps lollipop pudding chocolate cake pastry. Dragée sweet roll pudding. Soufflé candy pie cheesecake candy tiramisu jelly-o brownie oat cake. Pastry liquorice cake chocolate cupcake danish ice cream. Biscuit bear claw chocolate carrot cake. Sesame snaps gummi bears macaroon lollipop gummies macaroon marzipan. Croissant chupa chups sweet roll topping gummies biscuit. Sweet roll icing bonbon jelly beans macaroon sesame snaps gingerbread dragée. Candy pastry cake dragée chocolate. Muffin halvah powder biscuit. Tootsie roll jelly cupcake liquorice sesame snaps dragée cupcake oat cake powder. Tiramisu candy cake donut cheesecake pastry pie donut.
+	h2.js-accordion__header&attributes({"data-accordion-opened='true'": active})
+		span Accordion item #{id}
+		svg(class="icon accordion__icon" aria-hidden="true")
+			use(xlink:href="#icon-chevron-down")
+	div(class="js-accordion__panel") 
+		p Cake danish gummi bears cookie. <a href="#">Biscuit pastry</a> cake sugar plum. Danish lollipop biscuit gingerbread sesame snaps lollipop pudding chocolate cake pastry. Dragée sweet roll pudding. Soufflé candy pie cheesecake candy tiramisu jelly-o brownie oat cake. Pastry liquorice cake chocolate cupcake danish ice cream. Biscuit bear claw chocolate carrot cake. Sesame snaps gummi bears macaroon lollipop gummies macaroon marzipan. Croissant chupa chups sweet roll topping gummies biscuit. Sweet roll icing bonbon jelly beans macaroon sesame snaps gingerbread dragée. Candy pastry cake dragée chocolate. Muffin halvah powder biscuit. Tootsie roll jelly cupcake liquorice sesame snaps dragée cupcake oat cake powder. Tiramisu candy cake donut cheesecake pastry pie donut.
 
 section.section.js-menu#Accordion
 	.row
@@ -28,7 +12,7 @@ section.section.js-menu#Accordion
 			h3.section__title Accordion
 	.row.js-parent-snippet
 		.col-12
-			section.accordion.js-snippet
+			section.accordion.js-accordion.js-snippet(data-accordion-multiselectable="none")
 				+accordion-item('1', true)
 				+accordion-item('2', false)
 				+accordion-item('3', false)

@@ -22,9 +22,8 @@ section.section.js-menu#Tooltips
 				input(type="text", id="demoTooltipInput" class="tooltip js-simple-tooltip", data-simpletooltip-text="Hello !")
 		div(class=" col-12 sm:col-6 lg:col-3")
 			h5 Button
-			button(type="button", class="btn btn--primary btn--small tooltip js-simple-tooltip js-snippet", data-simpletooltip-text="Fermer")
-				svg.icon
-					title Fermer
+			button(type="button", class="btn btn--primary btn--small tooltip js-simple-tooltip js-snippet", data-simpletooltip-text="desc", aria-label="Fermer")
+				svg.icon(aria-hidden="true")
 					use(xlink:href="#icon-x")
 	div(class="row js-parent-snippet mb")
 		.col-12 

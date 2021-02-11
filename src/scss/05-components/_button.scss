@@ -37,8 +37,7 @@
 				--btn-background: var(--color-#{$name});
 				color: #fff;
 
-				&:hover,
-				&[aria-selected='true'] {
+				&:hover {
 					--btn-background: var(--color-#{$name}-dark);
 					color: #fff;
 				}
@@ -66,8 +65,7 @@
 			--btn-background: #fff;
 			color: var(--color-primary);
 
-			&:hover,
-			&[aria-selected='true'] {
+			&:hover {
 				--btn-background: var(--color-primary-lightest);
 				color: var(--color-primary-dark);
 			}
@@ -81,8 +79,7 @@
 			--btn-background: var(--color-lightgrey);
 			color: var(--color-black);
 
-			&:hover,
-			&[aria-selected='true'] {
+			&:hover {
 				--btn-background: var(--color-darkgrey);
 				color: #fff;
 			}
@@ -96,8 +93,7 @@
 			--btn-background: var(--color-black);
 			color: #fff;
 
-			&:hover,
-			&[aria-selected='true'] {
+			&:hover {
 				--btn-background: var(--color-darkgrey);
 				color: #fff;
 			}
@@ -111,8 +107,7 @@
 			--btn-background: transparent;
 			color: var(--color-black);
 
-			&:hover,
-			&[aria-selected='true'] {
+			&:hover {
 				--btn-background: var(--color-lightgrey);
 				color: var(--color-black);
 			}

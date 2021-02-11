@@ -42,6 +42,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
     "tiny-slider": "^2.9.3",
+    "van11y-accessible-accordion-aria": "^3.0.1",
     "van11y-accessible-simple-tooltip-aria": "^3.0.0",
     "van11y-accessible-tab-panel-aria": "^2.0.4"
   }

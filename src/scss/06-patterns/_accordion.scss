@@ -2,7 +2,10 @@
 	.accordion {
 		--p: var(--sp);
 
-		&__toggle {
+		&__header {
+			@extend .btn;
+			@extend .btn--transparent;
+			@extend .btn--large;
 			--px: var(--p);
 			--py: var(--p);
 			justify-content: space-between;
@@ -16,7 +19,7 @@
 			}
 		}
 
-		&__header {
+		&__title {
 			margin: 0;
 
 			&:not(:last-of-type) {
@@ -24,7 +27,7 @@
 			}
 		}
 
-		&__content {
+		&__panel {
 			padding: var(--p);
 
 			&[aria-hidden='true'] {
