@@ -21,8 +21,6 @@
 			padding-bottom: 0.2em;
 
 			&:not(:first-child) {
-				margin: 0;
-
 				&::before {
 					content: '';
 					display: inline-block;
@@ -42,6 +40,11 @@
 
 			&:last-child {
 				--o: 0.5;
+			}
+		}
+
+		&__link {
+			&[aria-current] {
 				color: var(--color-black);
 			}
 		}

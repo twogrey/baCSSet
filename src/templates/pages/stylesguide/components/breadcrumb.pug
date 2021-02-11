@@ -10,13 +10,10 @@ section.section.js-menu#Breadcrumb
 		div(class="col-12 mb-0.5")
 			nav(aria-label="Fil d'ariane", class="breadcrumb")
 				ol.breadcrumb__list
-					li.breadcrumb__item(aria-current="page") Homepage
-		div(class="col-12 mb-0.5")
-			nav(aria-label="Fil d'ariane", class="breadcrumb")
-				ol.breadcrumb__list
 					li.breadcrumb__item
 						a(href="#", class="breadcrumb__link") Homepage
-					li.breadcrumb__item(aria-current="page") Brand
+					li.breadcrumb__item
+						a(href="#", class="breadcrumb__link", aria-current="page") Brand
 		div(class="col-12 mb-0.5")
 			nav(aria-label="Fil d'ariane", class="breadcrumb")
 				ol.breadcrumb__list
@@ -24,7 +21,8 @@ section.section.js-menu#Breadcrumb
 						a(href="#", class="breadcrumb__link") Homepage
 					li.breadcrumb__item
 						a(href="#", class="breadcrumb__link") Brand
-					li.breadcrumb__item(aria-current="page") Category
+					li.breadcrumb__item
+						a(href="#", class="breadcrumb__link", aria-current="page") Category
 		div(class="col-12 mb-0.5")
 			nav(aria-label="Fil d'ariane", class="breadcrumb")
 				ol.breadcrumb__list
@@ -34,7 +32,8 @@ section.section.js-menu#Breadcrumb
 						a(href="#", class="breadcrumb__link") Brand
 					li.breadcrumb__item
 						a(href="#", class="breadcrumb__link") Category
-					li.breadcrumb__item(aria-current="page") Product
+					li.breadcrumb__item
+						a(href="#", class="breadcrumb__link", aria-current="page") Product
 		.col-12
 			nav(aria-label="Fil d'ariane", class="breadcrumb js-snippet")
 				ol.breadcrumb__list
@@ -53,10 +52,11 @@ section.section.js-menu#Breadcrumb
 							svg(class="icon breadcrumb__icon", aria-hidden="true")
 								use(xlink:href="#icon-tag")
 							| Category
-					li.breadcrumb__item(aria-current="page")
-						svg(class="icon breadcrumb__icon", aria-hidden="true")
-							use(xlink:href="#icon-cart")
-						| Product
+					li.breadcrumb__item
+						a(href="#", class="breadcrumb__link", aria-current="page") 
+							svg(class="icon breadcrumb__icon", aria-hidden="true")
+								use(xlink:href="#icon-cart")
+							| Product
 	.row
 		details.toggle-code
 			summary Toggle linked data
