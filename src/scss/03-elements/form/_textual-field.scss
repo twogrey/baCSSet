@@ -15,6 +15,7 @@
 	[type='file'],
 	select,
 	textarea {
+		--focus-color: var(--color-primary-lightest);
 		width: 100%;
 		min-width: 0;
 		max-width: 100%;
@@ -31,9 +32,19 @@
 		transition-duration: 0.2s;
 		transition-property: border-color, color, box-shadow;
 		appearance: none;
+		outline: none;
 
 		&:hover {
 			border-color: $input-hover-border-color;
+		}
+
+		&:focus {
+			border-color: $input-focus-border-color;
+			box-shadow: 0 0 0 $input-focus-width var(--focus-color);
+		}
+
+		&:focus-visible {
+			outline: none;
 		}
 
 		&::placeholder {
@@ -52,10 +63,12 @@
 
 		.error & {
 			border-color: $input-error-border-color;
+			&:focus { --focus-color: var(--color-error-lightest); }
 		}
 
 		// .valid & {
 		// 	border-color: $input-valid-border-color;
+		// 	&:focus { --focus-color: var(--color-success-lightest); }
 		// }    
 	}
 
