@@ -12,11 +12,12 @@
 			&--ellipsis {
 				margin-right: 0;
 				margin-left: 0;
+				pointer-events: none;
 			}
-		}
 
-		[aria-disabled='true'] {
-			pointer-events: none;
+			&[aria-disabled='true'] {
+				pointer-events: none;
+			}
 		}
 	}
 

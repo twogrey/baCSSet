@@ -10,6 +10,12 @@ a {
 
 	p & {
 		text-decoration: underline;
+
+		&:not(.btn):hover {
+			color: inherit;
+			outline: 2px dotted currentColor;
+			outline-offset: 4px;
+		}
 	}
 
 	&:hover {

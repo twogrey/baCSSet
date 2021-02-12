@@ -8,28 +8,19 @@ section.section.js-menu#Pagination
 				ul
 					li Pour une pagination en AJAX, modifier les attributs <code>aria-disabled</code>, <code>aria-current</code> et <code>tabindex</code> lors d'un changement de page.
 		.col-12
-			nav(aria-label="Pagination", class="js-snippet")
-				ol.pagination.list-unstyled
-					li.pagination__item
-						a(href="#", aria-disabled="true", tabindex="-1", rel="prev", class="btn btn--outline btn--primary btn--small", aria-label="Page précédente") 
-							svg(class="icon", aria-hidden="true")
-								use(xlink:href="#icon-chevron-left")
-					li.pagination__item
-						a(href="#", aria-label="Page 1", aria-current="page", class="btn btn--primary btn--small")
-							span(aria-hidden="true") 1
-					li.pagination__item
-						a(href="#", aria-label="Page 2", class="btn btn--outline btn--primary btn--small")
-							span(aria-hidden="true") 2
-					li.pagination__item
-						a(href="#", aria-label="Page 3", class="btn btn--outline btn--primary btn--small")
-							span(aria-hidden="true") 3
-					li.pagination__item.pagination__item--ellipsis(aria-hidden="true")
-						a(href="#", aria-disabled="true", tabindex="-1", class="btn btn--white btn--small")
-							span &hellip;
-					li.pagination__item
-						a(href="#", aria-label="Page 99", class="btn btn--outline btn--primary btn--small")
-							span(aria-hidden="true") 99
-					li.pagination__item
-						a(href="#", rel="next", class="btn btn--outline btn--primary btn--small", aria-label="Page suivante") 
-							svg(class="icon", aria-hidden="true")
-								use(xlink:href="#icon-chevron-right")
+			nav(aria-label="Pagination", class="pagination js-snippet")
+				a(href="#", aria-disabled="true", tabindex="-1", rel="prev", class="btn btn--outline btn--primary btn--small pagination__item", aria-label="Page précédente") 
+					svg(class="icon", aria-hidden="true")
+						use(xlink:href="#icon-chevron-left")
+				a(href="#", aria-label="Page 1", aria-current="page", class="btn btn--primary btn--small pagination__item")
+					span(aria-hidden="true") 1
+				a(href="#", aria-label="Page 2", class="btn btn--outline btn--primary btn--small pagination__item")
+					span(aria-hidden="true") 2
+				a(href="#", aria-label="Page 3", class="btn btn--outline btn--primary btn--small pagination__item")
+					span(aria-hidden="true") 3
+				span(aria-hidden="true", class="btn btn--white btn--small pagination__item pagination__item--ellipsis") &hellip;
+				a(href="#", aria-label="Dernière page : 99", class="btn btn--outline btn--primary btn--small pagination__item")
+					span(aria-hidden="true") 99
+				a(href="#", rel="next", class="btn btn--outline btn--primary btn--small pagination__item", aria-label="Page suivante") 
+					svg(class="icon", aria-hidden="true")
+						use(xlink:href="#icon-chevron-right")
