@@ -5,33 +5,25 @@
 	@include tns;
    
 	.slider {
+		--dot-size: #{rem(30px)};
+		--dot-m: #{rem(4px)};
+		--dot-container-mt: calc(var(--sp) - var(--dot-m));
 		position: relative;
-		display: none;
-		user-select: none;
+		//display: none;
 
 		&__controls {
-			display: none;
-
-			@include large {
-				display: block;
-			}
+			position: absolute;
+			top: calc(50% - var(--dot-container-mt) / 2 - var(--dot-size) / 2 - var(--dot-m));
+			right: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-between;
+			pointer-events: none;
+			transform: translateY(-50%);
 		}
 
 		&__control {
-			@include large {
-				position: absolute;
-				top: 50%;
-
-				&--prev {
-					left: 0;
-					transform: translate(-50%, -50%);
-				}
-
-				&--next {
-					right: 0;
-					transform: translate(50%, -50%);
-				}
-			}
+			pointer-events: auto;
 		}
 
 		&__content {
@@ -39,20 +31,19 @@
 		} 
 
 		.tns-nav {
-			$size: 30px;
 			$outline-width: 4px;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
-			margin: calc(var(--sp) - #{$outline-width}) 0 $outline-width * -1;
+			margin: var(--dot-container-mt) 0 calc(var(--dot-m) * -1);
 
 			button {
 				box-sizing: content-box;
-				width: $size / 2;
-				height: $size / 2;
-				padding: $size / 4;
+				width: calc(var(--dot-size) / 2);
+				height: calc(var(--dot-size) / 2);
+				padding: calc(var(--dot-size) / 4);
 				border: 0;
-				margin: $outline-width;
+				margin: var(--dot-m);
 				border-radius: 50%;
 				background-color: var(--color-primary-lightest);
 				background-clip: content-box;
@@ -61,7 +52,7 @@
 				transition: background-color 0.2s;
 
 				&:hover {
-					outline: $outline-width / 2 dotted var(--color-primary);
+					outline: calc(var(--dot-m) / 2) dotted var(--color-primary);
 				}
 			}
 

@@ -312,7 +312,6 @@ module.exports = function (grunt) {
      */
 		jshint: {
 			options: {
-				// '-W083': true,
 				esversion: 6,
 			},
 			dist: [ `${jsPath}**/*.js` ],
