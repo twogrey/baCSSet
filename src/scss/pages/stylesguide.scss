@@ -386,6 +386,34 @@ div.code-toolbar > .toolbar span:hover {
 
 /** --------------------------------------------
  * 
+ * Sliders
+ * 
+ -------------------------------------------- */
+
+.js-slider {
+	counter-reset: slider;
+
+	.tns-item {
+		position: relative;
+		counter-increment: slider;
+
+		&::before {
+			content: counter(slider);
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			padding: var(--sp-1-2);
+			line-height: 1;
+			font-weight: $bold;
+			background-color: var(--color-primary-dark);
+			color: #fff;
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
  * Demo Grid
  * 
  -------------------------------------------- */

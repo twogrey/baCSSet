@@ -1,16 +1,20 @@
-mixin slide(img)
+mixin slide(img, imgFullWidthOnly)
 	.slider__item
-		.bg-lightgrey.p.h-100
-			if(img) 
-				img(src="https://picsum.photos/400/200", loading="lazy", class="mb-0.5", width="400", height="200" alt="") 
-			| Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+		if(imgFullWidthOnly) 
+			.preserve-ratio(style="--ratio: 25%")
+				img(src="https://picsum.photos/1200/600", loading="lazy", width="1200", height="600", alt="") 
+		else
+			.bg-lightgrey.p.h-100
+				if(img)
+					img(src="https://picsum.photos/400/200", loading="lazy", class="mb-0.5", width="400", height="200", alt="") 
+				| Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
 
-mixin controls
-	.slider__controls
-		button(type="button", class="btn btn--primary btn--rounded btn--small slider__control js-slider-control", data-controls="prev", aria-label="Slide précédente", disabled) 
+mixin controls(alt)
+	.slider__controls(class={'slider__controls--alt':alt})
+		button(type="button", class="btn slider__control js-slider-control", data-controls="prev", aria-label="Slide précédente", class={'btn--transparent slider__control--alt':alt, 'btn--primary btn--rounded':!alt} ,disabled) 
 			svg(class="icon", aria-hidden="true")
 				use(xlink:href="#icon-chevron-left")
-		button(type="button", class="btn btn--primary btn--rounded btn--small slider__control js-slider-control", data-controls="next", aria-label="Slide suivante")
+		button(type="button", class="btn slider__control js-slider-control", data-controls="next", aria-label="Slide suivante", class={'btn--transparent slider__control--alt':alt, 'btn--primary btn--rounded':!alt})
 			svg(class="icon", aria-hidden="true")
 				use(xlink:href="#icon-chevron-right")
 
@@ -25,26 +29,11 @@ section.section.js-menu#Slider
 					li Repo Github : <a href="https://github.com/ganlanyuan/tiny-slider/" target="_blank" rel="noopener">github.com/ganlanyuan/tiny-slider</a>
 					li Options : <a href="http://ganlanyuan.github.io/tiny-slider/#options" target="_blank" rel="noopener">ganlanyuan.github.io/tiny-slider</a>
 					li Demo : <a href="http://ganlanyuan.github.io/tiny-slider/demo/" target="_blank" rel="noopener">ganlanyuan.github.io/tiny-slider/demo</a>
-					li La pagination et les contrôles se n'affichent pas s'il n'y a pas plus d'une seule slide.
-					li Avec l'option <code>onInit</code>, prévoir un loader ou un placeholder pendant l'init du slider. Par défaut, sa propriété <code>display</code> passe de <code>none</code> à <code>block</code>.
 	.row.js-parent-snippet
 		.col-12
 			h4 Base
 		.col-12
-			.slider.js-slider(data-slider-options="demo-1")
-				.slider__content
-					+slide(true)
-					+slide
-					+slide
-					+slide
-					+slide
-					+slide
-					+slide
-					+slide
-		.col-12
-			h4 With controls (prev/next)
-		.col-12
-			.slider.js-slider(data-slider-options="demo-1").js-snippet
+			.slider.js-slider.js-snippet(data-slider-options="demo-1")
 				+controls
 				.slider__content
 					+slide(true)
@@ -55,10 +44,62 @@ section.section.js-menu#Slider
 					+slide
 					+slide
 					+slide
+	.row
+		details(class="toggle-code")
+			summary Toggle script
+			pre
+				code(class="language-js")
+				| var options = {
+				|     'demo-1': {
+				|     	  items: 1,
+				|     	  responsive: {
+				|       	    576: {
+				|       	        items: 2,
+				|       	        gutter: baseFontSize * getComputedStyle(html).getPropertyValue('--sp-unitless')
+				|       	    },
+				|       	    1200: {
+				|       	        items: 3
+				|       	    }
+				|       	}
+				|     },
+				|     'demo-2': {
+				|         ...
+				|     },
+				|     'demo-3': {
+				|         ...
+				|     }
+				| };
+	.row.js-parent-snippet.mt-2
 		.col-12
-			h4 With edgePadding
+			h4 Alternative controls
 		.col-12
-			.slider.js-slider(data-slider-options="demo-2")
+			.slider.slider--alt.js-slider.js-snippet(data-slider-options="demo-2")
+				+controls(true)
+				.slider__content
+					+slide(true, true)
+					+slide(true, true)
+					+slide(true, true)
+	.row
+		details(class="toggle-code")
+			summary Toggle script
+			pre
+				code(class="language-js")
+				| var options = {
+				|     'demo-1': {
+				|         ...
+				|     },
+				|     'demo-2': {
+				|         items: 1
+				|     },
+				|     'demo-3': {
+				|         ...
+				|     }
+				| };
+	.row.js-parent-snippet.mt-2
+		.col-12
+			h4 With edgePadding &amp; no controls
+		.col-12
+			.slider.slider--no-controls.js-slider.js-snippet(data-slider-options="demo-3")
 				.slider__content
 					+slide(true)
 					+slide
@@ -68,52 +109,29 @@ section.section.js-menu#Slider
 					+slide
 					+slide
 					+slide
-		.col-12
-			h4 With controls &amp; edgePadding
-		.col-12
-			.slider.js-slider(data-slider-options="demo-2")
-				+controls
-				.slider__content
-					+slide(true)
-					+slide
-					+slide
-					+slide
-					+slide
-					+slide
-					+slide
-					+slide
-	//- .row
-	//- 	details(class="toggle-code")
-	//- 		summary Toggle script
-	//- 		pre
-	//- 			code(class="language-js")
-	//- 				| var demoSlider = document.querySelector('.js-slider-demo');
-	//- 				| 
-	//- 				| if(demoSlider) {
-	//- 				| 
-	//- 				|     tns({
-	//- 				|         container: demoSlider.querySelector('.slider__content'),
-	//- 				|         items: 1,
-	//- 				|         slideBy: 'page',
-	//- 				|         nav: 'true',
-	//- 				|         navPosition: 'bottom',
-	//- 				|         controlsContainer: demoSlider.querySelector('.slider__controls'),
-	//- 				|         arrowKeys: true, 
-	//- 				|         autoplayButtonOutput: false,
-	//- 				|         loop: false,
-	//- 				|         responsive: {
-	//- 				|             576: {
-	//- 				|                 items: 2,
-	//- 				|                 gutter: baseFontSize * getComputedStyle(html).getPropertyValue('--sp-unitless')
-	//- 				|             },
-	//- 				|             1200: {
-	//- 				|                 items: 3
-	//- 				|             }
-	//- 				|         },
-	//- 				|         preventScrollOnTouch: 'auto',
-	//- 				|         onInit: function() {
-	//- 				|             demoSlider.style.display = 'block';
-	//- 				|         }
-	//- 				|     });
-	//- 				| 
-	//- 				| }
+	.row
+		details(class="toggle-code")
+			summary Toggle script
+			pre
+				code(class="language-js")
+				| var options = {
+				|     'demo-1': {
+				|         ...
+				|     },
+				|     'demo-2': {
+				|         ...
+				|     },
+				|     'demo-3': {
+				|         items: 1,
+				|         gutter: baseFontSize,
+				|         edgePadding: baseFontSize * 3,
+				|         responsive: {
+				|             576: {
+				|                 items: 2
+				|             },
+				|             1200: {
+				|                 items: 3
+				|             }
+				|         }
+				|     }
+				| };

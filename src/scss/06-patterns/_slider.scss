@@ -5,11 +5,37 @@
 	@include tns;
    
 	.slider {
+		--control-w: #{rem(40px)};
+		--control-h: var(--control-w);
 		--dot-size: #{rem(30px)};
 		--dot-m: #{rem(4px)};
 		--dot-container-mt: calc(var(--sp) - var(--dot-m));
 		position: relative;
-		//display: none;
+		padding: 0 calc(var(--control-w) + var(--sp));
+
+		&:not(.on) {
+			visibility: hidden;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				visibility: visible;
+				background-color: var(--color-lightgrey);
+				background-image: linear-gradient(to left, transparent, var(--color-grey), transparent);
+				background-repeat: no-repeat;
+				background-size: 50% auto;
+				animation: placeholder 1s infinite linear;
+			}
+		}
+
+		&--alt,
+		&--no-controls {
+			padding: 0;
+		}
 
 		&__controls {
 			position: absolute;
@@ -21,15 +47,45 @@
 			justify-content: space-between;
 			pointer-events: none;
 			transform: translateY(-50%);
+
+			&--alt {
+				--control-h: calc(100% - var(--dot-container-mt) - var(--dot-size) - var(--dot-m) * 2);
+				--radius: 0;
+				top: 0;
+				bottom: 0;
+				transform: none;
+			}
 		}
 
 		&__control {
+			width: var(--control-w);
+			height: var(--control-h);
+			padding: 0;
+			border: 0;
 			pointer-events: auto;
+
+			&--alt {
+				background-color: rgba(#000, 0.25);
+				color: #fff;
+
+				&:hover {
+					background-color: rgba(#000, 0.5);
+					color: #fff;
+				}
+			}
 		}
 
 		&__content {
 			display: flex;
+			overflow: hidden;
 		} 
+
+		&__item {
+			&:not(.tns-item) {
+				flex: 0 0 auto;
+				width: 100%;
+			}
+		}
 
 		.tns-nav {
 			$outline-width: 4px;

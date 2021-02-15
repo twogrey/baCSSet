@@ -12,18 +12,21 @@ var options = {
         }
     },
     'demo-2': {
+        items: 1
+    },
+    'demo-3': {
         items: 1,
+        gutter: baseFontSize,
         edgePadding: baseFontSize * 3,
         responsive: {
             576: {
-                items: 2,
-                gutter: baseFontSize
+                items: 2
             },
             1200: {
                 items: 3
             }
         }
-    },
+    }
 };
 
 function showHideControls(slider) {
@@ -80,7 +83,7 @@ document.querySelectorAll('.js-slider').forEach((slider) => {
         loop: false,
         preventScrollOnTouch: 'auto',
         onInit: function() {
-            //slider.style.display = 'block';
+            slider.classList.add('on');
             showHideControls(slider);
             preventFocusOnSlideOffScreen(slider);
         },
