@@ -7,7 +7,7 @@ mixin slide(img)
 
 mixin controls
 	.slider__controls
-		button(type="button", class="btn btn--primary btn--rounded btn--small slider__control js-slider-control", data-controls="prev", aria-label="Slide précédente") 
+		button(type="button", class="btn btn--primary btn--rounded btn--small slider__control js-slider-control", data-controls="prev", aria-label="Slide précédente", disabled) 
 			svg(class="icon", aria-hidden="true")
 				use(xlink:href="#icon-chevron-left")
 		button(type="button", class="btn btn--primary btn--rounded btn--small slider__control js-slider-control", data-controls="next", aria-label="Slide suivante")
@@ -38,17 +38,23 @@ section.section.js-menu#Slider
 					+slide
 					+slide
 					+slide
+					+slide
+					+slide
+					+slide
 		.col-12
 			h4 With controls (prev/next)
 		.col-12
 			.slider.js-slider(data-slider-options="demo-1").js-snippet
+				+controls
 				.slider__content
 					+slide(true)
 					+slide
 					+slide
 					+slide
 					+slide
-				+controls
+					+slide
+					+slide
+					+slide
 		.col-12
 			h4 With edgePadding
 		.col-12
@@ -59,17 +65,23 @@ section.section.js-menu#Slider
 					+slide
 					+slide
 					+slide
+					+slide
+					+slide
+					+slide
 		.col-12
 			h4 With controls &amp; edgePadding
 		.col-12
 			.slider.js-slider(data-slider-options="demo-2")
+				+controls
 				.slider__content
 					+slide(true)
 					+slide
 					+slide
 					+slide
 					+slide
-				+controls
+					+slide
+					+slide
+					+slide
 	//- .row
 	//- 	details(class="toggle-code")
 	//- 		summary Toggle script

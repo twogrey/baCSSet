@@ -13,7 +13,6 @@ var options = {
     },
     'demo-2': {
         items: 1,
-        slideBy: 1,
         edgePadding: baseFontSize * 3,
         responsive: {
             576: {
@@ -27,6 +26,50 @@ var options = {
     },
 };
 
+function showHideControls(slider) {
+    if(!!slider.querySelector('.slider__controls')) {
+        if(slider.querySelector('.tns-nav').style.display == 'none') {
+            slider.querySelector('.slider__controls').style.display = 'none';
+        } else {
+            slider.querySelector('.slider__controls').style.display = '';
+        }
+    }
+}
+
+function toggleDisabledControls(slider, sliderTNS) {
+    if(!!slider.querySelector('.slider__controls')) {
+        let sliderTNSinfos = sliderTNS.getInfo();
+        if(sliderTNSinfos.pages == (sliderTNSinfos.navCurrentIndex + 1)) {
+            slider.querySelector('[data-controls="next"]').setAttribute('disabled', '');
+        } else {
+            slider.querySelector('[data-controls="next"]').removeAttribute('disabled');
+        }
+        if(sliderTNSinfos.navCurrentIndex == 0) {
+            slider.querySelector('[data-controls="prev"]').setAttribute('disabled', '');
+        } else {
+            slider.querySelector('[data-controls="prev"]').removeAttribute('disabled');
+        }
+    }
+}
+
+function preventFocusOnSlideOffScreen(slider) {
+    slider.querySelectorAll('.tns-item').forEach((slide) => {
+        let slideLeft = parseInt(slide.getBoundingClientRect().left),
+            slideRight = parseInt(slide.getBoundingClientRect().right - (parseInt(getComputedStyle(slide).paddingRight))),
+            sliderLeft = parseInt(slide.closest('.js-slider').getBoundingClientRect().left),
+            sliderRight = parseInt(slide.closest('.js-slider').getBoundingClientRect().right);
+        if(slide.getAttribute('tabindex') == '-1' || (slideLeft < sliderLeft) || (slideRight > sliderRight)) {
+            slide.querySelectorAll(focusableSelector).forEach((elmt) => {
+                elmt.setAttribute('tabindex', '-1');
+            });
+        } else {
+            slide.querySelectorAll(focusableSelector).forEach((elmt) => {
+                elmt.removeAttribute('tabindex');
+            });
+        }
+    });
+}
+
 document.querySelectorAll('.js-slider').forEach((slider) => {
     let sliderTNS = tns({
         container: slider.querySelector('.slider__content'),
@@ -38,13 +81,37 @@ document.querySelectorAll('.js-slider').forEach((slider) => {
         preventScrollOnTouch: 'auto',
         onInit: function() {
             //slider.style.display = 'block';
+            showHideControls(slider);
+            preventFocusOnSlideOffScreen(slider);
         },
         ...options[slider.getAttribute('data-slider-options')] // jshint ignore:line
     });
 
     slider.querySelectorAll('.js-slider-control').forEach((btn) => {
         btn.addEventListener('click', () => {
-            sliderTNS.goTo(btn.getAttribute('data-controls'));
+            let sliderTNSinfos = sliderTNS.getInfo();
+            if(btn.getAttribute('data-controls') == 'next') {
+                sliderTNS.goTo(parseInt((sliderTNSinfos.navCurrentIndex + 1) * sliderTNSinfos.items));
+            }
+            if(btn.getAttribute('data-controls') == 'prev') {
+                sliderTNS.goTo(parseInt((sliderTNSinfos.navCurrentIndex - 1) * sliderTNSinfos.items));
+            }
         });
     });
+
+    sliderTNS.events.on('indexChanged', () => {
+        toggleDisabledControls(slider, sliderTNS);
+    });
+
+    sliderTNS.events.on('transitionEnd', () => {
+        preventFocusOnSlideOffScreen(slider);
+    });
+
+    sliderTNS.events.on('newBreakpointEnd', () => {
+        showHideControls(slider);
+        toggleDisabledControls(slider, sliderTNS);
+        preventFocusOnSlideOffScreen(slider);
+    });
+
+
 });
