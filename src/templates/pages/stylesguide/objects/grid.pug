@@ -1,7 +1,7 @@
-section.section.js-menu#Grid
+section.section.js-menu#Layout
 	.row
 		.col-12
-			h3.section__title#rows Rows
+			h3.section__title#rows Layout
 		each val in ['justify-between', 'justify-around', 'justify-center']
 			.col-12
 				.section__content
@@ -27,14 +27,12 @@ section.section.js-menu#Grid
 				div(class="row js-parent-snippet mt-0.5")
 					.row(class='d-none js-snippet '+val) ...
 		.col-12
-			h3.section__title#columns Columns
-		.col-12
 			.section__content
 				.container
 					.row
 						- var n = 1;
 						while n <= 12
-							.col-1.px-0.border-transparent.bg-primary.text-white.border-left.border-right= n
+							.col-1.px-0.bg-primary.text-white.border-top-0.border-bottom-0.border-left-0= n
 							- n++; 
 					.row
 						div(class="col")

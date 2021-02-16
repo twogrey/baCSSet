@@ -13,7 +13,7 @@ mixin modal(id, size, viewport, lightbox, snippet)
 			.modal__content
 				.modal__header
 					h1(id="titleModal"+id, class="modal__title" class={'sr-only': lightbox}) Modal title
-					button.modal__close.btn.js-modal-close(type="button", class={'btn--transparent': !lightbox, 'btn--white': lightbox}, aria-label="Fermer cette fenêtre modale")
+					button.modal__close.btn.js-modal-close(type="button", class={'btn--transparent': !lightbox, 'btn--white': lightbox}, aria-label="Close this modal")
 						svg(class="icon", aria-hidden="true")
 							use(xlink:href="#icon-x")
 				.modal__body
@@ -35,7 +35,7 @@ mixin modal(id, size, viewport, lightbox, snippet)
 							input(type="text", id="demoInputModal"+id)
 				if(!lightbox)
 					.modal__footer 
-						button(type="button", class="btn btn--error btn--outline js-modal-close") Fermer
+						button(type="button", class="btn btn--error btn--outline js-modal-close") Close
 						button(type="button", class="btn btn--primary") Button 
 
 section.section.js-menu#Modals

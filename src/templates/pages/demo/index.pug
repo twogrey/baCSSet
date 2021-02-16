@@ -43,12 +43,13 @@ block main
 				h2.border-bottom.border-lightgrey.pb.mb-2 Annexe
 				section
 					h3(class="p bg-lightgrey radius h5-like") Want more ?
-					form(action="/", method="post", role="search")
-						div(class="form-group")
-							label(for="searchInput") Search a post
-							input(type="search", id="searchInput", name="searchInput")
-						div(class="form-group text-right mt-0.5")
-							button(type="submit", class="btn btn--primary") Submit
+					div(role="search")
+						form(action="/", method="post")
+							div(class="form-group")
+								label(for="searchInput") Search a post
+								input(type="search", id="searchInput", name="searchInput")
+							div(class="form-group text-right mt-0.5")
+								button(type="submit", class="btn btn--primary") Submit
 				section.mt-2
 					h3(id="recentsPostsTitle", class="p bg-lightgrey radius h5-like") Recents posts
 					nav(aria-labelledby="recentsPostsTitle", class="nmt-0.5")

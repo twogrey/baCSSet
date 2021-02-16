@@ -1,16 +1,6 @@
 each val, index in ['text', 'date', 'search', 'file']
 	.col-12
 		h2= val.charAt(0).toUpperCase() + val.slice(1)
-	if val == 'search'
-		.col-12
-			.bg-lightgrey.p 
-				p 
-					b Notes :
-				ul
-					li 
-						| Ajouter 
-						code role="search"
-						|  au conteneur.
 	.col-12
 		.row.js-parent-snippet&attributes({"role='search'": val=='search', "aria-label='Demo Search'": val=='search'})
 			div(class="col-12 md:col-6 lg:col-4")
