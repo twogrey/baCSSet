@@ -35,11 +35,13 @@ block main
 				div(class="container md:py md:px-2")
 					block content
 
-block append scripts-footer
+block prepend scripts-footer
 		script(src="node_modules/prismjs/prism.js")
 		script(src="node_modules/prismjs/plugins/toolbar/prism-toolbar.js")
 		script(src="node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js")
 		script(src="dest/js/pages/stylesguide.min.js")
+
+block append scripts-footer
 		script(src="dest/js/components/sliders.min.js")
 		script(src="dest/js/components/modals.min.js")
 		script(src="dest/js/components/offcanvas.min.js")

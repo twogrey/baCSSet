@@ -60,6 +60,11 @@
 					border-radius: 0;
 				}
 			}
+
+			[aria-selected='true'] {
+				--btn-background: var(--color-primary-lightest);
+				color: var(--color-primary-dark);
+			}
 		}
 
 		&__content {

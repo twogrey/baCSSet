@@ -45,3 +45,9 @@ html(lang="en", class="touch")
 			script(src="node_modules/van11y-accessible-simple-tooltip-aria/dist/van11y-accessible-simple-tooltip-aria.min.js")
 			script(src="node_modules/van11y-accessible-tab-panel-aria/dist/van11y-accessible-tab-panel-aria.min.js")
 			script(src="dest/js/scripts.min.js")
+			script.
+				var other_accordion = van11yAccessibleAccordionAria({
+						ACCORDION_JS: 'js-acc',
+				    ACCORDION_HEADER_STYLE: 'btn'
+				});
+				other_accordion.attach();
