@@ -119,7 +119,9 @@ module.exports = function (grunt) {
 		    		'The “banner” role is unnecessary for element “header”.',
 		    		'The “contentinfo” role is unnecessary for element “footer”.',
 		    		'The “main” role is unnecessary for element “main”.',
-		    		'The “navigation” role is unnecessary for element “nav”.'
+		    		'The “navigation” role is unnecessary for element “nav”.',
+		    		'The “complementary” role is unnecessary for element “aside”.',
+		    		'The “dialog” role is unnecessary for element “dialog”.'
 		    	]
 		  },
     	all: [ pagesBuildPath + '**/*.unmin.html' ]

@@ -1,5 +1,5 @@
 mixin modal(id, size, viewport, lightbox, snippet)
-	dialog.modal(aria-labelledby="titleModal"+id, id="modal"+id, class={'js-snippet':snippet})
+	dialog.modal(role="dialog", aria-labelledby="titleModal"+id, id="modal"+id, class={'js-snippet':snippet})
 		- var sizeClass = '';
 		- var viewportClass = '';
 		- var lightboxClass = '';
