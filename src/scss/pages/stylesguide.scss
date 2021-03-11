@@ -254,6 +254,10 @@ div.code-toolbar > .toolbar span:hover {
 	}
 }
 
+body {
+	background-color: var(--color-lightgrey);
+}
+
 .menu-stylesguide {
 	position: sticky;
 	z-index: 10;
@@ -262,12 +266,16 @@ div.code-toolbar > .toolbar span:hover {
 	box-shadow: 0 rem(1px) rem(2px) rgba(#000, 0.25);
 
 	@include medium {
-		@include scrollbar(rem(15px), $color-secondary);
+		@include scrollbar(rem(7px), $color-secondary);
+		top: var(--header-height);
 		z-index: auto;
-		height: 100vh;
+		height: calc(100vh - var(--header-height));
 		overflow-y: auto;
 		box-shadow: none;
-		overflow-y: auto;
+	}
+
+	+ div {
+		background-color: #fff;
 	}
 
 	> ul {
