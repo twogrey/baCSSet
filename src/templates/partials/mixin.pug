@@ -1,6 +1,6 @@
 mixin input(type, groupId, id, disabled, inline, checked, toggle)
 	.form-check(class={'form-check--inline': inline==true})
-		input(type=type, name=type+"Example"+groupId, id=type+"Example"+groupId+id)&attributes({"disabled": disabled==true, "checked": checked==true, "class='switch'": toggle==true})
+		input.sr-only(type=type, name=type+"Example"+groupId, id=type+"Example"+groupId+id, class={'switch': toggle==true})&attributes({"disabled": disabled==true, "checked": checked==true})
 		label(for=type+"Example"+groupId+id)= type.toString().charAt(0).toUpperCase() + type.toString().slice(1)
 
 mixin inputs(id, inline, title, type, toggle, error)
@@ -16,16 +16,21 @@ mixin inputs(id, inline, title, type, toggle, error)
 			+input(type, id, '2', false, inline, true)
 			+input(type, id, '3', true, inline, false)
 			+input(type, id, '4', true, inline, true)
-		if type == 'radio'
+		if type == 'radio' && !toggle
 			+input(type, id, '5', false, inline)
 			+input(type, id, '6', false, inline, true)
 			+input(type, id+1, '7', true, inline, false)
 			+input(type, id+1, '8', true, inline, true)
-		if toggle
+		if type == 'checkbox' && toggle
 			+input(type, id, '9', false, inline, false, true)
 			+input(type, id, '10', false, inline, true, true)
 			+input(type, id, '11', true, inline, false, true)
 			+input(type, id, '12', true, inline, true, true)
+		if type == 'radio' && toggle
+			+input(type, id, '13', false, inline, false, true)
+			+input(type, id, '14', false, inline, true, true)
+			+input(type, id+1, '15', true, inline, false, true)
+			+input(type, id+1, '16', true, inline, true, true)
 
 mixin errorMsg(id)
 	span.message(id=id) There's an error.
