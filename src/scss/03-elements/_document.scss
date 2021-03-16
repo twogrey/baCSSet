@@ -1,8 +1,20 @@
+/** --------------------------------------------
+ * 
+ * Fonts declarations
+ * 
+ -------------------------------------------- */
+
 // @include font-face('XXX', 'XXX-Regular', $regular, normal, swap); 
 // @include font-face('XXX', 'XXX-SemiBold', $semibold, normal, swap); 
 // @include font-face('XXX', 'XXX-Bold', $bold, normal, swap); 
 
 @include font-face('icons', 'icons', $display: block); 
+
+/** --------------------------------------------
+ * 
+ * z-index management
+ * 
+ -------------------------------------------- */
 
 :root {
 	--z-header: 10;
@@ -11,6 +23,12 @@
 	--z-offcanvas: 2000;
 	--z-max: 9999; 
 }
+
+/** --------------------------------------------
+ * 
+ * Base styles for <html>
+ * 
+ -------------------------------------------- */
 
 html {
 	box-sizing: border-box;
@@ -23,11 +41,23 @@ html {
 	}
 }
 
+/** --------------------------------------------
+ * 
+ * Box sizing
+ * 
+ -------------------------------------------- */
+
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
 }
+
+/** --------------------------------------------
+ * 
+ * Base styles for <body>
+ * 
+ -------------------------------------------- */
 
 body {
 	font-size: 1rem;
@@ -36,6 +66,9 @@ body {
 	color: $text-color;
 	-webkit-tap-highlight-color: transparent;
 
+	/**
+	 * Loading bar
+	 */
 	&::before {
 		content: '';
 		position: fixed;
@@ -57,6 +90,18 @@ body {
 	}
 }
 
+@keyframes loading-page-running {
+	to {
+		transform: translateX(90%);
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Apply outline only for keyboard users (and when browser considers user need it)
+ * 
+ -------------------------------------------- */
+
 :focus,
 :focus-visible {
 	outline-offset: 4px;
@@ -70,18 +115,24 @@ body {
 	outline-style: auto;
 }
 
+/** --------------------------------------------
+ * 
+ * Style for text select
+ * 
+ -------------------------------------------- */
+
 ::selection {
 	background-color: var(--color-primary-dark);
 	color: #fff;
 }
 
+/** --------------------------------------------
+ * 
+ * Utility class for screen reader
+ * 
+ -------------------------------------------- */
+
 .sr-only,
 .invisible {
 	@extend %hidden;
-}
-
-@keyframes loading-page-running {
-	to {
-		transform: translateX(90%);
-	}
 }

@@ -10,12 +10,12 @@ $input-border-color: var(--color-grey);
 $input-border-width: 0.0625rem;
 $input-border: $input-border-width solid $input-border-color;
 
-$input-hover-border-color: var(--color-darkgrey);
+$input-hover-border-color: var(--color-grey-dark);
 $input-focus-border-color: var(--color-primary);
 $input-error-border-color: var(--color-error);
 $input-valid-border-color: var(--color-success);
 
-$input-focus-width: 0.2rem;
+$input-focus-width: 0.3rem;
 $input-background-color: #fff;
 $input-height: 2.5rem;
 $input-padding-x: $spacing;

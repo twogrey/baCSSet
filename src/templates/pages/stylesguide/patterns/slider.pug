@@ -4,7 +4,7 @@ mixin slide(img, imgFullWidthOnly)
 			.preserve-ratio(style="--ratio: 25%")
 				img(src="https://picsum.photos/1200/600", loading="lazy", width="1200", height="600", alt="") 
 		else
-			.bg-lightgrey.p.h-100
+			.bg-grey-lightest.p.h-100
 				if(img)
 					img(src="https://picsum.photos/400/200", loading="lazy", class="mb-0.5", width="400", height="200", alt="") 
 				| Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
@@ -23,7 +23,7 @@ section.section.js-menu#Slider
 		.col-12
 			h3.section__title Slider
 		.col-12
-			.bg-lightgrey.p 
+			.bg-grey-lightest.p 
 				p <b>Notes :</b>
 				ul
 					li Repo Github : <a href="https://github.com/ganlanyuan/tiny-slider/" target="_blank" rel="noopener">github.com/ganlanyuan/tiny-slider</a>

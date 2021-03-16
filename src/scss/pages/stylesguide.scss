@@ -213,7 +213,7 @@ div.code-toolbar > .toolbar span:hover {
 		font-size: rem(14px);
 		text-transform: uppercase;
 		font-weight: bold;
-		background-color: var(--color-lightgrey);
+		background-color: var(--color-grey-lightest);
 	}
 }
 
@@ -240,7 +240,7 @@ div.code-toolbar > .toolbar span:hover {
 	padding-bottom: var(--sp-3);
 
 	&:not(:last-child) {
-		border-bottom: 1px solid var(--color-lightgrey);
+		border-bottom: 1px solid var(--color-grey-light);
 		margin-bottom: var(--sp-4);
 	}
 
@@ -255,14 +255,14 @@ div.code-toolbar > .toolbar span:hover {
 }
 
 body {
-	background-color: var(--color-lightgrey);
+	background-color: var(--color-grey-lightest);
 }
 
 .menu-stylesguide {
 	position: sticky;
 	z-index: 10;
 	top: 0;
-	background-color: var(--color-lightgrey);
+	background-color: var(--color-grey-lightest);
 	box-shadow: 0 rem(1px) rem(2px) rgba(#000, 0.25);
 
 	@include medium {
@@ -429,7 +429,7 @@ body {
 #Layout {
 	.section__content {
 		padding: var(--sp);
-		background-color: var(--color-grey);
+		background-color: var(--color-grey-light);
 
 		.row {
 			&:not(:last-child) {
@@ -444,7 +444,7 @@ body {
 			margin-bottom: 0;
 			font-family: monospace;
 			text-align: center;
-			border: 1px solid var(--color-lightgrey);
+			border: 1px solid var(--color-grey-light);
 			background-color: #fff;
 			word-wrap: break-word;
 		}

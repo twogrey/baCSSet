@@ -1,7 +1,7 @@
 @if $enable-form-fieldset {
 	fieldset {
 		padding: calc(var(--sp) / 1.125) var(--sp) calc(var(--sp) / 2) var(--sp);
-		border: 2px solid $lightgrey;
+		border: 2px solid var(--color-grey-light);
 		margin: 0;
 
 		legend {

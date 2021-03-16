@@ -13,24 +13,24 @@
 						.form-group(role="group", aria-labelledby="titleGroupDemoFormRadios")
 							.label(id="titleGroupDemoFormRadios") Gender
 							.form-check.form-check--inline
-								input(type="radio", name="groupDemoFormRadios", id="groupDemoFormRadios1", required)
+								input(type="radio", class="sr-only", name="groupDemoFormRadios", id="groupDemoFormRadios1", required)
 								label(for="groupDemoFormRadios1") Man
 							.form-check.form-check--inline
-								input(type="radio", name="groupDemoFormRadios", id="groupDemoFormRadios2", required)
+								input(type="radio", class="sr-only", name="groupDemoFormRadios", id="groupDemoFormRadios2", required)
 								label(for="groupDemoFormRadios2") Woman
 					div(class="col-12 md:col-6")
 						.form-group
 							label(for="firstname") First name&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
-							input(type="text", id="firstname", required)
+							input(type="text", id="firstname", autocomplete="given-name", required)
 					div(class="col-12 md:col-6")
 						.form-group
 							label(for="lastname") Last name&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
-							input(type="text", id="lastname", required)
+							input(type="text", id="lastname", autocomplete="family-name", required)
 					div(class="col-12")
 						.form-group
 							label(for="email") E-mail&nbsp;<abbr title="obligatoire" aria-hidden="true">*</abbr>
 							.input-icon.input-icon--right
-								input(type="email", id="email", required)
+								input(type="email", id="email", autocomplete="email", required)
 								svg(class="icon", aria-hidden="true")
 									use(xlink:href="#icon-envelope")
 					div(class="col-12")
@@ -41,7 +41,7 @@
 					div(class="col-12")
 						.form-group
 							.form-check
-								input(type="checkbox", name="optin", id="optin", required)
+								input(type="checkbox", class="sr-only", name="optin", id="optin", required)
 								label(for="optin") I accept use terms. 
 					div(class="col-12 mb-0")
 						.form-group

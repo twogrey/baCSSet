@@ -12,7 +12,7 @@
 			border-color: inherit;
 			margin: (-$input-padding-y) (-$input-padding-x);
 			border-radius: 0;
-			background-color: var(--color-lightgrey);
+			background-color: var(--color-grey-light);
 			pointer-events: none;
 			transition: background-color 0.2s;
 			margin-inline-end: $input-padding-x;
@@ -31,7 +31,7 @@
 			border-color: inherit;
 			margin: (-$input-padding-y) (-$input-padding-x);
 			border-radius: 0;
-			background-color: var(--color-lightgrey);
+			background-color: var(--color-grey-light);
 			pointer-events: none;
 			transition: background-color 0.2s;
 			margin-inline-end: $input-padding-x;

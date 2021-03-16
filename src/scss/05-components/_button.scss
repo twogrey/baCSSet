@@ -71,21 +71,21 @@
 			}
 
 			&:active {
-				--btn-outline-color: var(--color-lightgrey);
+				--btn-outline-color: var(--color-grey-lightest);
 			}
 		}
 
 		&--light {
-			--btn-background: var(--color-lightgrey);
+			--btn-background: var(--color-grey-lightest);
 			color: var(--color-black);
 
 			&:hover {
-				--btn-background: var(--color-darkgrey);
+				--btn-background: var(--color-grey-dark);
 				color: #fff;
 			}
 
 			&:active {
-				--btn-outline-color: var(--color-grey);
+				--btn-outline-color: var(--color-grey-light);
 			}
 		}
 
@@ -94,12 +94,12 @@
 			color: #fff;
 
 			&:hover {
-				--btn-background: var(--color-darkgrey);
+				--btn-background: var(--color-grey-dark);
 				color: #fff;
 			}
 
 			&:active {
-				--btn-outline-color: var(--color-grey);
+				--btn-outline-color: var(--color-grey-light);
 			}
 		}
 
@@ -108,12 +108,12 @@
 			color: var(--color-black);
 
 			&:hover {
-				--btn-background: var(--color-lightgrey);
+				--btn-background: var(--color-grey-lightest);
 				color: var(--color-black);
 			}
 
 			&:active {
-				--btn-outline-color: var(--color-grey);
+				--btn-outline-color: var(--color-grey-light);
 			}
 		}
 
