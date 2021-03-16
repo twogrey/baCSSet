@@ -5,7 +5,7 @@ block title-page
 
 mixin post(id)
 	div(class="col-12 sm:col-6 md:col-12 lg:col-6")
-		article.radius.border.border-lightgrey.p.h-100.d-flex.flex-column.shadow
+		article.radius.border.border-grey-lightest.p.h-100.d-flex.flex-column.shadow
 			h3(id="titlePost"+id) Post title
 			.preserve-ratio.mb.nmr.nml
 				img(src="https://picsum.photos/400/200", loading="lazy", alt="")
@@ -21,7 +21,7 @@ mixin post(id)
 					span(aria-hidden="true") 10m
 
 block main
-	section.bg-lightgrey.py-5
+	section.bg-grey-lightest.py-5
 		.container.text-center
 			.row.justify-center
 				div(class="col-12 md:col-10 lg:col-8 mb-0")
@@ -33,16 +33,16 @@ block main
 	div(class="container py-2 md:pt-4 md:pb-2")
 		.row
 			section(class="col-12 md:col-8 lg:col-9 md:mb-0")
-				h2.border-bottom.border-lightgrey.pb.mb-2 Posts
+				h2.border-bottom.border-grey-lightest.pb.mb-2 Posts
 				.row
 					+post('1')
 					+post('2')
 					+post('3')
 					+post('4')
 			aside(class="col-12 md:col-4 lg:col-3 md:mb-0")
-				h2.border-bottom.border-lightgrey.pb.mb-2 Annexe
+				h2.border-bottom.border-grey-lightest.pb.mb-2 Annexe
 				section
-					h3(class="p bg-lightgrey radius h5-like") Want more ?
+					h3(class="p bg-grey-lightest radius h5-like") Want more ?
 					div(role="search")
 						form(action="/", method="post")
 							div(class="form-group")
@@ -51,23 +51,23 @@ block main
 							div(class="form-group text-right mt-0.5")
 								button(type="submit", class="btn btn--primary") Submit
 				section.mt-2
-					h3(id="recentsPostsTitle", class="p bg-lightgrey radius h5-like") Recents posts
+					h3(id="recentsPostsTitle", class="p bg-grey-lightest radius h5-like") Recents posts
 					nav(aria-labelledby="recentsPostsTitle", class="nmt-0.5")
 						ul.list-unstyled
 							li
 								a(href="#", class="py-0.5 d-block") Post title #3
 							li
-								a(href="#", class="py-0.5 d-block border-top border-lightgrey") Post title #2
+								a(href="#", class="py-0.5 d-block border-top border-grey-lightest") Post title #2
 							li
-								a(href="#", class="py-0.5 d-block border-top border-lightgrey") Post title #1
+								a(href="#", class="py-0.5 d-block border-top border-grey-lightest") Post title #1
 				section.mt-2
-					h3(id="contactUsTitle", class="p bg-lightgrey radius h5-like") Contact us
+					h3(id="contactUsTitle", class="p bg-grey-lightest radius h5-like") Contact us
 					address(aria-labelledby="contactUsTitle", class="nmt-0.5")
 						a(href="mailto:", class="py-0.5 d-block")
 							svg(class="icon mr", aria-hidden="true")
 								use(xlink:href="#icon-envelop") 
 							| admin@test.fr
-						a(href="tel:", class="py-0.5 d-block border-top border-lightgrey")
+						a(href="tel:", class="py-0.5 d-block border-top border-grey-lightest")
 							svg(class="icon mr", aria-hidden="true")
 								use(xlink:href="#icon-user") 
 							| (311) 444-3479
