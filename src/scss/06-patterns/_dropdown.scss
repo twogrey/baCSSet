@@ -59,6 +59,7 @@
 		}
 
 		&__toggle {
+			--i: 0;
 			text-align: left;
 			
 			&[aria-expanded='true'] {
@@ -71,7 +72,7 @@
 		}
 
 		&__icon {
-			transform: rotate(calc(180deg * var(--i, 0)));
+			transform: rotate(calc(180deg * var(--i)));
 		}
 	}
 

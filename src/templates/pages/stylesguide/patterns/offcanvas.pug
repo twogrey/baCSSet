@@ -17,7 +17,20 @@ mixin offcanvas(id, align, responsive)
 					if(responsive)
 						p Offcanvas in &lt; 768px res. Default flow in &gt;= 768px res.
 					else
-						if(align == 'right')
+						if(align == 'right')							
+							.dropdown.mb
+								button(
+									type="button", 
+									class="btn btn--primary dropdown__toggle js-dropdown",
+									aria-expanded="false"
+									aria-controls="dropdownListInModal"+id)
+									span Dropdown
+									svg(class="icon dropdown__icon", aria-hidden="true")
+										use(xlink:href="#icon-chevron-down")
+								ul.dropdown__content(id="dropdownListInModal"+id)
+									each i in [1, 2, 3]
+										li
+											button(type="button", class="dropdown__item") Option #{i}
 							.row
 								.col-12.mb
 									.form-group

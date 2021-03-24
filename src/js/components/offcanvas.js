@@ -75,21 +75,21 @@ const stopPropagation = function (e) {
 
 // Focus trap
 const focusInOffcanvas = function (e) {
-	let index = offcanvas.findIndex((f) => f === offcanvas.querySelector(':focus'));
+	let index = offcanvasFocusables.findIndex((f) => f === offcanvas.querySelector(':focus'));
 	if (e.shiftKey === true) {
 		index--;
 	} else {
 		index++;
 	}
-	if (index >= offcanvas.length) {
+	if (index >= offcanvasFocusables.length) {
 		e.preventDefault();
 		index = 0;
-		offcanvas[index].focus();
+		offcanvasFocusables[index].focus();
 	}
 	if (index < 0) {
 		e.preventDefault();
-		index = offcanvas.length - 1;
-		offcanvas[index].focus();
+		index = offcanvasFocusables.length - 1;
+		offcanvasFocusables[index].focus();
 	}
 };
 
