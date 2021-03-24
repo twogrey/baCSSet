@@ -29,10 +29,6 @@
 			background-color: #fff;
 			animation: o-fade-in 0.2s;
 			list-style: none;
-
-			&:not(.is-active) {
-				display: none;
-			}
 		}
 
 		&__item {
@@ -52,7 +48,7 @@
 
 			&:hover {
 				text-decoration: none;
-				background-color: var(--color-grey-light);
+				background-color: var(--color-grey-lightest);
 				color: var(--color-black);
 			}
 
@@ -67,6 +63,10 @@
 			
 			&[aria-expanded='true'] {
 				--i: 1;
+			}
+
+			&[aria-expanded='false'] + * {
+				display: none;
 			}
 		}
 

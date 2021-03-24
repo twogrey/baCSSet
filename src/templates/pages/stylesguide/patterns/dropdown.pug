@@ -1,32 +1,22 @@
-mixin dropdown(id, text, link, absolute, align, active)
+mixin dropdown(id, text, link, absolute, align)
 	if(align)
 		- alignClass = 'dropdown--'+align;
 	.dropdown.js-snippet(class={'dropdown--absolute': absolute}, class=alignClass)
-		//- Add attridute "data-toggle-outside" to close the list when clicking outside
 		button(
 			type="button", 
-			class="btn btn--primary dropdown__toggle"
-			data-toggle-class, 
-			data-toggle-target-next, 
-			aria-expanded="false",
-			id="dropdownButton"+id, 
-			aria-controls="dropdownList"+id)&attributes({"data-toggle-is-active": active, "data-toggle-outside": absolute})
+			class="btn btn--primary dropdown__toggle js-dropdown",
+			aria-expanded="false"
+			aria-controls="dropdownList"+id)
 			span= text
 			svg(class="icon dropdown__icon", aria-hidden="true")
 				use(xlink:href="#icon-chevron-down")
-		ul(
-			class="dropdown__content",
-			id="dropdownList"+id)
+		ul.dropdown__content(id="dropdownList"+id)
 			each i in [1, 2, 3]
 				li
 					if(link)
 						a(href="#", class="dropdown__item") Link #{i}
 					else
-						//- Add attridute "data-toggle-trigger-off" to close the list after selecting an option
-						button(
-							type="button",
-							class="dropdown__item",
-							data-toggle-trigger-off) Option #{i}
+						button(type="button", class="dropdown__item") Option #{i}
 
 section.section.js-menu#Dropdowns
 	.row
@@ -36,7 +26,7 @@ section.section.js-menu#Dropdowns
 		.col-12
 			h4 Default
 		.col-auto
-			+dropdown('1', 'Choose an action (open by default)', false, false, false, true)
+			+dropdown('1', 'Choose an action (open by default)', false, false, false)
 		.col-auto
 			+dropdown('2', 'Go to', true)
 	.row.js-parent-snippet

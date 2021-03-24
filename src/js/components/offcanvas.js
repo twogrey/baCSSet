@@ -75,28 +75,30 @@ const stopPropagation = function (e) {
 
 // Focus trap
 const focusInOffcanvas = function (e) {
-	e.preventDefault();
-	let index = offcanvasFocusables.findIndex((f) => f === offcanvas.querySelector(':focus'));
+	let index = offcanvas.findIndex((f) => f === offcanvas.querySelector(':focus'));
 	if (e.shiftKey === true) {
 		index--;
 	} else {
 		index++;
 	}
-	if (index >= offcanvasFocusables.length) {
+	if (index >= offcanvas.length) {
+		e.preventDefault();
 		index = 0;
+		offcanvas[index].focus();
 	}
 	if (index < 0) {
-		index = offcanvasFocusables.length - 1;
+		e.preventDefault();
+		index = offcanvas.length - 1;
+		offcanvas[index].focus();
 	}
-	offcanvasFocusables[index].focus();
 };
 
 window.addEventListener('keydown', (e) => {
-	// Close modal by pressing Esc
-	if (e.key === 'Escape' || e.key === 'Esc') {
+	// Close offcanvas by pressing Esc
+	if (e.keyCode === 27 && activeDropdown === null) {
 		closeOffcanvas(e);
 	}
-	if (e.key === 'Tab' && offcanvas !== null) {
+	if (e.keyCode === 9 && offcanvas !== null) {
 		focusInOffcanvas(e);
 	}
 });

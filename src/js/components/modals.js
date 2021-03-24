@@ -15,6 +15,7 @@ const openModal = function (modalID) {
 
 	// Check focusable elements in the modal then give focus to the first one
 	modalFocusables = Array.from(modal.querySelectorAll(focusableSelector));
+	console.log(modalFocusables);
 	modalFocusables[0].focus();
 
 	// Init closing modal functions
@@ -67,7 +68,6 @@ const stopPropagation = function (e) {
 
 // Focus trap
 const focusInModal = function (e) {
-	e.preventDefault();
 	let index = modalFocusables.findIndex((f) => f === modal.querySelector(':focus'));
 	if (e.shiftKey === true) {
 		index--;
@@ -75,20 +75,23 @@ const focusInModal = function (e) {
 		index++;
 	}
 	if (index >= modalFocusables.length) {
+		e.preventDefault();
 		index = 0;
+		modalFocusables[index].focus();
 	}
 	if (index < 0) {
+		e.preventDefault();
 		index = modalFocusables.length - 1;
+		modalFocusables[index].focus();
 	}
-	modalFocusables[index].focus();
 };
 
 window.addEventListener('keydown', (e) => {
 	// Close modal by pressing Esc
-	if (e.key === 'Escape' || e.key === 'Esc') {
+	if (e.keyCode === 27 && activeDropdown === null) {
 		closeModal(e);
 	}
-	if (e.key === 'Tab' && modal !== null) {
+	if (e.keyCode === 9 && modal !== null) {
 		focusInModal(e);
 	}
 });

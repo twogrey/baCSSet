@@ -29,6 +29,19 @@ mixin modal(id, size, viewport, lightbox, snippet)
 							p Sweet roll donut jujubes gingerbread pudding. Donut marshmallow croissant sweet brownie tootsie roll. Chocolate bar cake bear claw bonbon halvah. Jelly-o candy canes muffin jelly-o jelly sweet. Bonbon cheesecake caramels topping. Chupa chups macaroon donut. Sugar plum apple pie dessert tiramisu donut powder toffee macaroon. Chocolate bar lemon drops macaroon. Powder chocolate bar cotton candy pastry muffin chupa chups jelly-o sweet. Candy chocolate wafer tootsie roll soufflé sesame snaps. Carrot cake bonbon pastry topping. Cupcake marzipan dragée sweet roll.
 							p Tart fruitcake marzipan candy fruitcake. Sugar plum marzipan topping. Chocolate bar icing oat cake apple pie jelly beans. Cupcake sesame snaps wafer tiramisu cheesecake apple pie lemon drops dragée chocolate. Sesame snaps biscuit danish jelly cheesecake jujubes dragée candy. Muffin cookie muffin pastry pie donut. Pastry marzipan halvah jelly beans sweet caramels gummi bears. Halvah cupcake jelly beans bonbon fruitcake jelly-o jelly. Pie sweet roll chocolate soufflé marzipan bear claw. Cookie dessert bear claw tootsie roll dessert. Sugar plum bear claw croissant. Apple pie topping wafer toffee wafer.
 						else
+							.dropdown.mb
+								button(
+									type="button", 
+									class="btn btn--primary dropdown__toggle js-dropdown",
+									aria-expanded="false"
+									aria-controls="dropdownListInModal"+id)
+									span Dropdown
+									svg(class="icon dropdown__icon", aria-hidden="true")
+										use(xlink:href="#icon-chevron-down")
+								ul.dropdown__content(id="dropdownListInModal"+id)
+									each i in [1, 2, 3]
+										li
+											button(type="button", class="dropdown__item") Option #{i}
 							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo modi velit incidunt accusantium architecto dicta <a href="#">link</a> impedit iste fugit quis illum amet voluptas nostrum, dolorem, deleniti sit magnam inventore beatae nemo!
 						div
 							label(for="demoInputModal"+id) Label
