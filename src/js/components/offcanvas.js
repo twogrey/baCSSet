@@ -23,11 +23,10 @@ const openOffcanvas = function (offcanvasID) {
 	offcanvasFocusables[0].focus();
 
 	// Init closing offcanvas functions
-	offcanvas.addEventListener('click', closeOffcanvas);
+	offcanvas.addEventListener('click', closeOffcanvasOnBackdrop);
 	offcanvas.querySelectorAll('.js-offcanvas-close').forEach((btn) => {
 		btn.addEventListener('click', closeOffcanvas);
 	});
-	offcanvas.querySelector('.js-offcanvas-stop').addEventListener('click', stopPropagation);
 };
 
 const closeOffcanvas = function () {
@@ -48,11 +47,10 @@ const closeOffcanvas = function () {
 	offcanvas.classList.add('is-hiding');
 
 	// Remove closing offcanvas functions
-	offcanvas.removeEventListener('click', closeOffcanvas);
+	offcanvas.removeEventListener('click', closeOffcanvasOnBackdrop);
 	offcanvas.querySelectorAll('.js-offcanvas-close').forEach((btn) => {
 		btn.removeEventListener('click', closeOffcanvas);
 	});
-	offcanvas.querySelector('.js-offcanvas-stop').removeEventListener('click', stopPropagation);
 
 	//
 	const hideOffcanvas = function () {
@@ -69,8 +67,11 @@ const closeOffcanvas = function () {
 	offcanvas.addEventListener('animationend', hideOffcanvas);
 };
 
-const stopPropagation = function (e) {
-	e.stopPropagation();
+//
+const closeOffcanvasOnBackdrop = function (e) {
+	if(e.target === offcanvas) {
+		closeOffcanvas();
+	}
 };
 
 // Focus trap

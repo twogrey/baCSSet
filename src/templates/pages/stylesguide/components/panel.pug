@@ -17,7 +17,7 @@ mixin panel(id, variant, closable, longContent)
 				- variant = 'dark';
 			else if(variant == 'dark')
 				- variant = 'light';
-			button(type="button", aria-label="Cacher ce message", class="panel__close btn btn--small btn--outline btn--" + variant, data-toggle-class, data-toggle-target-only, data-toggle-target="#msg_"+id, data-toggle-is-active) 
+			button(type="button", aria-label="Cacher ce message", class="panel__close btn btn--small btn--outline btn--" + variant) 
 				svg(class="icon", aria-hidden="true")
 					use(xlink:href="#icon-x")
 

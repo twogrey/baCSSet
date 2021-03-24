@@ -144,7 +144,7 @@
 		 */
 		.icon {
 			--h: calc(#{$button-line-height} * 1em);
-			--w: 0.75em;
+			--w: 1em;
 			flex: 0 0 auto;
 			width: var(--w);
 			height: var(--h);
@@ -155,10 +155,7 @@
 			&:last-child { margin-left: var(--px); }
 
 			&:only-child {
-				--w: var(--h);
-				padding: 0 calc(var(--py) / 2);
-				margin-right: calc(var(--px) * -0.5);
-				margin-left: calc(var(--px) * -0.5);
+				margin: 0 calc((var(--py) - (var(--h) - var(--w))/2) * -1);
 			}
 		}
 

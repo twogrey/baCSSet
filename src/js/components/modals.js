@@ -15,15 +15,13 @@ const openModal = function (modalID) {
 
 	// Check focusable elements in the modal then give focus to the first one
 	modalFocusables = Array.from(modal.querySelectorAll(focusableSelector));
-	console.log(modalFocusables);
 	modalFocusables[0].focus();
 
 	// Init closing modal functions
-	modal.addEventListener('click', closeModal);
+	modal.addEventListener('click', closeModalOnBackdrop);
 	modal.querySelectorAll('.js-modal-close').forEach((btn) => {
 		btn.addEventListener('click', closeModal);
 	});
-	modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
 };
 
 const closeModal = function () {
@@ -45,7 +43,6 @@ const closeModal = function () {
 	modal.querySelectorAll('.js-modal-close').forEach((btn) => {
 		btn.removeEventListener('click', closeModal);
 	});
-	modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation);
 
 	//
 	const hideModal = function () {
@@ -62,8 +59,11 @@ const closeModal = function () {
 	modal.addEventListener('animationend', hideModal);
 };
 
-const stopPropagation = function (e) {
-	e.stopPropagation();
+//
+const closeModalOnBackdrop = function (e) {
+	if(e.target === modal) {
+		closeModal();
+	}
 };
 
 // Focus trap

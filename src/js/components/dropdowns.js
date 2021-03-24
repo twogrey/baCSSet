@@ -1,4 +1,5 @@
 let activeDropdown = null;
+let dropdownFocusables = [];
 
 const dropdownClickHandler = function(e) {
   if (!activeDropdown.contains(e.target)) {
@@ -6,10 +7,22 @@ const dropdownClickHandler = function(e) {
   }
 };
 
+window.addEventListener('keydown', (e) => {
+	if (e.keyCode === 9 && activeDropdown !== null) {
+		focusDropdown(e);
+	}
+});
+
 const focusDropdown = function(e) {
-  if (!activeDropdown.contains(e.target)) {
-    closeDropdown(activeDropdown);
-  }
+	let index = dropdownFocusables.findIndex((f) => f === activeDropdown.querySelector(':focus'));
+	if (e.shiftKey === true) {
+		index--;
+	} else {
+		index++;
+	}
+	if (index < 0 || index >= dropdownFocusables.length) {
+		closeDropdown(activeDropdown);
+	}
 };
 
 window.addEventListener('keydown', (e) => {
@@ -18,19 +31,18 @@ window.addEventListener('keydown', (e) => {
 		closeDropdown(activeDropdown);
 	}	
 });
-
+ 
 const openDropdown = function (dropdown) {
 	if(activeDropdown) closeDropdown(activeDropdown);
 	activeDropdown = dropdown;
+	dropdownFocusables = Array.from(dropdown.querySelectorAll(focusableSelector));
 	dropdown.querySelector('.js-dropdown').setAttribute('aria-expanded', 'true');
 	document.addEventListener('click', dropdownClickHandler);
-	document.addEventListener('focusin', focusDropdown);
 };
 
 const closeDropdown = function (dropdown) {
 	dropdown.querySelector('.js-dropdown').setAttribute('aria-expanded', 'false');
 	document.removeEventListener('click', dropdownClickHandler);
-	document.removeEventListener('focusin', focusDropdown);
 	activeDropdown = null;
 };
 
