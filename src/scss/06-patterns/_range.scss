@@ -88,7 +88,7 @@
 
 		&__output {
 			&::after {
-				content: attr(data-value);
+				content: attr(data-value) attr(data-unit);
 			}
 
 			&--multi {

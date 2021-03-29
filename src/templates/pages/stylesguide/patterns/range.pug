@@ -17,21 +17,53 @@ section.section.js-menu#Range
 			.form-group.range.js-range.js-snippet(role="group", aria-labelledby="rangeMulti2", style="--min: 0; --max: 100; --a: 25; --b: 75")
 				div#rangeMulti2.label Multi thumb slider
 				.range__wrap
-					label(for="range2-a", class="sr-only") Min price
+					label(for="range2-a", class="sr-only") Min
 					input(type="range", id="range2-a", class="range__input", value="25", min="0", max="100")
 					output(for="range2-a", aria-hidden="true", class="range__output range__output--multi", data-value="25")
-					label(for="range2-b", class="sr-only") Max price
+					label(for="range2-b", class="sr-only") Max
 					input(type="range", id="range2-b", class="range__input", value="75", min="0", max="100")
 					output(for="range2-b", aria-hidden="true", class="range__output range__output--multi", data-value="75")
-	.row.js-parent-snippet
+	.row.mb.js-parent-snippet
 		.col-12
 			.form-group.range.js-range.js-snippet(role="group", aria-labelledby="rangeMulti3", style="--min: 1; --max: 10;--a: 2.3; --b: 5.5")
 				div#rangeMulti3.label With decimals
 				.range__wrap
 					label(for="range3-a", class="sr-only") Min
-					input(type="range", id="range3-a", class="range__input", step="0.1", value="2.5", min="1", max="10")
+					input(type="range", id="range3-a", class="range__input", step="0.1", value="2.3", min="1", max="10")
 					output(for="range3-a", aria-hidden="true", class="range__output range__output--multi", data-value="2.3")
 					label(for="range3-b", class="sr-only") Max
 					input(type="range", id="range3-b", class="range__input", step="0.1", value="5.5", min="1", max="10")
 					output(for="range3-b", aria-hidden="true", class="range__output range__output--multi", data-value="5.5")
+	.row.mb.js-parent-snippet
+		.col-12
+			.form-group.range.js-range.js-snippet(role="group", aria-labelledby="rangeMulti4", style="--min: -10; --max: 5; --a: -2; --b: 0")
+				div#rangeMulti4.label Negative minimum
+				.range__wrap
+					label(for="range4-a", class="sr-only") Min
+					input(type="range", id="range4-a", class="range__input", value="-2", min="-10", max="5")
+					output(for="range4-a", aria-hidden="true", class="range__output range__output--multi", data-value="-2")
+					label(for="range4-b", class="sr-only") Max
+					input(type="range", id="range4-b", class="range__input", value="0", min="-10", max="5")
+					output(for="range4-b", aria-hidden="true", class="range__output range__output--multi", data-value="0")
+	.row.mb.js-parent-snippet
+		.col-12
+			.form-group.range.js-range.js-snippet
+				label(for="rangeSingle") 
+					| One thumb slider (with unit) 
+					span(aria-hidden="true")
+						| (
+						span(class="range__output", data-value="50", data-unit="€")
+						| )
+				input(type="range", id="rangeSingle", value="50", min="0", max="100", aria-valuetext="50€", data-unit="€")
+	.row.js-parent-snippet
+		.col-12
+			.form-group.range.js-range.js-snippet(role="group", aria-labelledby="rangeMulti5", style="--min: 0; --max: 100; --a: 25; --b: 75")
+				div#rangeMulti5.label With unit
+				.range__wrap
+					label(for="range5-a", class="sr-only") Min price
+					input(type="range", id="range5-a", class="range__input", value="25", min="0", max="100", data-unit="€", aria-valuetext="25€")
+					output(for="range5-a", aria-hidden="true", class="range__output range__output--multi", data-value="25", data-unit="€")
+					label(for="range5-b", class="sr-only") Max price
+					input(type="range", id="range5-b", class="range__input", value="75", min="0", max="100", data-unit="€", aria-valuetext="75€")
+					output(for="range5-b", aria-hidden="true", class="range__output range__output--multi", data-value="75", data-unit="€")
 
