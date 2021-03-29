@@ -1,0 +1,26 @@
+section.section.js-menu#Range
+	.row
+		.col-12
+			h3.section__title Range slider
+	.row.mb.js-parent-snippet
+		.col-12
+			.form-group.range.js-range.js-snippet(style="--a: 50")
+				label(for="rangeSingle") 
+					| One thumb slider 
+					span(aria-hidden="true")
+						| (
+						span(class="range__output", style="--val: var(--a)")
+						| )
+				input(type="range", id="rangeSingle", value="50", min="0", max="100")
+	.row.js-parent-snippet
+		.col-12
+			.form-group.range.js-range.js-snippet(role="group", aria-labelledby="rangeMulti", style="--a: 25; --b: 75")
+				div#rangeMulti.label Multi thumb slider
+				.range__wrap
+					label(for="range2-a", class="sr-only") Min price
+					input(type="range", id="range2-a", class="range__input", value="25", min="0", max="100")
+					output(for="range2-a", aria-hidden="true", class="range__output range__output--multi", style="--val: var(--a)")
+					label(for="range2-b", class="sr-only") Max price
+					input(type="range", id="range2-b", class="range__input", value="75", min="0", max="100")
+					output(for="range2-b", aria-hidden="true", class="range__output range__output--multi", style="--val: var(--b)")
+

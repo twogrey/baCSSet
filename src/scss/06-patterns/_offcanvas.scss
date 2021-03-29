@@ -48,6 +48,7 @@
 				--wrap-anim: none !important;
 				--close-display: none;
 				--wrap-p: 0;
+				--wrap-o: visible;
 				--title-mr: 0;
 				position: static;
 				display: block;
@@ -62,7 +63,7 @@
 			height: 100%;
 			padding: var(--wrap-p);
 			margin-left: var(--ml);
-			overflow-y: auto;
+			overflow-y: var(--wrap-o, auto);
 			background-color: #fff;
 			animation: var(--wrap-anim);
 		}
@@ -81,7 +82,7 @@
 		}
 
 		&__close {
-			display: var(--close-display);
+			display: var(--close-display, inline-flex);
 			margin-left: auto;
 		}
 	}

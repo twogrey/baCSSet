@@ -23,11 +23,11 @@ mixin offcanvas(id, align, responsive)
 									type="button", 
 									class="btn btn--primary dropdown__toggle js-dropdown",
 									aria-expanded="false"
-									aria-controls="dropdownListInModal"+id)
+									aria-controls="dropdownListInOffcanvas"+id)
 									span Dropdown
 									svg(class="icon dropdown__icon", aria-hidden="true")
 										use(xlink:href="#icon-chevron-down")
-								ul.dropdown__content(id="dropdownListInModal"+id)
+								ul.dropdown__content(id="dropdownListInOffcanvas"+id)
 									each i in [1, 2, 3]
 										li
 											button(type="button", class="dropdown__item") Option #{i}

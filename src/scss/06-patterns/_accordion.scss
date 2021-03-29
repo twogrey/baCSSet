@@ -1,6 +1,8 @@
 @if $enable-accordion { 
 	.accordion {
 		--p: var(--sp);
+		--bb: 1px solid;
+		--bb-c: var(--color-grey-light);
 
 		&:not([role='tablist']) {
 			visibility: hidden;
@@ -28,29 +30,40 @@
 		&__title {
 			margin: 0;
 
-			&:not(:last-of-type) {
-				border-bottom: 1px solid var(--color-grey-light);
+			&:last-of-type {
+				--bb-c: transparent;
 			}
 
 			.btn {
-				@extend .btn--transparent;
-				@extend .btn--large;
+				--i: 0;
 				--px: var(--p);
 				--py: var(--p);
 				justify-content: space-between;
 				width: 100%;
+				border-bottom: var(--bb) var(--bb-c);
 				border-radius: 0;
 				text-align: left;
+				@extend .btn--transparent;
+				@extend .btn--large;
 
 				&[aria-expanded='true'] {
 					--i: 1;
+					--bb-c: transparent;
 					color: var(--color-primary);
+				}
+
+				* {
+					pointer-events: none;
 				}
 			}
 		}
 
 		&__panel {
-			padding: var(--p);
+			padding: var(--p) var(--p) calc(var(--p) * 2);
+
+			&:not(:last-of-type) {
+				border-bottom: var(--bb) var(--bb-c);
+			}
 
 			&[aria-hidden='true'] {
 				display: none;
@@ -58,7 +71,7 @@
 		}
 
 		&__icon {
-			transform: rotate(calc(180deg * var(--i, 0)));
+			transform: rotate(calc(180deg * var(--i)));
 		}
 	}
 }
