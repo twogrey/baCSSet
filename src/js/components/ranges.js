@@ -1,27 +1,35 @@
 function updateRangeOutput(range) {
-	let parent = range.closest('.js-range'),
-			nbRanges = parent.querySelectorAll('[type="range"]').length,
-			value = range.value,
+	let container = range.closest('.js-range'),
+			nbRanges = container.querySelectorAll('[type="range"]').length,
+			value = parseFloat(range.value),
 			inputMin = null,
-			inputMax = null;
+			inputMax = null,
+			outputMin = container.querySelector('.range__output'),
+			outputMax = null;
 
-	if(parent.querySelectorAll('[type="range"]').length === 2) {
-		inputMin = parent.querySelector('[type="range"]:first-of-type');
-		inputMax = parent.querySelector('[type="range"]:last-of-type');
+	if(container.querySelectorAll('[type="range"]').length === 2) {
+		inputMin = container.querySelector('[type="range"]:first-of-type');
+		inputMax = container.querySelector('[type="range"]:last-of-type');
+		outputMin = container.querySelector('.range__output:first-of-type');
+		outputMax = container.querySelector('.range__output:last-of-type');
 	}
 
 	if(range.matches(':first-of-type')) {
-		if(inputMax && value >= inputMax.value) {
+		if(inputMax && value >= parseFloat(inputMax.value)) {
 			inputMax.value = value;
-			parent.style.setProperty('--b', value);
+			outputMax.setAttribute('data-value', value);
+			container.style.setProperty('--b', value);
 		}
-		parent.style.setProperty('--a', value);
+		outputMin.setAttribute('data-value', value);
+		container.style.setProperty('--a', value);
 	} else {
-		if(value <= inputMin.value) {
+		if(value <= parseFloat(inputMin.value)) {
 			inputMin.value = value;
-			parent.style.setProperty('--a', value);
+			outputMin.setAttribute('data-value', value);
+			container.style.setProperty('--a', value);
 		}
-		parent.style.setProperty('--b', value);
+		outputMax.setAttribute('data-value', value);
+		container.style.setProperty('--b', value);
 	}
 }
 

@@ -8,16 +8,22 @@
 }
 
 @mixin thumb() {
-  height: calc(var(--h) * 2);
-  width: calc(var(--h) * 2);
+	--s: calc(var(--h) * 2);
+  height: var(--s);
+  width: var(--s);
   border: 0;
-  margin-top: calc(var(--h) * -.5);
+  margin-top: calc(var(--s) / -2 + var(--h) / 2);
   box-shadow: none;
   border-radius: 50%;
   background: var(--color-primary);
   cursor: pointer;
   appearance: none;
   pointer-events: auto;
+  transition: background-color 0.2s;
+}
+
+@mixin thumb-hover() {
+	background-color: var(--color-secondary);
 }
 
 @mixin thumb-focus() {
@@ -35,28 +41,54 @@
 			display: grid;
 			grid-template: auto auto / 1fr 1fr;
 
-			&::before {
+			&::before,
+			&::after {
 				content: '';
 				position: absolute;
-				left: 0;
+				z-index: 0;
 				bottom: calc(var(--h) / 2);
-				width: 100%;
 				height: var(--h);
+			}
+
+			&::before {
+				left: 0;
+				width: 100%;
 				background-color: var(--color-grey-lightest);
+			}
+
+			&::after {
+				--total: calc(var(--max) - var(--min));
+				--l: calc((var(--a) - var(--min)) * 100% / var(--total));
+				--r: calc((var(--b) - var(--min)) * 100% / var(--total));
+				left: var(--l);
+				width: calc(var(--r) - var(--l));
+				background-color: var(--color-grey);
 			}
 		}
 
 		&__input {
 			position: relative;
+			z-index: 1;
 			grid-column: 1 / span 2;
 			grid-row: 2;
 			pointer-events: none;
+
+			&:first-of-type {
+				&::-webkit-slider-thumb {
+					margin-left: calc(var(--h) * -1);
+				}
+			}
+
+			&:last-of-type {
+				&::-webkit-slider-thumb { 
+					margin-left: var(--h);
+				}
+			}
 		}
 
 		&__output {
 			&::after {
-				content: counter(val);
-				counter-reset: val var(--val);
+				content: attr(data-value);
 			}
 
 			&--multi {
@@ -83,6 +115,9 @@
 		&::-webkit-slider-thumb { @include thumb; }
 		&::-moz-range-thumb { @include thumb; }
 		
+		&:hover::-webkit-slider-thumb { @include thumb-hover; }
+		&:hover::-moz-range-thumb { @include thumb-hover; }
+
 		&:focus::-webkit-slider-thumb { @include thumb-focus; }
 		&:focus::-moz-range-thumb { @include thumb-focus; }
 	}
