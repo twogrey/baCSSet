@@ -26,11 +26,14 @@ var options = {
                 items: 3
             }
         }
+    },
+    'demo-4': {
+        items: 1,
     }
 };
 
 function showHideControls(slider) {
-    if(!!slider.querySelector('.slider__controls')) {
+    if(slider.querySelector('.slider__controls')) {
         if(slider.querySelector('.tns-nav').style.display == 'none') {
             slider.querySelector('.slider__controls').style.display = 'none';
         } else {
@@ -40,7 +43,7 @@ function showHideControls(slider) {
 }
 
 function toggleDisabledControls(slider, sliderTNS) {
-    if(!!slider.querySelector('.slider__controls')) {
+    if(slider.querySelector('.slider__controls')) {
         let sliderTNSinfos = sliderTNS.getInfo();
         if(sliderTNSinfos.pages == (sliderTNSinfos.navCurrentIndex + 1)) {
             slider.querySelector('[data-controls="next"]').setAttribute('disabled', '');
@@ -73,6 +76,13 @@ function preventFocusOnSlideOffScreen(slider) {
     });
 }
 
+function initImgAsThumbnail(slider) {
+    let imgs = slider.getAttribute('data-slider-img-as-thumbnail').split(',');
+    slider.querySelectorAll('.tns-nav button').forEach((thumbnail, index) => {
+        thumbnail.style.backgroundImage = 'url('+imgs[index]+')';
+    });
+}
+
 document.querySelectorAll('.js-slider').forEach((slider) => {
     let sliderTNS = tns({
         container: slider.querySelector('.slider__content'),
@@ -86,6 +96,9 @@ document.querySelectorAll('.js-slider').forEach((slider) => {
             slider.classList.add('on');
             showHideControls(slider);
             preventFocusOnSlideOffScreen(slider);
+            if(slider.getAttribute('data-slider-img-as-thumbnail')) {
+                initImgAsThumbnail(slider);
+            }
         },
         ...options[slider.getAttribute('data-slider-options')] // jshint ignore:line
     });

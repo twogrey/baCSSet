@@ -37,6 +37,13 @@
 			padding: 0;
 		}
 
+		&--imgAsThumb {
+			--dot-w: #{rem(100px)};
+			--dot-h: #{rem(75px)};
+			--dot-rad: 0;
+			--dot-bgclip: border-box;
+		}
+
 		&__controls {
 			position: absolute;
 			top: calc(50% - var(--dot-container-mt) / 2 - var(--dot-size) / 2 - var(--dot-m));
@@ -96,14 +103,16 @@
 
 			button {
 				box-sizing: content-box;
-				width: calc(var(--dot-size) / 2);
-				height: calc(var(--dot-size) / 2);
+				width: var(--dot-w, calc(var(--dot-size) / 2));
+				height: var(--dot-h, calc(var(--dot-size) / 2));
 				padding: calc(var(--dot-size) / 4);
 				border: 0;
 				margin: var(--dot-m);
-				border-radius: 50%;
+				border-radius: var(--dot-rad, 50%);
 				background-color: var(--color-primary-lightest);
-				background-clip: content-box;
+				background-size: cover;
+				background-clip: var(--dot-bgclip, content-box);
+				background-position: center;
 				box-shadow: none;
 				cursor: pointer;
 				transition: background-color 0.2s;

@@ -450,7 +450,7 @@ module.exports = function (grunt) {
 					spawn: true
 				},
 				files: [ `${scssPath}**/*.scss`, `!${scssPath}pages/**/*.scss` ],
-				tasks: [ 'shell:lint', 'sass:dist', 'postcss:dist' ],
+				tasks: [ 'sass:dist', 'postcss:dist' ],
 			},
 			stylePages: {
 				files: [ `${scssPath}pages/**/*.scss` ],

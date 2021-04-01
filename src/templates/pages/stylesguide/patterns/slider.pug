@@ -5,9 +5,9 @@ mixin slide(img, imgFullWidthOnly)
 				img(src="https://picsum.photos/1200/600", loading="lazy", width="1200", height="600", alt="") 
 		else
 			.bg-grey-lightest.p.h-100
+				p Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
 				if(img)
-					img(src="https://picsum.photos/400/200", loading="lazy", class="mb-0.5", width="400", height="200", alt="") 
-				| Lorem ipsum dolor sit, amet <a href="#">consectetur adipisicing</a> elit. Necessitatibus error, dicta voluptas numquam, vero accusantium dignissimos.
+					img(src="https://picsum.photos/400/200", loading="lazy", width="400", height="200", alt="") 
 
 mixin controls(alt)
 	.slider__controls(class={'slider__controls--alt':alt})
@@ -73,9 +73,9 @@ section.section.js-menu#Slider
 			.slider.slider--alt.js-slider.js-snippet(data-slider-options="demo-2")
 				+controls(true)
 				.slider__content
-					+slide(true, true)
-					+slide(true, true)
-					+slide(true, true)
+					+slide(false, true)
+					+slide(false, true)
+					+slide(false, true)
 	.row
 		details(class="toggle-code")
 			summary Toggle script
@@ -128,3 +128,13 @@ section.section.js-menu#Slider
 				|         }
 				|     }
 				| };
+	.row.js-parent-snippet.mt-2
+		.col-12
+			h4 With images as thumbnails
+		.col-12
+			.slider.slider--no-controls.slider--imgAsThumb.js-snippet.js-slider(data-slider-options="demo-4", data-slider-img-as-thumbnail="https://picsum.photos/400/200, https://picsum.photos/400/200, https://picsum.photos/400/200, https://picsum.photos/400/200")
+				.slider__content
+					+slide(true)
+					+slide(true)
+					+slide(true)
+					+slide(true)

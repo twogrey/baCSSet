@@ -38,10 +38,6 @@
 
 		&--closable {
 			padding-right: calc(var(--s) * 3);
-
-			&:not(.is-active) {
-				display: none;
-			}
 		}
 
 		a {
