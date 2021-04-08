@@ -8,6 +8,9 @@ var options = {
             },
             1200: {
                 items: 3
+            },
+            1600: {
+                items: 4
             }
         }
     },
@@ -36,8 +39,10 @@ function showHideControls(slider) {
     if(slider.querySelector('.slider__controls')) {
         if(slider.querySelector('.tns-nav').style.display == 'none') {
             slider.querySelector('.slider__controls').style.display = 'none';
+            slider.style.padding = '0';
         } else {
             slider.querySelector('.slider__controls').style.display = '';
+            slider.style.removeProperty('padding');
         }
     }
 }
