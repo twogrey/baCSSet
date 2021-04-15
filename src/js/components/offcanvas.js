@@ -12,7 +12,8 @@ const openOffcanvas = function (offcanvasID) {
 		previouslyFocusedElementOffcanvas.setAttribute('aria-expanded', 'true');
 	}
 
-	// Add specific styles to <body>
+	// Add specific styles to <html> & <body>
+	getScrollbarWidth();
 	body.classList.add('offcanvas-is-open');
 
 	// Show element
@@ -96,10 +97,10 @@ const focusInOffcanvas = function (e) {
 
 window.addEventListener('keydown', (e) => {
 	// Close offcanvas by pressing Esc
-	if (e.keyCode === 27 && activeDropdown === null) {
+	if (e.key === 'Escape' && activeDropdown === null) {
 		closeOffcanvas(e);
 	}
-	if (e.keyCode === 9 && offcanvas !== null) {
+	if (e.key === 'Tab' && offcanvas !== null) {
 		focusInOffcanvas(e);
 	}
 });

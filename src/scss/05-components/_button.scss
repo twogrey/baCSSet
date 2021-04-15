@@ -22,12 +22,9 @@
 		cursor: pointer;
 		user-select: none;
 		-webkit-tap-highlight-color: transparent;
-
-		html:not(.touch) & {
-			transition-timing-function: ease;
-			transition-duration: 0.2s;
-			transition-property: opacity, color, border-color, background-color, box-shadow;
-		}
+		transition-timing-function: ease;
+		transition-duration: 0.2s;
+		transition-property: opacity, color, border-color, background-color, box-shadow;
 
 		/**
 		 * Colors
@@ -108,7 +105,8 @@
 			color: var(--color-black);
 
 			&:hover {
-				--btn-background: var(--color-grey-lightest);
+				--btn-background: rgba(0, 0, 0, 0.1);
+				--btn-border-color: transparent;
 				color: var(--color-black);
 			}
 

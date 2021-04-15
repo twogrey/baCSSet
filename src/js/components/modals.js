@@ -7,7 +7,8 @@ const openModal = function (modalID) {
 	modal = document.querySelector('#'+modalID);
 	previouslyFocusedElementModal = document.querySelector(':focus');
 	
-	// Add specific styles to <body>
+	// Add specific styles to <html> & <body>
+	getScrollbarWidth();
 	body.classList.add('modal-is-open');
 
 	// Set attribute to <dialog> element
@@ -88,10 +89,10 @@ const focusInModal = function (e) {
 
 window.addEventListener('keydown', (e) => {
 	// Close modal by pressing Esc
-	if (e.keyCode === 27 && activeDropdown === null) {
+	if (e.key === 'Escape' && activeDropdown === null) {
 		closeModal(e);
 	}
-	if (e.keyCode === 9 && modal !== null) {
+	if (e.key === 'Tab' && modal !== null) {
 		focusInModal(e);
 	}
 });

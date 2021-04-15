@@ -58,8 +58,8 @@
 
 			&::after {
 				--total: calc(var(--max) - var(--min));
-				--l: calc((var(--a) - var(--min)) * 100% / var(--total));
-				--r: calc((var(--b) - var(--min)) * 100% / var(--total));
+				--l: calc((var(--a) - var(--min)) * 100% / var(--total) - var(--h));
+				--r: calc((var(--b) - var(--min)) * 100% / var(--total) + var(--h));
 				left: var(--l);
 				width: calc(var(--r) - var(--l));
 				background-color: var(--color-grey);

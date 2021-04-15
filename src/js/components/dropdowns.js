@@ -8,7 +8,7 @@ const dropdownClickHandler = function(e) {
 };
 
 window.addEventListener('keydown', (e) => {
-	if (e.keyCode === 9 && activeDropdown !== null) {
+	if (e.key === 'Tab' && activeDropdown !== null) {
 		focusDropdown(e);
 	}
 });
@@ -26,7 +26,7 @@ const focusDropdown = function(e) {
 };
 
 window.addEventListener('keydown', (e) => {
-	if (e.keyCode === 27 && activeDropdown !== null) {
+	if (e.key === 'Escape' && activeDropdown !== null) {
 		activeDropdown.querySelector('.js-dropdown').focus();
 		closeDropdown(activeDropdown);
 	}	

@@ -1,10 +1,7 @@
 @if $enable-modal {
 	.modal-is-open { 
 		overflow: hidden;
-
-		.not-touch & {
-			padding-right: var(--scrollbar-width);
-		}
+		padding-right: var(--scrollbar-width);
 	}
 
 	.modal {
