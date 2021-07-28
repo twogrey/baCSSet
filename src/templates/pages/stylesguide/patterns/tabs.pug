@@ -3,8 +3,8 @@ mixin tab(position)
 		a(href="#tab"+position, class="btn btn--white js-tablist__link")= 'Tab #'+position
 
 mixin tabContent(position)
-	.js-tabcontent(id="tab"+position, tabindex="0")
-		h4= 'Tab title #'+position
+	.js-tabcontent(id="tab"+position)
+		h4(tabindex="0")= 'Tab title #'+position
 		p 
 			| Lorem ipsum dolor sit, 
 			a(href="#") amet consectetur
@@ -23,7 +23,7 @@ section.section.js-menu#Tabs
 							| If there is not 
 							code hx 
 							|  in the content, add 
-							code data-existing-hx="h2"
+							code data-hx="hx"
 							|  to 
 							code .js-tabs
 							| .

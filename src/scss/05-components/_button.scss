@@ -6,6 +6,8 @@
 	 * Base
 	 */
 	.btn {
+		--fs-normal: 1rem;
+		--fs: var(--fs-normal);
 		--px: 1.125em;
 		--py: calc(var(--px) / 2);
 		display: inline-flex;
@@ -14,7 +16,7 @@
 		padding: var(--py) var(--px);
 		border: 1px solid var(--btn-border-color, var(--btn-background));
 		border-radius: var(--radius);
-		font-size: 1rem;
+		font-size: var(--fs);
 		line-height: $button-line-height;
 		text-decoration: none;
 		vertical-align: middle;
@@ -142,7 +144,7 @@
 		 */
 		.icon {
 			--h: calc(#{$button-line-height} * 1em);
-			--w: 1em;
+			--w: 1.25em;
 			flex: 0 0 auto;
 			width: var(--w);
 			height: var(--h);
@@ -153,20 +155,32 @@
 			&:last-child { margin-left: var(--px); }
 
 			&:only-child {
-				margin: 0 calc((var(--py) - (var(--h) - var(--w))/2) * -1);
+				margin: 0 calc((var(--px) - var(--py)) * -1);
 			}
 		}
 
 		/**
 		 * Differents sizes
 		 */
-		&--small { font-size: 0.75rem; }
+		&--small { --fs: 0.75rem; }
 
-		&--large { font-size: 1.25rem; }
+		&--large { --fs: 1.25rem; }
 
 		/**
 		 * Rounded corners
 		 */
 		&--rounded { border-radius: 10em; }		
+	}
+
+	.md\:btn--normal {
+		@include medium {
+			--fs: var(--fs-normal);
+		}
+	}
+
+	.lg\:btn--normal {
+		@include large {
+			--fs: var(--fs-normal);
+		}
 	}
 }
