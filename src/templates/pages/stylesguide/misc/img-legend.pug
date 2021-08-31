@@ -4,11 +4,12 @@ section.section.js-menu#Figures
 			h3.section__title Images &amp; captions
 		.col-12
 			p Watch out : <a href="https://github.com/DISIC/rgaa_referentiel/issues/53" target="_blank">https://github.com/DISIC/rgaa_referentiel/issues/53</a>.
+			p To ensure optimal support, an explicit association can also be made between the content of the image alternative text and the content of the &lt;figcaption&gt; element.
+			p <a hhref="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#crit-1-9" target="_blank">RGAA Critère 1.9</a> : Chaque légende d’image est-elle, si nécessaire, correctement reliée à l’image correspondante ?
 	.row.js-parent-snippet
 		.col-12.mb-0
-			figure(role="group", aria-label="Figure 1 : figcaption content", class="js-snippet")
-				img(src="dest/img/holy-placeholder.jpg", loading="lazy", alt="Figure 1")
-				figcaption(aria-hidden="true", id="fig1")
-					span.sr-only Figure 1 :
-					|  figcaption content
+			//- Repeat figcaption content in aria-label
+			figure(role="figure", class="js-snippet", aria-label="Figcaption content xxx")
+				img(src="dest/img/holy-placeholder.jpg", loading="lazy", alt="alt content xxx")
+				figcaption Figcaption content xxx
 				
