@@ -1,0 +1,33 @@
+$name-spacings: (
+	'margin'  : 'm', 
+	'padding' : 'p' 
+);
+
+$direction-spacings: (
+	'-block-start'    : 't', 
+	'-inline-start'  : 'l',
+	'-block-end' : 'b',
+	'-inline-end'   : 'r' 
+);
+
+$utility-spacings: (
+	'-0' : 0, 
+	'-0#{\.}25' : calc(var(--sp) * 0.25),
+	'-0#{\.}33' : calc(var(--sp) * 0.33),
+	'-0#{\.}5' : calc(var(--sp) * 0.5),
+	'' : var(--sp),
+	'-1#{\.}5' : calc(var(--sp) * 1.5),
+	'-2' : calc(var(--sp) * 2),
+	'-2#{\.}5' : calc(var(--sp) * 2.5),
+	'-3' : calc(var(--sp) * 3) 
+);
+
+$spacing-0: map-get($utility-spacings, "-0");
+$spacing-0_25: map-get($utility-spacings, "-0#{\.}25");
+$spacing-0_33: map-get($utility-spacings, "-0#{\.}33");
+$spacing-0_5: map-get($utility-spacings, "-0#{\.}5");
+$spacing: map-get($utility-spacings, "");
+$spacing-1_5: map-get($utility-spacings, "-1#{\.}5");
+$spacing-2: map-get($utility-spacings, "-2");
+$spacing-2_5: map-get($utility-spacings, "-2#{\.}5");
+$spacing-3: map-get($utility-spacings, "-3");

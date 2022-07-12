@@ -1,0 +1,38 @@
+@use "../functions" as *; 
+
+$sans-serif-font-family: Poppins, sans-serif;
+$serif-font-family: Merriweather, serif;
+
+$w-regular: 400;
+$w-bold: 700;
+
+$text-color: var(--color-black);
+
+$fs-1: #{rem(19px)};
+$fs-2: #{rem(16px)};
+$fs-3: #{rem(13px)};
+
+@mixin heading($level) {
+	display: block;
+	margin: var(--spacing) 0;
+	font-weight: $w-bold;
+	font-family: $serif-font-family;
+	word-break: break-word;
+
+	@if $level == 1 {
+		font-size: $fs-1;
+	}
+
+	@if $level == 2 {
+		font-size: $fs-2;
+	}
+
+	@if $level == 3 {
+		font-size: $fs-3;
+	}
+
+	&:first-child { margin-top: 0; }
+
+	&:only-child,
+	&:last-child { margin-bottom: 0; }
+}

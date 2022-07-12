@@ -1,0 +1,81 @@
+@use "../abstracts" as *; 
+
+:root {
+	--sp: 1rem;
+}
+
+/** --------------------------------------------
+ * 
+ * Only one axis for padding & margin
+ * 
+ -------------------------------------------- */
+
+@each $spacing, $sp in($name-spacings) {
+	@each $direction, $dir in($direction-spacings) {
+		@each $name, $value in($utility-spacings) {
+			.#{$sp}#{$dir}#{$name} { #{$spacing}#{$direction}: #{$value} !important; }
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Only one axis for margin but with negatives values
+ * 
+ -------------------------------------------- */
+
+@each $direction, $dir in($direction-spacings) {
+	@each $name, $value in($utility-spacings) {
+		@if $value != '0' { 
+			.nm#{$dir}#{$name} { margin#{$direction}: calc(#{$value} * -1) !important; }
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * Axis X, Y or both for padding & margin
+ * 
+ -------------------------------------------- */
+
+@each $spacing, $sp in($name-spacings) {
+	@each $name, $value in($utility-spacings) {
+		.#{$sp}x#{$name} { 
+			#{$spacing}-inline-start: #{$value} !important;
+			#{$spacing}-inline-end: #{$value} !important; 
+		}
+
+		.#{$sp}y#{$name} { 
+			#{$spacing}-block-start: #{$value} !important;
+			#{$spacing}-block-end: #{$value} !important; 
+		}
+
+		.#{$sp}#{$name} { 
+			#{$spacing}: #{$value} !important; 
+		}
+	}
+}
+
+/** --------------------------------------------
+ * 
+ * auto value for only one axis, or axis X, Y (or both) for margin
+ * 
+ -------------------------------------------- */
+
+@each $direction, $dir in($direction-spacings) {
+	.m#{$dir}-a { margin#{$direction}: auto !important; }
+}
+
+.mx-a {
+	margin-inline-start: auto !important;
+	margin-inline-end: auto !important;
+}
+
+.my-a {
+	margin-block-start: auto !important;
+	margin-block-end: auto !important;
+}
+
+.m-a {
+	margin: auto !important;
+}

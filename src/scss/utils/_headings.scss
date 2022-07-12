@@ -1,0 +1,9 @@
+@use "../abstracts" as *; 
+
+@for $i from 1 through 3 {
+	h#{$i},
+	.h#{$i} {
+		@include heading($i);
+	} 
+}
+

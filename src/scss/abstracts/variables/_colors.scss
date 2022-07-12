@@ -1,0 +1,31 @@
+$black: #2D1926;
+$white: #fff;
+
+$grey-1: #F8F6F6;
+$grey-2: #F2EEEE;
+$grey-3: #D8CECE;
+$grey-4: #C2B9B9;
+
+$color-primary: #2D1926;
+
+$color-secondary: #D22630;
+
+$color-success: #31DD6B;
+
+$color-slip: #EE626B;
+
+$color-passport: #A65D8C;
+
+$all-colors: (
+	'primary' : $color-primary,
+	'secondary' : $color-secondary,
+	'success' : $color-success,
+	'slip' : $color-slip,
+	'passport' : $color-passport,
+	'grey-1' : $grey-1,
+	'grey-2' : $grey-2,
+	'grey-3' : $grey-3,
+	'grey-4' : $grey-4,
+	'white' : $white,
+	'black' : $black
+);

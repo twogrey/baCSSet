@@ -1,0 +1,62 @@
+@use "../abstracts" as *; 
+
+/** --------------------------------------------
+ * 
+ * Screen reader only
+ * 
+ -------------------------------------------- */
+
+.sr-only {
+	@extend %sr-only;
+}
+
+/** --------------------------------------------
+ * 
+ * Box sizing
+ * 
+ -------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/** --------------------------------------------
+ * 
+ * Base styles for <html>
+ * 
+ -------------------------------------------- */
+
+html {
+	box-sizing: border-box;
+	font-size: 100%;
+}
+
+/** --------------------------------------------
+ * 
+ * Base styles for <body>
+ * 
+ -------------------------------------------- */
+
+body {
+	font-family: $sans-serif-font-family;
+	font-size: rem(15px);
+	line-height: calc(1em + 0.25rem);
+	text-rendering: optimizeSpeed;
+	color: $text-color;
+}
+
+/** --------------------------------------------
+ * 
+ * Apply outline only for keyboard users (and when browser considers user need it)
+ * 
+ -------------------------------------------- */
+
+:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+:focus-visible {
+	outline-style: auto;
+}
