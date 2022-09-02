@@ -1,0 +1,541 @@
+@charset "UTF-8";
+/** -----------------------------------------------------------
+ *
+ * Combination of all files that do not generate CSS.
+ * Used for styles files in /pages/
+ * 
+ */
+/** --------------------------------------------
+ * 
+ * Enable/disable imports
+ * 
+ -------------------------------------------- */
+/**
+ * Form
+ */
+/**
+ * HTML Elements
+ */
+/**
+ * Objects
+ */
+/**
+ * Components
+ */
+/**
+ * Patterns
+ */
+/**
+ * Utilities
+ */
+/** --------------------------------------------
+ * 
+ * Grid
+ * 
+ -------------------------------------------- */
+/**
+ * Generic
+ */
+/**
+ * Breakpoints
+ */
+/** --------------------------------------------
+ * 
+ *  /!\ Use it only for pages/ scss files
+ * 
+ -------------------------------------------- */
+/** --------------------------------------------
+* 
+* 
+* 
+-------------------------------------------- */
+/*
+	Improved screen reader only CSS class
+	@author Gaël Poupard
+		@note Based on Yahoo!'s technique
+		@author Thierry Koblentz
+		@see https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+	* 1.
+		@note `clip` is deprecated but works everywhere
+		@see https://developer.mozilla.org/en-US/docs/Web/CSS/clip
+	* 2.
+		@note `clip-path` is the future-proof version, but not very well supported yet
+		@see https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
+		@see http://caniuse.com/#search=clip-path
+		@author Yvain Liechti
+		@see https://twitter.com/ryuran78/status/778943389819604992
+	* 3.
+		@note preventing text to be condensed
+		author J. Renée Beach
+		@see https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+		@note Drupal 8 goes with word-wrap: normal instead
+		@see https://www.drupal.org/node/2045151
+		@see http://cgit.drupalcode.org/drupal/commit/?id=5b847ea
+	* 4.
+		@note !important is important
+		@note Obviously you wanna hide something
+		@author Harry Roberts
+		@see https://csswizardry.com/2016/05/the-importance-of-important/
+*/
+/* PrismJS 1.16.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+code:not([class]) {
+  display: inline-block;
+  max-width: 100%;
+  overflow: auto;
+  padding: 0 0.2em;
+  font-size: 1rem;
+  font-weight: 400;
+  vertical-align: middle;
+  color: var(--color-secondary);
+}
+h2 code:not([class]) {
+  margin-left: 1rem;
+}
+
+code[class*=language-],
+pre[class*=language-] {
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 0.95em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  text-shadow: none;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*=language-] {
+  padding: 1em;
+  margin: 1em 0 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
+
+div.code-toolbar {
+  position: relative;
+}
+
+div.code-toolbar > .toolbar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+div.code-toolbar > .toolbar .toolbar-item {
+  display: inline-block;
+}
+
+div.code-toolbar > .toolbar a {
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none;
+  /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  padding: 0.5em 1em;
+  background: #f5f2f0;
+  background: rgba(224, 224, 224, 0.2);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar span:hover {
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+.toggle-code {
+  display: block;
+  width: calc(100% - (var(--sp)));
+  margin: 0 auto var(--sp);
+}
+@media screen and (min-width: 48rem) {
+  .toggle-code {
+    width: calc(100% - (var(--sp-2)));
+  }
+}
+.toggle-code summary {
+  padding: var(--sp-1-2) var(--sp);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: var(--color-grey-lightest);
+}
+
+/** --------------------------------------------
+ * 
+ * Layout
+ * 
+ -------------------------------------------- */
+.god-section-title {
+  padding: var(--sp-3);
+  margin-bottom: var(--sp);
+  line-height: 1.25;
+  font-size: responsive 1.875rem 3.125rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  background-color: var(--color-primary-dark);
+}
+
+.section {
+  padding-bottom: var(--sp-3);
+}
+.section:not(:last-child) {
+  border-bottom: 1px solid var(--color-grey-light);
+  margin-bottom: var(--sp-4);
+}
+.section__title {
+  padding: 0.625rem 1.25rem;
+  border-left: 0.3125rem solid var(--color-primary-dark);
+  line-height: 1.15;
+  color: #fff;
+  background-color: var(--color-primary);
+  clip-path: polygon(98% 0%, 100% 50%, 98% 100%, 0% 100%, 0% 0%);
+}
+
+body {
+  background-color: var(--color-grey-lightest);
+}
+
+.menu-stylesguide {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: var(--color-grey-lightest);
+  box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.25);
+}
+@media screen and (min-width: 48rem) {
+  .menu-stylesguide {
+    scrollbar-color: #a05524 #d0aa92;
+    scrollbar-width: thin;
+    top: var(--header-height);
+    z-index: auto;
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    box-shadow: none;
+  }
+  .menu-stylesguide::-webkit-scrollbar {
+    width: 0.4375rem;
+    height: 0.4375rem;
+  }
+  .menu-stylesguide::-webkit-scrollbar-thumb {
+    background: #a05524;
+    transition: background-color 0.2s;
+  }
+  .menu-stylesguide::-webkit-scrollbar-thumb:hover {
+    background: #904d20;
+  }
+  .menu-stylesguide::-webkit-scrollbar-thumb:active {
+    background: #80441d;
+  }
+  .menu-stylesguide::-webkit-scrollbar-track {
+    background: #d0aa92;
+  }
+}
+.menu-stylesguide + div {
+  background-color: #fff;
+}
+.menu-stylesguide > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: var(--sp-1-2);
+  list-style: none;
+}
+@media screen and (min-width: 48rem) {
+  .menu-stylesguide > ul {
+    display: block;
+    padding-top: var(--sp);
+  }
+}
+.menu-stylesguide > ul > li {
+  margin-top: 0;
+}
+@media screen and (min-width: 48rem) {
+  .menu-stylesguide > ul > li {
+    margin-bottom: var(--sp);
+  }
+}
+@media screen and (min-width: 48rem) {
+  .menu-stylesguide > ul > li > a {
+    font-weight: bold;
+  }
+}
+.menu-stylesguide > ul ul {
+  display: none;
+}
+@media screen and (min-width: 48rem) {
+  .menu-stylesguide > ul ul {
+    display: block;
+    list-style: none;
+    padding: 0;
+  }
+}
+.menu-stylesguide > ul ul a {
+  font-size: 85%;
+}
+.menu-stylesguide li {
+  margin-top: var(--sp-1-4);
+  line-height: 1.25;
+}
+.menu-stylesguide a {
+  display: block;
+  padding: var(--sp-1-2);
+  text-decoration: none;
+  color: var(--color-black);
+}
+@media screen and (min-width: 48rem) {
+  .menu-stylesguide a {
+    padding: var(--sp-1-4);
+  }
+}
+.menu-stylesguide a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+@media screen and (min-width: 48rem) {
+  .menu-stylesguide + * {
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.27);
+  }
+}
+
+/** --------------------------------------------
+ * 
+ * Cheatsheet
+ * 
+ -------------------------------------------- */
+.cheatsheet {
+  border: 1px solid var(--color-black);
+}
+@media screen and (min-width: 62rem) {
+  .cheatsheet {
+    display: grid;
+    grid: repeat(5, fit-content(300px))/repeat(4, 1fr);
+    grid-template-areas: "colors typography typography typography" "colors buttons buttons links" "form form form form";
+  }
+}
+.cheatsheet > [class*=a-] {
+  position: relative;
+  padding: var(--sp-2);
+  border: 1px solid var(--color-black);
+}
+.cheatsheet .legend {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  padding: 0 10px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  background-color: #fff;
+}
+.cheatsheet .a-colors {
+  grid-area: colors;
+}
+.cheatsheet .a-typography {
+  grid-area: typography;
+}
+.cheatsheet .a-buttons {
+  grid-area: buttons;
+}
+.cheatsheet .a-links {
+  grid-area: links;
+}
+.cheatsheet .a-form {
+  grid-area: form;
+}
+.cheatsheet .a-loader {
+  grid-area: loader;
+}
+.cheatsheet .a-b {
+  grid-area: b;
+}
+.cheatsheet .a-c {
+  grid-area: c;
+}
+.cheatsheet .a-alerts {
+  grid-area: alerts;
+}
+
+/** --------------------------------------------
+ * 
+ * Sliders
+ * 
+ -------------------------------------------- */
+.js-slider {
+  counter-reset: slider;
+}
+.js-slider .tns-item {
+  position: relative;
+  counter-increment: slider;
+}
+.js-slider .tns-item::before {
+  content: counter(slider);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: var(--sp-1-2);
+  line-height: 1;
+  font-weight: 700;
+  background-color: var(--color-primary-dark);
+  color: #fff;
+}
+
+/** --------------------------------------------
+ * 
+ * Demo Grid
+ * 
+ -------------------------------------------- */
+#Layout .section__content {
+  padding: var(--sp);
+  background-color: var(--color-grey-light);
+}
+#Layout .section__content .row:not(:last-child) {
+  margin-bottom: var(--sp);
+}
+#Layout .section__content .col,
+#Layout .section__content [class*=col-] {
+  padding-top: var(--sp-1-2);
+  padding-bottom: var(--sp-1-2);
+  margin-bottom: 0;
+  font-family: monospace;
+  text-align: center;
+  border: 1px solid var(--color-grey-light);
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+/*# sourceMappingURL=stylesguide.css.map */

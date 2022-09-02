@@ -267,7 +267,6 @@ body {
 
 	@include medium {
 		@include scrollbar(rem(7px), $color-secondary);
-		top: var(--header-height);
 		z-index: auto;
 		height: calc(100vh - var(--header-height));
 		overflow-y: auto;

@@ -4,8 +4,4 @@ node_modules
 
 npm-debug.log
 
-dest/ 
-
-*.css.map
-
 reports/
